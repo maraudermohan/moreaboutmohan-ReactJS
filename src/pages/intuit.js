@@ -11,7 +11,7 @@ import intuit9 from 'images/intuit9.png';
 import intuit10 from 'images/intuit10.png';
 import intuit11 from 'images/intuit11.png';
 
-export const carouselProps = [
+export const jumbotronProps = [
   {
     imageUrl: intuit0,
     imageAlt: 'Intuit experience',
@@ -30,7 +30,7 @@ export const carouselProps = [
   },
 ];
 
-export const sliderProps = [
+export const carouselProps = [
   {
     imageUrl: intuit4,
     imageAlt: 'Header component',
@@ -64,3 +64,13 @@ export const sliderProps = [
     imageAlt: 'Product selector component',
   },
 ];
+
+export const jobTitle = {
+  title: 'Software Engineer II',
+  company: 'Intuit',
+};
+
+export const timeWorked = {
+  duration: '~3 years',
+  months: 'Mar 2014 to Dec 2016',
+};

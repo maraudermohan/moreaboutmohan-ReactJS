@@ -7,7 +7,7 @@ import { StyledDiv, StyledImg } from './styles';
 // Adds height, width and alt properties
 const LazyLoadImage = ({
   height = '350px',
-  imageAlt = '',
+  imageAlt = 'Portfolio - Mohan Subramanian',
   imageUrl = '',
   width = 'auto',
 }) => {
@@ -38,7 +38,7 @@ const LazyLoadImage = ({
 LazyLoadImage.propTypes = {
   height: Proptypes.string,
   imageAlt: Proptypes.string,
-  imageUrl: Proptypes.string,
+  imageUrl: Proptypes.string.isRequired,
   width: Proptypes.string,
 };
 

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import colors from 'constants/colors';
+import { colors } from 'constants/colors';
 
 // Styled <img> and <div> elements
 const StyledImg = styled.img`
-  display: ${(props) => (props.hasLoaded ? 'block' : 'none')};
+  opacity: ${(props) => (props.hasLoaded ? 1 : 0)};
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
 `;
