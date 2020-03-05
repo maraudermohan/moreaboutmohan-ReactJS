@@ -8,13 +8,13 @@ const StyledImg = styled.img`
   height: ${(props) => props.$height};
 `;
 
-const StyledDiv = styled.div`
+const StyledImgSubstitute = styled.div`
   width: ${(props) => props.$height};
   height: ${(props) => props.$width};
   background: ${colors.white};
 `;
 
 export {
-  StyledDiv,
+  StyledImgSubstitute,
   StyledImg,
 };

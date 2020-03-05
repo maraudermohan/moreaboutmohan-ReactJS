@@ -67,7 +67,7 @@ export const carouselProps = [
 
 export const jobTitle = {
   title: 'Software Engineer II',
-  company: 'Intuit',
+  company: '@ Intuit',
 };
 
 export const timeWorked = {

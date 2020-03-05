@@ -1,35 +1,36 @@
 import styled from 'styled-components';
 import mq from 'constants/media-queries';
-import { StyledImg, StyledDiv } from 'components/LazyLoadImage/styles';
+import { colors, theme } from 'constants/colors';
+import { StyledImg, StyledImgSubstitute } from 'components/LazyLoadImage/styles';
 
-export const StyledContainer = styled.div`
+export const JumbotronContainer = styled.div`
   display: grid;
   position: relative;
   width: 100%;
   overflow: hidden;
 
   ${StyledImg},
-  ${StyledDiv} {
+  ${StyledImgSubstitute} {
     width: 100%;
     justify-self: end;
   }
   ${StyledImg} {
     height: auto;
   }
-  ${StyledDiv} {
+  ${StyledImgSubstitute} {
     height: 100%;
   }
 
-  @media (${mq.mobile}) {
+  @media ${mq.mobile} {
     height: 240px;
   }
-  @media (${mq.tablet}) {
+  @media ${mq.tablet} {
     height: 300px;
   }
-  @media (${mq.desktop}) {
+  @media ${mq.desktop} {
     height: 350px;
   }
-  @media (${mq.largeDevice}) {
+  @media ${mq.largeDevice} {
     height: 400px;
     ${StyledImg} {
       position: relative;
@@ -38,13 +39,13 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyledOverlay = styled.div`
+export const JumbotronOverlay = styled.div`
   position: absolute;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(0deg,rgba(5,22,34,1) 0%,rgba(5,22,34,.8) 25%,rgba(0,0,0,0) 100%),
-              linear-gradient(45deg,rgba(5,22,34,.6) 0%,rgba(5,22,34,.4) 30%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(0deg,${theme.BASE}FF 0%,${theme.BASE}CC 25%,${colors.WHITE}00 100%),
+              linear-gradient(45deg,${theme.BASE}99 0%,${theme.BASE}66 30%,${colors.WHITE}00 100%);
 `;

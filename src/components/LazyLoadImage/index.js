@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Proptypes from 'prop-types';
-import { StyledDiv, StyledImg } from './styles';
+import { StyledImgSubstitute, StyledImg } from './styles';
 
 // Component that lazy loads image from the given URL
 // Renders a white div till the image is loaded
@@ -29,7 +29,7 @@ const LazyLoadImage = ({
       />
       {
         !hasLoaded
-        && <StyledDiv />
+        && <StyledImgSubstitute />
       }
     </>
   );

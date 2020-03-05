@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import LazyLoadImage from 'components/LazyLoadImage';
-import { StyledContainer, StyledOverlay } from './styles';
+import { JumbotronContainer, JumbotronOverlay } from './styles';
 
+// Component that cycles through images every few seconds
+// Acts as HERO component for the page
 const Jumbotron = ({
   data = [],
 }) => {
@@ -19,12 +21,12 @@ const Jumbotron = ({
   });
 
   return (
-    <StyledContainer>
+    <JumbotronContainer>
       <LazyLoadImage
         {...data[iterator]}
       />
-      <StyledOverlay />
-    </StyledContainer>
+      <JumbotronOverlay />
+    </JumbotronContainer>
   );
 };
 
