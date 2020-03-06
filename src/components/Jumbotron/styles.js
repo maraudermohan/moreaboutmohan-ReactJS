@@ -7,6 +7,7 @@ export const JumbotronContainer = styled.div`
   display: grid;
   position: relative;
   width: 100%;
+  height: 240px;
   overflow: hidden;
 
   ${StyledImg},
@@ -21,9 +22,6 @@ export const JumbotronContainer = styled.div`
     height: 100%;
   }
 
-  @media ${mq.mobile} {
-    height: 240px;
-  }
   @media ${mq.tablet} {
     height: 300px;
   }
@@ -46,6 +44,11 @@ export const JumbotronOverlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(0deg,${theme.BASE}FF 0%,${theme.BASE}CC 25%,${colors.WHITE}00 100%),
-              linear-gradient(45deg,${theme.BASE}99 0%,${theme.BASE}66 30%,${colors.WHITE}00 100%);
+  background: linear-gradient(0deg,${theme.BASE}FF 10%,${theme.BASE}CC 35%,${colors.WHITE}00 100%),
+              linear-gradient(45deg,${theme.BASE}99 10%,${theme.BASE}66 40%,${colors.WHITE}00 100%);
+
+  @media ${mq.phone} {
+    background: linear-gradient(0deg,${theme.BASE}FF 0%,${theme.BASE}CC 25%,${colors.WHITE}00 100%),
+                linear-gradient(45deg,${theme.BASE}99 0%,${theme.BASE}66 30%,${colors.WHITE}00 100%);
+  }
 `;

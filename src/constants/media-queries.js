@@ -1,4 +1,5 @@
 export default {
+  uptoSmallPhone: '(max-width: 359.98px)',
   phone: '(min-width: 576px)',
   uptoPhone: '(max-width: 575.98px)',
   tablet: '(min-width: 768px)',

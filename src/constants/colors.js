@@ -1,5 +1,4 @@
 // Style constants
-
 export const colors = {
   ASPARAGUS: '#92A332', // grass green
   ABYSS: '#051622', // dark blue

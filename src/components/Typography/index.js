@@ -2,9 +2,13 @@ import styled from 'styled-components';
 import mq from 'constants/media-queries';
 
 export const StyledH1 = styled.h1`
-  font-size: 36px;
+  font-size: 32px;
   line-height: 1.25em;
   font-weight: 500;
+
+  @media ${mq.phone} {
+    font-size: 36px;
+  }
 
   @media ${mq.tablet} {
     font-size: 42px;
@@ -34,9 +38,13 @@ export const StyledH2 = styled.h2`
 `;
 
 export const StyledH3 = styled.h3`
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.25em;
   font-weight: 400;
+
+  @media ${mq.phone} {
+    font-size: 28px;
+  }
 
   @media ${mq.desktop} {
     font-size: 32px;
@@ -64,4 +72,10 @@ export const StyledParagraph = styled.p`
     font-size: 22px;
     line-height: 1.125em;
   }
+`;
+
+export const StyledSubtext = styled.p`
+  font-size: 14px;
+  line-height: 1em;
+  font-weight: 300;
 `;

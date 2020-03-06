@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Jumbotron from 'components/Jumbotron';
 import TitleSection from 'components/TitleSection';
+import Footer from 'components/Footer';
 import { jumbotronProps, jobTitle, timeWorked } from 'pages/intuit';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         heading={jobTitle.title}
         subHeading={jobTitle.company}
       />
+      <Footer />
     </div>
   );
 }
