@@ -31,8 +31,10 @@ export const JumbotronContainer = styled.div`
   @media ${mq.largeDevice} {
     height: 400px;
     ${StyledImg} {
-      position: relative;
+      position: absolute;
       top: -10%;
+      right: 0;
+      z-index: -1;
     }
   }
 `;

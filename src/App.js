@@ -3,6 +3,7 @@ import './App.css';
 import Jumbotron from 'components/Jumbotron';
 import TitleSection from 'components/TitleSection';
 import Footer from 'components/Footer';
+import ScrollCarousel from 'components/ScrollCarousel';
 import { jumbotronProps, jobTitle, timeWorked } from 'pages/intuit';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         heading={jobTitle.title}
         subHeading={jobTitle.company}
       />
+      <ScrollCarousel />
       <Footer />
     </div>
   );
