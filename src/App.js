@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import Jumbotron from 'components/Jumbotron';
 import TitleSection from 'components/TitleSection';
+import ContentList from 'components/ContentList';
 import Footer from 'components/Footer';
 import ScrollCarousel from 'components/ScrollCarousel';
-import { jumbotronProps, jobTitle, timeWorked } from 'pages/intuit';
+import { jumbotronProps, jobTitle, summary } from 'pages/intuit';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         heading={jobTitle.title}
         subHeading={jobTitle.company}
       />
+      <ContentList data={summary} alignment="right" />
       <ScrollCarousel />
       <Footer />
     </div>

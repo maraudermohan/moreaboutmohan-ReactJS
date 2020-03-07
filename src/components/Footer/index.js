@@ -4,15 +4,18 @@ import { StyledH3, StyledSubtext } from 'components/Typography';
 import { email, github, linked } from 'images/icons';
 import { FooterContainer, FooterLine, IconContainer } from './styles';
 
+// Footer component with Social information
 class Footer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       text: 'Say Hello.',
     };
+
+    this.iconClickhandler = this.iconClickhandler.bind(this);
   }
 
-  iconClickhandler = (href) => {
+  iconClickhandler(href) {
     const { text } = this.state;
     if (text === href) {
       this.setState({ text: 'Say Hello.' });
@@ -38,7 +41,7 @@ class Footer extends Component {
             }) => (
               <Icon
                 key={`${Icon}-${href}`}
-                onClick={() => {this.iconClickhandler(href)}}
+                onClick={() => { this.iconClickhandler(href); }}
                 data-selected={text === href}
               />
             ))

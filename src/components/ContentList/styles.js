@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import mq from 'constants/media-queries';
 import { StyledParagraph } from 'components/Typography';
 
-export const ContentListContainer = styled.ul`
+const ContentListContainer = styled.ul`
   display: grid;
   grid-template-columns: 30px auto;
   grid-auto-rows: auto;
@@ -32,7 +32,7 @@ export const ContentListContainer = styled.ul`
     padding: 0 0 64px 0;
   }
 
-  ${props => ((props.$alignment === 'full') && css`
+  ${(props) => ((props.$alignment === 'full') && css`
     @media ${mq.tablet} {
       width: 70%;
     }
@@ -41,4 +41,28 @@ export const ContentListContainer = styled.ul`
       width: 840px;
     }
   `)}
+
+  ${(props) => ((props.$alignment !== 'full') && css`
+    @media ${mq.tablet} {
+      width: 40%;
+    }
+
+    @media ${mq.desktop} {
+      width: 420px;
+    }
+
+    @media ${mq.largeDevice} {
+      width: 500px;
+    }
+  `)}
+
+  ${(props) => ((props.$alignment === 'left') && css`
+    margin: 0 50% 0 auto;
+  `)}
+
+  ${(props) => ((props.$alignment === 'right') && css`
+    margin: 0 auto 0 50%;
+  `)}
 `;
+
+export default ContentListContainer;

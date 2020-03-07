@@ -76,14 +76,14 @@ export const timeWorked = {
 };
 
 export const summary = [
-  "Main responsibilities include designing & developing Responsive web components.",
-  "Lead Frontend engineer in launching the Proconnect domain. Won a Spotlight Award for the same.",
-  "Built admin configurations for web components in Adobe AEM.",
-  "Led the launch of responsive sites for Quickbooks Canada, Brazil, France and India.",
-  "Worked on onboarding the 'One-login' feature across the launched sites.",
-  "Responsible for cross-browser compatibility and collaboration with designers and marketing team.",
-  "Contributed in the framework migration from Ruby-on-Rails to NodeJS / React.",
-  "Winner of 2 more Spotlight awards -",
-  "1. For a commendable demo in the EBS Demo Day 2016.",
-  "2. Leading frontend of Domain-name migration of Proconnect (previously 'Taxpro').",
+  'Main responsibilities include designing & developing Responsive web components.',
+  'Lead Frontend engineer in launching the Proconnect domain. Won a Spotlight Award for the same.',
+  'Built admin configurations for web components in Adobe AEM.',
+  'Led the launch of responsive sites for Quickbooks Canada, Brazil, France and India.',
+  'Worked on onboarding the "One-login" feature across the launched sites.',
+  'Responsible for cross-browser compatibility and collaboration with designers and marketing team.',
+  'Contributed in the framework migration from Ruby-on-Rails to NodeJS / React.',
+  'Winner of 2 more Spotlight awards -',
+  '1. For a commendable demo in the EBS Demo Day 2016.',
+  '2. Leading frontend of Domain-name migration of Proconnect (previously "Taxpro").',
 ];

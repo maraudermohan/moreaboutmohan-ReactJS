@@ -3,29 +3,30 @@ import Proptypes from 'prop-types';
 
 import { StyledParagraph } from 'components/Typography';
 import { AngleRightIcon } from 'images/icons/';
-import { ContentListContainer } from './styles';
+import ContentListContainer from './styles';
 
+// Component that renders unordered list of content
+// Alignment props sets the width to full or 50%
 const ContentList = ({
+  alignment = 'left',
   data = [],
-  alignment = 'full',
-}) => {
-  return (
-    <ContentListContainer
-      $alignment={alignment}
-    >
-      {
-        data.map((content, index) => (
-          <Fragment key={`${content}-${index}`}>
-            <AngleRightIcon width="18px" height="18px" />
-            <StyledParagraph as="li">{content}</StyledParagraph>
-          </Fragment>
-        ))
-      }
-    </ContentListContainer>
-  );
-};
+}) => (
+  <ContentListContainer
+    $alignment={alignment}
+  >
+    {
+      data.map((content) => (
+        <Fragment key={content}>
+          <AngleRightIcon width="18px" height="18px" />
+          <StyledParagraph as="li">{content}</StyledParagraph>
+        </Fragment>
+      ))
+    }
+  </ContentListContainer>
+);
 
 ContentList.propTypes = {
+  alignment: Proptypes.string,
   data: Proptypes.arrayOf(Proptypes.string),
 };
 
