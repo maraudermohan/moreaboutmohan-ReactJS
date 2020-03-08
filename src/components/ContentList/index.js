@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { StyledParagraph } from 'components/Typography';
 import { AngleRightIcon } from 'images/icons/';
@@ -26,8 +26,8 @@ const ContentList = ({
 );
 
 ContentList.propTypes = {
-  alignment: Proptypes.string,
-  data: Proptypes.arrayOf(Proptypes.string),
+  alignment: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ContentList;

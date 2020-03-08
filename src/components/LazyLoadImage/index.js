@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Proptypes from 'prop-types';
+import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { StyledImgSubstitute, StyledImg } from './styles';
 
 // Component that lazy loads image from the given URL
@@ -36,10 +36,10 @@ const LazyLoadImage = ({
 };
 
 LazyLoadImage.propTypes = {
-  height: Proptypes.string,
-  imageAlt: Proptypes.string,
-  imageUrl: Proptypes.string.isRequired,
-  width: Proptypes.string,
+  height: PropTypes.string,
+  imageAlt: PropTypes.string,
+  imageUrl: PropTypes.string.isRequired,
+  width: PropTypes.string,
 };
 
 export default LazyLoadImage;

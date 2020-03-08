@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
-import { StyledImg } from 'components/LazyLoadImage/styles';
-
 const ScrollCarouselContainer = styled.div`
   width: 100%;
 
-  ${StyledImg} {
+  img {
     display: block;
-    margin: 300px 0 0 0;
+    position: relative;
+    margin: 300px auto 0 auto;
     max-width: 540px;
   }
 `;

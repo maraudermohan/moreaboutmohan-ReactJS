@@ -4,6 +4,7 @@ import Jumbotron from 'components/Jumbotron';
 import TitleSection from 'components/TitleSection';
 import ContentList from 'components/ContentList';
 import Footer from 'components/Footer';
+import ScrollHOC from 'components/ScrollHOC';
 import ScrollCarousel from 'components/ScrollCarousel';
 import { jumbotronProps, jobTitle, summary } from 'pages/intuit';
 
@@ -18,7 +19,9 @@ function App() {
         subHeading={jobTitle.company}
       />
       <ContentList data={summary} alignment="right" />
-      <ScrollCarousel />
+      <ScrollHOC>
+          <ScrollCarousel />
+      </ScrollHOC>
       <Footer />
     </div>
   );

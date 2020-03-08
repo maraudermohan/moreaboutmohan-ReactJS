@@ -1,28 +1,69 @@
-import React, { useRef } from 'react';
+import React, { createRef, useState, useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
 
-import { summary } from 'pages/intuit';
-import ContentList from 'components/ContentList';
+import ScrollPositionContext from 'constants/contexts';
+import { carouselProps } from 'pages/intuit';
+import ImgWithRef from 'components/LazyLoadImage/img-with-ref';
+import ScrollCarouselContainer from './styles';
 
-const ScrollCarousel = () => {
-  const ref2 = useRef(null);
+const ScrollCarousel = ({
+  renderProps = '',
+}) => {
+  const [refArray, setRefArray] = useState([]);
+  const [cssArray, setCssArray] = useState([]);
+  console.log('carousel', useContext(ScrollPositionContext));
 
-  const scrollHandler = (e) => {
-    const startScroll = (window.innerHeight - ref2.current.offsetHeight)/2;
-    console.log(e, window.innerHeight, ref2.current.offsetHeight, startScroll, window.pageYOffset);
-    if (window.pageYOffset >= startScroll) {
-      console.log('true');
+  useEffect(() => {
+    let newArray = [];
+    for(let index in carouselProps) {
+      newArray[index] = createRef();
     }
-  };
+    setRefArray(newArray);
+  }, []);
+
+  useEffect(() => {
+    if (!!refArray.length){
+      const [topScroll, bottomScroll] = renderProps;
+      let newArray = [];
+
+      for(let index in carouselProps) {
+        const currentElem = refArray[index].current;
+        let delta = 0;
+        if (topScroll + 100 <= currentElem.offsetTop) {
+          delta = currentElem.offsetTop - topScroll - 100;
+        } else if (currentElem.offsetTop + currentElem.clientHeight + 100 <= bottomScroll) {
+          delta = currentElem.offsetTop + currentElem.clientHeight + 100 - bottomScroll;
+        }
+        newArray[index] = delta;
+      }
+      setCssArray(newArray);
+    }
+  },[renderProps]);
 
   return (
-    <div style={{ width: '100%', height: '1000px', }} onScroll={() => { console.log('hello', scrollHandler)}}>
-      <ContentList
-        style={{ width: '45%', color: 'white', fontSize: '18px', lineHeight: '1.5em'}}
-        ref={ref2}
-        data={summary}
-      />
-    </div>
+    <ScrollCarouselContainer>
+      {
+        carouselProps.map(({
+          imageUrl,
+          imageAlt,
+        }, index) => {
+          return (
+            <ImgWithRef
+              key={imageUrl}
+              ref={refArray[index]}
+              style={{left: `${cssArray[index]}px`}}
+              imageUrl={imageUrl}
+              imageAlt={imageAlt}
+            />
+          );
+        })
+      }
+    </ScrollCarouselContainer>
   );
+};
+
+ScrollCarousel.propTypes = {
+  renderProps: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default ScrollCarousel;
