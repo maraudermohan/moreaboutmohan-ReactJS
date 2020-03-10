@@ -21,7 +21,8 @@ const ContentListContainer = styled.ul`
 
   ${StyledParagraph} {
     grid-column: 2;
-    padding: 0 0 1.25em 0;
+    line-height: 1.2em;
+    padding: 0 0 1em 0;
   }
 
   @media ${mq.tablet} {

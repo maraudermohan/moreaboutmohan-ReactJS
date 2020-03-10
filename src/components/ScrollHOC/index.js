@@ -9,27 +9,41 @@ import ScrollPositionContext from 'constants/contexts';
 const ScrollHOC = ({
   children = {},
 }) => {
-  const [scrollPos, setScrollPos] = useState([]);
+  const [scrollPos, setScrollPos] = useState({});
 
   const scrollHandler = () => {
-    setScrollPos([window.pageYOffset, window.pageYOffset + window.innerHeight]);
+    setScrollPos({
+      topScroll: window.pageYOffset,
+      bottomScroll: window.pageYOffset + window.innerHeight,
+    });
   };
 
   useEffect(() => {
+    // Throttling scroll handling every 10 micro seconds for smooth scoll animation
     let throttle = false;
     window.addEventListener('scroll', () => {
       if (!throttle) {
         scrollHandler();
         throttle = true;
-        setTimeout(() => { throttle = false}, 10);
+        setTimeout(() => { throttle = false; }, 10);
       }
+    });
+
+    // Debouncing resize event to calculate the correct window.innerheight
+    let timeoutID = null;
+    window.addEventListener('resize', () => {
+      if (timeoutID !== 'undefined') {
+        clearTimeout(timeoutID);
+      }
+      timeoutID = setTimeout(scrollHandler, 300);
     });
 
     return () => {
       window.removeEventListener('scroll', () => {});
+      window.removeEventListener('resize', () => {});
     };
   }, []);
-  console.log(scrollPos);
+
   return (
     <ScrollPositionContext.Provider value={scrollPos}>
       {children}

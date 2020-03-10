@@ -1,69 +1,84 @@
-import React, { createRef, useState, useEffect, useContext } from 'react';
-import PropTypes from 'prop-types';
+import React, {
+  useRef,
+  useState,
+  useEffect,
+} from 'react';
 
-import ScrollPositionContext from 'constants/contexts';
-import { carouselProps } from 'pages/intuit';
-import ImgWithRef from 'components/LazyLoadImage/img-with-ref';
+import { carouselProps, summary1 } from 'pages/intuit';
+import ContentList from 'components/ContentList';
+import FixedOnScrollHOC from 'components/ScrollAnimations/FixedOnScrollHOC';
+import LazyLoadImage from 'components/LazyLoadImage';
 import ScrollCarouselContainer from './styles';
 
-const ScrollCarousel = ({
-  renderProps = '',
-}) => {
-  const [refArray, setRefArray] = useState([]);
-  const [cssArray, setCssArray] = useState([]);
-  console.log('carousel', useContext(ScrollPositionContext));
+const ScrollCarousel = () => {
+  const fixedElem = useRef(null);
+  const slideElements = useRef(null);
+  const [cssObject, setCssObject] = useState({});
 
   useEffect(() => {
-    let newArray = [];
-    for(let index in carouselProps) {
-      newArray[index] = createRef();
+    const fixedCss = {};
+    if (!!fixedElem && !!slideElements) {
+      fixedCss.top = fixedElem.current.offsetTop
+                    + fixedElem.current.offsetHeight;
+      fixedCss.bottom = slideElements.current.offsetTop
+                        + slideElements.current.offsetHeight
+                        + fixedElem.current.offsetHeight
+                        + 100;
     }
-    setRefArray(newArray);
+
+    setCssObject({
+      fixedElemStart: fixedCss.top,
+      fixedElemEnd: fixedCss.bottom,
+      fixedElemHeight: fixedElem.current.offsetHeight,
+    });
   }, []);
-
-  useEffect(() => {
-    if (!!refArray.length){
-      const [topScroll, bottomScroll] = renderProps;
-      let newArray = [];
-
-      for(let index in carouselProps) {
-        const currentElem = refArray[index].current;
-        let delta = 0;
-        if (topScroll + 100 <= currentElem.offsetTop) {
-          delta = currentElem.offsetTop - topScroll - 100;
-        } else if (currentElem.offsetTop + currentElem.clientHeight + 100 <= bottomScroll) {
-          delta = currentElem.offsetTop + currentElem.clientHeight + 100 - bottomScroll;
-        }
-        newArray[index] = delta;
-      }
-      setCssArray(newArray);
-    }
-  },[renderProps]);
 
   return (
     <ScrollCarouselContainer>
-      {
-        carouselProps.map(({
-          imageUrl,
-          imageAlt,
-        }, index) => {
-          return (
-            <ImgWithRef
-              key={imageUrl}
-              ref={refArray[index]}
-              style={{left: `${cssArray[index]}px`}}
-              imageUrl={imageUrl}
-              imageAlt={imageAlt}
-            />
-          );
-        })
-      }
+      <FixedOnScrollHOC
+        fixedElemCss={cssObject}
+        render={
+          (stylesProps) => (
+            <>
+              <div
+                ref={fixedElem}
+                style={stylesProps}
+              >
+                <ContentList
+                  data={summary1}
+                  alignment="left"
+                />
+              </div>
+              {
+                Object.keys(stylesProps).length && stylesProps.position === 'fixed'
+                  ? (<div style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
+                  : null
+              }
+              <div ref={slideElements}>
+                {
+                  carouselProps.map(({
+                    imageUrl,
+                    imageAlt,
+                  }) => (
+                    <LazyLoadImage
+                      key={imageUrl}
+                      imageUrl={imageUrl}
+                      imageAlt={imageAlt}
+                    />
+                  ))
+                }
+              </div>
+              {
+                Object.keys(stylesProps).length
+                  ? (<div style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
+                  : null
+              }
+            </>
+          )
+        }
+      />
     </ScrollCarouselContainer>
   );
-};
-
-ScrollCarousel.propTypes = {
-  renderProps: PropTypes.arrayOf(PropTypes.number),
 };
 
 export default ScrollCarousel;
