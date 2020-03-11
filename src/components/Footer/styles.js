@@ -28,7 +28,7 @@ export const IconContainer = styled.section`
 
 export const FooterContainer = styled.footer`
   display: flex;
-  margin: 32px auto 0 auto;
+  margin: 132px auto 0 auto;
   width: 75%;
   height: auto;
   flex-direction: column;

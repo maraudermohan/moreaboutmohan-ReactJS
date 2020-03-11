@@ -9,10 +9,12 @@ import ContentListContainer from './styles';
 // Alignment props sets the width to full or 50%
 const ContentList = ({
   alignment = 'left',
+  browserHeight = 0,
   data = [],
 }) => (
   <ContentListContainer
     $alignment={alignment}
+    $browserHeight={browserHeight}
   >
     {
       data.map((content) => (
@@ -27,6 +29,7 @@ const ContentList = ({
 
 ContentList.propTypes = {
   alignment: PropTypes.string,
+  browserHeight: PropTypes.number,
   data: PropTypes.arrayOf(PropTypes.string),
 };
 

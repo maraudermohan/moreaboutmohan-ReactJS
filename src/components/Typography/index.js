@@ -68,9 +68,31 @@ export const StyledParagraph = styled.p`
   line-height: 1.25em;
   font-weight: 300;
 
+  @media ${mq.phone} and (orientation: landscape) {
+    font-size: 14px;
+  }
+
+  @media ${mq.uptoSmallPhone} and (orientation: portrait) {
+    line-height: 1.2em;
+  }
+
+  @media (min-width: 361px) and ${mq.uptoPhone} and (orientation: portrait) {
+    line-height: 1.4em;
+  }
+
+  @media ${mq.tablet} and (orientation: portrait) {
+    font-size: 22px;
+  }
+
   @media ${mq.desktop} {
     font-size: 22px;
     line-height: 1.125em;
+  }
+
+  @media ${mq.desktop} and (orientation: portrait),
+  @media ${mq.desktop} and (orientation: landscape) {
+    font-size: 24px;
+    line-height: 1.2em;
   }
 `;
 
