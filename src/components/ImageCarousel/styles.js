@@ -34,7 +34,7 @@ export const ImageCarouselContainer = styled.div`
     padding: 15% 0 0 0;
     flex-direction: row;
     flex-wrap: nowrap;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.3s;
   }
 
@@ -43,12 +43,16 @@ export const ImageCarouselContainer = styled.div`
 
     &:first-child {
       margin-left: 0;
-      padding: 0 0 0 ${(props) => props.$browserWidth}px;
+      padding: ${(props) => props.$slideDirection === 'left'
+      ? `0 0 0 ${props.$browserWidth * 0.7}px;`
+      : `0 0 0 ${props.$browserWidth / 10}px;`};
     }
   
     &:last-child {
       margin-right: 0;
-      padding: 0 ${(props) => props.$browserWidth / 10}px 0 0;
+      padding: ${(props) => props.$slideDirection === 'left'
+      ? `0 ${props.$browserWidth / 10}px 0 0;`
+      : `0 ${props.$browserWidth * 0.7}px 0 0;`};
     }
   }
 
@@ -92,11 +96,15 @@ export const ImageCarouselContainer = styled.div`
     img {
       max-width: 540px;
       &:first-child {
-        padding: 0 0 0 ${(props) => props.$browserWidth}px;
+        padding: ${(props) => props.$slideDirection === 'right'
+        ? `0 0 0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px;`
+        : null};
       }
-    
+
       &:last-child {
-        padding: 0 ${(props) => (props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px 0 0;
+        padding: ${(props) => props.$slideDirection === 'left'
+        ? `0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px 0 0;`
+        : null};
       }
     }
   }
@@ -121,7 +129,7 @@ export const calculateStaticHeight = (
     return 'auto';
   }
   const width = calculateImageWidth(browserWidth, browserHeight);
-  let sumWidth = browserWidth;
+  let sumWidth = browserWidth * 0.7;
   sumWidth += dataLength * width;
   sumWidth += (browserWidth - width) / 2;
   sumWidth += browserWidth * 0.67 * (dataLength - 1);

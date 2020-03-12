@@ -70,8 +70,12 @@ export const jobTitle = {
   company: '@ Intuit',
 };
 
+export const duration = {
+  heading: '~3 years',
+  subHeading: 'Mar 2014 to Dec 2016',
+};
+
 export const summary1 = [
-  '~3 years from Mar 2014 to Dec 2016',
   'Main responsibilities include designing & developing Responsive web components.',
   'Lead Frontend engineer in launching the Proconnect domain. Won a Spotlight Award for the same.',
 ];

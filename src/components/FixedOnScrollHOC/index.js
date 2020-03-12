@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 import ScrollPositionContext from 'constants/contexts';
 
+// Higher order component that detects scroll event
+// Scroll positions are compared with current element's offsetTop
+// Current element is set to position FIXED
 const FixedOnScrollHOC = ({
   fixedElemCss = {},
   render,

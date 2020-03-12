@@ -1,9 +1,14 @@
 import styled, { css } from 'styled-components';
 
 import mq from 'constants/media-queries';
-import { StyledParagraph } from 'components/Typography';
+import { StyledParagraph, StyledSubtext } from 'components/Typography';
 
-const ContentListContainer = styled.ul`
+export const BoldParagraph = styled(StyledParagraph)`
+  margin: 0;
+  font-weight: 500;
+`;
+
+export const ContentListContainer = styled.ul`
   display: grid;
   grid-template-columns: 30px auto;
   grid-auto-rows: auto;
@@ -17,6 +22,12 @@ const ContentListContainer = styled.ul`
     grid-column: 1;
     justify-self: center;
     padding: 3px 0 0 0;
+  }
+
+  ${StyledSubtext} {
+    grid-row: 1;
+    grid-column: 2;
+    margin: 0 0 8px 0;
   }
 
   ${StyledParagraph} {
@@ -63,5 +74,3 @@ const ContentListContainer = styled.ul`
     }
   `)}
 `;
-
-export default ContentListContainer;

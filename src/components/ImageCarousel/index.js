@@ -2,16 +2,19 @@ import React, {
   useEffect,
   useRef,
   useContext,
-  useState,
-} from 'react';
+  useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ScrollPositionContext from 'constants/contexts';
 import LazyLoadImage from 'components/LazyLoadImage';
 import { ImageCarouselContainer, calculateStaticHeight, calculateImageWidth } from './styles';
 
+// Component that renders a list of images in a single row
+// Normal scroll event is transformed to offset the image carousel
+// Hence scrolling down the page will create a sliding effect on the images
 const ImageCarousel = ({
   data = [],
+  slideDirection = 'left',
 }) => {
   const imagesList = useRef(null);
   const [staticCss, setStaticCss] = useState({});
@@ -37,13 +40,17 @@ const ImageCarousel = ({
   }, [browserWidth]);
 
   useEffect(() => {
-    let styles = {};
+    let styles = slideDirection === 'left' ? {}
+    : {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+    };
     if (topScroll >= staticCss.offsetTop + staticCss.containerHeight - browserHeight / 2) {
       styles = {
         position: 'fixed',
         top: 0,
-        left: `${browserWidth - staticCss.imageListWidth}px`,
-        opacity: 0,
+        [slideDirection]: `${browserWidth - staticCss.imageListWidth}px`,
       };
     } else if (topScroll >= staticCss.offsetTop) {
       let leftCss = staticCss.offsetTop - topScroll;
@@ -52,7 +59,8 @@ const ImageCarousel = ({
       styles = {
         position: 'fixed',
         top: 0,
-        left: `${leftCss}px`,
+        [slideDirection]: `${leftCss}px`,
+        opacity: 1,
       };
     }
 
@@ -64,6 +72,7 @@ const ImageCarousel = ({
       $browserWidth={browserWidth}
       $browserHeight={browserHeight}
       $imageListWidth={staticCss.imageListWidth}
+      $slideDirection={slideDirection}
       style={{ height: staticCss.containerHeight }}
     >
       <div
@@ -91,6 +100,7 @@ const ImageCarousel = ({
 
 ImageCarousel.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
+  slideDirection: PropTypes.string,
 };
 
 export default ImageCarousel;

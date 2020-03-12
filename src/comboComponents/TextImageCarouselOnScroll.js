@@ -5,13 +5,16 @@ import React, {
   useContext,
 } from 'react';
 
-import { carouselProps, summary1 } from 'pages/intuit';
+import { carouselProps, duration, summary1 } from 'pages/intuit';
 import ScrollPositionContext from 'constants/contexts';
 import ContentList from 'components/ContentList';
 import FixedOnScrollHOC from 'components/FixedOnScrollHOC';
 import ImageCarousel from 'components/ImageCarousel';
 
-const ScrollCarousel = () => {
+// Combining FixedOnScroll and Image Carousel
+// The text stays fixed to the screen bottom, while the images slide
+// Slide direction can be customized
+const TextImageCarouselOnScroll = () => {
   const fixedElem = useRef(null);
   const slideElements = useRef(null);
   const [cssObject, setCssObject] = useState({});
@@ -49,6 +52,8 @@ const ScrollCarousel = () => {
                 data={summary1}
                 alignment="full"
                 browserHeight={browserHeight}
+                heading={duration.heading}
+                subHeading={duration.subHeading}
               />
             </div>
             {
@@ -71,4 +76,4 @@ const ScrollCarousel = () => {
   );
 };
 
-export default ScrollCarousel;
+export default TextImageCarouselOnScroll;
