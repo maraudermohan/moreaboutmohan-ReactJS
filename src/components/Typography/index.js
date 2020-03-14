@@ -56,11 +56,6 @@ export const StyledH4 = styled.h4`
   font-size: 24px;
   line-height: 1.25em;
   font-weight: 400;
-
-  @media ${mq.desktop} {
-    font-size: 28px;
-    line-height: 1.125em;
-  }
 `;
 
 export const StyledParagraph = styled.p`

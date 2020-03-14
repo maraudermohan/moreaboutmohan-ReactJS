@@ -9,7 +9,7 @@ const TitleSection = ({
   heading = '',
   subHeading = '',
 }) => (
-  <TitleSectionContainer>
+  <TitleSectionContainer className="page__title">
     <StyledH1>{heading}</StyledH1>
     <StyledH3>{subHeading}</StyledH3>
   </TitleSectionContainer>

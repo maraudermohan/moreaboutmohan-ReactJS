@@ -43,16 +43,16 @@ export const ImageCarouselContainer = styled.div`
 
     &:first-child {
       margin-left: 0;
-      padding: ${(props) => props.$slideDirection === 'left'
-      ? `0 0 0 ${props.$browserWidth * 0.7}px;`
-      : `0 0 0 ${props.$browserWidth / 10}px;`};
+      padding: ${(props) => (props.$slideDirection === 'left'
+    ? `0 0 0 ${props.$browserWidth * 0.7}px;`
+    : `0 0 0 ${props.$browserWidth / 10}px;`)};
     }
   
     &:last-child {
       margin-right: 0;
-      padding: ${(props) => props.$slideDirection === 'left'
-      ? `0 ${props.$browserWidth / 10}px 0 0;`
-      : `0 ${props.$browserWidth * 0.7}px 0 0;`};
+      padding: ${(props) => (props.$slideDirection === 'left'
+    ? `0 ${props.$browserWidth / 10}px 0 0;`
+    : `0 ${props.$browserWidth * 0.7}px 0 0;`)};
     }
   }
 
@@ -96,15 +96,15 @@ export const ImageCarouselContainer = styled.div`
     img {
       max-width: 540px;
       &:first-child {
-        padding: ${(props) => props.$slideDirection === 'right'
-        ? `0 0 0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px;`
-        : null};
+        padding: ${(props) => (props.$slideDirection === 'right'
+    ? `0 0 0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px;`
+    : null)};
       }
 
       &:last-child {
-        padding: ${(props) => props.$slideDirection === 'left'
-        ? `0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px 0 0;`
-        : null};
+        padding: ${(props) => (props.$slideDirection === 'left'
+    ? `0 ${(props.$browserWidth - calculateImageWidth(props.$browserWidth, props.$browserHeight)) / 2}px 0 0;`
+    : null)};
       }
     }
   }

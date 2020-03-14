@@ -28,7 +28,7 @@ const TextImageCarouselOnScroll = () => {
       fixedCss.bottom = slideElements.current.offsetTop
                         + slideElements.current.offsetHeight
                         + fixedElem.current.offsetHeight
-                        + 100;
+                        + 50;
     }
 
     setCssObject({
@@ -47,6 +47,7 @@ const TextImageCarouselOnScroll = () => {
             <div
               ref={fixedElem}
               style={stylesProps}
+              className="main__content-summary"
             >
               <ContentList
                 data={summary1}
@@ -58,15 +59,15 @@ const TextImageCarouselOnScroll = () => {
             </div>
             {
               Object.keys(stylesProps).length && stylesProps.position === 'fixed'
-                ? (<div style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
+                ? (<div className="main__placeholder" style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
                 : null
             }
-            <div ref={slideElements}>
+            <div ref={slideElements} className="main__image-carousel">
               <ImageCarousel data={carouselProps} />
             </div>
             {
               Object.keys(stylesProps).length
-                ? (<div style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
+                ? (<div className="main__placeholder" style={{ width: '100%', height: cssObject.fixedElemHeight }} />)
                 : null
             }
           </>

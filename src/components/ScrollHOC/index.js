@@ -7,7 +7,7 @@ import ScrollPositionContext from 'constants/contexts';
 // It passes the current top and bottom scroll position to Children
 // by setting the scroll context with the current scroll values
 const ScrollHOC = ({
-  children = {},
+  children,
 }) => {
   const [scrollPos, setScrollPos] = useState({});
 
@@ -54,7 +54,7 @@ const ScrollHOC = ({
 };
 
 ScrollHOC.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
 };
 
 export default ScrollHOC;

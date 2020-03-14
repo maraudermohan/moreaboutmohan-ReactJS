@@ -2,47 +2,69 @@ import React, {
   useContext,
   useEffect,
   useRef,
-  useState } from 'react';
+  useState,
+} from 'react';
+import PropTypes from 'prop-types';
 
 import ScrollPositionContext from 'constants/contexts';
+import HiddenSection from './styles';
 
-const TransparentScroller = () => {
+const TransparentScroller = ({
+  children,
+  background,
+  variant = 'fold',
+}) => {
   const transparentElem = useRef(null);
+  const [hiddenSectionCss, setHiddenSectionCss] = useState();
   const {
-    // bottomScroll = 0,
-    browserWidth = 0,
-    browserHeight = 0,
+    bottomScroll = 0,
+    browserWidth = window.innerWidth,
+    browserHeight = window.innerHeight,
   } = useContext(ScrollPositionContext);
-  const [transparentElemCss] = useState({
+  const transparentElemCss = {
     width: browserWidth,
     height: browserHeight,
-    background: transparentElem,
-  });
+    background: 'transparent',
+  };
 
   useEffect(() => {
+    const styles = {
+      background,
+      width: `${browserWidth}px`,
+      height: `${browserHeight}px`,
+    };
+    const elem = transparentElem.current;
+    if (variant === 'fold' && bottomScroll >= elem.offsetTop + browserHeight) {
+      styles.display = 'grid';
+      styles.position = 'relative';
+    } else if (variant === 'hide' && bottomScroll >= elem.offsetTop + (browserHeight * 2)) {
+      styles.display = 'none';
+    } else if (bottomScroll >= elem.offsetTop) {
+      styles.display = 'grid';
+    }
 
-  }, []);
+    setHiddenSectionCss(styles);
+  }, [bottomScroll]);
 
   return (
     <div
+      className="main__transparent-scroller"
       ref={transparentElem}
       style={transparentElemCss}
     >
-      <section
-        style={{
-          position: 'fixed',
-          width: browserWidth,
-          height: browserHeight,
-          top: 0,
-          left: 0,
-          background: 'red',
-          zIndex: '-5',
-        }}
+      <HiddenSection
+        style={hiddenSectionCss}
       >
-        hello
-      </section>
+        {children}
+      </HiddenSection>
     </div>
   );
+};
+
+TransparentScroller.propTypes = {
+  children: PropTypes.node,
+  background: PropTypes.string,
+  variant: PropTypes.oneOf(['hide', 'fold']),
 };
 
 export default TransparentScroller;

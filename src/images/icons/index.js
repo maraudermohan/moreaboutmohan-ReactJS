@@ -1,13 +1,7 @@
 import { ReactComponent as AngleRight } from './angle-right.svg';
-// import { ReactComponent as AngleDown } from './angle-down.svg';
-// import { ReactComponent as AngleLeft } from './angle-left.svg';
-// import { ReactComponent as AngleUp } from './angle-up.svg';
-// import { ReactComponent as ChevronDown } from './chevron-down.svg';
-// import { ReactComponent as ChevronLeft } from './chevron-left.svg';
-// import { ReactComponent as ChevronRight } from './chevron-right.svg';
-// import { ReactComponent as ChevronUp } from './chevron-up.svg';
 import { ReactComponent as EmailIcon } from './email.svg';
 import { ReactComponent as GithubIcon } from './github.svg';
+import header from './header.ico';
 import { ReactComponent as LinkedIcon } from './linkedin.svg';
 import { ReactComponent as Stopwatch } from './stopwatch.svg';
 
@@ -29,3 +23,5 @@ export const linked = {
 export const StopwatchIcon = Stopwatch;
 
 export const AngleRightIcon = AngleRight;
+
+export const HeaderIcon = header;

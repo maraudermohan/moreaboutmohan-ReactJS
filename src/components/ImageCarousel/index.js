@@ -2,7 +2,8 @@ import React, {
   useEffect,
   useRef,
   useContext,
-  useState } from 'react';
+  useState,
+} from 'react';
 import PropTypes from 'prop-types';
 
 import ScrollPositionContext from 'constants/contexts';
@@ -41,11 +42,11 @@ const ImageCarousel = ({
 
   useEffect(() => {
     let styles = slideDirection === 'left' ? {}
-    : {
-      position: 'fixed',
-      top: 0,
-      right: 0,
-    };
+      : {
+        position: 'fixed',
+        top: 0,
+        right: 0,
+      };
     if (topScroll >= staticCss.offsetTop + staticCss.containerHeight - browserHeight / 2) {
       styles = {
         position: 'fixed',
@@ -88,7 +89,7 @@ const ImageCarousel = ({
               key={imageUrl}
               imageUrl={imageUrl}
               imageAlt={imageAlt}
-              width={`${0.9 * browserWidth}px`}
+              width={0.9 * browserWidth}
               height="auto"
             />
           ))
@@ -100,7 +101,7 @@ const ImageCarousel = ({
 
 ImageCarousel.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
-  slideDirection: PropTypes.string,
+  slideDirection: PropTypes.oneOf(['left', 'right']),
 };
 
 export default ImageCarousel;

@@ -6,10 +6,10 @@ import { StyledImgSubstitute, StyledImg } from './styles';
 // Renders a white div till the image is loaded
 // Adds height, width and alt properties
 const LazyLoadImage = ({
-  height = '350px',
   imageAlt = 'Portfolio - Mohan Subramanian',
   imageUrl = '',
   width = 'auto',
+  height = '350',
 }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -36,10 +36,10 @@ const LazyLoadImage = ({
 };
 
 LazyLoadImage.propTypes = {
-  height: PropTypes.string,
   imageAlt: PropTypes.string,
   imageUrl: PropTypes.string.isRequired,
   width: PropTypes.string,
+  height: PropTypes.string,
 };
 
 export default LazyLoadImage;

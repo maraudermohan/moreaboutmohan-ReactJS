@@ -32,7 +32,7 @@ const ContentList = ({
 );
 
 ContentList.propTypes = {
-  alignment: PropTypes.string,
+  alignment: PropTypes.oneOf(['left', 'right', 'full']),
   browserHeight: PropTypes.number,
   data: PropTypes.arrayOf(PropTypes.string),
   heading: PropTypes.string,
