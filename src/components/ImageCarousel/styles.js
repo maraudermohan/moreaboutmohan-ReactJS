@@ -125,7 +125,7 @@ export const calculateStaticHeight = (
   browserWidth = null,
   browserHeight = null,
 ) => {
-  if (browserWidth === 'undefined' || browserHeight === 'undefined') {
+  if (browserWidth === 0 || browserHeight === 0) {
     return 'auto';
   }
   const width = calculateImageWidth(browserWidth, browserHeight);

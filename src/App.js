@@ -3,6 +3,7 @@ import './App.css';
 import Jumbotron from 'components/Jumbotron';
 import TitleSection from 'components/TitleSection';
 import Footer from 'components/Footer';
+import ResizeHOC from 'components/ResizeHOC';
 import ScrollHOC from 'components/ScrollHOC';
 import TextImageCarouselOnScroll from 'comboComponents/TextImageCarouselOnScroll';
 import {
@@ -27,7 +28,9 @@ function App() {
         subHeading={jobTitle.company}
         duration={jobTitle.duration}
       />
-      <Header />
+      <ResizeHOC>
+        <Header />
+      </ResizeHOC>
       <main>
         <ScrollHOC>
           <TextImageCarouselOnScroll />

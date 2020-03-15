@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import ScrollPositionContext from 'constants/contexts';
+import { ScrollPositionContext } from 'constants/contexts';
 import HiddenSection from './styles';
 
 const TransparentScroller = ({
@@ -16,10 +16,10 @@ const TransparentScroller = ({
 }) => {
   const transparentElem = useRef(null);
   const [hiddenSectionCss, setHiddenSectionCss] = useState();
+  const browserWidth = window.innerWidth;
+  const browserHeight = window.innerHeight;
   const {
     bottomScroll = 0,
-    browserWidth = window.innerWidth,
-    browserHeight = window.innerHeight,
   } = useContext(ScrollPositionContext);
   const transparentElemCss = {
     width: browserWidth,

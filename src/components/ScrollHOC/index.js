@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ScrollPositionContext from 'constants/contexts';
+import { ScrollPositionContext } from 'constants/contexts';
 
 // Higher order component that handles the scroll and resize event
 // It passes the current top and bottom scroll position to Children
@@ -15,8 +15,6 @@ const ScrollHOC = ({
     setScrollPos({
       topScroll: window.pageYOffset,
       bottomScroll: window.pageYOffset + window.innerHeight,
-      browserWidth: window.innerWidth,
-      browserHeight: window.innerHeight,
     });
   };
 
@@ -31,18 +29,8 @@ const ScrollHOC = ({
       }
     });
 
-    // Debouncing resize event to calculate the correct window.innerheight
-    let timeoutID = null;
-    window.addEventListener('resize', () => {
-      if (timeoutID !== 'undefined') {
-        clearTimeout(timeoutID);
-      }
-      timeoutID = setTimeout(scrollHandler, 300);
-    });
-
     return () => {
       window.removeEventListener('scroll', () => {});
-      window.removeEventListener('resize', () => {});
     };
   }, []);
 

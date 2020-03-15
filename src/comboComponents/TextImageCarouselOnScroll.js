@@ -2,11 +2,9 @@ import React, {
   useRef,
   useState,
   useEffect,
-  useContext,
 } from 'react';
 
 import { carouselProps, duration, summary1 } from 'pages/intuit';
-import ScrollPositionContext from 'constants/contexts';
 import ContentList from 'components/ContentList';
 import FixedOnScrollHOC from 'components/FixedOnScrollHOC';
 import ImageCarousel from 'components/ImageCarousel';
@@ -15,10 +13,14 @@ import ImageCarousel from 'components/ImageCarousel';
 // The text stays fixed to the screen bottom, while the images slide
 // Slide direction can be customized
 const TextImageCarouselOnScroll = () => {
-  const fixedElem = useRef(null);
-  const slideElements = useRef(null);
+  const fixedElem = useRef({
+    current: {},
+  });
+  const slideElements = useRef({
+    current: {},
+  });
   const [cssObject, setCssObject] = useState({});
-  const { browserWidth, browserHeight } = useContext(ScrollPositionContext);
+  const browserHeight = window.innerHeight;
 
   useEffect(() => {
     const fixedCss = {};
@@ -36,11 +38,12 @@ const TextImageCarouselOnScroll = () => {
       fixedElemEnd: fixedCss.bottom,
       fixedElemHeight: fixedElem.current.offsetHeight,
     });
-  }, [browserWidth, browserHeight]);
+  }, [fixedElem.current.offsetHeight, slideElements.current.offsetHeight]);
 
   return (
     <FixedOnScrollHOC
       fixedElemCss={cssObject}
+      slideElements={slideElements}
       render={
         (stylesProps) => (
           <>

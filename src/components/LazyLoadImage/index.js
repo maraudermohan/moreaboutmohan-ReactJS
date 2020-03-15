@@ -9,7 +9,7 @@ const LazyLoadImage = ({
   imageAlt = 'Portfolio - Mohan Subramanian',
   imageUrl = '',
   width = 'auto',
-  height = '350',
+  height = '350px',
 }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
 

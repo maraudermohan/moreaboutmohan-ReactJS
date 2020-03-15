@@ -1,10 +1,33 @@
 import { createContext } from 'react';
 
-const ScrollPositionContext = createContext({
-  topScroll: 0, // Top scroll position
-  bottomScroll: 0, // Bottom scroll position
-  browserWidth: 0, // window.innerWidth
-  browserHeight: 0, // window.innerHeight
+export const calcBreakpoint = (width) => {
+  let breakpoint = 0;
+  if (width >= 1200) {
+    breakpoint = 4; // xl
+  } else if (width >= 992) {
+    breakpoint = 3; // lg
+  } else if (width >= 768) {
+    breakpoint = 2; // md
+  } else if (width >= 576) {
+    breakpoint = 1; // sm
+  }
+  return breakpoint;
+};
+
+export const calcOrientation = (width, height) => {
+  let orientation = 'landscape';
+  if (width < 1200 && width < height) {
+    orientation = 'portrait';
+  }
+  return orientation;
+};
+
+export const BrowserContext = createContext({
+  breakpoint: 'xs',
+  orientation: 'landscape',
 });
 
-export default ScrollPositionContext;
+export const ScrollPositionContext = createContext({
+  topScroll: 0, // Top scroll position
+  bottomScroll: 0, // Bottom scroll position
+});

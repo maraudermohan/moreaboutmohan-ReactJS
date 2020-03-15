@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import ScrollPositionContext from 'constants/contexts';
+import { ScrollPositionContext } from 'constants/contexts';
 
 // Higher order component that detects scroll event
 // Scroll positions are compared with current element's offsetTop
@@ -19,6 +19,7 @@ const FixedOnScrollHOC = ({
 
   useEffect(() => {
     let styles = {};
+
     if (bottomScroll >= fixedElemEnd) {
       styles = {
         position: 'relative',

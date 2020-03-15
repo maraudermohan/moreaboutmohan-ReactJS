@@ -10,7 +10,8 @@ const TitleSectionContainer = styled.div`
   z-index: 1;
   color: ${colors.WHITE};
   text-shadow: 4px 4px 7px ${theme.BASE},
-              -1px -1px 7px ${colors.CYAN};
+              1px -1px 7px ${colors.CYAN},
+              -1px -1px 7px ${colors.PANTONE};
 `;
 
 export default TitleSectionContainer;

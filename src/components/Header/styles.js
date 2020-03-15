@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { StyledH4 } from 'components/Typography';
 import { colors, theme } from 'constants/colors';
+import mq from 'constants/media-queries';
 
 export const HeaderContainer = styled.header`
   position: absolute;
@@ -17,13 +18,17 @@ export const HeaderContainer = styled.header`
               linear-gradient(190deg,${theme.BASE}99 10%, ${colors.WHITE}00 30%);
 
   ${StyledH4} {
+    display: none;
     justify-self: end;
     align-self: center;
     grid-column: 3;
     color: ${colors.LATTE};
     cursor: pointer;
-    text-shadow: 4px 4px 5px ${theme.BASE},
-                -1px -1px 5px ${colors.CYAN};
+
+    @media ${mq.phone} and (orientation: landscape),
+    ${mq.tablet} {
+      display: block;
+    }
   }
 `;
 
@@ -46,7 +51,7 @@ export const StyledSpan2 = styled(StyledSpan1)`
 
 export const LogoContainer = styled.span`
   position: relative;
-  margin: 20px 0 0 40px;
+  margin: 15px 0 0 15px;
   width: 57px;
   height: 57px;
   border-radius: 50%;
@@ -69,7 +74,7 @@ export const LogoContainer = styled.span`
   &:hover {
     width: 67px;
     height: 67px;
-    margin: 17px 0 0 37px;
+    margin: 13px 0 0 13px;
     background: ${colors.SUNGLOW};
     img {
       top: 13px;
@@ -88,6 +93,18 @@ export const LogoContainer = styled.span`
       height: 59px;
       top: 4px;
       left: 4px;
+    }
+  }
+
+  @media ${mq.uptoTablet} {
+    transform: scale(0.8);
+  }
+
+  @media ${mq.tablet} {
+    margin: 20px 0 0 40px;
+
+    &:hover {
+      margin: 17px 0 0 37px;
     }
   }
 `;

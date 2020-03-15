@@ -39,6 +39,13 @@ export const ContentListContainer = styled.ul`
     padding: 0 0 12px 0;
   }
 
+  @media ${mq.uptoTablet} and (orientation: landscape) {
+    ${StyledSubtext} {
+      margin: 0 0 6px 0;
+      font-size: 12px;
+    }
+  }
+
   @media ${mq.uptoSmallPhone} and (orientation: portrait) {
     padding: 0 0 10% 0;
   }

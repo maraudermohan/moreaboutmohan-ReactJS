@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 
-import ScrollPositionContext from 'constants/contexts';
+import { ScrollPositionContext } from 'constants/contexts';
 import LazyLoadImage from 'components/LazyLoadImage';
 import { ImageCarouselContainer, calculateStaticHeight, calculateImageWidth } from './styles';
 
@@ -20,24 +20,27 @@ const ImageCarousel = ({
   const imagesList = useRef(null);
   const [staticCss, setStaticCss] = useState({});
   const [slideCss, setSlideCss] = useState({});
+  const browserWidth = window.innerWidth;
+  const browserHeight = window.innerHeight;
+
   const {
-    browserWidth = window.innerWidth,
-    browserHeight = window.innerHeight,
     topScroll = 0,
   } = useContext(ScrollPositionContext);
 
   useEffect(() => {
-    const imageListWidth = calculateStaticHeight(data.length, browserWidth, browserHeight);
-    const containerHeight = imageListWidth
-                            - (browserHeight / 2)
-                            + calculateImageWidth(browserWidth, browserHeight);
+    if (browserWidth && browserHeight) {
+      const imageListWidth = calculateStaticHeight(data.length, browserWidth, browserHeight);
+      const containerHeight = imageListWidth
+                              - (browserHeight / 2)
+                              + calculateImageWidth(browserWidth, browserHeight);
 
-    setStaticCss({
-      imageListWidth,
-      containerHeight,
-      offsetTop: imagesList.current.offsetTop,
-      offsetHeight: imagesList.current.offsetHeight,
-    });
+      setStaticCss({
+        imageListWidth,
+        containerHeight,
+        offsetTop: imagesList.current.offsetTop,
+        offsetHeight: imagesList.current.offsetHeight,
+      });
+    }
   }, [browserWidth]);
 
   useEffect(() => {
@@ -89,7 +92,7 @@ const ImageCarousel = ({
               key={imageUrl}
               imageUrl={imageUrl}
               imageAlt={imageAlt}
-              width={0.9 * browserWidth}
+              width={`${0.9 * browserWidth}px`}
               height="auto"
             />
           ))
