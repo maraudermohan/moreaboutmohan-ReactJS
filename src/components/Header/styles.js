@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { StyledH4 } from 'components/Typography';
-import { colors, theme } from 'constants/colors';
+import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 
 export const HeaderContainer = styled.header`
@@ -13,9 +13,9 @@ export const HeaderContainer = styled.header`
   width: 100%;
   height: 120px;
   z-index: 1;
-  background: linear-gradient(180deg,${theme.BASE}CC 10%, ${colors.WHITE}00 90%),
-              linear-gradient(170deg,${theme.BASE}66 10%, ${colors.WHITE}00 30%),
-              linear-gradient(190deg,${theme.BASE}99 10%, ${colors.WHITE}00 30%);
+  background: linear-gradient(180deg,${colors.ABYSS}CC 10%, ${colors.WHITE}00 90%),
+              linear-gradient(170deg,${colors.ABYSS}66 10%, ${colors.WHITE}00 30%),
+              linear-gradient(190deg,${colors.ABYSS}99 10%, ${colors.WHITE}00 30%);
 
   ${StyledH4} {
     display: none;
@@ -39,14 +39,9 @@ export const StyledSpan1 = styled.span`
   top: 33px;
   left: 33px;
   border-radius: 50%;
-  z-index: 3;
+  z-index: 2;
   transition: all 0.3s;
   background: ${colors.LATTE};
-`;
-
-export const StyledSpan2 = styled(StyledSpan1)`
-  z-index: 2;
-  background: ${colors.PANTONE};
 `;
 
 export const LogoContainer = styled.span`
@@ -69,30 +64,27 @@ export const LogoContainer = styled.span`
     height: 45px;
     z-index: 4;
     transition: all 0.3s;
+    transform: rotate(0deg);
   }
 
   &:hover {
     width: 67px;
     height: 67px;
     margin: 13px 0 0 13px;
-    background: ${colors.SUNGLOW};
+    background: ${colors.AZURE};
     img {
       top: 13px;
       left: 13px;
       width: 41px;
       height: 41px; 
+      transform: rotate(360deg);
     }
     ${StyledSpan1} {
-      width: 51px;
-      height: 51px;
-      top: 8px;
-      left: 8px;
-    }
-    ${StyledSpan2} {
-      width: 59px;
-      height: 59px;
-      top: 4px;
-      left: 4px;
+      width: 53px;
+      height: 53px;
+      top: 5px;
+      left: 5px;
+      border: 2px solid ${colors.PANTONE};
     }
   }
 

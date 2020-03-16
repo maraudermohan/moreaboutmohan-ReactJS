@@ -34,6 +34,15 @@ const Nav = ({
     setTimeout(() => { startAnimation(0); }, 100);
   }, []);
 
+  useEffect(() => {
+    document.getElementById('root').style.height = `${window.innerHeight}px`;
+    document.getElementById('root').style.overflow = 'hidden';
+    return (() => {
+      document.getElementById('root').style.height = 'auto';
+      document.getElementById('root').style.overflow = 'initial';
+    });
+  });
+
   return (
     <NavContainer ref={navElement}>
       <StyledCloseIcon

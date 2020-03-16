@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import mq from 'constants/media-queries';
-import { colors, theme } from 'constants/colors';
+import colors from 'constants/colors';
 import { StyledImg, StyledImgSubstitute } from 'components/LazyLoadImage/styles';
 
 export const JumbotronContainer = styled.div`
@@ -46,11 +46,11 @@ export const JumbotronOverlay = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: linear-gradient(0deg,${theme.BASE}FF 10%,${theme.BASE}CC 35%,${colors.WHITE}00 100%),
-              linear-gradient(45deg,${theme.BASE}99 10%,${theme.BASE}66 40%,${colors.WHITE}00 100%);
+  background: linear-gradient(0deg,${colors.ABYSS}FF 10%,${colors.ABYSS}CC 35%,${colors.WHITE}00 100%),
+              linear-gradient(45deg,${colors.ABYSS}99 10%,${colors.ABYSS}66 40%,${colors.WHITE}00 100%);
 
   @media ${mq.phone} {
-    background: linear-gradient(0deg,${theme.BASE}FF 0%,${theme.BASE}CC 25%,${colors.WHITE}00 100%),
-                linear-gradient(45deg,${theme.BASE}99 0%,${theme.BASE}66 30%,${colors.WHITE}00 100%);
+    background: linear-gradient(0deg,${colors.ABYSS}FF 0%,${colors.ABYSS}CC 25%,${colors.WHITE}00 100%),
+                linear-gradient(45deg,${colors.ABYSS}99 0%,${colors.ABYSS}66 30%,${colors.WHITE}00 100%);
   }
 `;

@@ -11,6 +11,7 @@ import { ReactComponent as Film } from './projector.svg';
 import { ReactComponent as Bulb } from './lightbulb.svg';
 import { ReactComponent as Camera } from './camera.svg';
 import { ReactComponent as Close } from './close.svg';
+import { ReactComponent as Download } from './download.svg';
 
 export const email = {
   Icon: EmailIcon,
@@ -46,3 +47,5 @@ export const BulbIcon = Bulb;
 export const CameraIcon = Camera;
 
 export const CloseIcon = Close;
+
+export const DownloadIcon = Download;

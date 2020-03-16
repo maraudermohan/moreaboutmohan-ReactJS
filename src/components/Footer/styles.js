@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'constants/colors';
+import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH3, StyledSubtext } from 'components/Typography';
 

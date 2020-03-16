@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { StyledH2, StyledH4 } from 'components/Typography';
 import mq from 'constants/media-queries';
-import { colors } from 'constants/colors';
+import colors from 'constants/colors';
 import {
   BriefcaseIcon,
   ReactIcon,
@@ -64,6 +64,18 @@ export const NavLink = styled.section`
   svg {
     color: ${colors.PANTONE}BF;
     fill: ${colors.PANTONE}BF;
+  }
+
+  &:hover {
+    svg {
+      color: ${colors.WHITE};
+      fill: ${colors.WHITE};
+    }
+
+    ${StyledH2},
+    ${StyledH4} {
+      color: ${colors.WHITE};
+    }
   }
 
   svg:first-child {
@@ -176,6 +188,11 @@ export const StyledCloseIcon = styled(CloseIcon)`
   right: 12px;
   opacity: 0.75;
   z-index: 1000;
+  transition: all 0.3s;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 
   @media ${mq.tablet} {
     top: 24px;

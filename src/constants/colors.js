@@ -1,10 +1,10 @@
 // Style constants
-export const colors = {
+const colors = {
   APPLE: '#66b447', // green
+  ABYSS: '#051622', // dark blue
   ASPARAGUS: '#92A332', // grass green
   AZURE: '#3399FF',
   BLUSH: '#DE5D83', // Light pink
-  ABYSS: '#051622', // dark blue
   DAYLILY: '#FB9039', // orange
   LAGOON: '#1BA098', // teal
   LATTE: '#F7F4E9', // eyeshell white
@@ -15,6 +15,4 @@ export const colors = {
   WHITE: '#ffffff',
 };
 
-export const theme = {
-  BASE: colors.ABYSS,
-};
+export default colors;
