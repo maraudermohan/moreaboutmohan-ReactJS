@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import { ScrollPositionContext } from 'constants/contexts';
 import HiddenSection from './styles';
 
+// Component that creates a slide-up animation
 const TransparentScroller = ({
   children,
   background,

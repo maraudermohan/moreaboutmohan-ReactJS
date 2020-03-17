@@ -15,12 +15,14 @@ import {
   StyledCloseIcon,
 } from './styles';
 
+// Nav component that displays links to 5 main categories
 const Nav = ({
   clickHandler = () => {},
 }) => {
   const navElement = useRef(null);
 
   const startAnimation = (index = 0) => {
+    // Slide-right animation
     let newIndex = index;
     navElement.current.children[newIndex].classList.toggle('animated');
     newIndex += 1;

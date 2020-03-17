@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import mq from 'constants/media-queries';
 
+// List of Typography components with font-sizes for different breakpoints
 export const StyledH1 = styled.h1`
   font-size: 32px;
   line-height: 1.25em;

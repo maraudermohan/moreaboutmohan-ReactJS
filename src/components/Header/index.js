@@ -14,6 +14,7 @@ import {
   StyledSpan1,
 } from './styles';
 
+// Header component that displays name and trigger for Nav component
 const Header = () => {
   const {
     breakpoint,

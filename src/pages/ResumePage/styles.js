@@ -120,7 +120,7 @@ export const BoxSubcontainer = styled.div`
   top: 0;
   left: 53%;
 
-  section {
+  section.animated {
     margin: 0 0 10px 0;
     width: 100%;
   }
@@ -137,6 +137,44 @@ export const Timeline = styled.div`
   top: 2px ;
   left: calc(50% - 1px);
   border: 1px solid ${colors.LATTE};
+`;
+
+export const TimelineContainer = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  opacity: ${(props) => (props.$show ? 1 : 0)};
+  transition: all 1s;
+`;
+
+export const Mask = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  opacity: 0;
+  background: ${colors.PANTONE};
+  transition: all 0.3s;
+
+  @media ${mq.uptoTablet} and (orientation: landscape) {
+    height: 60px;
+  }
+
+  @media ${mq.desktop} {
+    height: 150px;
+  }
+
+  &.pre-animate {
+    position: absolute;
+    top: ${(props) => props.$animateStartPosition}px;
+  }
+
+  &.animate {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: 1;
+  }
 `;
 
 export const data = [
@@ -179,13 +217,13 @@ export const data = [
   },
   {
     title: 'Cooliris',
-    color: '#195905',
+    color: '#F56C2D',
     height: 2,
     alignment: 'right',
   },
   {
     title: 'Electronic Arts',
-    color: '#F56C2D',
+    color: '#64E986',
     height: 2,
     alignment: 'right',
   },

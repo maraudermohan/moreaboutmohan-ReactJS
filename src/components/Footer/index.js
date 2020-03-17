@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { StyledH3, StyledSubtext } from 'components/Typography';
 import { email, github, linked } from 'images/icons';
@@ -29,8 +30,14 @@ class Footer extends Component {
       text,
     } = this.state;
 
+    const {
+      hovercolor,
+    } = this.props;
+
     return (
-      <FooterContainer>
+      <FooterContainer
+        $hovercolor={hovercolor}
+      >
         <FooterLine />
         <StyledH3>{text}</StyledH3>
         <IconContainer>
@@ -52,5 +59,9 @@ class Footer extends Component {
     );
   }
 }
+
+Footer.propTypes = {
+  hovercolor: PropTypes.string,
+};
 
 export default Footer;

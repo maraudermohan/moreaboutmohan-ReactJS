@@ -18,6 +18,7 @@ const FixedOnScrollHOC = ({
   } = fixedElemCss;
 
   useEffect(() => {
+    // Animation that keeps div fixed while scrolling
     let styles = {};
 
     if (bottomScroll >= fixedElemEnd) {

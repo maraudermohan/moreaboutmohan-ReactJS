@@ -42,12 +42,21 @@ export const FooterContainer = styled.footer`
 
   svg {
     width: 44px;
+    padding: 0 4px;
     color: ${colors.WHITE};
+    transition: all 0.3s;
 
     &:hover,
     &[data-selected=true] {
       width: 52px;
-      color: ${colors.DAYLILY};
+      padding: 0;
+      color: ${(props) => props.$hovercolor};
+    }
+  }
+
+  @media ${mq.uptoTablet} {
+    ${StyledH3} {
+      font-size: 18px;
     }
   }
 
