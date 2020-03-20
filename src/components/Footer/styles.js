@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH3, StyledSubtext } from 'components/Typography';
 
@@ -28,29 +27,30 @@ export const IconContainer = styled.section`
 
 export const FooterContainer = styled.footer`
   display: flex;
-  margin: 132px auto 0 auto;
   width: 75%;
   height: auto;
+  padding: 132px 12.5% 0 12.5%;
   flex-direction: column;
   text-align: center;
+  background: ${(props) => props.$backgroundColor};
 
   ${StyledH3},
   ${StyledSubtext} {
     margin: 52px 0 0 0;
-    color: ${colors.WHITE};
+    color: ${(props) => props.$textColor};
   }
 
   svg {
     width: 44px;
     padding: 0 4px;
-    color: ${colors.WHITE};
+    color: ${(props) => props.$textColor};
     transition: all 0.3s;
 
     &:hover,
     &[data-selected=true] {
       width: 52px;
       padding: 0;
-      color: ${(props) => props.$hovercolor};
+      color: ${(props) => props.$hoverColor};
     }
   }
 
@@ -62,10 +62,12 @@ export const FooterContainer = styled.footer`
 
   @media ${mq.tablet} {
     width: 70%;
+    padding: 132px 15% 0 15%;
   }
 
   @media ${mq.desktop} {
     width: 60%;
+    padding: 132px 20% 0 20%;
   }
 `;
 
@@ -74,5 +76,5 @@ export const FooterLine = styled.span`
   height: 3px;
   align-self: end;
   border-radius: 2px;
-  background: ${colors.LATTE};
+  background: ${(props) => props.$textColor};
 `;

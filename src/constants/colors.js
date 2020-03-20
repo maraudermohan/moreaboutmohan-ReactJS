@@ -13,6 +13,7 @@ const colors = {
   SUNGLOW: '#FACD3D', // yellow
   TURQUOISE: '#15F4EE',
   WHITE: '#ffffff',
+  BLACK: '#000000',
 };
 
 export default colors;

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { StyledH3, StyledSubtext } from 'components/Typography';
 import { email, github, linked } from 'images/icons';
+import colors from 'constants/colors';
 import { FooterContainer, FooterLine, IconContainer } from './styles';
 
 // Footer component with Social information
@@ -31,14 +32,18 @@ class Footer extends Component {
     } = this.state;
 
     const {
-      hovercolor,
+      hoverColor = colors.DAYLILY,
+      backgroundColor = colors.PANTONE,
+      textColor = colors.LATTE,
     } = this.props;
 
     return (
       <FooterContainer
-        $hovercolor={hovercolor}
+        $hoverColor={hoverColor}
+        $backgroundColor={backgroundColor}
+        $textColor={textColor}
       >
-        <FooterLine />
+        <FooterLine $textColor={textColor} />
         <StyledH3>{text}</StyledH3>
         <IconContainer>
           {
@@ -61,7 +66,9 @@ class Footer extends Component {
 }
 
 Footer.propTypes = {
-  hovercolor: PropTypes.string,
+  hoverColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  textColor: PropTypes.string,
 };
 
 export default Footer;
