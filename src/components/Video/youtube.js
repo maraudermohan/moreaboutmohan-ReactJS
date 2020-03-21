@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { SpinnerIcon } from 'images/icons';
-import {
-  FallbackContainer,
-} from './styles';
 
 class Video extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hasLoaded: false,
-    };
     this.loadVideo = this.loadVideo.bind(this);
   }
 
@@ -55,7 +48,6 @@ class Video extends Component {
           } else {
             this.player.setVolume(70);
           }
-          this.setState({ hasLoaded: true });
         },
         onStateChange: (e) => {
           if (e.data === 0) {
@@ -69,33 +61,12 @@ class Video extends Component {
   render() {
     const {
       title = '',
-      width = '640',
-      height = '360',
     } = this.props;
 
-    const {
-      hasLoaded = false,
-    } = this.state;
-
     return (
-      <>
-        <section
-          style={{ height: hasLoaded ? '100%' : '0' }}
-        >
-          <div id={`${title}`} />
-        </section>
-        {
-          !hasLoaded
-          && (
-            <FallbackContainer
-              $width={width}
-              $height={height}
-            >
-              <SpinnerIcon />
-            </FallbackContainer>
-          )
-        }
-      </>
+      <section>
+        <div id={`${title}`} />
+      </section>
     );
   }
 }

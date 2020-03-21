@@ -1,4 +1,6 @@
 import { ReactComponent as AngleRight } from './angle-right.svg';
+import { ReactComponent as ArrowLeft } from './arrow-left.svg';
+import { ReactComponent as ArrowRight } from './arrow-right.svg';
 import { ReactComponent as ChevronRight } from './chevron-right.svg';
 import { ReactComponent as EmailIcon } from './email.svg';
 import { ReactComponent as GithubIcon } from './github.svg';
@@ -39,6 +41,10 @@ export const linked = {
 export const StopwatchIcon = Stopwatch;
 
 export const AngleRightIcon = AngleRight;
+
+export const ArrowRightIcon = ArrowRight;
+
+export const ArrowLeftIcon = ArrowLeft;
 
 export const ChevronRightIcon = ChevronRight;
 
