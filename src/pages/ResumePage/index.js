@@ -119,7 +119,7 @@ const ResumePage = () => {
         <Timeline />
       </TimelineContainer>
       <Mask ref={maskRef} $animateStartPosition={offsetObj.first} />
-      <Footer hovercolor={colors.DAYLILY} />
+      <Footer hoverColor={colors.DAYLILY} />
     </ResumePageContainer>
   );
 };

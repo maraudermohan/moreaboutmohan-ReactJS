@@ -3,14 +3,14 @@ import './App.css';
 
 import ResizeHOC from 'components/ResizeHOC';
 import ScrollHOC from 'components/ScrollHOC';
-import FilmmakerPage from 'pages/FilmmakerPage';
+import PhotographyPage from 'pages/PhotographyPage';
 
 function App() {
   return (
     <div className="App">
       <ScrollHOC>
         <ResizeHOC>
-          <FilmmakerPage />
+          <PhotographyPage />
         </ResizeHOC>
       </ScrollHOC>
     </div>
