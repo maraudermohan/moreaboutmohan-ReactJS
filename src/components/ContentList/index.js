@@ -18,8 +18,8 @@ const ContentList = ({
     $alignment={alignment}
     $browserHeight={browserHeight}
   >
-    <BoldParagraph>{heading}</BoldParagraph>
-    <StyledSubtext>{subHeading}</StyledSubtext>
+    <BoldParagraph className="content-list__heading">{heading}</BoldParagraph>
+    <StyledSubtext className="content-list__subheading">{subHeading}</StyledSubtext>
     {
       data.map((content) => (
         <Fragment key={content}>

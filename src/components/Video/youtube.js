@@ -64,7 +64,7 @@ class Video extends Component {
     } = this.props;
 
     return (
-      <section>
+      <section className="video__youtube">
         <div id={`${title}`} />
       </section>
     );

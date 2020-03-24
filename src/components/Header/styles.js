@@ -25,8 +25,7 @@ export const HeaderContainer = styled.header`
     color: ${colors.LATTE};
     cursor: pointer;
 
-    @media ${mq.phone} and (orientation: landscape),
-    ${mq.tablet} {
+    @media ${mq.phone} {
       display: block;
     }
   }

@@ -44,6 +44,7 @@ const TimelineBox = ({
       $height={height}
       $alignment={alignment}
       ref={elemRef}
+      className="resume-page__experience"
     >
       {
         alignment === 'right'

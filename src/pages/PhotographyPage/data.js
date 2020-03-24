@@ -57,20 +57,24 @@ import photo35 from 'images/photo35.jpg';
 import photo36 from 'images/photo36.jpg';
 import photo37 from 'images/photo37.jpg';
 import photo38 from 'images/photo38.jpg';
+import photo39 from 'images/photo39.jpg';
+import photo40 from 'images/photo40.jpg';
+import photo41 from 'images/photo41.jpg';
+import photo42 from 'images/photo42.jpg';
 
 const imageList = [
-  photo2,
-  photo1,
-  photo3,
-  photo4,
-  photo5,
-  photo6,
   photo7,
   photo8,
   photo9,
   photo10,
   photo11,
   photo12,
+  photo2,
+  photo1,
+  photo3,
+  photo4,
+  photo5,
+  photo6,
   photo13,
   photo14,
   photo15,
@@ -97,6 +101,10 @@ const imageList = [
   photo36,
   photo37,
   photo38,
+  photo39,
+  photo40,
+  photo41,
+  photo42,
   dance1,
   dance2,
   dance3,

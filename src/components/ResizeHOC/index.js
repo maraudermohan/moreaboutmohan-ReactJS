@@ -19,7 +19,7 @@ const ResizeHOC = ({
 
   useEffect(() => {
     resizeHandler();
-    // Debouncing resize event to calculate the correct window.innerheight
+    // Debouncing resize event to calculate the browser context
     let timeoutID = null;
     window.addEventListener('resize', () => {
       if (timeoutID !== 'undefined') {

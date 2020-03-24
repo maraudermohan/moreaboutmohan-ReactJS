@@ -44,17 +44,17 @@ class Footer extends Component {
         $textColor={textColor}
       >
         <FooterLine $textColor={textColor} />
-        <StyledH3>{text}</StyledH3>
-        <IconContainer>
+        <StyledH3 className="footer__text">{text}</StyledH3>
+        <IconContainer className="footer__icon">
           {
             [email, github, linked].map(({
               Icon,
-              href,
+              data,
             }) => (
               <Icon
-                key={`${Icon}-${href}`}
-                onClick={() => { this.iconClickhandler(href); }}
-                data-selected={text === href}
+                key={`${Icon}-${data}`}
+                onClick={() => { this.iconClickhandler(data); }}
+                data-selected={text === data}
               />
             ))
           }

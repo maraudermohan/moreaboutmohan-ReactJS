@@ -39,6 +39,7 @@ const TimelineYear = ({
     <YearContainer
       $alignment={alignment}
       ref={elemRef}
+      className="resume-page__year"
     >
       {
         alignment === 'right'

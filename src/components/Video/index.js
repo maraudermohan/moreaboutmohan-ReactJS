@@ -36,6 +36,7 @@ const Video = ({
         $hasLoaded={hasLoaded}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
+        className="video__iframe"
       />
       {
         !hasLoaded

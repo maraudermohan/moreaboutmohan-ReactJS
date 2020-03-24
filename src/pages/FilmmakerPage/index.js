@@ -19,6 +19,8 @@ import {
   StyledButton,
 } from './styles';
 
+// Page component to render all my dance videos and short films
+// Added a filter by Role/Type and Shuffle animation
 class FilmmakerPage extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +73,7 @@ class FilmmakerPage extends Component {
     } = this.context;
 
     return (
-      <FilmmakerPageContainer>
+      <FilmmakerPageContainer className="filmmaker-page">
         <Header />
         <StyledH1>Filmmaker Reel</StyledH1>
         <FilterContainer

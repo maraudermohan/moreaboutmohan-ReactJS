@@ -77,7 +77,7 @@ const ResumePage = () => {
   }, [breakpoint, bottomScroll]);
 
   return (
-    <ResumePageContainer>
+    <ResumePageContainer className="resume-page">
       <Header />
       <StyledH1>Work Experience</StyledH1>
       <DownloadContainer href="/mohan_subramanian_resume.pdf">

@@ -22,6 +22,7 @@ export const NavContainer = styled.nav`
   top: 0;
   right: 0;
   z-index: 999;
+  cursor: pointer;
 
   ${StyledH2},
   ${StyledH4} {
@@ -49,6 +50,14 @@ export const LinkContainer = styled.div`
 
   &:hover {
     background: ${(props) => props.$background};
+    > section > svg {
+      color: ${colors.WHITE};
+      fill: ${colors.WHITE};
+    }
+
+    ${StyledH2} {
+      color: ${colors.WHITE};
+    }
   }
 `;
 
@@ -64,18 +73,6 @@ export const NavLink = styled.section`
   svg {
     color: ${colors.PANTONE}BF;
     fill: ${colors.PANTONE}BF;
-  }
-
-  &:hover {
-    svg {
-      color: ${colors.WHITE};
-      fill: ${colors.WHITE};
-    }
-
-    ${StyledH2},
-    ${StyledH4} {
-      color: ${colors.WHITE};
-    }
   }
 
   svg:first-child {
@@ -129,6 +126,14 @@ export const LinkTwoSubContainer = styled.div`
 
   &:hover {
     background: ${(props) => props.$background};
+    > section > svg {
+      color: ${colors.WHITE};
+      fill: ${colors.WHITE};
+    }
+
+    ${StyledH4} {
+      color: ${colors.WHITE};
+    }
   }
 
   &:first-child {

@@ -48,6 +48,7 @@ const Nav = ({
   return (
     <NavContainer ref={navElement}>
       <StyledCloseIcon
+        className="nav__close"
         onClick={() => {
           startAnimation(0);
           setTimeout(clickHandler, 850);
@@ -62,16 +63,19 @@ const Nav = ({
           <LinkContainer
             key={`${Icon}${title}`}
             $background={background}
+            className="nav__link"
           >
             <NavLink>
               <Icon />
-              <StyledH2>{title}</StyledH2>
-              <ChevronRightIcon />
+              <StyledH2 className="nav__link-title">{title}</StyledH2>
+              <ChevronRightIcon className="nav__chevron-right" />
             </NavLink>
           </LinkContainer>
         ))
       }
-      <LinkTwoContainer>
+      <LinkTwoContainer
+        className="nav__link-two"
+      >
         {
           NavIcons2.map(({
             title,
@@ -81,11 +85,12 @@ const Nav = ({
             <LinkTwoSubContainer
               key={`${Icon}${title}`}
               $background={background}
+              className="nav__link"
             >
               <NavLinkTwo>
                 <Icon />
                 <StyledH4>{title}</StyledH4>
-                <ChevronRightIcon />
+                <ChevronRightIcon className="nav__chevron-right" />
               </NavLinkTwo>
             </LinkTwoSubContainer>
           ))

@@ -21,8 +21,9 @@ const Jumbotron = ({
   });
 
   return (
-    <JumbotronContainer className="page__jumbotron">
+    <JumbotronContainer className="jumbotron">
       <LazyLoadImage
+        className="jumbotron__img"
         {...data[iterator]}
       />
       <JumbotronOverlay />

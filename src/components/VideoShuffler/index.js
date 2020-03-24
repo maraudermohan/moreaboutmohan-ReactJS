@@ -170,6 +170,7 @@ class VideoShuffler extends Component {
       <ShufflerContainer
         $height={height}
         ref={this.shufflerRef}
+        className="video__shuffler"
       >
         <MainVideoContainer
           $height={height}

@@ -17,9 +17,10 @@ import TransparentScroller from 'components/TransparentScroller';
 import ContentList from 'components/ContentList';
 import Header from 'components/Header';
 
+// Intuit work experience page
 function App() {
   return (
-    <div className="App">
+    <div className="intuit-page">
       <Jumbotron
         data={jumbotronProps}
       />

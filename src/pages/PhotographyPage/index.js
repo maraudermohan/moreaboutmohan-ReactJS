@@ -14,7 +14,7 @@ import {
 
 // Page component for all my photography works and performances
 const PhotographyPage = () => (
-  <PhotographyPageContainer>
+  <PhotographyPageContainer className="photography-page">
     <Header />
     <StyledH1>Arts & Photography</StyledH1>
     <Gradient>

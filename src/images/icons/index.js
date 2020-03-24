@@ -25,17 +25,20 @@ import { ReactComponent as CheckCircle } from './check-circle.svg';
 
 export const email = {
   Icon: EmailIcon,
-  href: 'maraudermohan gmail',
+  data: 'maraudermohan gmail',
+  href: 'mailto:maraudermohan@gmail.com',
 };
 
 export const github = {
   Icon: GithubIcon,
-  href: 'github.com/maraudermohan/',
+  data: 'github /maraudermohan/',
+  href: 'https://www.github.com/maraudermohan/',
 };
 
 export const linked = {
   Icon: LinkedIcon,
-  href: 'linkedin.com/in/maraudermohan/',
+  data: 'linkedin /in/maraudermohan/',
+  href: 'https://www.linkedin.com/in/maraudermohan/',
 };
 
 export const StopwatchIcon = Stopwatch;

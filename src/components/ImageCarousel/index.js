@@ -94,6 +94,7 @@ const ImageCarousel = ({
               imageAlt={imageAlt}
               width={`${0.9 * browserWidth}px`}
               height="auto"
+              className="image-carousel__img"
             />
           ))
         }
