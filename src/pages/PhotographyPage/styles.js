@@ -12,6 +12,24 @@ export const PhotographyPageContainer = styled.main`
     background: none;
   }
 
+  .header__title {
+    font-family: "Acme", san-serif;
+  }
+
+  nav .nav__link-two > .nav__link:last-of-type,
+  nav .nav__link-two > .nav__link:last-of-type:hover {
+    background: transparent;
+
+    svg {
+      color: ${colors.BLUSH}BF;
+      fill: ${colors.BLUSH}BF;
+    }
+
+    h4 {
+      color: ${colors.BLUSH};
+    }
+  }
+
   ${StyledH1} {
     padding: 150px 0 100px 0;
     text-align: center;

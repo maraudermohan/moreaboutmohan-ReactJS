@@ -8,6 +8,7 @@ import {
   FallbackContainer,
 } from './styles';
 
+// Video component that renders embedded iframe
 const Video = ({
   title = '',
   player = 'youtube',

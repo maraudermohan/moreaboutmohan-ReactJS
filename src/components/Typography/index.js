@@ -3,6 +3,7 @@ import mq from 'constants/media-queries';
 
 // List of Typography components with font-sizes for different breakpoints
 export const StyledH1 = styled.h1`
+  font-family: "Acme", san-serif;
   font-size: 32px;
   line-height: 1.25em;
   font-weight: 500;
@@ -39,6 +40,7 @@ export const StyledH2 = styled.h2`
 `;
 
 export const StyledH3 = styled.h3`
+  font-family: "Staatliches", san-serif;
   font-size: 24px;
   line-height: 1.25em;
   font-weight: 400;
@@ -62,11 +64,7 @@ export const StyledH4 = styled.h4`
 export const StyledParagraph = styled.p`
   font-size: 18px;
   line-height: 1.25em;
-  font-weight: 300;
-
-  @media ${mq.phone} and (orientation: landscape) {
-    font-size: 14px;
-  }
+  font-weight: 400;
 
   @media ${mq.uptoSmallPhone} and (orientation: portrait) {
     line-height: 1.2em;

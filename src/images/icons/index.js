@@ -31,13 +31,13 @@ export const email = {
 
 export const github = {
   Icon: GithubIcon,
-  data: 'github /maraudermohan/',
+  data: 'github/maraudermohan/',
   href: 'https://www.github.com/maraudermohan/',
 };
 
 export const linked = {
   Icon: LinkedIcon,
-  data: 'linkedin /in/maraudermohan/',
+  data: 'linkedin/in/maraudermohan/',
   href: 'https://www.linkedin.com/in/maraudermohan/',
 };
 

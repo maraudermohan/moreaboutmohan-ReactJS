@@ -38,11 +38,12 @@ class FilmmakerPage extends Component {
       [property]: bool,
     };
 
-    if (property === 'DanceVideos' && bool) {
-      newObj.ShortFilms = !bool;
-    } else if (property === 'ShortFilms' && bool) {
-      newObj.DanceVideos = !bool;
+    if (property === 'Dance-Videos' && bool) {
+      newObj['Short-Films'] = !bool;
+    } else if (property === 'Short-Films' && bool) {
+      newObj['Dance-Videos'] = !bool;
     }
+
     const newFilterValues = { ...filterValues, ...newObj };
     this.setState({ filterValues: newFilterValues });
   }

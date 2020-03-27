@@ -10,6 +10,7 @@ import { ContentListContainer, BoldParagraph } from './styles';
 const ContentList = ({
   alignment = 'left',
   browserHeight = 0,
+  className = '',
   data = [],
   heading = '',
   subHeading = '',
@@ -17,6 +18,7 @@ const ContentList = ({
   <ContentListContainer
     $alignment={alignment}
     $browserHeight={browserHeight}
+    className={className}
   >
     <BoldParagraph className="content-list__heading">{heading}</BoldParagraph>
     <StyledSubtext className="content-list__subheading">{subHeading}</StyledSubtext>
@@ -34,6 +36,7 @@ const ContentList = ({
 ContentList.propTypes = {
   alignment: PropTypes.oneOf(['left', 'right', 'full']),
   browserHeight: PropTypes.number,
+  className: PropTypes.string,
   data: PropTypes.arrayOf(PropTypes.string),
   heading: PropTypes.string,
   subHeading: PropTypes.string,

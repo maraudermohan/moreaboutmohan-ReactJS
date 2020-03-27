@@ -7,6 +7,7 @@ import BoxContainer from './styles';
 
 // Component used in ResumePage to display Company info
 const TimelineBox = ({
+  href = '/',
   title,
   subTitle,
   offsetAhead,
@@ -40,9 +41,10 @@ const TimelineBox = ({
 
   return (
     <BoxContainer
-      $color={color}
-      $height={height}
-      $alignment={alignment}
+      to={href}
+      color={color}
+      height={height}
+      alignment={alignment}
       ref={elemRef}
       className="resume-page__experience"
     >
@@ -63,6 +65,7 @@ const TimelineBox = ({
 };
 
 TimelineBox.propTypes = {
+  href: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,
   offsetAhead: PropTypes.number,

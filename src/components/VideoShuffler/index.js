@@ -12,6 +12,7 @@ import {
   ShufflerContainer,
 } from './styles';
 
+// Component to add shuffling-animation to the filtered videos
 class VideoShuffler extends Component {
   constructor(props) {
     super(props);
@@ -20,10 +21,11 @@ class VideoShuffler extends Component {
     this.state = {
       width: Math.round(window.innerWidth * 0.7),
       height: Math.round(window.innerWidth * 0.7 * 0.562),
-      currentIndex: 0,
+      currentIndex: Math.floor(Math.random() * 3),
       order: ['left preload', 'main preload', 'right preload'],
     };
 
+    this.animatePreload = this.animatePreload.bind(this);
     this.animateOnClick = this.animateOnClick.bind(this);
     this.renderComponents = this.renderComponents.bind(this);
     this.calcWidthHeight = this.calcWidthHeight.bind(this);
@@ -36,21 +38,29 @@ class VideoShuffler extends Component {
       e.preventDefault();
       this.clickHandler(e);
     });
+
+    this.animatePreload();
     this.calcWidthHeight();
   }
 
   componentDidUpdate() {
-    const shufflerElem = this.shufflerRef.current;
-    /* eslint-disable */
-    for (let elem of shufflerElem.children) {
-      setTimeout(() => { elem.classList.remove('preload'); }, 750);
-    }
-    /* eslint-enable */
+    this.animatePreload();
     this.calcWidthHeight();
   }
 
   componentWillUnmount() {
     this.shufflerRef.current.removeEventListener('click touchend', (e) => { this.clickHandler(e); });
+  }
+
+  animatePreload() {
+    const shufflerElem = this.shufflerRef.current;
+    /* eslint-disable */
+    if (shufflerElem.children[0].classList.contains('preload')) {
+      for (let elem of shufflerElem.children) {
+        setTimeout(() => { elem.classList.remove('preload'); }, 750);
+      }
+    }
+    /* eslint-enable */
   }
 
   clickHandler(e) {
@@ -97,9 +107,9 @@ class VideoShuffler extends Component {
     }
     /* eslint-enable */
 
-    if (toggleClassNames.add !== 'undefined') {
+    if (toggleClassNames.add) {
       newIndex = currentIndex < videoData.length - 1 ? currentIndex + 1 : 0;
-    } else if (toggleClassNames.add !== 'undefined') {
+    } else if (toggleClassNames.subtract) {
       newIndex = currentIndex > 0 ? currentIndex - 1 : videoData.length - 1;
     }
 

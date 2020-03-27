@@ -35,6 +35,11 @@ export const ContentListContainer = styled.ul`
     padding: 0 0 1em 0;
   }
 
+  ${StyledSubtext},
+  ${StyledParagraph} {
+    font-family: 'Sen', san-serif;
+  }
+
   @media ${mq.phone} and (orientation: landscape) {
     padding: 0 0 12px 0;
   }

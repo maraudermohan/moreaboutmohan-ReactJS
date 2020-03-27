@@ -15,19 +15,23 @@ export const MainPageContainer = styled.main`
   align-items: center;
   width: ${(props) => props.$width}px;
   height: ${(props) => props.$height}px;
-  background-size: cover;
-  background-position: center;
   overflow: hidden;
 
   header {
     z-index: 10;
   }
 
+  .header__title {
+    display: none;
+  }
+
   .main-page__title {
     position: fixed;
     top: 24px;
     right: 24px;
-    z-index: 6;
+    z-index: 11;
+    font-family: "Lobster", san-serif;
+    font-size: 32px;
     color: ${colors.LATTE};
     text-shadow: 4px 4px 7px ${colors.ABYSS},
                 -1px -1px 7px ${colors.PANTONE};
@@ -67,7 +71,7 @@ export const MainPageContainer = styled.main`
       }
   
       .nav__link:hover {
-        background: ${colors.LATTE}4D;
+        background: ${colors.LATTE}66;
   
         svg, h2, h4 {
           text-shadow: 4px 4px 7px ${colors.BLACK}80,
@@ -89,6 +93,18 @@ export const MainPageContainer = styled.main`
       }
     }
   }
+`;
+
+export const ImageContainer = styled.div`
+  position: absolute;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  top: -12px;
+  left: -12px;
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease-out;
+  z-index: 0;
 `;
 
 export const ImageBgContainer = styled.div`
@@ -123,8 +139,13 @@ export const TextBox = styled.section`
   ${StyledH4} {
     text-align: center;
     line-height: 36px;
+    font-family: "Sen", san-serif;
     font-weight: 500;
     color: ${colors.LATTE};
+
+    span {
+      font-size: 44px;
+    }
 
     @media ${mq.uptoTablet} {
       font-size: 18px;

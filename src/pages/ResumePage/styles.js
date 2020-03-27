@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
-import { StyledH1, StyledH3, StyledSubtext } from 'components/Typography';
+import { StyledH1, StyledSubtext } from 'components/Typography';
 import resume from 'images/workexperience.jpg';
 
 export const downloadImg = resume;
@@ -12,6 +12,24 @@ export const ResumePageContainer = styled.main`
 
   header {
     background: none;
+  }
+
+  .header__title {
+    font-family: "Acme", san-serif;
+  }
+
+  nav > .nav__link:first-of-type,
+  nav > .nav__link:first-of-type:hover {
+    background: ${colors.WHITE}F2;
+
+    svg {
+      color: ${colors.DAYLILY}BF;
+      fill: ${colors.DAYLILY}BF;
+    }
+
+    .nav__link-title {
+      color: ${colors.DAYLILY};
+    }
   }
 
   ${StyledH1} {
@@ -98,8 +116,9 @@ export const DownloadContainer = styled.a`
     color: ${colors.PANTONE};
   }
 
-  ${StyledH3} {
+  .resume__title {
     color: ${colors.PANTONE};
+    font-family: "Sen", san-serif;
     font-weight: 500;
   }
 
@@ -120,7 +139,7 @@ export const BoxSubcontainer = styled.div`
   top: 0;
   left: 53%;
 
-  section.animated {
+  a.animated {
     margin: 0 0 10px 0;
     width: 100%;
   }
@@ -183,12 +202,14 @@ export const data = [
     color: '#00bf6f',
     height: 3,
     alignment: 'right',
+    href: '/resume/surveymonkey',
   },
   {
     title: 'Intuit',
     color: '#0377C5',
     height: 3,
     alignment: 'left',
+    href: '/resume/intuit',
   },
   {
     title: 'Zynga',

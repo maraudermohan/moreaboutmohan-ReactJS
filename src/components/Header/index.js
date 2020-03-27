@@ -4,12 +4,12 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import LazyLoadImage from 'components/LazyLoadImage';
 import { BrowserContext } from 'constants/contexts';
 import Nav from 'components/Nav';
 import { HeaderIcon } from 'images/icons';
-import { StyledH4 } from 'components/Typography';
 import {
   HeaderContainer,
   LogoContainer,
@@ -47,9 +47,9 @@ const Header = ({
               <LazyLoadImage imageUrl={HeaderIcon} />
               <StyledSpan1 />
             </LogoContainer>
-            <StyledH4 className="header__title">
+            <Link to="/" className="header__title">
               {`Mohan ${breakpoint > 3 ? 'Subramanian' : 'S'}`}
-            </StyledH4>
+            </Link>
           </HeaderContainer>
         )
       }

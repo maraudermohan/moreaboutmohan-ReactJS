@@ -30,7 +30,7 @@ export const jumbotronProps = [
   },
 ];
 
-export const carouselProps = [
+export const carouselProps1 = [
   {
     imageUrl: intuit4,
     imageAlt: 'Header component',
@@ -40,18 +40,6 @@ export const carouselProps = [
     imageAlt: 'Hero component',
   },
   {
-    imageUrl: intuit6,
-    imageAlt: 'Subnav component',
-  },
-  {
-    imageUrl: intuit7,
-    imageAlt: 'Tabs component',
-  },
-  {
-    imageUrl: intuit8,
-    imageAlt: 'Pricing cards component',
-  },
-  {
     imageUrl: intuit9,
     imageAlt: 'Testimonial component',
   },
@@ -59,11 +47,27 @@ export const carouselProps = [
     imageUrl: intuit10,
     imageAlt: 'Promobanner component',
   },
-  {
-    imageUrl: intuit11,
-    imageAlt: 'Product selector component',
-  },
 ];
+
+export const imageProps1 = {
+  imageUrl: intuit11,
+  imageAlt: 'Product selector component',
+};
+
+export const imageProps2 = {
+  imageUrl: intuit8,
+  imageAlt: 'Pricing cards component',
+};
+
+export const imageProps3 = {
+  imageUrl: intuit7,
+  imageAlt: 'Tabs component',
+};
+
+export const imageProps4 = {
+  imageUrl: intuit6,
+  imageAlt: 'Subnav component',
+};
 
 export const jobTitle = {
   title: 'Software Engineer II',
@@ -94,6 +98,6 @@ export const summary3 = [
 
 export const summary4 = [
   'Winner of 2 more Spotlight awards -',
-  '1. For a commendable demo in the EBS Demo Day 2016.',
-  '2. Leading frontend of Domain-name migration of Proconnect (previously "Taxpro").',
+  'For a commendable demo in the EBS Demo Day 2016.',
+  'Leading frontend of Domain-name migration of Proconnect (previously "Taxpro").',
 ];

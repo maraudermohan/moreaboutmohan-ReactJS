@@ -30,4 +30,5 @@ export const BrowserContext = createContext({
 export const ScrollPositionContext = createContext({
   topScroll: 0, // Top scroll position
   bottomScroll: 0, // Bottom scroll position
+  startedScrolling: false, // Has the user started to scroll
 });

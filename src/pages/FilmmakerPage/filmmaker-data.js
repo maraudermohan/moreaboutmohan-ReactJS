@@ -13,7 +13,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Visweta-Aladdin',
@@ -22,7 +22,7 @@ const videos = [
     start: 12,
     Director: true,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Ek-do-teen',
@@ -31,7 +31,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Saa-boo-III',
@@ -40,7 +40,7 @@ const videos = [
     start: 0,
     Director: true,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Shivam',
@@ -49,7 +49,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Koova-2',
@@ -57,7 +57,7 @@ const videos = [
     url: 'LKnxcz9hjVw',
     start: 15,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: '3D-Vittaai',
@@ -66,7 +66,7 @@ const videos = [
     start: 0,
     Director: true,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Mahanati',
@@ -75,7 +75,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Dance-promo',
@@ -83,7 +83,7 @@ const videos = [
     url: 'SnHKSVr-ioU',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
     Performer: true,
   },
   {
@@ -93,7 +93,7 @@ const videos = [
     start: 0,
     Director: true,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Dance-constant',
@@ -101,7 +101,7 @@ const videos = [
     url: 'mu-jzfpd814',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Nayantara-tribute',
@@ -110,7 +110,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Indre-kollum',
@@ -119,7 +119,7 @@ const videos = [
     start: 0,
     Performer: true,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Neeye-sol',
@@ -128,7 +128,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Crown-jathi-mix',
@@ -137,7 +137,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Zingaat-dance',
@@ -146,7 +146,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Karuvizhi-karuvi',
@@ -154,7 +154,7 @@ const videos = [
     url: 'u2HffXNnUiY',
     start: 0,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Seemaraja-dance',
@@ -163,7 +163,7 @@ const videos = [
     start: 0,
     Performer: true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Believer-dance',
@@ -172,7 +172,7 @@ const videos = [
     start: 52,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Once-again-dance',
@@ -181,7 +181,7 @@ const videos = [
     start: 0,
     Performer: true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Suzharchi',
@@ -189,7 +189,7 @@ const videos = [
     url: 'JopIo5rombc',
     start: 0,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Shake-it-off-dance',
@@ -198,7 +198,7 @@ const videos = [
     start: 44,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Sanhiti-IPL-dance',
@@ -207,7 +207,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Mungda-dance',
@@ -216,7 +216,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Velai-evanidam',
@@ -224,7 +224,7 @@ const videos = [
     url: 'q0aWIQ-9bVs',
     start: 0,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Nilave-mugam-kaatu',
@@ -232,7 +232,7 @@ const videos = [
     url: 'acIvgCl8pys',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Rowdy-baby-dance',
@@ -241,7 +241,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Break-the-rules-dance',
@@ -250,7 +250,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Null-hypothesis',
@@ -258,7 +258,7 @@ const videos = [
     url: 'nAlreN8y5rI',
     start: 0,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Cant-stop-the-feeling',
@@ -266,7 +266,7 @@ const videos = [
     url: '0TUfbNHg9ZE',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
     'D.o.P': true,
   },
   {
@@ -275,7 +275,7 @@ const videos = [
     url: 'EyBYPlsqz4w',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Pilichinda-dance',
@@ -284,7 +284,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Nallavela-suttutaanunga',
@@ -292,7 +292,7 @@ const videos = [
     url: '5Ft3hdqHNpg',
     start: 0,
     Editor: true,
-    ShortFilms: true,
+    'Short-Films': true,
   },
   {
     title: 'Dont-stop-dance',
@@ -301,7 +301,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Say-something-dance',
@@ -310,7 +310,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Akh-Lad-Jaave-dance',
@@ -319,7 +319,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Twitmania',
@@ -334,7 +334,7 @@ const videos = [
     url: 'zzaFIViZpc0',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'It-wasnt-me-dance',
@@ -343,7 +343,7 @@ const videos = [
     start: 0,
     'D.o.P': true,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Milegi-dance',
@@ -351,7 +351,7 @@ const videos = [
     url: 'KXbqY-UYCH8',
     start: 0,
     Editor: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Mama-douser-dance',
@@ -359,7 +359,7 @@ const videos = [
     url: '6-6OxsKPWAE',
     start: 685,
     Performer: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Theeratha-dance',
@@ -367,7 +367,7 @@ const videos = [
     url: 'jX6ZnlVwo_I',
     start: 1050,
     Performer: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Kasu-mela-dance',
@@ -375,7 +375,7 @@ const videos = [
     url: 'zTor5l7h3u8',
     start: 4175,
     Performer: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Editing-classical-dance',
@@ -383,7 +383,7 @@ const videos = [
     url: 'gFR14gPn1dQ',
     start: 82,
     Director: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Lighting-contemporary-dance',
@@ -391,7 +391,7 @@ const videos = [
     url: 'e7s6dtEfU4E',
     start: 45,
     Director: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
   {
     title: 'Top-down-camera-dance',
@@ -399,7 +399,7 @@ const videos = [
     url: 'CNDshA69NH4',
     start: 63,
     Director: true,
-    DanceVideos: true,
+    'Dance-Videos': true,
   },
 ];
 

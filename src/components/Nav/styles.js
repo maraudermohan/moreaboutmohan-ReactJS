@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import { StyledH2, StyledH4 } from 'components/Typography';
 import mq from 'constants/media-queries';
@@ -26,6 +27,7 @@ export const NavContainer = styled.nav`
 
   ${StyledH2},
   ${StyledH4} {
+    font-family: "El Messiri", san-serif;
     color: ${colors.PANTONE};
   }
 
@@ -35,7 +37,8 @@ export const NavContainer = styled.nav`
   }
 `;
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled(Link)`
+  display: block;
   position: relative;
   width: 100%;
   height: 100%;
@@ -43,6 +46,7 @@ export const LinkContainer = styled.div`
   grid-column: 1;
   background: ${colors.WHITE}F2;
   transition: left 0.2s ease-in-out;
+  text-decoration: none;
   
   &.animated {
     left: 0;
@@ -71,13 +75,15 @@ export const NavLink = styled.section`
   align-items: center;
 
   svg {
+    position: relative;
+    bottom: 4px;
     color: ${colors.PANTONE}BF;
     fill: ${colors.PANTONE}BF;
   }
 
   svg:first-child {
-    width: 42px;
-    height: 42px;
+    width: 40px;
+    height: 40px;
     margin: 0 0 0 32px;
   }
 
@@ -90,19 +96,31 @@ export const NavLink = styled.section`
   @media ${mq.uptoTablet} and (orientation: landscape),
   ${mq.tablet} {
     svg:first-child {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
     }
   }
 `;
 
-export const LinkTwoContainer = styled(LinkContainer)`
+export const LinkTwoContainer = styled.div`
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  grid-column: 1;
+  grid-template-columns: 100%;
+  grid-template-rows: 50% 50%;
+  background: ${colors.WHITE}F2;
+  transition: left 0.2s ease-in-out;
+
+  &.animated {
+    left: 0;
+  }
+
   &:hover {
     background: ${colors.WHITE}F2;
   }
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 50% 50%;
 
   @media ${mq.uptoTablet} and (orientation: landscape),
   ${mq.tablet} {
@@ -118,11 +136,12 @@ export const NavLinkTwo = styled(NavLink)`
   }
 `;
 
-export const LinkTwoSubContainer = styled.div`
+export const LinkTwoSubContainer = styled(Link)`
   width: 100%;
   height: 100%;
   grid-column: 1;
   background: transparent;
+  text-decoration: none;
 
   &:hover {
     background: ${(props) => props.$background};
@@ -172,16 +191,19 @@ export const NavIcons = [
     title: 'Résumé',
     Icon: BriefcaseIcon,
     background: colors.DAYLILY,
+    href: '/resume',
   },
   {
     title: 'React projects',
     Icon: ReactIcon,
     background: colors.AZURE,
+    href: 'http://old.moreaboutmohan.com/#work-sample',
   },
   {
     title: 'Filmmaking',
     Icon: FilmIcon,
     background: colors.MAGENTA,
+    href: '/filmmaker',
   },
 ];
 
@@ -210,10 +232,12 @@ export const NavIcons2 = [
     title: 'Design works',
     Icon: BulbIcon,
     background: colors.APPLE,
+    href: 'http://old.moreaboutmohan.com/#design',
   },
   {
     title: 'Arts & Photography',
     Icon: CameraIcon,
     background: colors.BLUSH,
+    href: '/photography',
   },
 ];

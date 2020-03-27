@@ -4,6 +4,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import PropTypes from 'prop-types';
 
 import Header from 'components/Header';
 import { StyledH2, StyledH4 } from 'components/Typography';
@@ -14,12 +15,15 @@ import {
   backgroundDataIndex,
   MainPageContainer,
   IconContainer,
+  ImageContainer,
   ImageBgContainer,
   TextBox,
 } from './styles';
 
 // Page component that renders copy and links related to work experience
-const MainPage = () => {
+const MainPage = ({
+  is404 = false,
+}) => {
   const imageBgRef = useRef(null);
   const { breakpoint } = useContext(BrowserContext);
   const [mouseXY, setMouseXY] = useState({
@@ -33,8 +37,8 @@ const MainPage = () => {
 
   const mouseMoveHandler = (e) => {
     setMouseXY({
-      x: Math.round((-12 * (window.innerWidth - 2 * e.clientX)) / window.innerWidth),
-      y: Math.round((-6 * (window.innerHeight - 2 * e.clientY)) / window.innerHeight),
+      x: Math.round((-8 * (window.innerWidth - 2 * e.clientX)) / window.innerWidth),
+      y: Math.round((-4 * (window.innerHeight - 2 * e.clientY)) / window.innerHeight),
     });
   };
 
@@ -70,14 +74,14 @@ const MainPage = () => {
       className="main-page"
       $width={browserParams.width}
       $height={browserParams.height}
-      style={{ backgroundImage: `url(${backgroundData[backgroundDataIndex]})` }}
     >
-      {
-        breakpoint > 2
-        && (
-          <StyledH2 className="main-page__title">Mohan Subramanian</StyledH2>
-        )
-      }
+      <ImageContainer
+        style={{
+          backgroundImage: `url(${backgroundData[backgroundDataIndex]})`,
+          transform: `translateX(${-1 * mouseXY.x}px) translateY(${-1 * mouseXY.y}px)`,
+        }}
+      />
+      <StyledH2 className="main-page__title">{`Mohan ${breakpoint > 3 ? 'Subramanian' : 'S'}`}</StyledH2>
       <Header isMainPage={breakpoint > 2} />
       <ImageBgContainer />
       <TextBox
@@ -85,15 +89,26 @@ const MainPage = () => {
         $width={browserParams.width}
         style={{ transform: `translateX(${mouseXY.x}px) translateY(${mouseXY.y}px)` }}
       >
-        <StyledH4>
-          Senior Frontend Developer
-          <br />
-          with &lsquo;Game Designer&rsquo; skills
-          <br />
-          9+ years of experience
-          <br />
-          Fueled by passion & creativity
-        </StyledH4>
+        {
+          is404
+            ? (
+              <StyledH4>
+                <span>404</span>
+                <br />
+                Page not found
+              </StyledH4>
+            ) : (
+              <StyledH4>
+                Senior Frontend Developer
+                <br />
+                with &lsquo;Game Designer&rsquo; skills
+                <br />
+                9+ years of experience
+                <br />
+                Fueled by passion & creativity
+              </StyledH4>
+            )
+        }
       </TextBox>
       <IconContainer className="main-page__icon">
         {
@@ -110,6 +125,10 @@ const MainPage = () => {
       </IconContainer>
     </MainPageContainer>
   );
+};
+
+MainPage.propTypes = {
+  is404: PropTypes.bool,
 };
 
 export default MainPage;

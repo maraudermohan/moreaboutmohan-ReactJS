@@ -59,8 +59,10 @@ const Nav = ({
           title,
           Icon,
           background,
+          href,
         }) => (
           <LinkContainer
+            to={href}
             key={`${Icon}${title}`}
             $background={background}
             className="nav__link"
@@ -81,8 +83,10 @@ const Nav = ({
             title,
             Icon,
             background,
+            href,
           }) => (
             <LinkTwoSubContainer
+              to={href}
               key={`${Icon}${title}`}
               $background={background}
               className="nav__link"

@@ -15,6 +15,7 @@ const ScrollHOC = ({
     setScrollPos({
       topScroll: window.pageYOffset,
       bottomScroll: window.pageYOffset + window.innerHeight,
+      startedScrolling: true,
     });
   };
 

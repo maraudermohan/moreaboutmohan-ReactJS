@@ -17,16 +17,17 @@ import {
   summary4,
   duration,
   carouselProps1,
-  imageProps2,
+  carouselProps2,
   imageProps1,
+  imageProps2,
   imageProps3,
   imageProps4,
-} from './intuit-data';
-import IntuitPageContainer from './styles';
+} from './surveymonkey-data';
+import SurveymonkeyPageContainer from './styles';
 
-// Intuit work experience page
-const IntuitPage = () => (
-  <IntuitPageContainer className="intuit-page">
+// SurveyMonkey work experience page
+const SurveymonkeyPage = () => (
+  <SurveymonkeyPageContainer className="intuit-page">
     <Jumbotron
       data={jumbotronProps}
     />
@@ -36,67 +37,65 @@ const IntuitPage = () => (
       duration={jobTitle.duration}
     />
     <Header />
-    <ContentList
-      data={summary1}
-      alignment="right"
-      browserHeight={window.innerHeight}
-      heading={duration.heading}
-      subHeading={duration.subHeading}
-      className="intuit-page__summary1"
-    />
     <LazyLoadImage
       imageUrl={imageProps1.imageUrl}
       imageAlt={imageProps1.imageAlt}
       width="720px"
-      height="540px"
-      className="intuit-page__image1"
+      height="360px"
+      className="surveymonkey-page__image1"
+    />
+    <ContentList
+      data={summary1}
+      alignment="full"
+      browserHeight={window.innerHeight}
+      heading={duration.heading}
+      subHeading={duration.subHeading}
+      className="surveymonkey-page__summary1"
     />
     <TextImageCarouselOnScroll
       carouselData={carouselProps1}
-      contentListData={summary2}
+      contentListData={summary3}
     />
-    <div className="intuit-page__image-holder">
+    <div className="surveymonkey-page__content1">
       <LazyLoadImage
         imageUrl={imageProps3.imageUrl}
         imageAlt={imageProps3.imageAlt}
-        width="640px"
-        height="480px"
-        className="intuit-page__image3"
-      />
-      <ContentList
-        alignment="full"
-        browserHeight={window.innerHeight}
-        data={summary3}
-        className="intuit-page__summary3"
+        width="650px"
+        height="350px"
+        className="surveymonkey-page__image3"
       />
       <LazyLoadImage
         imageUrl={imageProps4.imageUrl}
         imageAlt={imageProps4.imageAlt}
-        width="650px"
-        height="406px"
-        className="intuit-page__image4"
+        width="300px"
+        height="540px"
+        className="surveymonkey-page__image4"
       />
     </div>
     <TransparentScroller
-      className="intuit-page__transparent-scroller"
+      className="surveymonkey-page__transparent-scroller"
       background={colors.LATTE}
     >
       <LazyLoadImage
         imageUrl={imageProps2.imageUrl}
         imageAlt={imageProps2.imageAlt}
-        width="652px"
-        height="489px"
-        className="intuit-page__image2"
+        width="720px"
+        height="324px"
+        className="surveymonkey-page__image2"
       />
       <ContentList
         alignment="full"
         browserHeight={window.innerHeight}
-        data={summary4}
-        className="intuit-page__summary4"
+        data={summary2}
+        className="surveymonkey-page__summary2"
       />
     </TransparentScroller>
+    <TextImageCarouselOnScroll
+      carouselData={carouselProps2}
+      contentListData={summary4}
+    />
     <Footer />
-  </IntuitPageContainer>
+  </SurveymonkeyPageContainer>
 );
 
-export default IntuitPage;
+export default SurveymonkeyPage;

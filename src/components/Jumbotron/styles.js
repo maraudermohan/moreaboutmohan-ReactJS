@@ -34,7 +34,6 @@ export const JumbotronContainer = styled.div`
       position: absolute;
       top: -10%;
       right: 0;
-      z-index: -1;
     }
   }
 `;

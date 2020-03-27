@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
+// Error handling component that renders null, instead of errored out component
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);

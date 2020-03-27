@@ -19,13 +19,19 @@ const ImageCarousel = ({
 }) => {
   const imagesList = useRef(null);
   const [staticCss, setStaticCss] = useState({});
-  const [slideCss, setSlideCss] = useState({});
+  const [slideCss, setSlideCss] = useState({
+    startedScrolling: 0,
+  });
   const browserWidth = window.innerWidth;
   const browserHeight = window.innerHeight;
 
   const {
     topScroll = 0,
   } = useContext(ScrollPositionContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     if (browserWidth && browserHeight) {
@@ -41,7 +47,7 @@ const ImageCarousel = ({
         offsetHeight: imagesList.current.offsetHeight,
       });
     }
-  }, [browserWidth]);
+  }, [browserWidth, slideCss.startedScrolling]);
 
   useEffect(() => {
     let styles = slideDirection === 'left' ? {}
@@ -50,6 +56,7 @@ const ImageCarousel = ({
         top: 0,
         right: 0,
       };
+
     if (topScroll >= staticCss.offsetTop + staticCss.containerHeight - browserHeight / 2) {
       styles = {
         position: 'fixed',
@@ -67,6 +74,7 @@ const ImageCarousel = ({
         opacity: 1,
       };
     }
+    styles.startedScrolling = 1;
 
     setSlideCss(styles);
   }, [topScroll]);

@@ -12,6 +12,7 @@ import HiddenSection from './styles';
 // Component that creates a slide-up animation
 const TransparentScroller = ({
   children,
+  className,
   background,
   variant = 'fold',
 }) => {
@@ -49,7 +50,7 @@ const TransparentScroller = ({
 
   return (
     <div
-      className="main__transparent-scroller"
+      className={className}
       ref={transparentElem}
       style={transparentElemCss}
     >
@@ -64,6 +65,7 @@ const TransparentScroller = ({
 
 TransparentScroller.propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
   background: PropTypes.string,
   variant: PropTypes.oneOf(['hide', 'fold']),
 };

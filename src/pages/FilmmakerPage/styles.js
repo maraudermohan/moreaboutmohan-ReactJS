@@ -20,6 +20,24 @@ export const FilmmakerPageContainer = styled.main`
     background: none;
   }
 
+  .header__title {
+    font-family: "Lobster", san-serif;
+  }
+
+  nav > .nav__link:nth-child(4),
+  nav > .nav__link:nth-child(4):hover {
+    background: ${colors.WHITE}F2;
+
+    svg {
+      color: ${colors.MAGENTA}BF;
+      fill: ${colors.MAGENTA}BF;
+    }
+
+    .nav__link-title {
+      color: ${colors.MAGENTA};
+    }
+  }
+
   ${StyledH1} {
     padding: 150px 0 100px 0;
     text-align: center;
@@ -100,6 +118,7 @@ export const CountContainer = styled.div`
   display: grid;
   width: 100%;
   height: 100px;
+  padding: ${(props) => (props.$show ? '0 0 24px 0' : '0')};
   justify-content: center;
   justify-items: center;
   max-height: ${(props) => (props.$show ? '800px' : '0px')};
@@ -121,6 +140,7 @@ export const StyledButton = styled.button`
   width: 99%;
   height: 99px;
   grid-row: 2;
+  font-family: "Staatliches", san-serif;
   font-weight: 500;
   color: ${(props) => (props.$selected ? colors.APPLE : colors.LATTE)};
   background: ${(props) => (props.$selected ? colors.LATTE : colors.BLUSH)};
@@ -131,11 +151,13 @@ export const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: ${(props) => (props.$selected ? colors.LATTE : colors.APPLE)}D9;
+    background: ${(props) => (props.$selected ? `${colors.LATTE}D9` : colors.LATTE)};
+    color: ${colors.APPLE};
     font-size: 18px;
     svg {
       transform: scale(1.2);
-      color: ${(props) => (props.$selected ? colors.APPLE : colors.LATTE)};
+      color: ${colors.APPLE};
+      fill: ${colors.APPLE};
     }
   }
 
@@ -208,8 +230,8 @@ export const filterKeys = [
   'D.o.P',
   'Editor',
   'Performer',
-  'DanceVideos',
-  'ShortFilms',
+  'Dance-Videos',
+  'Short-Films',
 ];
 
 export const filterIcons = [

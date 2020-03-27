@@ -79,8 +79,11 @@ const ResumePage = () => {
   return (
     <ResumePageContainer className="resume-page">
       <Header />
-      <StyledH1>Work Experience</StyledH1>
-      <DownloadContainer href="/mohan_subramanian_resume.pdf">
+      <StyledH1 className="page__title">Work Experience</StyledH1>
+      <DownloadContainer
+        href="/mohan_subramanian_resume.pdf"
+        target="_blank"
+      >
         <LazyLoadImage
           imageUrl={downloadImg}
           imageAlt="Download resume"
@@ -90,7 +93,7 @@ const ResumePage = () => {
         <span />
         <div>
           <DownloadIcon />
-          <StyledH3>Resume</StyledH3>
+          <StyledH3 className="resume__title">Resume</StyledH3>
         </div>
       </DownloadContainer>
       <StyledSubtext style={{ margin: '64px 0 8px 0' }}>Present</StyledSubtext>

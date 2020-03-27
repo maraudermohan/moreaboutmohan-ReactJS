@@ -40,11 +40,16 @@ export const FooterContainer = styled.footer`
     color: ${(props) => props.$textColor};
   }
 
+  ${StyledH3} {
+    font-family: "El Messiri", san-serif;
+  }
+
   svg {
     width: 44px;
     padding: 0 4px;
     color: ${(props) => props.$textColor};
     transition: all 0.3s;
+    cursor: pointer;
 
     &:hover,
     &[data-selected=true] {

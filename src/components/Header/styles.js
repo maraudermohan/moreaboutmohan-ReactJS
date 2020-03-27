@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { StyledH4 } from 'components/Typography';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 
@@ -17,13 +16,22 @@ export const HeaderContainer = styled.header`
               linear-gradient(170deg,${colors.ABYSS}66 10%, ${colors.WHITE}00 30%),
               linear-gradient(190deg,${colors.ABYSS}99 10%, ${colors.WHITE}00 30%);
 
-  ${StyledH4} {
+  .header__title {
     display: none;
     justify-self: end;
     align-self: center;
     grid-column: 3;
+    font-family: "Lobster", san-serif;
+    font-size: 28px;
     color: ${colors.LATTE};
     cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+
+    &:hover {
+      text-shadow: 4px 4px 7px ${colors.ABYSS},
+      -1px -1px 7px ${colors.PANTONE};
+    }
 
     @media ${mq.phone} {
       display: block;

@@ -3,8 +3,8 @@ import React, {
   useState,
   useEffect,
 } from 'react';
+import PropTypes from 'prop-types';
 
-import { carouselProps, duration, summary1 } from 'pages/intuit';
 import ContentList from 'components/ContentList';
 import FixedOnScrollHOC from 'components/FixedOnScrollHOC';
 import ImageCarousel from 'components/ImageCarousel';
@@ -12,7 +12,14 @@ import ImageCarousel from 'components/ImageCarousel';
 // Combining FixedOnScroll and Image Carousel
 // The text stays fixed to the screen bottom, while the images slide
 // Slide direction can be customized
-const TextImageCarouselOnScroll = () => {
+const TextImageCarouselOnScroll = ({
+  carouselData = [],
+  contentListDuration = {
+    heading: '',
+    subHeading: '',
+  },
+  contentListData = [],
+}) => {
   const fixedElem = useRef({
     current: {},
   });
@@ -43,7 +50,6 @@ const TextImageCarouselOnScroll = () => {
   return (
     <FixedOnScrollHOC
       fixedElemCss={cssObject}
-      slideElements={slideElements}
       render={
         (stylesProps) => (
           <>
@@ -53,11 +59,11 @@ const TextImageCarouselOnScroll = () => {
               className="main__content-summary"
             >
               <ContentList
-                data={summary1}
+                data={contentListData}
                 alignment="full"
                 browserHeight={browserHeight}
-                heading={duration.heading}
-                subHeading={duration.subHeading}
+                heading={contentListDuration.heading}
+                subHeading={contentListDuration.subHeading}
               />
             </div>
             {
@@ -66,7 +72,7 @@ const TextImageCarouselOnScroll = () => {
                 : null
             }
             <div ref={slideElements} className="main__image-carousel">
-              <ImageCarousel data={carouselProps} />
+              <ImageCarousel data={carouselData} />
             </div>
             {
               Object.keys(stylesProps).length
@@ -78,6 +84,12 @@ const TextImageCarouselOnScroll = () => {
       }
     />
   );
+};
+
+TextImageCarouselOnScroll.propTypes = {
+  carouselData: PropTypes.arrayOf(PropTypes.object),
+  contentListDuration: PropTypes.objectOf(PropTypes.object),
+  contentListData: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default TextImageCarouselOnScroll;

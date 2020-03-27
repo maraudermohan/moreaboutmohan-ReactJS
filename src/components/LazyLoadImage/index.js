@@ -10,6 +10,7 @@ const LazyLoadImage = ({
   imageUrl = '',
   width = 'auto',
   height = '350px',
+  className = '',
 }) => {
   const [hasLoaded, setHasLoaded] = useState(false);
 
@@ -26,6 +27,7 @@ const LazyLoadImage = ({
         hasLoaded={hasLoaded}
         $width={width} // Styled props, hence adding $
         $height={height}
+        className={className}
       />
       {
         !hasLoaded
@@ -40,6 +42,7 @@ LazyLoadImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   width: PropTypes.string,
   height: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default LazyLoadImage;
