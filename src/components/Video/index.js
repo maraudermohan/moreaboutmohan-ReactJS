@@ -17,6 +17,7 @@ const Video = ({
   height = '360',
   start = 0,
   autoplay = 0,
+  className = 'video__iframe',
 }) => {
   let src = `https://www.youtube-nocookie.com/embed/${url}?rel=1&start=${start}&autoplay=${autoplay}`;
   if (player === 'vimeo') {
@@ -37,7 +38,7 @@ const Video = ({
         $hasLoaded={hasLoaded}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-        className="video__iframe"
+        className={className}
       />
       {
         !hasLoaded
@@ -62,6 +63,7 @@ Video.propTypes = {
   height: PropTypes.string,
   start: PropTypes.number,
   autoplay: PropTypes.number,
+  className: PropTypes.string,
 };
 
 export default Video;

@@ -27,7 +27,7 @@ import SurveymonkeyPageContainer from './styles';
 
 // SurveyMonkey work experience page
 const SurveymonkeyPage = () => (
-  <SurveymonkeyPageContainer className="intuit-page">
+  <SurveymonkeyPageContainer className="surveymonkey-page">
     <Jumbotron
       data={jumbotronProps}
     />

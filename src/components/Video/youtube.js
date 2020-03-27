@@ -62,10 +62,11 @@ class Video extends Component {
   render() {
     const {
       title = '',
+      className = 'video__youtube',
     } = this.props;
 
     return (
-      <section className="video__youtube">
+      <section className={className}>
         <div id={`${title}`} />
       </section>
     );
@@ -81,6 +82,7 @@ Video.propTypes = {
   autoplay: PropTypes.number,
   muted: PropTypes.bool,
   onDone: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default Video;

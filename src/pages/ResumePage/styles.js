@@ -216,6 +216,7 @@ export const data = [
     color: '#DEC79B',
     height: 2,
     alignment: 'right',
+    href: '/resume/zynga',
   },
   {
     title: 'Masters',
@@ -223,36 +224,42 @@ export const data = [
     color: '#DC0606',
     height: 9,
     alignment: 'left',
+    href: '/resume/carnegie',
   },
   {
     title: 'EFSD + SMALLab',
     color: '#9730A6',
     height: 2,
     alignment: 'right',
+    href: '/resume/smallab',
   },
   {
     title: 'Smilegate',
     color: '#21EBC8',
     height: 2,
     alignment: 'right',
+    href: '/resume/smilegate',
   },
   {
     title: 'Cooliris',
     color: '#F56C2D',
     height: 2,
     alignment: 'right',
+    href: '/resume/cooliris',
   },
   {
     title: 'Electronic Arts',
     color: '#64E986',
     height: 2,
     alignment: 'right',
+    href: '/resume/ea',
   },
   {
     title: 'Nokia Siemens',
     color: '#F2DB22',
     height: 3,
     alignment: 'left',
+    href: '/resume/nokia',
   },
   {
     title: 'Bachelors',
@@ -260,5 +267,6 @@ export const data = [
     color: '#DE5D83',
     height: 3,
     alignment: 'right',
+    href: '/resume/psg',
   },
 ];

@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import ResizeHOC from 'components/ResizeHOC';
 import ScrollHOC from 'components/ScrollHOC';
 import MainPage from 'pages/MainPage';
-import ResumePage from 'pages/ResumePage';
-import FilmmakerPage from 'pages/FilmmakerPage';
-import PhotographyPage from 'pages/PhotographyPage';
-import IntuitPage from 'pages/IntuitPage';
-import SurveymonkeyPage from 'pages/SurveymonkeyPage';
+const ResumePage = lazy(() => import('pages/ResumePage'));
+const FilmmakerPage = lazy(() => import('pages/FilmmakerPage'));
+const PhotographyPage = lazy(() => import('pages/PhotographyPage'));
+const IntuitPage = lazy(() => import('pages/IntuitPage'));
+const SurveymonkeyPage = lazy(() => import('pages/SurveymonkeyPage'));
+const ZyngaPage = lazy(() => import('pages/ZyngaPage'));
+const SmallabPage = lazy(() => import('pages/SmallabPage'));
+const SmilegatePage = lazy(() => import('pages/SmilegatePage'));
 
 function App() {
   return (
-    <div className="App">
+    <Suspense fallback={<MainPage />} className="App">
       <ScrollHOC>
         <ResizeHOC>
           <Switch>
@@ -23,11 +26,14 @@ function App() {
             <Route path="/photography" component={PhotographyPage} exact />
             <Route path="/resume/intuit" component={IntuitPage} />
             <Route path="/resume/surveymonkey" component={SurveymonkeyPage} />
+            <Route path="/resume/zynga" component={ZyngaPage} />
+            <Route path="/resume/smallab" component={SmallabPage} />
+            <Route path="/resume/smilegate" component={SmilegatePage} />
             <Route component={() => <MainPage is404 />} />
           </Switch>
         </ResizeHOC>
       </ScrollHOC>
-    </div>
+    </Suspense>
   );
 }
 
