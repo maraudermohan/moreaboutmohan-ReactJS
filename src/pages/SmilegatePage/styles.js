@@ -53,7 +53,7 @@ const SmilegatePageContainer = styled.main`
     @media ${mq.uptoTablet},
     (max-width: 868px) and (orientation: landscape) {
       width: 300px;
-      height: 170px;
+      height: 232px;
       margin: 0 calc(50% - 150px);
     }
   }
@@ -71,10 +71,6 @@ const SmilegatePageContainer = styled.main`
   .smilegate-page__summary4 {
     padding: 16px 0;
     color: ${colors.PANTONE};
-  }
-
-  .smilegate-page__video2 {
-    padding: 64px 0 0 0;
   }
 
   .main__image-carousel {
@@ -145,17 +141,11 @@ const SmilegatePageContainer = styled.main`
       }
     }
   }
+
+  img,
+  iframe {
+    border-radius: 5px;
+  }
 `;
 
 export default SmilegatePageContainer;
-
-// max-width: 320px;
-// @media (orientation: landscape) {
-//   max-width: 270px;
-// }
-// @media ${mq.tablet} and (orientation: portrait) {
-//   max-width: 640px;
-// }
-// @media ${mq.desktop} and (orientation: landscape) {
-//   max-width: 540px;
-// }

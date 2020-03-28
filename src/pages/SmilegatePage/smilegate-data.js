@@ -53,7 +53,7 @@ export const imageProps1 = {
 
 export const jobTitle = {
   title: 'Lead Game Designer',
-  company: '@ Smilegate',
+  company: '@ \xa0 \xa0 Smilegate',
 };
 
 export const duration = {
@@ -65,7 +65,7 @@ export const video1 = {
   title: 'west-turn-promo',
   player: 'youtube',
   url: '_WeFxDD_fho',
-  start: 0,
+  start: 55,
 };
 
 export const video3 = {

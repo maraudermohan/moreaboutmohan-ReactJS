@@ -14,8 +14,12 @@ const BoxContainer = styled(Link)`
   padding: 4px 0;
   transition: all 0.3s;
   opacity: 0;
-  cursor: pointer;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
   ${(props) => (props.alignment === 'left' ? css`
     justify-content: flex-end;
     left: -70px;

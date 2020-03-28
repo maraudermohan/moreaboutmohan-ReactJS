@@ -71,7 +71,7 @@ export const imageProps4 = {
 
 export const jobTitle = {
   title: 'Software Engineer II',
-  company: '@ Intuit',
+  company: '@ \xa0 \xa0 Intuit',
 };
 
 export const duration = {
@@ -97,7 +97,6 @@ export const summary3 = [
 ];
 
 export const summary4 = [
-  'Winner of 2 more Spotlight awards -',
   'For a commendable demo in the EBS Demo Day 2016.',
   'Leading frontend of Domain-name migration of Proconnect (previously "Taxpro").',
 ];

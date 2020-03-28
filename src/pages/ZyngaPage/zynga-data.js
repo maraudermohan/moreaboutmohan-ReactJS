@@ -44,7 +44,7 @@ export const imageProps2 = {
 
 export const jobTitle = {
   title: 'Associate Designer',
-  company: '@ Zynga',
+  company: '@ \xa0 \xa0 Zynga',
 };
 
 export const duration = {

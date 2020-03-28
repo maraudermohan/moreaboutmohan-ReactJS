@@ -252,7 +252,7 @@ export const data = [
     color: '#64E986',
     height: 2,
     alignment: 'right',
-    href: '/resume/ea',
+    href: '/resume/megalodon',
   },
   {
     title: 'Nokia Siemens',
@@ -267,6 +267,6 @@ export const data = [
     color: '#DE5D83',
     height: 3,
     alignment: 'right',
-    href: '/resume/psg',
+    href: '/resume/bachelor',
   },
 ];

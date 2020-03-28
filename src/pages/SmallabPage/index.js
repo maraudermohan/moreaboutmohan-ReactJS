@@ -52,7 +52,7 @@ const SmallabPage = () => {
         height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
         width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
         autoplay={1}
-        muted={false}
+        muted
         className="smallab-page__video1"
       />
       <ContentList
@@ -117,14 +117,16 @@ const SmallabPage = () => {
           className="smallab-page__video3"
         />
       </TransparentScroller>
-      <Video
-        {...video3}
-        height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
-        width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
-        autoplay={0}
-        muted
-        className="smallab-page__video4"
-      />
+      <div style={{ padding: '44px 0 24px 0' }}>
+        <Video
+          {...video3}
+          height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
+          width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
+          autoplay={0}
+          muted
+          className="smallab-page__video4"
+        />
+      </div>
       <ContentList
         alignment="full"
         browserHeight={window.innerHeight}

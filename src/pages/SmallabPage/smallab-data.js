@@ -57,7 +57,7 @@ export const imageProps1 = {
 
 export const jobTitle = {
   title: 'Lead Game Designer',
-  company: '@ SMALLab + EFSD',
+  company: '@ \xa0 \xa0 SMALLab + EFSD',
 };
 
 export const duration = {

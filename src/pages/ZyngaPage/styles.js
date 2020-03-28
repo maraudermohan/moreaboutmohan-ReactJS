@@ -25,7 +25,7 @@ const ZyngaPageContainer = styled.main`
   .zynga-page__image1 {
     display: block;
     margin: 0 auto;
-    padding: 0 0 44px 0;
+    border-radius: 5px;
     @media ${mq.uptoTablet},
     (max-width: 868px) and (orientation: landscape) {
       width: 300px;
@@ -37,7 +37,7 @@ const ZyngaPageContainer = styled.main`
   .zynga-page__image2 {
     display: block;
     margin: 0 auto;
-    padding: 100px 0 0 0;
+    border-radius: 5px;
     @media ${mq.uptoTablet},
     (max-width: 868px) and (orientation: landscape) {
       width: 300px;

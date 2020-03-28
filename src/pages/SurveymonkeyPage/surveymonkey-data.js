@@ -80,7 +80,7 @@ export const imageProps4 = {
 
 export const jobTitle = {
   title: 'Software Engineer III',
-  company: '@ SurveyMonkey',
+  company: '@ \xa0 \xa0 SurveyMonkey',
 };
 
 export const duration = {

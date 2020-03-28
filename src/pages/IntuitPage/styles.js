@@ -63,7 +63,7 @@ const IntuitPageContainer = styled.main`
   .intuit-page__transparent-scroller {
     .intuit-page__image2 {
       margin: 0 auto;
-      padding: 24px 0 0 0;
+      padding: 0;
       @media ${mq.uptoDesktop} and (orientation: portrait) {
         padding: 48px 0 0 0;
       }

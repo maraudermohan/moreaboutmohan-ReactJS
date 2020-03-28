@@ -92,6 +92,7 @@ const IntuitPage = () => (
         alignment="full"
         browserHeight={window.innerHeight}
         data={summary4}
+        heading="Winner of 2 more Spotlight awards -"
         className="intuit-page__summary4"
       />
     </TransparentScroller>

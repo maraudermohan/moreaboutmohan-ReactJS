@@ -48,7 +48,7 @@ const SmilegatePage = () => {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={1}
-          muted={false}
+          muted
           className="smilegate-page__video1"
         />
         <ContentList
@@ -63,7 +63,7 @@ const SmilegatePage = () => {
           imageUrl={imageProps1.imageUrl}
           imageAlt={imageProps1.imageAlt}
           width="540px"
-          height="304px"
+          height="418px"
           className="smilegate-page__image1"
         />
         <ContentList

@@ -85,12 +85,13 @@ const SmallabPageContainer = styled.main`
     color: ${colors.PANTONE};
   }
 
-  .smallab-page__video4 {
-    padding: 44px 0 24px 0;
-  }
-
   .smallab-page__summary9 {
     padding: 0;
+  }
+
+  img,
+  iframe {
+    border-radius: 5px;
   }
 `;
 

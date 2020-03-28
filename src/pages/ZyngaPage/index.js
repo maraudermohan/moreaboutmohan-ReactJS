@@ -46,17 +46,20 @@ const ZyngaPage = () => (
       height="538px"
       className="zynga-page__image1"
     />
+    <div style={{ width: '100%', height: '48px' }} />
     <TextImageCarouselOnScroll
       carouselData={carouselProps1}
       contentListData={summary2}
     />
-    <LazyLoadImage
-      imageUrl={imageProps2.imageUrl}
-      imageAlt={imageProps2.imageAlt}
-      width="720px"
-      height="451px"
-      className="zynga-page__image2"
-    />
+    <div style={{ padding: '100px 0 24px 0' }}>
+      <LazyLoadImage
+        imageUrl={imageProps2.imageUrl}
+        imageAlt={imageProps2.imageAlt}
+        width="720px"
+        height="451px"
+        className="zynga-page__image2"
+      />
+    </div>
     <ContentList
       alignment="full"
       browserHeight={window.innerHeight}
