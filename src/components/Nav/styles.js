@@ -53,7 +53,7 @@ export const LinkContainer = styled(Link)`
   }
 
   &:hover {
-    background: ${(props) => props.$background};
+    background: ${(props) => props.background};
     > section > svg {
       color: ${colors.WHITE};
       fill: ${colors.WHITE};
@@ -144,7 +144,7 @@ export const LinkTwoSubContainer = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    background: ${(props) => props.$background};
+    background: ${(props) => props.background};
     > section > svg {
       color: ${colors.WHITE};
       fill: ${colors.WHITE};
@@ -197,7 +197,7 @@ export const NavIcons = [
     title: 'React projects',
     Icon: ReactIcon,
     background: colors.AZURE,
-    href: 'http://old.moreaboutmohan.com/#work-sample',
+    href: '/react',
   },
   {
     title: 'Filmmaking',
@@ -232,7 +232,7 @@ export const NavIcons2 = [
     title: 'Design works',
     Icon: BulbIcon,
     background: colors.APPLE,
-    href: 'http://old.moreaboutmohan.com/#design',
+    href: '/design',
   },
   {
     title: 'Arts & Photography',

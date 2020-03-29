@@ -9,6 +9,7 @@ import MainPage from 'pages/MainPage';
 const ResumePage = lazy(() => import('pages/ResumePage'));
 const FilmmakerPage = lazy(() => import('pages/FilmmakerPage'));
 const PhotographyPage = lazy(() => import('pages/PhotographyPage'));
+const DesignsPage = lazy(() => import('pages/DesignsPage'));
 const IntuitPage = lazy(() => import('pages/IntuitPage'));
 const SurveymonkeyPage = lazy(() => import('pages/SurveymonkeyPage'));
 const ZyngaPage = lazy(() => import('pages/ZyngaPage'));
@@ -30,6 +31,7 @@ function App() {
             <Route path="/resume" component={ResumePage} exact />
             <Route path="/filmmaker" component={FilmmakerPage} exact />
             <Route path="/photography" component={PhotographyPage} exact />
+            <Route path="/design" component={DesignsPage} exact />
             <Route path="/resume/intuit" component={IntuitPage} />
             <Route path="/resume/surveymonkey" component={SurveymonkeyPage} />
             <Route path="/resume/zynga" component={ZyngaPage} />

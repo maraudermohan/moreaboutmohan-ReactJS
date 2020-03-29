@@ -64,7 +64,7 @@ const Nav = ({
           <LinkContainer
             to={href}
             key={`${Icon}${title}`}
-            $background={background}
+            background={background}
             className="nav__link"
           >
             <NavLink>
@@ -88,7 +88,7 @@ const Nav = ({
             <LinkTwoSubContainer
               to={href}
               key={`${Icon}${title}`}
-              $background={background}
+              background={background}
               className="nav__link"
             >
               <NavLinkTwo>

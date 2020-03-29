@@ -140,8 +140,7 @@ class FilmmakerPage extends Component {
                   height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
                   width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
                   autoplay={1}
-                  muted={false}
-                  onDone={() => this.closeDemoReelVideo()}
+                  muted
                 />
               </DemoContainer>
             )

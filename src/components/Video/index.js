@@ -17,9 +17,10 @@ const Video = ({
   height = '360',
   start = 0,
   autoplay = 0,
+  muted = 0,
   className = 'video__iframe',
 }) => {
-  let src = `https://www.youtube-nocookie.com/embed/${url}?rel=1&start=${start}&autoplay=${autoplay}`;
+  let src = `https://www.youtube-nocookie.com/embed/${url}?rel=1&start=${start}&autoplay=${autoplay}&mute=${muted}`;
   if (player === 'vimeo') {
     src = `https://player.vimeo.com/video/${url}?color=ffffff&byline=0&portrait=0`;
   }
@@ -62,6 +63,7 @@ Video.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   start: PropTypes.number,
+  muted: PropTypes.number,
   autoplay: PropTypes.number,
   className: PropTypes.string,
 };

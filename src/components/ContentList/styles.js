@@ -11,7 +11,7 @@ export const BoldParagraph = styled(StyledParagraph)`
 export const ContentListContainer = styled.ul`
   display: grid;
   grid-template-columns: 30px auto;
-  grid-auto-rows: auto;
+  grid-template-rows: auto;
   width: 80%;
   margin: 0 auto;
   padding: 0 0 15% 0;
