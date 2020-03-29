@@ -60,20 +60,38 @@ const Nav = ({
           Icon,
           background,
           href,
-        }) => (
-          <LinkContainer
-            to={href}
-            key={`${Icon}${title}`}
-            background={background}
-            className="nav__link"
-          >
-            <NavLink>
-              <Icon />
-              <StyledH2 className="nav__link-title">{title}</StyledH2>
-              <ChevronRightIcon className="nav__chevron-right" />
-            </NavLink>
-          </LinkContainer>
-        ))
+        }) => {
+          if (title === 'React projects') {
+            return (
+              <a
+                href={href}
+                key={`${Icon}${title}`}
+                background={background}
+                className="nav__link-react"
+              >
+                <NavLink>
+                  <Icon />
+                  <StyledH2 className="nav__link-title">{title}</StyledH2>
+                  <ChevronRightIcon className="nav__chevron-right" />
+                </NavLink>
+              </a>
+            );
+          }
+          return (
+            <LinkContainer
+              to={href}
+              key={`${Icon}${title}`}
+              background={background}
+              className="nav__link"
+            >
+              <NavLink>
+                <Icon />
+                <StyledH2 className="nav__link-title">{title}</StyledH2>
+                <ChevronRightIcon className="nav__chevron-right" />
+              </NavLink>
+            </LinkContainer>
+          );
+        })
       }
       <LinkTwoContainer
         className="nav__link-two"

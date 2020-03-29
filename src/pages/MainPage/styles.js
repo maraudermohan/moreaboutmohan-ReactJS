@@ -61,6 +61,7 @@ export const MainPageContainer = styled.main`
       }
   
       .nav__link:not(:hover),
+      .nav__link-react:not(:hover),
       .nav__link-title,
       svg,
       h2,
@@ -70,7 +71,8 @@ export const MainPageContainer = styled.main`
         fill: transparent;
       }
   
-      .nav__link:hover {
+      .nav__link:hover,
+      .nav__link-react:hover {
         background: ${colors.LATTE}66;
   
         svg, h2, h4 {
@@ -79,7 +81,8 @@ export const MainPageContainer = styled.main`
         }
       }
   
-      .nav__link > section {
+      .nav__link > section,
+      .nav__link-react > section {
         max-width: none;
         margin: 0;
         border-bottom: 1px solid ${colors.BLACK}26;
