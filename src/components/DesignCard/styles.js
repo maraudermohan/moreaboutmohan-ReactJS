@@ -7,7 +7,7 @@ const DesignCardContainer = styled.div`
   width: calc(50% - 8px);
   height: 180px;
   position: relative;
-  border: 4px solid transparent;
+  border: 4px solid ${colors.LATTE};
   border-radius: 4px;
   transition: all 0.3s;
   justify-content: center;
@@ -15,7 +15,6 @@ const DesignCardContainer = styled.div`
   cursor: pointer;
 
   &:hover {
-    border: 4px solid ${colors.LATTE};
     cursor: pointer;
     .design-card__overlay {
       width: 100%;
