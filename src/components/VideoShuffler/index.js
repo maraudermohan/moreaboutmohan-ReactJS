@@ -64,7 +64,8 @@ class VideoShuffler extends Component {
   }
 
   clickHandler(e) {
-    if (!!e.target.classList && e.target.classList.contains('left')) {
+    if (!!e.target.classList && (e.target.classList.contains('left')
+      || e.target.parentNode.classList.contains('left'))) {
       this.animateOnClick({
         main: 'MainToRight',
         left: 'LeftToMain',
@@ -74,7 +75,8 @@ class VideoShuffler extends Component {
         RightToLeft: 'left',
         subtract: true,
       });
-    } else if (!!e.target.classList && e.target.classList.contains('right')) {
+    } else if (!!e.target.classList && (e.target.classList.contains('right')
+      || e.target.parentNode.classList.contains('right'))) {
       this.animateOnClick({
         main: 'MainToLeft',
         left: 'LeftToRight',
@@ -162,9 +164,9 @@ class VideoShuffler extends Component {
         />
       );
     } else if (order[index].indexOf('left') >= 0) {
-      comp = <ArrowLeftIcon />;
+      comp = <ArrowLeftIcon className="left" />;
     } else if (order[index].indexOf('right') >= 0) {
-      comp = <ArrowRightIcon />;
+      comp = <ArrowRightIcon className="right" />;
     }
     return comp;
   }
