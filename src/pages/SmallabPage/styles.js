@@ -70,7 +70,7 @@ const SmallabPageContainer = styled.main`
     margin: 120px 0 64px 0;
     background: ${colors.ABYSS};
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: auto;
     box-shadow: 4px 4px 7px ${colors.ABYSS}4D,
                 -1px 8px 7px ${colors.PANTONE}4D;
@@ -81,7 +81,7 @@ const SmallabPageContainer = styled.main`
   }
 
   .smallab-page__summary7 {
-    padding: 32px 0 0 0;
+    padding: 0 0 32px 0;
     color: ${colors.PANTONE};
   }
 

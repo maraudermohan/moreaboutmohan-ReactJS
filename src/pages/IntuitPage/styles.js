@@ -54,7 +54,7 @@ const IntuitPageContainer = styled.main`
     margin: 48px 0 0 0;
     background: ${colors.ABYSS};
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: auto;
     box-shadow: 4px 4px 7px ${colors.ABYSS}4D,
                 -1px 8px 7px ${colors.PANTONE}4D;
@@ -64,13 +64,14 @@ const IntuitPageContainer = styled.main`
     .intuit-page__image2 {
       margin: 0 auto;
       padding: 0;
-      @media ${mq.uptoDesktop} and (orientation: portrait) {
-        padding: 48px 0 0 0;
-      }
     }
 
     .intuit-page__summary4 {
       color: ${colors.PANTONE};
+      padding: 12px 0 0 0;
+      @media ${mq.uptoDesktop} and (orientation: portrait) {
+        padding: 24px 0 0 0;
+      }
     }
   }
 `;

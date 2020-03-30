@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import LazyLoadImage from 'components/LazyLoadImage';
-import { BrowserContext } from 'constants/contexts';
+import { BrowserContext, ScrollPositionContext } from 'constants/contexts';
 import Nav from 'components/Nav';
 import { HeaderIcon } from 'images/icons';
 import {
@@ -23,7 +23,11 @@ const Header = ({
   const {
     breakpoint,
   } = useContext(BrowserContext);
+  const {
+    topScroll = 0,
+  } = useContext(ScrollPositionContext);
   const [showNav, setShowNav] = useState(isMainPage);
+  const [isScrolling, setIsScrolling] = useState(false);
 
   const clickHandler = () => {
     setShowNav(!showNav);
@@ -33,12 +37,20 @@ const Header = ({
     setShowNav(isMainPage);
   }, [isMainPage]);
 
+  useEffect(() => {
+    if (topScroll <= 2) {
+      setIsScrolling(false);
+    } else {
+      setIsScrolling(true);
+    }
+  }, [topScroll]);
+
   return (
     <>
       {
         !isMainPage
         && (
-          <HeaderContainer>
+          <HeaderContainer className={isScrolling ? 'scrolling' : ''}>
             <LogoContainer
               $isNavOpen={showNav}
               onClick={clickHandler}

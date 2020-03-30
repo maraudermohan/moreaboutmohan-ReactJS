@@ -33,8 +33,9 @@ const TransparentScroller = ({
     const styles = {
       background,
       width: `${browserWidth}px`,
-      height: `${browserHeight - 36}px`,
-      padding: '36px 0 0 0',
+      height: `${browserHeight}px`,
+      padding: '0',
+      zIndex: 1,
     };
     const elem = transparentElem.current;
     if (variant === 'fold' && bottomScroll >= elem.offsetTop + browserHeight) {

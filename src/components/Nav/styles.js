@@ -241,9 +241,14 @@ export const StyledCloseIcon = styled(CloseIcon)`
   height: 28px;
   top: 12px;
   right: 12px;
-  opacity: 0.75;
+  opacity: 0;
   z-index: 1000;
   transition: all 0.3s;
+  color: ${colors.PANTONE};
+
+  &.animated {
+    opacity: 0.75;
+  }
 
   &:hover {
     transform: scale(1.2);

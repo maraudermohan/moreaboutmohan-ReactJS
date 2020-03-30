@@ -60,7 +60,7 @@ const CarnegiePageContainer = styled.main`
     padding: 36px 0 0 0;
     background: ${colors.LATTE};
     position: relative;
-    z-index: 1;
+    z-index: 2;
     height: auto;
     box-shadow: 4px 4px 7px ${colors.ABYSS}4D,
                 -1px 8px 7px ${colors.PANTONE}4D;
@@ -72,7 +72,7 @@ const CarnegiePageContainer = styled.main`
   }
 
   .carnegie-page__summary4 {
-    padding: 16px 0;
+    padding: 32px 0 0 0;
   }
 
   .main__image-carousel,

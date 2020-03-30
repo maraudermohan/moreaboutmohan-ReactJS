@@ -3,7 +3,7 @@ import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 
 export const HeaderContainer = styled.header`
-  position: absolute;
+  position: fixed;
   display: grid;
   grid-template-columns: 95px auto 20% 40px;
   grid-template-rows: auto 25px;
@@ -11,10 +11,11 @@ export const HeaderContainer = styled.header`
   left: 0;
   width: 100%;
   height: 120px;
-  z-index: 1;
+  z-index: 500;
   background: linear-gradient(180deg,${colors.ABYSS}CC 10%, ${colors.WHITE}00 90%),
               linear-gradient(170deg,${colors.ABYSS}66 10%, ${colors.WHITE}00 30%),
               linear-gradient(190deg,${colors.ABYSS}99 10%, ${colors.WHITE}00 30%);
+  transition: background 0.5s;
 
   .header__title {
     display: none;

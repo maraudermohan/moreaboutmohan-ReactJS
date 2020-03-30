@@ -38,10 +38,10 @@ const Nav = ({
 
   useEffect(() => {
     document.getElementById('root').style.height = `${window.innerHeight}px`;
-    document.getElementById('root').style.overflow = 'hidden';
+    document.getElementById('root').style.position = 'relative';
     return (() => {
       document.getElementById('root').style.height = 'auto';
-      document.getElementById('root').style.overflow = 'initial';
+      document.getElementById('root').style.position = 'static';
     });
   });
 
