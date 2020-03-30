@@ -44,7 +44,7 @@ export const linked = {
 
 export const info = {
   Icon: InfoIcon,
-  data: 'Old version - old.moreaboutmohan.com/',
+  data: 'Old website \xa0 - \xa0 old.moreaboutmohan.com/',
   href: 'http://old.moreaboutmohan.com/',
 };
 

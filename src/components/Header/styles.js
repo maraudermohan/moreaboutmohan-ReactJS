@@ -17,6 +17,14 @@ export const HeaderContainer = styled.header`
               linear-gradient(190deg,${colors.ABYSS}99 10%, ${colors.WHITE}00 30%);
   transition: background 0.5s;
 
+  &.scrolling {
+    grid-template-rows: auto;
+    height: 90px;
+    background: linear-gradient(180deg,${colors.ABYSS}A6 12%, ${colors.WHITE}00 95%),
+                linear-gradient(170deg,${colors.ABYSS}40 12%, ${colors.WHITE}00 40%),
+                linear-gradient(190deg,${colors.ABYSS}73 12%, ${colors.WHITE}00 40%);
+  }
+
   .header__title {
     display: none;
     justify-self: end;

@@ -4,7 +4,7 @@ import { StyledH3, StyledSubtext } from 'components/Typography';
 
 export const IconContainer = styled.section`
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 100px;
   margin: 0 auto;
   padding: 40px 0 0 0;
@@ -15,6 +15,7 @@ export const IconContainer = styled.section`
   }
 
   @media ${mq.tablet} {
+    width: 80%;
     height: 130px;
     padding: 60px 0 0 0;
   }

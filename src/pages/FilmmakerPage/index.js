@@ -27,6 +27,7 @@ class FilmmakerPage extends Component {
     this.state = {
       filterValues: filterInitialValues,
       demoReelDone: false,
+      filterData: [],
     };
   }
 
@@ -45,11 +46,16 @@ class FilmmakerPage extends Component {
     }
 
     const newFilterValues = { ...filterValues, ...newObj };
-    this.setState({ filterValues: newFilterValues });
+    this.setState({ filterValues: newFilterValues, filterData: [] }, () => {
+      this.setState({ filterData: this.updateFilterData() });
+    });
   }
 
   closeDemoReelVideo() {
-    setTimeout(() => this.setState({ demoReelDone: true }), 1000);
+    setTimeout(() => this.setState({
+      demoReelDone: true,
+      filterData: this.updateFilterData(),
+    }), 1000);
   }
 
   updateFilterData() {
@@ -68,6 +74,7 @@ class FilmmakerPage extends Component {
     const {
       filterValues,
       demoReelDone,
+      filterData,
     } = this.state;
     const {
       breakpoint = 2,
@@ -106,13 +113,13 @@ class FilmmakerPage extends Component {
           $show={demoReelDone}
         >
           <StyledSubtext>Count:</StyledSubtext>
-          <StyledH2>{this.updateFilterData().length}</StyledH2>
+          <StyledH2>{filterData.length}</StyledH2>
         </CountContainer>
         {
-          demoReelDone && this.updateFilterData().length > 1
+          demoReelDone && filterData.length > 1
             && (
               <VideoShuffler
-                videoData={this.updateFilterData()}
+                videoData={filterData}
               />
             )
         }
@@ -132,11 +139,11 @@ class FilmmakerPage extends Component {
             )
         }
         {
-          demoReelDone && this.updateFilterData().length === 1
+          demoReelDone && filterData.length === 1
             && (
               <DemoContainer>
                 <Video
-                  {...this.updateFilterData()[0]}
+                  {...filterData[0]}
                   height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
                   width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
                   autoplay={1}

@@ -240,12 +240,18 @@ export const MainVideoContainer = styled.div`
   background: ${colors.ABYSS};
 
   svg {
-    width: 40px;
-    height: 40px;
-    margin: 0 32px; 
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
     color: ${colors.LATTE};
     fill: ${colors.LATTE};
     transition: all 0.3s;
+
+    @media (min-width: 620px) {
+      width: 40px;
+      height: 40px;
+      margin: 0 32px;
+    }
   }
 
   @media (hover: hover) and (pointer: fine) {

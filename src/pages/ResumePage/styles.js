@@ -10,17 +10,12 @@ export const downloadImg = resume;
 export const ResumePageContainer = styled.main`
   background: ${colors.PANTONE};
 
-  header {
-    background: linear-gradient(180deg,${colors.PANTONE}99 10%, ${colors.WHITE}00 90%),
-                linear-gradient(170deg,${colors.PANTONE}66 10%, ${colors.WHITE}00 30%),
-                linear-gradient(190deg,${colors.PANTONE}33 10%, ${colors.WHITE}00 30%); 
-    &:not(.scrolling) {
-      background: none;
-    }
+  header:not(.scrolling) {
+    background: none;
   }
 
   .header__title {
-    font-family: "Acme", san-serif;
+    font-family: "Lobster", san-serif;
   }
 
   nav > .nav__link:first-of-type {
