@@ -248,16 +248,18 @@ export const MainVideoContainer = styled.div`
     transition: all 0.3s;
   }
 
-  &.left:hover,
-  &.right:hover {
-    background: ${colors.LATTE};
-    border-color: ${colors.MAGENTA};
-    svg {
-      width: 50px;
-      height: 50px;
-      margin: 0 24px;
-      color: ${colors.MAGENTA};
-      fill: ${colors.MAGENTA};
+  @media (hover: hover) and (pointer: fine) {
+    &.left:hover,
+    &.right:hover {
+      background: ${colors.LATTE};
+      border-color: ${colors.MAGENTA};
+      svg {
+        width: 50px;
+        height: 50px;
+        margin: 0 24px;
+        color: ${colors.MAGENTA};
+        fill: ${colors.MAGENTA};
+      }
     }
   }
 

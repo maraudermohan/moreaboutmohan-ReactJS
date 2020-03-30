@@ -51,11 +51,18 @@ export const FooterContainer = styled.footer`
     transition: all 0.3s;
     cursor: pointer;
 
-    &:hover,
     &[data-selected=true] {
       width: 52px;
       padding: 0;
       color: ${(props) => props.$hoverColor};
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        width: 52px;
+        padding: 0;
+        color: ${(props) => props.$hoverColor};
+      }
     }
   }
 

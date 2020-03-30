@@ -9,7 +9,12 @@ import PropTypes from 'prop-types';
 import Header from 'components/Header';
 import { StyledH2, StyledH4 } from 'components/Typography';
 import { BrowserContext } from 'constants/contexts';
-import { email, github, linked } from 'images/icons';
+import {
+  email,
+  github,
+  linked,
+  info,
+} from 'images/icons';
 import {
   backgroundData,
   backgroundDataIndex,
@@ -112,7 +117,7 @@ const MainPage = ({
       </TextBox>
       <IconContainer className="main-page__icon">
         {
-          [email, github, linked].map(({
+          [email, github, linked, info].map(({
             Icon,
             href,
           }) => (

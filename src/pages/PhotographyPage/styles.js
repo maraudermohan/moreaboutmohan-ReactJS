@@ -21,8 +21,7 @@ export const PhotographyPageContainer = styled.main`
     font-family: "Acme", san-serif;
   }
 
-  nav .nav__link-two > .nav__link:last-of-type,
-  nav .nav__link-two > .nav__link:last-of-type:hover {
+  nav .nav__link-two > .nav__link:last-of-type {
     background: transparent;
 
     svg {
@@ -32,6 +31,21 @@ export const PhotographyPageContainer = styled.main`
 
     h4 {
       color: ${colors.BLUSH};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    nav .nav__link-two > .nav__link:last-of-type:hover {
+      background: transparent;
+  
+      svg {
+        color: ${colors.BLUSH}BF;
+        fill: ${colors.BLUSH}BF;
+      }
+  
+      h4 {
+        color: ${colors.BLUSH};
+      }
     }
   }
 

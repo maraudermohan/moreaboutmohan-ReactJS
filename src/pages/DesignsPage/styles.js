@@ -21,8 +21,7 @@ export const DesignsPageContainer = styled.main`
     font-family: "Acme", san-serif;
   }
 
-  nav .nav__link-two > .nav__link:first-of-type,
-  nav .nav__link-two > .nav__link:first-of-type:hover {
+  nav .nav__link-two > .nav__link:first-of-type {
     background: transparent;
 
     svg {
@@ -32,6 +31,21 @@ export const DesignsPageContainer = styled.main`
 
     h4 {
       color: ${colors.APPLE};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    nav .nav__link-two > .nav__link:first-of-type:hover {
+      background: transparent;
+  
+      svg {
+        color: ${colors.APPLE}BF;
+        fill: ${colors.APPLE}BF;
+      }
+  
+      h4 {
+        color: ${colors.APPLE};
+      }
     }
   }
 
@@ -65,7 +79,6 @@ export const DesignRow = styled.div`
   margin: 0 auto;
   padding: 12px 0;
   transition: all 0.5s;
-  justify-content: space-between;
 
   @media ${mq.tablet} {
     max-width: 768px;
@@ -100,10 +113,12 @@ export const DesignButton = styled.a`
     margin: 0 8px 0 0;
   }
 
-  &:hover {
-    background: ${colors.APPLE};
-    box-shadow: 4px 4px 7px ${colors.ABYSS}4D,
-                -1px 8px 7px ${colors.PANTONE}4D;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: ${colors.APPLE};
+      box-shadow: 4px 4px 7px ${colors.ABYSS}4D,
+                  -1px 8px 7px ${colors.PANTONE}4D;
+    }
   }
 `;
 
@@ -122,6 +137,10 @@ export const DesignContentHidden = styled.div`
     ${DesignRow} {
       opacity: 1;
       z-index: 1;
+    }
+
+    .design-page__summary {
+      display: grid;
     }
   }
 
@@ -149,8 +168,10 @@ export const DesignContentHidden = styled.div`
   }
 
   .design-page__summary {
+    display: none;
     grid-column: 1 / 3;
     grid-row: 4;
     margin: 32px auto 0 auto;
+    padding-bottom: 24px;
   }
 `;

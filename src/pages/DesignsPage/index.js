@@ -27,8 +27,6 @@ class DesignsPage extends Component {
       currentRow: -1,
       data: desktopList,
       hiddenElemRef: createRef(null),
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
     };
 
     this.clickHandler = this.clickHandler.bind(this);
@@ -38,22 +36,18 @@ class DesignsPage extends Component {
     this.updateCardList();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    /* eslint-disable */
-    if (prevProps && (
-      prevState.windowWidth !== window.innerWidth || prevState.windowHeight !== window.innerHeight)
-    ) {
-      this.setState({ windowWidth: window.innerWidth, windowHeight: window.innerHeight },
-        () => { this.updateCardList(); });
-    }
-    /* eslint-enable */
+  componentDidUpdate() {
+    this.updateCardList();
   }
 
   updateCardList() {
+    const { data } = this.state;
+    let newData = desktopList;
     if (window.innerWidth < 880) {
-      this.setState({ data: mobileList, currentCard: null, currentRow: -1 });
-    } else {
-      this.setState({ data: desktopList, currentCard: null, currentRow: -1 });
+      newData = mobileList;
+    }
+    if (newData !== data) {
+      this.setState({ data: newData, currentCard: null, currentRow: -1 });
     }
   }
 
@@ -90,84 +84,84 @@ class DesignsPage extends Component {
     const {
       currentCard = null,
       currentRow = null,
-      data = desktopList,
+      data,
       hiddenElemRef = null,
-      windowWidth,
-      windowHeight,
     } = this.state;
 
-    const { breakpoint } = this.context;
-
     return (
-      <DesignsPageContainer className="design-page">
-        <Header />
-        <StyledH1>Design works</StyledH1>
-        <Gradient ref={hiddenElemRef}>
-          {
-            data.map((row, index) => (
-              <Fragment key={`${row[0].title}${row[1].title}`}>
-                <DesignRow>
-                  {
-                    row.map((cardData) => (
-                      <DesignCard
-                        key={cardData.title}
-                        clickHandler={this.clickHandler}
-                        {...cardData}
-                        isCurrent={currentCard && (currentCard.pdf === cardData.pdf)}
-                      />
-                    ))
-                  }
-                </DesignRow>
-                <DesignContentHidden
-                  className={`design-page__hidden ${(currentCard && (currentRow === index)) ? 'selected' : ''}`}
-                >
-                  <DesignRow>
-                    <StyledSubtext className="design-page__time">{currentCard ? currentCard.time : ''}</StyledSubtext>
-                    <StyledParagraph className="design-page__year">{currentCard ? currentCard.year : ''}</StyledParagraph>
-                    <DesignButton
-                      href={currentCard ? currentCard.pdf : ''}
-                      target="_blank"
-                    >
-                      <DownloadIcon />
-                      PDF
-                    </DesignButton>
-                    {
-                      currentCard && (
-                        <>
+      <BrowserContext.Consumer>
+        {
+          ({ breakpoint }) => (
+            <DesignsPageContainer className="design-page">
+              <Header />
+              <StyledH1>Design works</StyledH1>
+              <Gradient ref={hiddenElemRef}>
+                {
+                  data.map((row, index) => (
+                    <Fragment key={`${row[0].title}${row[1].title}`}>
+                      <DesignRow>
+                        {
+                          row.map((cardData) => (
+                            <DesignCard
+                              key={cardData.title}
+                              clickHandler={this.clickHandler}
+                              {...cardData}
+                              isCurrent={currentCard && (currentCard.pdf === cardData.pdf)}
+                            />
+                          ))
+                        }
+                      </DesignRow>
+                      <DesignContentHidden
+                        className={`design-page__hidden ${(currentCard && (currentRow === index)) ? 'selected' : ''}`}
+                      >
+                        <DesignRow>
+                          <StyledSubtext className="design-page__time">{currentCard ? currentCard.time : ''}</StyledSubtext>
+                          <StyledParagraph className="design-page__year">{currentCard ? currentCard.year : ''}</StyledParagraph>
+                          <DesignButton
+                            href={currentCard ? currentCard.pdf : ''}
+                            target="_blank"
+                          >
+                            <DownloadIcon />
+                            PDF
+                          </DesignButton>
                           {
-                            currentCard.video && (
-                              <Video
-                                {...currentCard.video}
-                                height={`${breakpoint < 1 ? Math.round(0.8 * 0.56 * windowWidth) : '280'}`}
-                                width={`${breakpoint < 1 ? Math.round(0.8 * windowWidth) : '500'}`}
-                                autoplay={1}
-                                muted={0}
-                                className="design-page__video"
-                              />
+                            currentCard && (
+                              <>
+                                {
+                                  currentCard.video && (
+                                    <Video
+                                      {...currentCard.video}
+                                      height={`${breakpoint < 1 ? Math.round(0.8 * 0.56 * window.innerWidth) : '280'}`}
+                                      width={`${breakpoint < 1 ? Math.round(0.8 * window.innerWidth) : '500'}`}
+                                      autoplay={1}
+                                      muted={0}
+                                      className="design-page__video"
+                                    />
+                                  )
+                                }
+                              </>
                             )
                           }
-                        </>
-                      )
-                    }
-                    <ContentList
-                      alignment="full"
-                      browserHeight={windowHeight}
-                      data={currentCard ? currentCard.summaryBody : []}
-                      heading={currentCard ? currentCard.summaryHeading : ''}
-                      className="design-page__summary"
-                    />
-                  </DesignRow>
-                </DesignContentHidden>
-              </Fragment>
-            ))
-          }
-        </Gradient>
-        <Footer hoverColor={colors.APPLE} />
-      </DesignsPageContainer>
+                          <ContentList
+                            alignment="full"
+                            browserHeight={window.innerHeight}
+                            data={currentCard ? currentCard.summaryBody : []}
+                            heading={currentCard ? currentCard.summaryHeading : ''}
+                            className="design-page__summary"
+                          />
+                        </DesignRow>
+                      </DesignContentHidden>
+                    </Fragment>
+                  ))
+                }
+              </Gradient>
+              <Footer hoverColor={colors.APPLE} />
+            </DesignsPageContainer>
+          )
+        }
+      </BrowserContext.Consumer>
     );
   }
 }
-
-DesignsPage.contextType = BrowserContext;
 
 export default DesignsPage;

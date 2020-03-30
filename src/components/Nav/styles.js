@@ -51,15 +51,17 @@ export const NavContainer = styled.nav`
       left: 0;
     }
 
-    &:hover {
-      background: ${colors.AZURE};
-      > section > svg {
-        color: ${colors.WHITE};
-        fill: ${colors.WHITE};
-      }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background: ${colors.AZURE};
+        > section > svg {
+          color: ${colors.WHITE};
+          fill: ${colors.WHITE};
+        }
 
-      ${StyledH2} {
-        color: ${colors.WHITE};
+        ${StyledH2} {
+          color: ${colors.WHITE};
+        }
       }
     }
   }
@@ -80,15 +82,17 @@ export const LinkContainer = styled(Link)`
     left: 0;
   }
 
-  &:hover {
-    background: ${(props) => props.background};
-    > section > svg {
-      color: ${colors.WHITE};
-      fill: ${colors.WHITE};
-    }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: ${(props) => props.background};
+      > section > svg {
+        color: ${colors.WHITE};
+        fill: ${colors.WHITE};
+      }
 
-    ${StyledH2} {
-      color: ${colors.WHITE};
+      ${StyledH2} {
+        color: ${colors.WHITE};
+      }
     }
   }
 `;
@@ -146,8 +150,10 @@ export const LinkTwoContainer = styled.div`
     left: 0;
   }
 
-  &:hover {
-    background: ${colors.WHITE}F2;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: ${colors.WHITE}F2;
+    }
   }
 
   @media ${mq.uptoTablet} and (orientation: landscape),
@@ -171,15 +177,17 @@ export const LinkTwoSubContainer = styled(Link)`
   background: transparent;
   text-decoration: none;
 
-  &:hover {
-    background: ${(props) => props.background};
-    > section > svg {
-      color: ${colors.WHITE};
-      fill: ${colors.WHITE};
-    }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: ${(props) => props.background};
+      > section > svg {
+        color: ${colors.WHITE};
+        fill: ${colors.WHITE};
+      }
 
-    ${StyledH4} {
-      color: ${colors.WHITE};
+      ${StyledH4} {
+        color: ${colors.WHITE};
+      }
     }
   }
 
@@ -250,8 +258,10 @@ export const StyledCloseIcon = styled(CloseIcon)`
     opacity: 0.75;
   }
 
-  &:hover {
-    transform: scale(1.2);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   @media ${mq.tablet} {

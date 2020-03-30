@@ -29,9 +29,11 @@ export const HeaderContainer = styled.header`
     transition: all 0.3s;
     text-decoration: none;
 
-    &:hover {
-      text-shadow: 4px 4px 7px ${colors.ABYSS},
-      -1px -1px 7px ${colors.PANTONE};
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        text-shadow: 4px 4px 7px ${colors.ABYSS},
+        -1px -1px 7px ${colors.PANTONE};
+      }
     }
 
     @media ${mq.phone} {
@@ -75,24 +77,26 @@ export const LogoContainer = styled.span`
     transform: rotate(0deg);
   }
 
-  &:hover {
-    width: 67px;
-    height: 67px;
-    margin: 13px 0 0 13px;
-    background: ${colors.AZURE};
-    img {
-      top: 13px;
-      left: 13px;
-      width: 41px;
-      height: 41px; 
-      transform: rotate(360deg);
-    }
-    ${StyledSpan1} {
-      width: 53px;
-      height: 53px;
-      top: 5px;
-      left: 5px;
-      border: 2px solid ${colors.PANTONE};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      width: 67px;
+      height: 67px;
+      margin: 13px 0 0 13px;
+      background: ${colors.AZURE};
+      img {
+        top: 13px;
+        left: 13px;
+        width: 41px;
+        height: 41px; 
+        transform: rotate(360deg);
+      }
+      ${StyledSpan1} {
+        width: 53px;
+        height: 53px;
+        top: 5px;
+        left: 5px;
+        border: 2px solid ${colors.PANTONE};
+      }
     }
   }
 
@@ -102,7 +106,9 @@ export const LogoContainer = styled.span`
 
   @media ${mq.tablet} {
     margin: 20px 0 0 40px;
+  }
 
+  @media ${mq.tablet} and (hover: hover) and (pointer: fine) {
     &:hover {
       margin: 17px 0 0 37px;
     }

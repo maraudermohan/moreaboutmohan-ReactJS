@@ -55,29 +55,46 @@ export const MainPageContainer = styled.main`
       .nav__chevron-right {
         visibility: hidden;
       }
-  
-      .nav__link-two {
-        background: transparent;
+
+      @media (hover: none) {
+        .nav__link,
+        .nav__link-react,
+        .nav__link-two {
+          background: transparent;
+
+          svg, h2, h4 {
+            color: ${colors.LATTE};
+            fill: ${colors.LATTE};
+            text-shadow: 4px 4px 7px ${colors.BLACK}80,
+                        -1px -1px 7px ${colors.BLACK}80;
+          }
+        }
       }
-  
-      .nav__link:not(:hover),
-      .nav__link-react:not(:hover),
-      .nav__link-title,
-      svg,
-      h2,
-      .nav__link-two h4 {
-        background: transparent;
-        color: transparent;
-        fill: transparent;
-      }
-  
-      .nav__link:hover,
-      .nav__link-react:hover {
-        background: ${colors.LATTE}66;
-  
-        svg, h2, h4 {
-          text-shadow: 4px 4px 7px ${colors.BLACK}80,
-                      -1px -1px 7px ${colors.BLACK}80;
+
+      @media (hover: hover) and (pointer: fine) {
+        .nav__link:not(:hover),
+        .nav__link-react:not(:hover),
+        .nav__link-title,
+        svg,
+        h2,
+        .nav__link-two h4 {
+          background: transparent;
+          color: transparent;
+          fill: transparent;
+        }
+
+        .nav__link-two {
+          background: transparent;
+        }
+
+        .nav__link:hover,
+        .nav__link-react:hover {
+          background: ${colors.LATTE}66;
+    
+          svg, h2, h4 {
+            text-shadow: 4px 4px 7px ${colors.BLACK}80,
+                        -1px -1px 7px ${colors.BLACK}80;
+          }
         }
       }
   
@@ -160,10 +177,10 @@ export const TextBox = styled.section`
 export const IconContainer = styled.div`
   display: flex;
   position: fixed;
-  width: 200px;
+  width: 260px;
   height: 72px;
   bottom: 0;
-  right: calc(50% - 100px);
+  right: calc(50% - 130px);
   justify-content: space-between;
   align-items: center;
   z-index: 4;
@@ -177,10 +194,12 @@ export const IconContainer = styled.div`
     cursor: pointer;
     transition: all 0.2s;
 
-    &:hover {
-      width: 46px;
-      height: 46px;
-      margin: 0;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        width: 46px;
+        height: 46px;
+        margin: 0;
+      }
     }
   }
 

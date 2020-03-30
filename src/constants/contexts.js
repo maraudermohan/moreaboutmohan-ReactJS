@@ -23,7 +23,7 @@ export const calcOrientation = (width, height) => {
 };
 
 export const BrowserContext = createContext({
-  breakpoint: 'xs',
+  breakpoint: 2,
   orientation: 'landscape',
 });
 

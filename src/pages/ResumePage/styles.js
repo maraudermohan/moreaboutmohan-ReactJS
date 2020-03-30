@@ -23,8 +23,7 @@ export const ResumePageContainer = styled.main`
     font-family: "Acme", san-serif;
   }
 
-  nav > .nav__link:first-of-type,
-  nav > .nav__link:first-of-type:hover {
+  nav > .nav__link:first-of-type {
     background: ${colors.WHITE}F2;
 
     svg {
@@ -34,6 +33,21 @@ export const ResumePageContainer = styled.main`
 
     .nav__link-title {
       color: ${colors.DAYLILY};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    nav > .nav__link:first-of-type:hover {
+      background: ${colors.WHITE}F2;
+  
+      svg {
+        color: ${colors.DAYLILY}BF;
+        fill: ${colors.DAYLILY}BF;
+      }
+  
+      .nav__link-title {
+        color: ${colors.DAYLILY};
+      }
     }
   }
 
@@ -77,18 +91,20 @@ export const DownloadContainer = styled.a`
     transition: all 0.5s;
   }
 
-  &:hover {
-    > div {
-      display: flex;
-    }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      > div {
+        display: flex;
+      }
 
-    > span {
-      width: 90%;
-    }
-
-    @media ${mq.desktop} {
       > span {
-        width: 800px;
+        width: 90%;
+      }
+
+      @media ${mq.desktop} {
+        > span {
+          width: 800px;
+        }
       }
     }
   }

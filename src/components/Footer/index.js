@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { StyledH3, StyledSubtext } from 'components/Typography';
-import { email, github, linked } from 'images/icons';
+import {
+  email,
+  github,
+  linked,
+  info,
+} from 'images/icons';
 import colors from 'constants/colors';
 import { FooterContainer, FooterLine, IconContainer } from './styles';
 
@@ -47,7 +52,7 @@ class Footer extends Component {
         <StyledH3 className="footer__text">{text}</StyledH3>
         <IconContainer className="footer__icon">
           {
-            [email, github, linked].map(({
+            [email, github, linked, info].map(({
               Icon,
               data,
             }) => (

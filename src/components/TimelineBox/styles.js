@@ -16,8 +16,10 @@ const BoxContainer = styled(Link)`
   opacity: 0;
   text-decoration: none;
 
-  &:hover {
-    cursor: pointer;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   ${(props) => (props.alignment === 'left' ? css`
@@ -114,35 +116,37 @@ const BoxContainer = styled(Link)`
     }
   }
 
-  &.animated:hover {
-    transform: scale(1.03);
+  @media (hover: hover) and (pointer: fine) {
+    &.animated:hover {
+      transform: scale(1.03);
 
-    @media ${mq.desktop} {
-      width: 350px;
-      ${(props) => (props.alignment === 'left' ? css`
-        margin: 0 52% 0 calc(48% - 350px);
-      ` : '')}
-
-      > div {
+      @media ${mq.desktop} {
+        width: 350px;
         ${(props) => (props.alignment === 'left' ? css`
-          padding-right: 19%;
+          margin: 0 52% 0 calc(48% - 350px);
         ` : '')}
+
+        > div {
+          ${(props) => (props.alignment === 'left' ? css`
+            padding-right: 19%;
+          ` : '')}
+        }
       }
-    }
 
-    > span {
-      border-top: 2px solid ${(props) => props.color};
-      border-bottom: 2px solid ${(props) => props.color};
-      ${(props) => (props.alignment === 'left' ? css`
-        background: linear-gradient(90deg, transparent 50%, ${props.color} 50.1%);
-      ` : css`
-        background: linear-gradient(90deg, ${props.color} 50%, transparent 50.1%);
-      `)}
-    }
+      > span {
+        border-top: 2px solid ${(props) => props.color};
+        border-bottom: 2px solid ${(props) => props.color};
+        ${(props) => (props.alignment === 'left' ? css`
+          background: linear-gradient(90deg, transparent 50%, ${props.color} 50.1%);
+        ` : css`
+          background: linear-gradient(90deg, ${props.color} 50%, transparent 50.1%);
+        `)}
+      }
 
-    ${StyledH4},
-    p {
-      color: ${(props) => props.color};
+      ${StyledH4},
+      p {
+        color: ${(props) => props.color};
+      }
     }
   }
 `;

@@ -29,8 +29,7 @@ export const FilmmakerPageContainer = styled.main`
     font-family: "Lobster", san-serif;
   }
 
-  nav > .nav__link:nth-child(4),
-  nav > .nav__link:nth-child(4):hover {
+  nav > .nav__link:nth-child(4) {
     background: ${colors.WHITE}F2;
 
     svg {
@@ -40,6 +39,21 @@ export const FilmmakerPageContainer = styled.main`
 
     .nav__link-title {
       color: ${colors.MAGENTA};
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    nav > .nav__link:nth-child(4):hover {
+      background: ${colors.WHITE}F2;
+  
+      svg {
+        color: ${colors.MAGENTA}BF;
+        fill: ${colors.MAGENTA}BF;
+      }
+  
+      .nav__link-title {
+        color: ${colors.MAGENTA};
+      }
     }
   }
 
@@ -155,14 +169,16 @@ export const StyledButton = styled.button`
   transition: all 0.3s;
   cursor: pointer;
 
-  &:hover {
-    background: ${(props) => (props.$selected ? `${colors.LATTE}D9` : colors.LATTE)};
-    color: ${colors.APPLE};
-    font-size: 18px;
-    svg {
-      transform: scale(1.2);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background: ${(props) => (props.$selected ? `${colors.LATTE}D9` : colors.LATTE)};
       color: ${colors.APPLE};
-      fill: ${colors.APPLE};
+      font-size: 18px;
+      svg {
+        transform: scale(1.2);
+        color: ${colors.APPLE};
+        fill: ${colors.APPLE};
+      }
     }
   }
 

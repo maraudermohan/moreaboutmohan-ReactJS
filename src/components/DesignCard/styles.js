@@ -7,31 +7,32 @@ const DesignCardContainer = styled.div`
   width: calc(50% - 8px);
   height: 180px;
   position: relative;
-  border: 4px solid ${colors.LATTE};
+  margin: 0 4px;
+  border: 1px solid ${colors.LATTE};
   border-radius: 4px;
   transition: all 0.3s;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 
-  &:hover {
-    cursor: pointer;
-    .design-card__overlay {
-      width: 100%;
-    }
-  
-    .design-card__image {
-      background-image: url(${(props) => props.$hoverImg});
-    }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      .design-card__overlay {
+        width: 100%;
+      }
+    
+      .design-card__image {
+        background-image: url(${(props) => props.$hoverImg});
+      }
 
-    .design-card__title {
-      opacity: 1;
+      .design-card__title {
+        opacity: 1;
+      }
     }
   }
 
   &.selected {
-    border: 4px solid ${colors.LATTE};
-
     .design-card__triangle {
       display: block;
     }
@@ -40,7 +41,7 @@ const DesignCardContainer = styled.div`
   @media (min-width: 880px) {
     width: calc(33.33% - 8px);
     height: 240px;
-    margin: 0 4px;
+    border: 4px solid ${colors.LATTE};
 
     .design-card__title {
       font-size: 17px;
@@ -92,12 +93,16 @@ const DesignCardContainer = styled.div`
     width: 0;
     height: 0;
     z-index: 4;
-    bottom: -36px;
+    bottom: -33px;
     border: 16px solid ${colors.LATTE};
     border-bottom-color: transparent;
     border-right-color: transparent;
     border-left-color: transparent;
     transition: all 0.4s;
+
+    @media (min-width: 880px) {
+      bottom: -36px;
+    }
   }
 `;
 
