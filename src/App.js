@@ -20,6 +20,7 @@ const MegalodonPage = lazy(() => import('pages/MegalodonPage'));
 const NokiaPage = lazy(() => import('pages/NokiaPage'));
 const BachelorPage = lazy(() => import('pages/BachelorPage'));
 const CarnegiePage = lazy(() => import('pages/CarnegiePage'));
+const Imagetile = lazy(() => import('reactProjects/Imagetile'));
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/resume/nokia" component={NokiaPage} />
             <Route path="/resume/bachelor" component={BachelorPage} />
             <Route path="/resume/carnegie" component={CarnegiePage} />
+            <Route path="/imagetile" component={Imagetile} />
             <Route component={() => <MainPage is404 />} />
           </Switch>
         </ResizeHOC>
