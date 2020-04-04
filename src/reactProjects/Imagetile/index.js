@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import configureStore from 'reactProjects/Imagetile/store/configureStore';
 import App from 'reactProjects/Imagetile/components/App';
 import 'reactProjects/Imagetile/styles/tile_core.css';
-import 'reactProjects/Imagetile/styles/bootstrap.min.css';
+import 'reactProjects/bootstrap.min.css';
 
 const store = configureStore();
 

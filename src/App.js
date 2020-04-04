@@ -21,6 +21,7 @@ const NokiaPage = lazy(() => import('pages/NokiaPage'));
 const BachelorPage = lazy(() => import('pages/BachelorPage'));
 const CarnegiePage = lazy(() => import('pages/CarnegiePage'));
 const Imagetile = lazy(() => import('reactProjects/Imagetile'));
+const CoursesCalendar = lazy(() => import('reactProjects/CoursesCalendar'));
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
             <Route path="/resume/bachelor" component={BachelorPage} />
             <Route path="/resume/carnegie" component={CarnegiePage} />
             <Route path="/imagetile" component={Imagetile} />
+            <Route path="/courses" component={CoursesCalendar} />
             <Route component={() => <MainPage is404 />} />
           </Switch>
         </ResizeHOC>

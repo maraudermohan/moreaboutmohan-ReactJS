@@ -5,7 +5,9 @@ import { ReactComponent as Briefcase } from './briefcase.svg';
 import { ReactComponent as Bulb } from './lightbulb.svg';
 import { ReactComponent as Camera } from './camera.svg';
 import { ReactComponent as CheckCircle } from './check-circle.svg';
+import { ReactComponent as ChevronDown } from './chevron-down.svg';
 import { ReactComponent as ChevronRight } from './chevron-right.svg';
+import { ReactComponent as ChevronUp } from './chevron-up.svg';
 import { ReactComponent as Cinematographer } from './cinematographer.svg';
 import { ReactComponent as Close } from './close.svg';
 import { ReactComponent as Dance } from './dancer.svg';
@@ -13,11 +15,13 @@ import { ReactComponent as Director } from './director.svg';
 import { ReactComponent as Download } from './download.svg';
 import { ReactComponent as Editor } from './editor.svg';
 import { ReactComponent as EmailIcon } from './email.svg';
+import { ReactComponent as Exclaim } from './exclamation.svg';
 import header from './header.ico';
 import { ReactComponent as InfoIcon } from './info.svg';
 import { ReactComponent as Film } from './projector.svg';
 import { ReactComponent as GithubIcon } from './github.svg';
 import { ReactComponent as LinkedIcon } from './linkedin.svg';
+import { ReactComponent as Pencil } from './pencil.svg';
 import { ReactComponent as Performer } from './performer.svg';
 import { ReactComponent as ReactSvg } from './react.svg';
 import { ReactComponent as ShortFilm } from './filmreel.svg';
@@ -56,7 +60,11 @@ export const ArrowRightIcon = ArrowRight;
 
 export const ArrowLeftIcon = ArrowLeft;
 
+export const ChevronDownIcon = ChevronDown;
+
 export const ChevronRightIcon = ChevronRight;
+
+export const ChevronUpIcon = ChevronUp;
 
 export const HeaderIcon = header;
 
@@ -89,3 +97,7 @@ export const DanceIcon = Dance;
 export const ShortFilmIcon = ShortFilm;
 
 export const CheckCircleIcon = CheckCircle;
+
+export const ExclaimIcon = Exclaim;
+
+export const PencilIcon = Pencil;
