@@ -24,7 +24,10 @@ const ImageCarousel = ({
   });
   const browserWidth = window.innerWidth;
   const browserHeight = window.innerHeight;
-
+  const isIphoneIpad = (window.navigator.userAgent.indexOf('iPad') >= 0
+    || window.navigator.userAgent.indexOf('iPhone') >= 0
+    || (window.navigator.userAgent.indexOf('Safari') >= 0
+    && window.navigator.userAgent.indexOf('Version') >= 0));
   const {
     topScroll = 0,
   } = useContext(ScrollPositionContext);
@@ -45,6 +48,7 @@ const ImageCarousel = ({
         containerHeight,
         offsetTop: imagesList.current.offsetTop,
         offsetHeight: imagesList.current.offsetHeight,
+        calculatedMaxWidth: calculateImageWidth(browserWidth, browserHeight),
       });
     }
   }, [browserWidth, slideCss.startedScrolling]);
@@ -102,7 +106,9 @@ const ImageCarousel = ({
               imageUrl={imageUrl}
               imageAlt={imageAlt}
               width={`${Math.floor(0.85 * browserWidth)}px`}
-              height={`${Math.floor((0.85 * browserWidth) / ratio)}px`}
+              height={isIphoneIpad
+                ? `${Math.floor(staticCss.calculatedMaxWidth / ratio)}px`
+                : 'auto'}
               className="image-carousel__img"
             />
           ))

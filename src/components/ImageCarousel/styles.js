@@ -20,7 +20,7 @@ export const calculateImageWidth = (
       width = 270;
     }
   } else {
-    width = browserWidth * 0.9;
+    width = browserWidth * 0.85;
   }
   return width;
 };
