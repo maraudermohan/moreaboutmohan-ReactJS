@@ -1,12 +1,14 @@
-const initializeArea = (area, top, left) => ({
+const initializeArea = (area, top, left, speed) => ({
   type: 'INITIALIZE_AREA',
   area,
   top,
   left,
+  speed,
 });
 
-const movePlayer = (top, left, direction) => ({
+const movePlayer = (area, top, left, direction) => ({
   type: 'MOVE_PLAYER',
+  area,
   top,
   left,
   direction,
@@ -14,6 +16,13 @@ const movePlayer = (top, left, direction) => ({
 
 const createVirus = (id, payload) => ({
   type: 'CREATE_VIRUS',
+  id,
+  payload,
+});
+
+const moveVirus = (id, payload) => ({
+  type: 'MOVE_VIRUS',
+  id,
   payload,
 });
 
@@ -26,5 +35,6 @@ export default {
   initializeArea,
   movePlayer,
   createVirus,
+  moveVirus,
   deleteVirus,
 };

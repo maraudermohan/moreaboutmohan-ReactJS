@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -7,8 +8,7 @@ import { StyledH1, StyledH3, StyledSubtext } from 'components/Typography';
 import colors from 'constants/colors';
 import {
   data,
-  ProjectContainer,
-  ResumePageContainer,
+  ReactPageContainer,
 } from './styles';
 
 // Page component that renders copy and links related to work experience
@@ -18,7 +18,7 @@ const ReactPage = () => {
   useEffect(() => {}, [window.innerWidth, window.innerHeight]);
 
   return (
-    <ResumePageContainer className="resume-page">
+    <ReactPageContainer className="react-page">
       <Header />
       <StyledH1 className="page__title">{'React \xa0 side-projects'}</StyledH1>
       {
@@ -29,28 +29,32 @@ const ReactPage = () => {
           subTitle,
           techInfo,
           href,
-        }) => (
-          <ProjectContainer
-            to={href}
-            key={title}
-            className="react__link"
-          >
-            <LazyLoadImage
-              imageUrl={imageUrl}
-              imageAlt={imageAlt}
-              width={`${0.85 * browserWidth}px`}
-              height={`${0.425 * browserWidth}px`}
-            />
-            <div>
-              <StyledH3 className="react__title">{title}</StyledH3>
-              <StyledSubtext className="react__info">{techInfo}</StyledSubtext>
-              <StyledSubtext className="react__subtitle">{subTitle}</StyledSubtext>
-            </div>
-          </ProjectContainer>
-        ))
+        }) => {
+          const ProjectContainer = title === 'Intuit quickpark' ? 'a' : Link;
+          return (
+            <ProjectContainer
+              to={href}
+              href={href}
+              key={title}
+              className="react-page__link"
+            >
+              <LazyLoadImage
+                imageUrl={imageUrl}
+                imageAlt={imageAlt}
+                width={`${0.85 * browserWidth}px`}
+                height={`${0.425 * browserWidth}px`}
+              />
+              <div>
+                <StyledH3 className="react-page__title">{title}</StyledH3>
+                <StyledSubtext className="react-page__info">{techInfo}</StyledSubtext>
+                <StyledSubtext className="react-page__subtitle">{subTitle}</StyledSubtext>
+              </div>
+            </ProjectContainer>
+          );
+        })
       }
       <Footer hoverColor={colors.AZURE} />
-    </ResumePageContainer>
+    </ReactPageContainer>
   );
 };
 

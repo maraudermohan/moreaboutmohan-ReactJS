@@ -21,20 +21,20 @@ const Player = ({
   const positionKeydownHandler = (event) => {
     let newDirection = direction;
     if (playerTop >= 10 && (event.code === 'KeyW' || event.code === 'ArrowUp')) {
-      playerRef.current.oldTop -= 10;
+      playerRef.current.oldTop -= 20;
     }
     if (playerTop <= (areaLength - 40) && (event.code === 'KeyS' || event.code === 'ArrowDown')) {
-      playerRef.current.oldTop += 10;
+      playerRef.current.oldTop += 20;
     }
     if (playerLeft >= 10 && (event.code === 'KeyA' || event.code === 'ArrowLeft')) {
-      playerRef.current.oldLeft -= 10;
+      playerRef.current.oldLeft -= 20;
       newDirection = 'left';
     }
     if (playerLeft <= (areaLength - 30) && (event.code === 'KeyD' || event.code === 'ArrowRight')) {
-      playerRef.current.oldLeft += 10;
+      playerRef.current.oldLeft += 20;
       newDirection = 'right';
     }
-    movePlayer(playerRef.current.oldTop, playerRef.current.oldLeft, newDirection);
+    movePlayer(areaLength, playerRef.current.oldTop, playerRef.current.oldLeft, newDirection);
   };
 
   useEffect(() => {

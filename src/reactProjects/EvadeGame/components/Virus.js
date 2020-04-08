@@ -1,7 +1,4 @@
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -10,31 +7,52 @@ import actions from '../actions';
 import { VirusStyled } from '../styles';
 
 const Virus = ({
-  top,
-  left,
+  id,
+  currentTop,
+  currentLeft,
+  endTop,
+  endLeft,
+  direction,
+  speed,
+  moveVirus,
+  deleteVirus,
 }) => {
-  const [pos, setPos] = useState({
-    top,
-    left,
-  });
-
   useEffect(() => {
-    setTimeout(() => {
-      if (pos.top < 600) {
-        setPos({
-          top: pos.top + 45,
-          left: pos.left,
-        });
-      }
-    }, 100);
+    let top = currentTop;
+    let left = currentLeft;
+    let shouldDelete = false;
+    if (direction === 'down') {
+      top += speed;
+      shouldDelete = top >= endTop;
+    } else if (direction === 'up') {
+      top -= speed;
+      shouldDelete = top <= endTop;
+    } else if (direction === 'right') {
+      left += speed;
+      shouldDelete = left >= endLeft;
+    } else if (direction === 'left') {
+      left -= speed;
+      shouldDelete = left <= endLeft;
+    }
+    if (shouldDelete) {
+      deleteVirus(id);
+    } else {
+      setTimeout(() => (
+        moveVirus(id, {
+          current: [top, left],
+          end: [endTop, endLeft],
+          direction,
+        })
+      ), 100);
+    }
   });
 
   return (
     <VirusStyled
       className="evade-game__virus"
       style={{
-        top: pos.top,
-        left: pos.left,
+        top: currentTop,
+        left: currentLeft,
       }}
     >
       <VirusIcon />
@@ -44,12 +62,29 @@ const Virus = ({
 };
 
 Virus.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  currentTop: PropTypes.number,
+  currentLeft: PropTypes.number,
+  endTop: PropTypes.number,
+  endLeft: PropTypes.number,
+  direction: PropTypes.string,
+  moveVirus: PropTypes.func,
+  deleteVirus: PropTypes.func,
+  speed: PropTypes.number,
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
+  currentTop: state.virusData[ownProps.id].current[0],
+  currentLeft: state.virusData[ownProps.id].current[1],
+  endTop: state.virusData[ownProps.id].end[0],
+  endLeft: state.virusData[ownProps.id].end[1],
+  direction: state.virusData[ownProps.id].direction,
+  speed: state.speed,
 });
 
 const mapDispatchToProps = {
+  moveVirus: actions.moveVirus,
+  deleteVirus: actions.deleteVirus,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Virus);

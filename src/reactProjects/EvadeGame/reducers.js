@@ -4,6 +4,8 @@ export const initialState = {
     direction: 'right',
   },
   virusData: {},
+  virusStartEndPos: [],
+  speed: 10,
 };
 
 const areaLength = (state = initialState.areaLength, action) => {
@@ -46,6 +48,12 @@ const virusData = (state = initialState.virusData, action) => {
         [action.id]: action.payload,
       };
 
+    case 'MOVE_VIRUS':
+      return {
+        ...state,
+        [action.id]: action.payload,
+      };
+
     case 'DELETE_VIRUS': {
       const obj = { ...state };
       delete obj[action.id];
@@ -57,8 +65,56 @@ const virusData = (state = initialState.virusData, action) => {
   }
 };
 
+const virusStartEndPos = (state = initialState.virusStartEndPos, action) => {
+  const calculate = (newAreaLength, newPlayerTop, newPlayerLeft) => ([
+    {
+      current: [-50, newPlayerLeft],
+      end: [newAreaLength + 50, newPlayerLeft],
+      direction: 'down',
+    },
+    {
+      current: [newPlayerTop, -50],
+      end: [newPlayerTop, newAreaLength + 50],
+      direction: 'right',
+    },
+    {
+      current: [newAreaLength + 50, newPlayerLeft],
+      end: [-50, newPlayerLeft],
+      direction: 'up',
+    },
+    {
+      current: [newPlayerTop, newAreaLength + 50],
+      end: [newPlayerTop, -50],
+      direction: 'left',
+    },
+  ]);
+
+  switch (action.type) {
+    case 'INITIALIZE_AREA':
+      return calculate(action.area, action.top, action.left);
+
+    case 'MOVE_PLAYER':
+      return calculate(action.area, action.top, action.left);
+
+    default:
+      return state;
+  }
+};
+
+const speed = (state = initialState.speed, action) => {
+  switch (action.type) {
+    case 'INITIALIZE_AREA':
+      return action.speed;
+
+    default:
+      return state;
+  }
+};
+
 export default {
   areaLength,
   playerPos,
   virusData,
+  virusStartEndPos,
+  speed,
 };

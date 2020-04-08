@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import actions from '../actions';
 import { AreaContainer } from '../styles';
 import Player from './Player';
-import Virus from './Virus';
+import Levels from './Levels';
 
 const GameArea = ({
   orientation,
@@ -21,7 +21,13 @@ const GameArea = ({
     const newAreaLength = Math.floor((length * 0.85) / 30) * 30;
     const newPlayerTop = Math.floor(newAreaLength / 60) * 30;
     const newPlayerLeft = Math.floor(newAreaLength / 40) * 20;
-    initializeArea(newAreaLength, newPlayerTop, newPlayerLeft);
+    let speed = 10;
+    if (newAreaLength > 600) {
+      speed = 30;
+    } else if (newAreaLength > 300) {
+      speed = 20;
+    }
+    initializeArea(newAreaLength, newPlayerTop, newPlayerLeft, speed);
   }, [orientation]);
 
   return (
@@ -30,7 +36,7 @@ const GameArea = ({
       className="evade-game__area"
     >
       <Player />
-      <Virus top={-25} left={220} />
+      <Levels />
     </AreaContainer>
   );
 };

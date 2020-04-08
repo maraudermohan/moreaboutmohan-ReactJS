@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
@@ -7,8 +6,9 @@ import { StyledH1, StyledSubtext } from 'components/Typography';
 import imagetile from 'images/imagetile1.png';
 import coursescalendar from 'images/coursescalendar.png';
 import evadegame from 'images/evadegame.png';
+import intuitpark from 'images/intuitpark.png';
 
-export const ResumePageContainer = styled.main`
+export const ReactPageContainer = styled.main`
   background: ${colors.PANTONE};
 
   header:not(.scrolling) {
@@ -49,6 +49,7 @@ export const ResumePageContainer = styled.main`
 
   ${StyledH1} {
     padding: 150px 0 100px 0;
+    margin: 0;
     text-align: center;
     color: ${colors.LATTE};
     background: ${colors.AZURE};
@@ -63,157 +64,160 @@ export const ResumePageContainer = styled.main`
     color: ${colors.LATTE};
     text-align: center;
   }
-`;
 
-export const ProjectContainer = styled(Link)`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 420px;
-  border: none;
-  text-decoration: none;
-  background: ${colors.PANTONE};
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  &:first-of-type {
-    background: linear-gradient(180deg, ${colors.AZURE} 50%, ${colors.PANTONE} 50.1%);
-  }
-
-  > div {
-    display: grid;
-    position: relative;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    width: 85%;
-    height: 160px;
-    margin: 0 auto;
-    bottom: 160px;
-    left: 0;
-    z-index: 2;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    background: ${colors.LATTE}E6;
-    box-shadow: 4px -4px 7px ${colors.ABYSS}33,
-                -1px -8px 7px ${colors.PANTONE}33;
-    transition: all 0.3s;
-  }
-
-  img{
+  .react-page__link {
     display: block;
-    margin: 0 auto;
-    border-radius: 7px;
-    transition: all 0.3s;
-  }
-
-  .react__title {
-    grid-column: 1;
-    grid-row: 1;
-    padding: 16px 0 0 24px;
-    color: ${colors.PANTONE};
-    font-family: "El Messiri", san-serif;
-    font-weight: 600;
-  }
-
-  .react__info {
-    margin: 0;
-    padding: 32px 24px 0 0;
-    grid-column: 2;
-    grid-row: 1;
-    color: ${colors.MAGENTA};
-    text-align: right;
-    font-family: "Sen", san-serif;
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .react__subtitle {
-    margin: 0;
-    padding: 0 0 30px 32px;
-    grid-column: 1 / 3;
-    grid-row: 2;
-    justify-self: start;
-    align-self: center;
-    color: ${colors.PANTONE};
-    text-align: left;
-    font-family: "Sen", san-serif;
-    font-size: 18px;
-  }
-
-  @media (hover: hover) and (pointer: fine) {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border: none;
     text-decoration: none;
-    
-    &:hover img,
-    &:hover > div {
-      transform: scale(1.02);
-      opacity: 1;
+    background: ${colors.PANTONE};
+    box-sizing: content-box;
+  
+    &:last-of-type {
+      padding-bottom: 0;
     }
-
-    &:hover > div {
-      background: ${colors.LATTE};
-      bottom: 150px;
+  
+    &:first-of-type {
+      background: linear-gradient(180deg, ${colors.AZURE} 50%, ${colors.PANTONE} 50.1%);
     }
-  }
-
-  @media ${mq.uptoTablet} {
-    height: auto;
-    margin: 0 0 60px 0;
-
+  
     > div {
-      bottom: 7px;
-      background: ${colors.LATTE};
-    }
-
-    &:nth-of-type(3) > div {
-      grid-template-columns: 60% 40%;
-    }
-
-    .react__title {
-      font-size: 20px;
-      padding: 20px 0 0 12px;
+      display: grid;
+      position: relative;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+      width: 85%;
+      height: 160px;
+      margin: 0 auto;
+      bottom: 160px;
+      left: 0;
+      z-index: 2;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+      background: ${colors.LATTE}E6;
+      box-shadow: 4px -4px 7px ${colors.ABYSS}33,
+                  -1px -8px 7px ${colors.PANTONE}33;
+      transition: all 0.3s;
     }
   
-    .react__info {
-      padding: 20px 12px 0 0;
-      font-size: 14px;
-    }
-  
-    .react__subtitle {
-      padding: 0 0 30px 16px;
-      font-size: 16px;
-    }
-  }
-
-  @media ${mq.tablet} and (max-width: 890px) {
-    height: 380px;
-  }
-
-  @media ${mq.tablet} and ${mq.uptoDesktop} {
-    margin: 0 0 80px 0;
-    &:nth-of-type(2) > div {
-      grid-template-columns: 40% 60%;
-    }
-
-    .react__info {
-      padding: 26px 24px 0 0;
-    }
-
-    .react__subtitle {
-      padding: 0 0 30px 24px;
-    }
-  }
-
-  @media ${mq.desktop} {
-    margin: 0 0 120px 0;
     img {
-      width: 840px;
-      height: 420px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 7px;
+      transition: all 0.3s;
     }
+  
+    .react-page__title {
+      grid-column: 1;
+      grid-row: 1;
+      padding: 16px 0 0 24px;
+      color: ${colors.PANTONE};
+      font-family: "El Messiri", san-serif;
+      font-weight: 600;
+    }
+  
+    .react-page__info {
+      margin: 0;
+      padding: 32px 24px 0 0;
+      grid-column: 2;
+      grid-row: 1;
+      color: ${colors.MAGENTA};
+      text-align: right;
+      font-family: "Sen", san-serif;
+      font-size: 16px;
+      font-weight: 500;
+    }
+  
+    .react-page__subtitle {
+      margin: 0;
+      padding: 0 0 30px 32px;
+      grid-column: 1 / 3;
+      grid-row: 2;
+      justify-self: start;
+      align-self: center;
+      color: ${colors.PANTONE};
+      text-align: left;
+      font-family: "Sen", san-serif;
+      font-size: 18px;
+    }
+  
+    @media (hover: hover) and (pointer: fine) {
+      text-decoration: none;
+      
+      &:hover img,
+      &:hover > div {
+        transform: scale(1.02);
+        opacity: 1;
+      }
+  
+      &:hover > div {
+        background: ${colors.LATTE};
+        bottom: 150px;
+      }
+    }
+  
+    @media ${mq.uptoTablet} {
+      height: auto;
+      padding: 0 0 60px 0;
+  
+      > div {
+        bottom: 7px;
+        background: ${colors.LATTE};
+      }
+  
+      &:nth-of-type(3) > div {
+        grid-template-columns: 60% 40%;
+      }
+  
+      .react-page__title {
+        font-size: 20px;
+        padding: 20px 0 0 12px;
+      }
     
-    > div {
-      width: 840px;
+      .react-page__info {
+        padding: 20px 12px 0 0;
+        font-size: 14px;
+      }
+    
+      .react-page__subtitle {
+        padding: 0 0 30px 16px;
+        font-size: 16px;
+      }
+    }
+  
+    @media ${mq.tablet} and (max-width: 890px) {
+      height: 380px;
+    }
+  
+    @media ${mq.tablet} and ${mq.uptoDesktop} {
+      height: 420px;
+      padding: 0 0 80px 0;
+      &:nth-of-type(2) > div {
+        grid-template-columns: 40% 60%;
+      }
+  
+      .react-page__info {
+        padding: 26px 24px 0 0;
+      }
+  
+      .react-page__subtitle {
+        padding: 0 0 30px 24px;
+      }
+    }
+  
+    @media ${mq.desktop} {
+      height: 420px;
+      padding: 0 0 120px 0;
+      img {
+        width: 840px;
+        height: 420px;
+      }
+      
+      > div {
+        width: 840px;
+      }
     }
   }
 `;
@@ -242,5 +246,13 @@ export const data = [
     subTitle: 'A basic calendar app, with a catalog of mock-courses.',
     techInfo: 'React + Redux + Bootstrap. 2016',
     href: '/courses',
+  },
+  {
+    imageUrl: intuitpark,
+    imageAlt: 'intuit parking app',
+    title: 'Intuit quickpark',
+    subTitle: 'Hackathon project building a parking app for employees.',
+    techInfo: 'React + Redux + GoogleMapsApi. 2016',
+    href: 'https://intuitpark.herokuapp.com/',
   },
 ];

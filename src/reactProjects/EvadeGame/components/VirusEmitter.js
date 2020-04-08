@@ -6,20 +6,18 @@ import Virus from './Virus';
 
 const VirusEmitter = ({
   virusData,
-}) => {
-  return (
-    <>
-      {
-        virusData.map((data) => (
-          <Virus
-            key={data}
-            data={data}
-          />
-        ))
-      }
-    </>
-  );
-};
+}) => (
+  <>
+    {
+      Object.keys(virusData).map((id) => (
+        <Virus
+          key={id}
+          id={id}
+        />
+      ))
+    }
+  </>
+);
 
 VirusEmitter.propTypes = {
   virusData: PropTypes.objectOf(PropTypes.objectOf),
@@ -29,7 +27,4 @@ const mapStateToProps = (state) => ({
   virusData: state.virusData,
 });
 
-const mapDispatchToProps = {
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(VirusEmitter);
+export default connect(mapStateToProps)(VirusEmitter);
