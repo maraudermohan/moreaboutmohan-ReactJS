@@ -60,6 +60,7 @@ export const StyledSpan1 = styled.span`
   z-index: 2;
   transition: all 0.3s;
   background: ${colors.LATTE};
+  box-sizing: content-box;
 `;
 
 export const LogoContainer = styled.span`

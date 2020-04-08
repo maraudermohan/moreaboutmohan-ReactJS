@@ -10,6 +10,10 @@ export const StyledMain = styled.main`
   grid-template-rows: auto;
   background: ${colors.PANTONE};
 
+  header a {
+    text-decoration: none;
+  }
+
   ${StyledH1} {
     margin: 0 auto;
     padding: 80px 0 0 0;

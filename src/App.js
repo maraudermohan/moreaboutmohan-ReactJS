@@ -48,7 +48,7 @@ function App() {
             <Route path="/resume/bachelor" component={BachelorPage} />
             <Route path="/resume/carnegie" component={CarnegiePage} />
             <Route path="/imagetile" component={Imagetile} exact />
-            <Route path="/courses" component={CoursesCalendar} exact />
+            <Route path="/courses" component={CoursesCalendar} />
             <Route path="/evade" component={EvadeGame} exact />
             <Route component={() => <MainPage is404 />} />
           </Switch>

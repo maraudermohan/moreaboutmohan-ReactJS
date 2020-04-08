@@ -87,6 +87,7 @@ export const DemoContainer = styled.div`
   text-decoration: none;
   overflow: hidden;
   background: linear-gradient(180deg, ${colors.MAGENTA} 50%, ${colors.LATTE} 50.1%);
+  box-sizing: content-box;
   &.demo-video-container {
     padding: 0 0 120px 0;
     background: ${colors.MAGENTA};
@@ -114,6 +115,7 @@ export const FilterContainer = styled.div`
   grid-template-rows: 28px 100px 100px;
   background: ${colors.MAGENTA};
   transition: all 1s;
+  box-sizing: content-box;
   ${StyledSubtext} {
     color: ${colors.LATTE};
     margin: 0;
@@ -157,6 +159,7 @@ export const CountContainer = styled.div`
   opacity: 1;
   background: ${colors.MAGENTA};
   transition: all 1s;
+  box-sizing: content-box;
 
   ${StyledSubtext},
   ${StyledH2} {

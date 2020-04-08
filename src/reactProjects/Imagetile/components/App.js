@@ -130,7 +130,7 @@ class App extends Component {
     const { url } = this.state;
     const { isImageSelected, moveCounter } = this.props;
     return (
-      <main>
+      <main className="image-tile-page">
         <Header />
         <StyledH1 className="game-title">Image tile game</StyledH1>
         <StyledParagraph className="game-subtitle">

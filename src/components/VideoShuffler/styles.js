@@ -224,6 +224,7 @@ export const ShufflerContainer = styled.div`
   text-decoration: none;
   overflow: hidden;
   background: linear-gradient(180deg, ${colors.MAGENTA} 50%, ${colors.LATTE} 50.1%);
+  box-sizing: content-box;
 `;
 
 export const MainVideoContainer = styled.div`

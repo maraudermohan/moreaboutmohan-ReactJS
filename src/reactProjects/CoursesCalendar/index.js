@@ -15,11 +15,11 @@ const store = configureStore();
 const CoursesCalendar = () => (
   <Provider store={store}>
     <Suspense fallback={<div />} className="page__courses-calendar">
-      <main>
+      <main className="courses-calendar-page">
         <Header />
         <Switch>
           <Route path="/courses" component={CoursesMain} exact />
-          <Route path="/courses/calendar" component={CalendarMain} exact />
+          <Route path="/courses/calendar" component={CalendarMain} />
         </Switch>
       </main>
     </Suspense>

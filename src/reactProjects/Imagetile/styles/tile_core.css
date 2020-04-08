@@ -1,26 +1,29 @@
-main {
-	background-color: #051622 !important;
+main.image-tile-page * {
+	box-sizing: border-box;
 }
-.flex-container {
+main.image-tile-page {
+	background-color: #051622;
+}
+main.image-tile-page .flex-container {
 	display: -webkit-flex;
 	display: flex;
 }
-.game-title {
+main.image-tile-page .game-title {
 	margin: 0;
 	padding: 128px 0 0 0;
 	text-align: center;
 	color: #F7F4E9;
 }
-a,
-a:hover {
+main.image-tile-page a,
+main.image-tile-page a:hover {
 	text-decoration: none !important;
 }
-main h1,
-main p,
-main h4 {
+main.image-tile-page h1,
+main.image-tile-page p,
+main.image-tile-page h4 {
 	color: #F7F4E9;
 }
-.game-subtitle {
+main.image-tile-page .game-subtitle {
 	margin: 0;
 	padding: 0 0 24px 0;
 	font-size: 20px;
@@ -28,10 +31,10 @@ main h4 {
 	color: #F7F4E9;
     font-family: 'Sen', san-serif;
 }
-.game-subtitle a {
+main.image-tile-page .game-subtitle a {
 	display: block;
 }
-.game-subtitle svg {
+main.image-tile-page .game-subtitle svg {
 	width: 44px;
 	height: 44px;
 	margin: 12px 0 1px 0;
@@ -39,27 +42,37 @@ main h4 {
 	transition: all 0.3s;
 	cursor: pointer;
 }
-.game-subtitle svg:hover {
+main.image-tile-page .game-subtitle svg:hover {
 	width: 46px;
 	height: 46px;
 	margin: 11px 0 0 0;
 	color: #F7F4E9;
 }
-.appContainer {
+main.image-tile-page .appContainer {
 	display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 	text-align: center;
 }
-footer {
+main.image-tile-page .appContainer h4 {
+	font-size: 21px;
+	margin-bottom: 12px;
+}
+main.image-tile-page footer {
 	width: 100% !important;
 }
-div.disappear {
+main.image-tile-page div.disappear {
 	text-align: center;
 	margin: 20px; 
 }
-div.appear {
+main.image-tile-page div.disappear p {
+	font-size: 18px;
+}
+main.image-tile-page div.disappear h4 {
+	font-size: 20px;
+}
+main.image-tile-page div.appear {
 	display: none;
 	text-align: center;
 	margin: 5px; 
@@ -68,27 +81,27 @@ div.appear {
 	-webkit-align-items: center;
 	align-items: center;
 }
-.btn.reset-btn {
+main.image-tile-page .btn.reset-btn {
 	display: none;
 	margin: 0 32px 0 0;
 }
 
 @media (min-width: 992px) {
-	.list-of-images {
+	main.image-tile-page .list-of-images {
 		width: 992px;
 	}
 }
-.inputURL {
+main.image-tile-page .inputURL {
 	width: 40%;
 	min-width: 200px;
     margin-right: 20px;
 }
 @media (max-width: 568px) {
-	.inputURL {
+	main.image-tile-page .inputURL {
 		min-width: 180px;
 	}
 }
-.image-item {
+main.image-tile-page .image-item {
 	width: 266px;
     height: 200px;
     display: inline-block;
@@ -100,10 +113,10 @@ div.appear {
 	-moz-transition: transform 1s;
 	transition: transform 1s;
 }
-.image-item:hover {
+main.image-tile-page .image-item:hover {
 	transform: scale(1.05);
 }
-.game-area-container.flex-container {
+main.image-tile-page .game-area-container.flex-container {
 	width: 100%;
 	height: auto;
 	-webkit-justify-content: center;
@@ -111,7 +124,7 @@ div.appear {
 	-webkit-align-items: center;
 	align-items: center;
 }
-div.game-area {
+main.image-tile-page div.game-area {
 	width : 0px;
 	height : auto;
 	padding: 0px;
@@ -119,7 +132,7 @@ div.game-area {
 	background-color: #dddfd4;
 	border: 2px solid #000000;
 }
-.game-tile {
+main.image-tile-page .game-tile {
 	text-align: center;
 	color: white;
 	display: inline-block;
@@ -129,22 +142,22 @@ div.game-area {
 	border: thin solid black;
 	line-height: 0;
 }
-.game-area.ready .game-tile.left, .game-area.ready .game-tile.right,
-.game-area.ready .game-tile.top, .game-area.ready .game-tile.bottom {
+main.image-tile-page .game-area.ready .game-tile.left, .game-area.ready .game-tile.right,
+main.image-tile-page .game-area.ready .game-tile.top, .game-area.ready .game-tile.bottom {
 	border: thin solid red;
 	cursor: pointer;
 }
-.game-area.not-ready .game-tile {
+main.image-tile-page .game-area.not-ready .game-tile {
 	-webkit-transition: left 0.02s, top 0.02s;
 	-moz-transition: left 0.02s, top 0.02s;
 	transition: left 0.02s, top 0.02s;
 }
-.game-area.ready .game-tile {
+main.image-tile-page .game-area.ready .game-tile {
 	-webkit-transition: left 0.25s, top 0.25s;
 	-moz-transition: left 0.25s, top 0.25s;
 	transition: left 0.25s, top 0.25s;
 }
-.game-tile.empty {
+main.image-tile-page .game-tile.empty {
 	display: inline-block;
 	position: absolute;
 	width: 0px;
@@ -152,7 +165,7 @@ div.game-area {
 	border: 0px;
 	line-height: 0;
 }
-.game-banner {
+main.image-tile-page .game-banner {
 	width: 100%;
 	height: 50%;
 	top: 25%;
@@ -165,12 +178,12 @@ div.game-area {
 	-webkit-align-items: center;
 	align-items: center;
 }
-.win {
+main.image-tile-page .win {
 	background-color: limegreen;
 }
-.lose {
+main.image-tile-page .lose {
 	background-color: tomato;
 }
-.shuffle {
+main.image-tile-page .shuffle {
 	background-color: rgba(0,0,0,0.5);
 }
