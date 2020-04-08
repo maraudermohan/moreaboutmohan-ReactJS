@@ -31,22 +31,27 @@ export const carouselProps1 = [
   {
     imageUrl: smallab5,
     imageAlt: 'Smallab wands',
+    ratio: 1.33,
   },
   {
     imageUrl: smallab8,
     imageAlt: 'Clock gameplay',
+    ratio: 1.81,
   },
   {
     imageUrl: smallab10,
     imageAlt: 'Reading gameplay',
+    ratio: 1.78,
   },
   {
     imageUrl: smallab4,
     imageAlt: 'Teaching gameplay',
+    ratio: 1.71,
   },
   {
     imageUrl: smallab6,
     imageAlt: 'Reading gameplay',
+    ratio: 1.8,
   },
 ];
 

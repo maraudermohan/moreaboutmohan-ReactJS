@@ -27,22 +27,27 @@ export const carouselProps1 = [
   {
     imageUrl: smilegate2,
     imageAlt: 'testing',
+    ratio: 1.77,
   },
   {
     imageUrl: smilegate3,
     imageAlt: 'screenshot',
+    ratio: 1.41,
   },
   {
     imageUrl: smilegate5,
     imageAlt: 'Gameplay setup',
+    ratio: 0.75,
   },
   {
     imageUrl: smilegate6,
     imageAlt: 'User testing',
+    ratio: 1.73,
   },
   {
     imageUrl: smilegate7,
     imageAlt: 'Level design',
+    ratio: 1.81,
   },
 ];
 

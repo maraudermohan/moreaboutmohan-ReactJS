@@ -35,36 +35,6 @@ export const NavContainer = styled.nav`
   ${mq.tablet} {
     grid-template-rows: repeat(4, 1fr);
   }
-
-  a.nav__link-react {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: -100%;
-    grid-column: 1;
-    background: ${colors.WHITE}F2;
-    transition: left 0.2s ease-in-out;
-    text-decoration: none;
-
-    &.animated {
-      left: 0;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        background: ${colors.AZURE};
-        > section > svg {
-          color: ${colors.WHITE};
-          fill: ${colors.WHITE};
-        }
-
-        ${StyledH2} {
-          color: ${colors.WHITE};
-        }
-      }
-    }
-  }
 `;
 
 export const LinkContainer = styled(Link)`
@@ -233,7 +203,7 @@ export const NavIcons = [
     title: 'React projects',
     Icon: ReactIcon,
     background: colors.AZURE,
-    href: 'https://github.com/maraudermohan?tab=repositories',
+    href: '/react',
   },
   {
     title: 'Filmmaking',

@@ -28,6 +28,23 @@ main h4 {
 	color: #F7F4E9;
     font-family: 'Sen', san-serif;
 }
+.game-subtitle a {
+	display: block;
+}
+.game-subtitle svg {
+	width: 44px;
+	height: 44px;
+	margin: 12px 0 1px 0;
+	color: #FB9039;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+.game-subtitle svg:hover {
+	width: 46px;
+	height: 46px;
+	margin: 11px 0 0 0;
+	color: #F7F4E9;
+}
 .appContainer {
 	display: flex;
     flex-direction: column;

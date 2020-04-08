@@ -27,6 +27,8 @@ import { ReactComponent as ReactSvg } from './react.svg';
 import { ReactComponent as ShortFilm } from './filmreel.svg';
 import { ReactComponent as Spinner } from './spinner.svg';
 import { ReactComponent as Stopwatch } from './stopwatch.svg';
+import { ReactComponent as Virus } from './virus.svg';
+import { ReactComponent as Walk } from './walk.svg';
 
 export const email = {
   Icon: EmailIcon,
@@ -101,3 +103,7 @@ export const CheckCircleIcon = CheckCircle;
 export const ExclaimIcon = Exclaim;
 
 export const PencilIcon = Pencil;
+
+export const VirusIcon = Virus;
+
+export const WalkIcon = Walk;

@@ -30,30 +30,37 @@ export const carouselProps1 = [
   {
     imageUrl: carnegie1,
     imageAlt: 'testing',
+    ratio: 1.74,
   },
   {
     imageUrl: carnegie2,
     imageAlt: 'screenshot',
+    ratio: 1.72,
   },
   {
     imageUrl: carnegie3,
     imageAlt: 'Gameplay setup',
+    ratio: 1.33,
   },
   {
     imageUrl: carnegie5,
     imageAlt: 'User testing',
+    ratio: 1.74,
   },
   {
     imageUrl: carnegie6,
     imageAlt: 'Level design',
+    ratio: 1.75,
   },
   {
     imageUrl: carnegie8,
     imageAlt: 'Gameplay setup',
+    ratio: 1.33,
   },
   {
     imageUrl: carnegie9,
     imageAlt: 'User testing',
+    ratio: 1.55,
   },
 ];
 

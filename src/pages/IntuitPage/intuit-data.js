@@ -34,18 +34,22 @@ export const carouselProps1 = [
   {
     imageUrl: intuit4,
     imageAlt: 'Header component',
+    ratio: 1.33,
   },
   {
     imageUrl: intuit5,
     imageAlt: 'Hero component',
+    ratio: 1.33,
   },
   {
     imageUrl: intuit9,
     imageAlt: 'Testimonial component',
+    ratio: 2.53,
   },
   {
     imageUrl: intuit10,
     imageAlt: 'Promobanner component',
+    ratio: 4.0,
   },
 ];
 

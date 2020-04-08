@@ -25,10 +25,12 @@ export const carouselProps1 = [
   {
     imageUrl: chefville1,
     imageAlt: 'Title card',
+    ratio: 1.66,
   },
   {
     imageUrl: chefville3,
     imageAlt: 'Gameplay',
+    ratio: 1.43,
   },
 ];
 

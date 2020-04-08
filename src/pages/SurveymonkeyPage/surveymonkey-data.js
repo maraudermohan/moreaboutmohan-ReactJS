@@ -31,18 +31,22 @@ export const carouselProps1 = [
   {
     imageUrl: surveymonkey2,
     imageAlt: 'Pricing module',
+    ratio: 1.29,
   },
   {
     imageUrl: surveymonkey10,
     imageAlt: 'GDPR cookie banner',
+    ratio: 2.1,
   },
   {
     imageUrl: surveymonkey5,
     imageAlt: 'Mobile nav',
+    ratio: 1.29,
   },
   {
     imageUrl: surveymonkey6,
     imageAlt: 'Testimonial component',
+    ratio: 1.25,
   },
 ];
 
@@ -51,10 +55,12 @@ export const carouselProps2 = [
   {
     imageUrl: surveymonkey7,
     imageAlt: 'Triple layout',
+    ratio: 1.79,
   },
   {
     imageUrl: surveymonkey8,
     imageAlt: 'Video component',
+    ratio: 1.27,
   },
 ];
 

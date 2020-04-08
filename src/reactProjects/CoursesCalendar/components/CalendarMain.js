@@ -109,7 +109,7 @@ class CalendarMain extends React.Component {
         <h3 style={{ textAlign: 'center' }}>
           Course list is empty.
           <br />
-          Please start by selecting desired courses!
+          Please start by selecting desired courses in Courses page!
         </h3>
       </div>
     );

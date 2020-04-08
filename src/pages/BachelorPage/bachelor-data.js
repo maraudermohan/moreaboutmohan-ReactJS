@@ -19,10 +19,12 @@ export const carouselProps1 = [
   {
     imageUrl: psg2,
     imageAlt: 'Web CMS',
+    ratio: 1.07,
   },
   {
     imageUrl: psg3,
     imageAlt: 'Web CMS',
+    ratio: 1.06,
   },
 ];
 

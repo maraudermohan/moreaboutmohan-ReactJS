@@ -63,6 +63,20 @@ export const FilmmakerPageContainer = styled.main`
       padding: 150px 0 80px 0;
     }
   }
+
+  .filter-title {
+    padding: 0 2% 32px 2%;
+    color: ${colors.LATTE};
+    background: ${colors.MAGENTA};
+    font-size: 21px;
+    font-family: 'Sen', san-serif;
+
+    @media ${mq.uptoTablet} and (orientation: landscape),
+    ${mq.tablet} {
+      padding: 0 5% 32px 5%;
+      font-size: 28px;
+    }
+  }
 `;
 
 export const DemoContainer = styled.div`
@@ -73,6 +87,10 @@ export const DemoContainer = styled.div`
   text-decoration: none;
   overflow: hidden;
   background: linear-gradient(180deg, ${colors.MAGENTA} 50%, ${colors.LATTE} 50.1%);
+  &.demo-video-container {
+    padding: 0 0 120px 0;
+    background: ${colors.MAGENTA};
+  }
 
   > section {
     display: grid;
@@ -89,9 +107,9 @@ export const DemoContainer = styled.div`
 export const FilterContainer = styled.div`
   display: grid;
   width: 96%;
-  padding: ${(props) => (props.$show ? '0 2% 36px 2%' : '0 2%')};
-  max-height: ${(props) => (props.$show ? '800px' : '0px')};
-  opacity: ${(props) => (props.$show ? 1 : 0)};
+  padding: 0 2% 36px 2%;
+  max-height: 800px;
+  opacity: 1;
   grid-template-columns: 1fr 1fr 8px 1fr;
   grid-template-rows: 28px 100px 100px;
   background: ${colors.MAGENTA};
@@ -113,7 +131,7 @@ export const FilterContainer = styled.div`
   @media ${mq.uptoTablet} and (orientation: landscape),
   ${mq.tablet} {
     width: 90%;
-    padding: ${(props) => (props.$show ? '0 5% 36px 5%' : '0 5%')};
+    padding: 0 5% 36px 5%;
     grid-template-columns: 1fr 1fr 1fr 1fr 12px 1fr 1fr;
     grid-template-rows: 28px 150px;
 
@@ -132,11 +150,11 @@ export const CountContainer = styled.div`
   display: grid;
   width: 100%;
   height: 100px;
-  padding: ${(props) => (props.$show ? '0 0 24px 0' : '0')};
+  padding: 0 0 24px 0;
   justify-content: center;
   justify-items: center;
-  max-height: ${(props) => (props.$show ? '800px' : '0px')};
-  opacity: ${(props) => (props.$show ? 1 : 0)};
+  max-height: 800px;
+  opacity: 1;
   background: ${colors.MAGENTA};
   transition: all 1s;
 

@@ -31,6 +31,24 @@ class FilmmakerPage extends Component {
     };
   }
 
+  componentDidMount() {
+    setTimeout(() => this.setState({
+      filterData: this.updateFilterData(),
+    }), 2000);
+  }
+
+  updateFilterData() {
+    const {
+      filterValues,
+    } = this.state;
+    const newFilterValues = Object.keys(filterValues).filter((key) => !!filterValues[key]);
+    let filteredData = data;
+    for (let index = 0; index < newFilterValues.length; index += 1) {
+      filteredData = filteredData.filter((video) => (video[newFilterValues[index]]));
+    }
+    return (filteredData);
+  }
+
   clickFilterHandler(property, bool) {
     const {
       filterValues,
@@ -54,20 +72,7 @@ class FilmmakerPage extends Component {
   closeDemoReelVideo() {
     setTimeout(() => this.setState({
       demoReelDone: true,
-      filterData: this.updateFilterData(),
     }), 1000);
-  }
-
-  updateFilterData() {
-    const {
-      filterValues,
-    } = this.state;
-    const newFilterValues = Object.keys(filterValues).filter((key) => !!filterValues[key]);
-    let filteredData = data;
-    for (let index = 0; index < newFilterValues.length; index += 1) {
-      filteredData = filteredData.filter((video) => (video[newFilterValues[index]]));
-    }
-    return (filteredData);
   }
 
   render() {
@@ -84,9 +89,23 @@ class FilmmakerPage extends Component {
       <FilmmakerPageContainer className="filmmaker-page">
         <Header />
         <StyledH1>Filmmaker Reel</StyledH1>
-        <FilterContainer
-          $show={demoReelDone}
-        >
+        {
+          !demoReelDone
+            && (
+              <DemoContainer className="demo-video-container">
+                <Video
+                  {...demo}
+                  height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
+                  width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
+                  autoplay={1}
+                  muted={false}
+                  onDone={() => this.closeDemoReelVideo()}
+                />
+              </DemoContainer>
+            )
+        }
+        <StyledH2 className="filter-title">Filter collection by</StyledH2>
+        <FilterContainer>
           <StyledSubtext>Role:</StyledSubtext>
           <StyledSubtext>Type:</StyledSubtext>
           {
@@ -109,14 +128,12 @@ class FilmmakerPage extends Component {
             })
           }
         </FilterContainer>
-        <CountContainer
-          $show={demoReelDone}
-        >
+        <CountContainer>
           <StyledSubtext>Count:</StyledSubtext>
           <StyledH2>{filterData.length}</StyledH2>
         </CountContainer>
         {
-          demoReelDone && filterData.length > 1
+          filterData.length > 1
             && (
               <VideoShuffler
                 videoData={filterData}
@@ -124,22 +141,7 @@ class FilmmakerPage extends Component {
             )
         }
         {
-          !demoReelDone
-            && (
-              <DemoContainer>
-                <Video
-                  {...demo}
-                  height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
-                  width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
-                  autoplay={1}
-                  muted={false}
-                  onDone={() => this.closeDemoReelVideo()}
-                />
-              </DemoContainer>
-            )
-        }
-        {
-          demoReelDone && filterData.length === 1
+          filterData.length === 1
             && (
               <DemoContainer>
                 <Video

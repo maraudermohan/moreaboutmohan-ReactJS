@@ -205,7 +205,14 @@ class CoursesMain extends React.Component {
         </>
       );
     }
-    return null;
+    return (
+      <h2 className="course-title-pseudo">
+        Course list is empty. Please start by selecting desired courses.
+        <p>
+          Once selected, the schedule gets updated in Calendar page.
+        </p>
+      </h2>
+    );
   }
 
   static renderSelectedCourses(value, index) {

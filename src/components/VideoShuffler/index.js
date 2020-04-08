@@ -49,7 +49,8 @@ class VideoShuffler extends Component {
   }
 
   componentWillUnmount() {
-    this.shufflerRef.current.removeEventListener('click touchend', (e) => { this.clickHandler(e); });
+    this.shufflerRef.current.removeEventListener('click', (e) => { this.clickHandler(e); });
+    this.shufflerRef.current.removeEventListener('touchend', (e) => { this.clickHandler(e); });
   }
 
   animatePreload() {

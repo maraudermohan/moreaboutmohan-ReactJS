@@ -95,13 +95,14 @@ const ImageCarousel = ({
           data.map(({
             imageUrl,
             imageAlt,
+            ratio,
           }) => (
             <LazyLoadImage
               key={imageUrl}
               imageUrl={imageUrl}
               imageAlt={imageAlt}
-              width={`${0.9 * browserWidth}px`}
-              height="auto"
+              width={`${Math.floor(0.85 * browserWidth)}px`}
+              height={`${Math.floor((0.85 * browserWidth) / ratio)}px`}
               className="image-carousel__img"
             />
           ))

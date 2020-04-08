@@ -32,26 +32,32 @@ export const carouselProps1 = [
   {
     imageUrl: ea3,
     imageAlt: 'testing',
+    ratio: 1.77,
   },
   {
     imageUrl: ea4,
     imageAlt: 'screenshot',
+    ratio: 1.11,
   },
   {
     imageUrl: ea5,
     imageAlt: 'Gameplay setup',
+    ratio: 1.48,
   },
   {
     imageUrl: ea10,
     imageAlt: 'User testing',
+    ratio: 1.77,
   },
   {
     imageUrl: ea7,
     imageAlt: 'Level design',
+    ratio: 1.33,
   },
   {
     imageUrl: ea6,
     imageAlt: 'Level design',
+    ratio: 1.34,
   },
 ];
 

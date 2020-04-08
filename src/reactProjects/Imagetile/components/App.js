@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import { github } from 'images/icons';
 import { StyledH1, StyledParagraph } from 'components/Typography';
 import photo22 from 'images/photo22.jpg';
 import photo24 from 'images/photo24.jpg';
@@ -132,12 +133,14 @@ class App extends Component {
       <main>
         <Header />
         <StyledH1 className="game-title">Image tile game</StyledH1>
-        <StyledParagraph className="game-subtitle">React + Redux + Bootstrap. Built in 2016</StyledParagraph>
+        <StyledParagraph className="game-subtitle">
+          React + Redux. Built in 2016
+          <a href="https://github.com/maraudermohan/image_tile_game"><github.Icon /></a>
+        </StyledParagraph>
         <div className="flex-container game-area-container">
           <div className="appContainer">
             <h4 style={{ color: '#F7F4E9', padding: '120px 0 0 0' }}>
-              Solve the shuffled image in under 100 moves  |
-              <a href="https://github.com/maraudermohan/image_tile_game">  Github Repo</a>
+              Solve the shuffled image in under 100 moves
             </h4>
             <div className="disappear">
               <p style={{ color: '#F7F4E9' }}>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import { github } from 'images/icons';
+
 // Presentational component for dynamically changing links without resetting the REDUX store
 const Header = ({
   location: {
@@ -13,7 +15,7 @@ const Header = ({
       <Link to="/courses" className={pathname === '/courses' ? 'active' : ''}>Courses</Link>
       <Link to="/courses/calendar" className={pathname === '/courses/calendar' ? 'active' : ''}>Calendar</Link>
     </nav>
-    <h4>My Course-Calendar</h4>
+    <a href="https://github.com/maraudermohan/calendar-data"><github.Icon /></a>
   </header>
 );
 

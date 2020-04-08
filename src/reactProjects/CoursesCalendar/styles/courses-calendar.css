@@ -73,13 +73,23 @@ header nav a.active {
 }
 header h1,
 header h2,
-header h3,
-header h4 {
+header h3 {
   color: white;
 }
-header h4 {
-  font-size: 24px;
+header svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin: 2px;
+  color: white;
+  transition: all 0.3s;
+}
+header svg:hover {
+  width: 38px;
+  height: 38px;
   margin: 0;
+  color: dodgerblue;
+  cursor: pointer;
 }
 .courses-page {
   width: 100%;
@@ -100,12 +110,20 @@ header h4 {
 .courses-page .selected-available-container .course-container {
   margin-bottom: 28px;
 }
-.courses-page .course-title {
+.courses-page .course-title,
+.courses-page .course-title-pseudo {
   width: 94%;
   margin: 0 3%;
   border-bottom: 0;
   padding: 20px 10px 5px 10px;
   cursor: pointer;
+}
+.courses-page .course-title-pseudo {
+  margin: 16px 3% 50px 3%;
+  color: crimson;
+}
+.courses-page .course-title-pseudo p {
+  margin: 8px 0;
 }
 .courses-page .course-title .glyphicon {
   display: none;
@@ -594,7 +612,8 @@ and (max-width: 992px)  {
     font-size: 20px;
     line-height: 20px;
   }
-  .courses-page .course-title {
+  .courses-page .course-title,
+  .courses-page .course-title-pseudo {
     width: 94%;
     font-size: 18px;
     padding: 20px 0px 5px 0px;
@@ -765,8 +784,13 @@ and (max-width: 992px)  {
   }
 }
 
-
 @media screen 
+and (max-width: 768px) {
+  .courses-page .course-title-pseudo {
+    text-align: center;
+  }
+}
+@media screen
 and (min-width: 768px) {
   .courses-page .course-container.selected-courses {
     overflow: scroll;

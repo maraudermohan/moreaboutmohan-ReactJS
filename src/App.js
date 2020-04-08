@@ -7,6 +7,7 @@ import ScrollHOC from 'components/ScrollHOC';
 import MainPage from 'pages/MainPage';
 
 const ResumePage = lazy(() => import('pages/ResumePage'));
+const ReactPage = lazy(() => import('pages/ReactPage'));
 const FilmmakerPage = lazy(() => import('pages/FilmmakerPage'));
 const PhotographyPage = lazy(() => import('pages/PhotographyPage'));
 const DesignsPage = lazy(() => import('pages/DesignsPage'));
@@ -22,6 +23,7 @@ const BachelorPage = lazy(() => import('pages/BachelorPage'));
 const CarnegiePage = lazy(() => import('pages/CarnegiePage'));
 const Imagetile = lazy(() => import('reactProjects/Imagetile'));
 const CoursesCalendar = lazy(() => import('reactProjects/CoursesCalendar'));
+const EvadeGame = lazy(() => import('reactProjects/EvadeGame'));
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
           <Switch>
             <Route path="/" component={MainPage} exact />
             <Route path="/resume" component={ResumePage} exact />
+            <Route path="/react" component={ReactPage} exact />
             <Route path="/filmmaker" component={FilmmakerPage} exact />
             <Route path="/photography" component={PhotographyPage} exact />
             <Route path="/design" component={DesignsPage} exact />
@@ -44,8 +47,9 @@ function App() {
             <Route path="/resume/nokia" component={NokiaPage} />
             <Route path="/resume/bachelor" component={BachelorPage} />
             <Route path="/resume/carnegie" component={CarnegiePage} />
-            <Route path="/imagetile" component={Imagetile} />
-            <Route path="/courses" component={CoursesCalendar} />
+            <Route path="/imagetile" component={Imagetile} exact />
+            <Route path="/courses" component={CoursesCalendar} exact />
+            <Route path="/evade" component={EvadeGame} exact />
             <Route component={() => <MainPage is404 />} />
           </Switch>
         </ResizeHOC>
