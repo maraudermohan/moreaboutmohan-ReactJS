@@ -14,21 +14,28 @@ const movePlayer = (area, top, left, direction) => ({
   direction,
 });
 
-const createVirus = (id, payload) => ({
+const createVirus = (id, payload, isGameReady) => ({
   type: 'CREATE_VIRUS',
   id,
   payload,
+  isGameReady,
 });
 
-const moveVirus = (id, payload) => ({
+const moveVirus = (id, payload, isGameReady) => ({
   type: 'MOVE_VIRUS',
   id,
   payload,
+  isGameReady,
 });
 
 const deleteVirus = (id) => ({
   type: 'DELETE_VIRUS',
   id,
+});
+
+const readyGame = (bool) => ({
+  type: 'READY_GAME',
+  bool,
 });
 
 export default {
@@ -37,4 +44,5 @@ export default {
   createVirus,
   moveVirus,
   deleteVirus,
+  readyGame,
 };

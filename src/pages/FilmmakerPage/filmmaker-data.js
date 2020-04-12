@@ -295,6 +295,15 @@ const videos = [
     'Short-Films': true,
   },
   {
+    title: 'game-trailer',
+    player: 'youtube',
+    url: 'aN0ZXV8ux58',
+    start: 0,
+    Director: true,
+    Editor: true,
+    'Short-Films': true,
+  },
+  {
     title: 'Dont-stop-dance',
     player: 'youtube',
     url: 'aj9-E4-mTA4',
@@ -400,6 +409,15 @@ const videos = [
     start: 63,
     Director: true,
     'Dance-Videos': true,
+  },
+  {
+    title: 'etc-music-video',
+    player: 'youtube',
+    url: 'VORhnpUUtig',
+    start: 10,
+    Director: true,
+    Editor: true,
+    'Dance-Films': true,
   },
 ];
 

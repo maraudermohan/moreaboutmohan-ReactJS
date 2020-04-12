@@ -4,18 +4,24 @@ import React, {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { StyledH2, StyledParagraph } from 'components/Typography';
 import actions from '../actions';
-import { AreaContainer } from '../styles';
+import {
+  AreaContainer,
+  ReadyGameContainer,
+  ScoreContainer,
+} from '../styles';
 import Player from './Player';
 import Levels from './Levels';
 
 const GameArea = ({
   orientation,
   areaLength,
+  gameScore,
+  isGameReady,
   initializeArea,
+  readyGame,
 }) => {
-  // const [area, setArea] = useState(0);
-
   useEffect(() => {
     const length = (orientation === 'landscape') ? window.innerHeight : window.innerWidth;
     const newAreaLength = Math.floor((length * 0.85) / 30) * 30;
@@ -31,31 +37,54 @@ const GameArea = ({
   }, [orientation]);
 
   return (
-    <AreaContainer
-      $length={areaLength}
-      className="evade-game__area"
-    >
-      <Player />
-      <Levels />
-    </AreaContainer>
+    <>
+      <AreaContainer
+        $length={areaLength}
+        className="evade-game__area"
+      >
+        <Player />
+        {
+          isGameReady
+            ? (
+              <>
+                <Levels />
+                <ScoreContainer>
+                  <StyledH2 className="game__score-value">{`${gameScore} \xa0 `}</StyledH2>
+                </ScoreContainer>
+              </>
+            ) : (
+              <ReadyGameContainer onClick={() => readyGame(true)}>
+                {
+                  gameScore !== null
+                    && <StyledParagraph>{`You scored ${gameScore}`}</StyledParagraph>
+                }
+                <StyledH2>Ready for new game?</StyledH2>
+              </ReadyGameContainer>
+            )
+        }
+      </AreaContainer>
+    </>
   );
 };
 
 GameArea.propTypes = {
   orientation: PropTypes.string,
   areaLength: PropTypes.number,
+  gameScore: PropTypes.number,
+  isGameReady: PropTypes.bool,
   initializeArea: PropTypes.func,
+  readyGame: PropTypes.func,
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return ({
-    areaLength: state.areaLength,
-  });
-};
+const mapStateToProps = (state) => ({
+  areaLength: state.areaLength,
+  gameScore: state.gameScore,
+  isGameReady: state.isGameReady,
+});
 
 const mapDispatchToProps = {
   initializeArea: actions.initializeArea,
+  readyGame: actions.readyGame,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameArea);

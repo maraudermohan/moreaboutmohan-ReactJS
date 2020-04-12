@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-import { StyledH1, StyledParagraph } from 'components/Typography';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 
@@ -14,7 +13,7 @@ export const StyledMain = styled.main`
     text-decoration: none;
   }
 
-  ${StyledH1} {
+  .game-title {
     margin: 0 auto;
     padding: 80px 0 0 0;
     text-align: center;
@@ -57,7 +56,7 @@ export const StyledMain = styled.main`
       color: ${colors.LATTE};
     }
 
-    ${StyledParagraph} {
+    .game-subtitle {
       margin: 0;
     }
   }
@@ -102,6 +101,29 @@ export const VirusStyled = styled.span`
     height: 25px;
     color: ${colors.PANTONE};
   }
+`;
+
+export const ScoreContainer = styled.div`
+  .game__score-value {
+    display: block;
+    float: right;
+    margin: 0;
+    line-height: 40px;
+    color: ${colors.APPLE};
+  }
+`;
+
+export const ReadyGameContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg,${colors.APPLE}CC 10%, #60c23999 90%),
+              linear-gradient(45deg,${colors.APPLE}66 10%, #60c23966 30%),
+              linear-gradient(225deg,${colors.APPLE}99 10%, #60c239CC 30%);
 `;
 
 export const FooterLine = styled.span`

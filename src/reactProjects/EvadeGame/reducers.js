@@ -6,6 +6,7 @@ export const initialState = {
   virusData: {},
   virusStartEndPos: [],
   speed: 10,
+  isGameReady: false,
 };
 
 const areaLength = (state = initialState.areaLength, action) => {
@@ -43,22 +44,31 @@ const playerPos = (state = initialState.playerPos, action) => {
 const virusData = (state = initialState.virusData, action) => {
   switch (action.type) {
     case 'CREATE_VIRUS':
-      return {
-        ...state,
-        [action.id]: action.payload,
-      };
+      if (action.isGameReady) {
+        return {
+          ...state,
+          [action.id]: action.payload,
+        };
+      }
+      return {};
 
     case 'MOVE_VIRUS':
-      return {
-        ...state,
-        [action.id]: action.payload,
-      };
+      if (action.isGameReady) {
+        return {
+          ...state,
+          [action.id]: action.payload,
+        };
+      }
+      return {};
 
     case 'DELETE_VIRUS': {
       const obj = { ...state };
       delete obj[action.id];
       return obj;
     }
+
+    case 'READY_GAME':
+      return action.bool ? state : {};
 
     default:
       return state;
@@ -111,10 +121,37 @@ const speed = (state = initialState.speed, action) => {
   }
 };
 
+const isGameReady = (state = initialState.isGameReady, action) => {
+  switch (action.type) {
+    case 'READY_GAME':
+      return action.bool;
+
+    default:
+      return state;
+  }
+};
+
+const gameScore = (state = null, action) => {
+  switch (action.type) {
+    case 'READY_GAME':
+      return action.bool ? 0 : state;
+
+    case 'DELETE_VIRUS': {
+      const newScore = state + 1;
+      return newScore;
+    }
+
+    default:
+      return state;
+  }
+};
+
 export default {
   areaLength,
   playerPos,
   virusData,
   virusStartEndPos,
   speed,
+  gameScore,
+  isGameReady,
 };

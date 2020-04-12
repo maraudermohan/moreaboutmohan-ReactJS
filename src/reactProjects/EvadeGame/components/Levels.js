@@ -3,58 +3,61 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import actions from '../actions';
-import VirusEmitter from './VirusEmitter';
+import Virus from './Virus';
 
 const Levels = ({
-  playerTop,
-  playerLeft,
   virusData,
   virusStartEndPos,
+  gameScore,
+  isGameReady,
   createVirus,
 }) => {
   const emitVirus = () => {
     const randomIndex = Math.floor(Math.random() * 4);
-    let newId = 0;
+    let newId = Math.floor(Math.random() * 50);
     while (Object.prototype.hasOwnProperty.call(virusData, newId)) {
       newId += 1;
     }
-    createVirus(newId, virusStartEndPos[randomIndex]);
+    createVirus(newId, virusStartEndPos[randomIndex], isGameReady);
   };
 
   useEffect(() => {
-    if (playerTop && playerLeft
-      && Object.keys(virusData).length === 0) {
+    if (Object.keys(virusData).length === 0) {
+      emitVirus();
+    } else if (gameScore > 3 && Object.keys(virusData).length < 3) {
       emitVirus();
     }
   }, [
-    virusData,
-    playerTop,
-    playerLeft,
+    Object.keys(virusData).length,
   ]);
 
   return (
     <>
       {
-        Object.keys(virusData).length
-          && <VirusEmitter />
+        Object.keys(virusData).map((id) => (
+          <Virus
+            key={id}
+            id={id}
+          />
+        ))
       }
     </>
   );
 };
 
 Levels.propTypes = {
-  playerTop: PropTypes.number,
-  playerLeft: PropTypes.number,
   virusData: PropTypes.objectOf(PropTypes.objectOf),
   virusStartEndPos: PropTypes.arrayOf(PropTypes.object),
+  gameScore: PropTypes.number,
+  isGameReady: PropTypes.bool,
   createVirus: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({
-  playerTop: state.playerPos.top,
-  playerLeft: state.playerPos.left,
   virusData: state.virusData,
   virusStartEndPos: state.virusStartEndPos,
+  gameScore: state.gameScore,
+  isGameReady: state.isGameReady,
 });
 
 const mapDispatchToProps = {
