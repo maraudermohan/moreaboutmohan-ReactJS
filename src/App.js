@@ -24,6 +24,7 @@ const CarnegiePage = lazy(() => import('pages/CarnegiePage'));
 const Imagetile = lazy(() => import('reactProjects/Imagetile'));
 const CoursesCalendar = lazy(() => import('reactProjects/CoursesCalendar'));
 const EvadeGame = lazy(() => import('reactProjects/EvadeGame'));
+const CourseRegexSearch = lazy(() => import('reactProjects/CourseRegexSearch'));
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path="/imagetile" component={Imagetile} exact />
             <Route path="/courses" component={CoursesCalendar} />
             <Route path="/evade" component={EvadeGame} exact />
+            <Route path="/regexsearch" component={CourseRegexSearch} exact />
             <Route component={() => <MainPage is404 />} />
           </Switch>
         </ResizeHOC>

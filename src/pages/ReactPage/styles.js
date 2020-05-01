@@ -7,6 +7,7 @@ import imagetile from 'images/imagetile1.png';
 import coursescalendar from 'images/coursescalendar.png';
 import evadegame from 'images/evadegame.png';
 import intuitpark from 'images/intuitpark.png';
+import regexsearch from 'images/regexsearch.png';
 
 export const ReactPageContainer = styled.main`
   background: ${colors.PANTONE};
@@ -230,6 +231,14 @@ export const data = [
     subTitle: 'Selected image is split into tiles and randomized. Solve it in less than 100 moves.',
     techInfo: 'React + Redux + Bootstrap. 2016',
     href: '/imagetile',
+  },
+  {
+    imageUrl: regexsearch,
+    imageAlt: 'Regex match & capture',
+    title: 'Regex match & capture',
+    subTitle: 'Validate the input entered, based on the format mock-course-data specified.',
+    techInfo: 'React + Styled-components + regex',
+    href: '/regexsearch',
   },
   {
     imageUrl: evadegame,
