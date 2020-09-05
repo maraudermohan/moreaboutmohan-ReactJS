@@ -40,9 +40,9 @@ const platformer = {
   year: 'Sep 2012',
   summaryHeading: 'Factory Fiasco - \'Temple Run\' from the side view',
   summaryBody: [
-    'This personal project is about designing a side-scrolling, fast-paced, action platformer.',
+    'Personal project - design a side-scrolling, fast-paced, action platformer.',
     'Level design document holds a sample level, aimed for a short-and-fast gameplay with an engaging interest curve.',
-    'Temple Run, Ninjump and many other iOS games have been an inspiration for my design.',
+    'Temple Run, Ninjump and many other iOS games have been an inspiration for this design.',
   ],
 };
 
@@ -85,7 +85,7 @@ const portal = {
   year: 'Apr 2012',
   summaryHeading: 'FPS Level Designs for action-adventure genre',
   summaryBody: [
-    'A personal design project for the first person shooters like Portal. Tools :  Maya & AfterEffects.',
+    'Personal project - design a first person shooter like Portal. Tools :  Maya & AfterEffects.',
     'Designed two levels - a) Egyptian ruins & b) Industrial room, both filled with sudden surprises & heavy combat.',
     'I took references from ancient Egyptian places like Temple of Philae and the great \'Temple of Abu Simbel\'.',
   ],
@@ -121,7 +121,7 @@ const tag = {
   year: 'Feb 2012',
   summaryHeading: '\'Cell\'ular Tag - game expansion',
   summaryBody: [
-    'A personal design project - variant of \'Tag\' that was designed to interest adults as well as kids.',
+    'Personal design project - variant of \'Tag\' that was designed to interest adults as well as kids.',
     'Tag is a fast-paced, fun game involving chasing and tagging players - famous for its simplicity and ease of play.',
     'This variant of Tag gives the players a choice between just running hard versus strategy.',
   ],
@@ -151,7 +151,7 @@ const masquerade = {
   year: 'Apr 2012',
   summaryHeading: 'Masquerade Murder - NFC enabled board game',
   summaryBody: [
-    'A personal game design project using NFC/Bluetooth enabled, mobile devices.',
+    'Personal project - design a game for NFC/Bluetooth enabled, mobile devices.',
     'Masquerade Murder is an unique social - strategy board game, for 2-5 players.',
     'Players take up the roles, each with their own mission and an unique ability necessary to succeed.',
   ],

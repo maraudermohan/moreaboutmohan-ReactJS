@@ -103,7 +103,7 @@ export const summary3 = [
 
 export const summary4 = [
   'Final product was a competitive multiplayer car-racing game with \'Temple-Run\' style controls.',
-  'Game setup : a central iPad serving as the host and the game screen, while multiple iPhones as controllers.',
+  'Game setup : a central iPad serves as the host game-screen, while multiple iPhones as controllers.',
 ];
 
 export const summary5 = [

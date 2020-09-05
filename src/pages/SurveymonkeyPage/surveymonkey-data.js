@@ -90,28 +90,28 @@ export const jobTitle = {
 };
 
 export const duration = {
-  heading: '3+ years',
-  subHeading: 'Dec 2016 to Present',
+  heading: '~4 years',
+  subHeading: 'Dec 2016 to Sep 2020',
 };
 
 export const summary1 = [
   'Lead frontend engineer in high profile projects such as',
-  '• Brand/theme refresh \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 • GDPR Cookie banner',
-  '• Design pattern library from ground-up using React',
+  '• Brand/theme UI refresh \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 \xa0 • React Component library',
+  '• Migrate legacy code to React ecosystem \xa0 \xa0 \xa0 \xa0 \xa0 • GDPR compliance',
 ];
 
 export const summary2 = [
   'Lead engineer in high-traffic pages like /Enterprise, /Business and /Surveymonkey-Customers.',
-  'Key contributor in Legal Center pages, especially sidebar.',
+  'Key contributor in Legal Center pages, especially sidebar and asset-dropdown components.',
 ];
 
 export const summary3 = [
-  'Developed and maintaining responsive, dynamic REACT components in our CMS architecture.',
-  'Collaborating closely with Creative/Product team in feature specifications, feasibility study, effort estimates & facilitating technical decision.',
+  'Developed and maintained responsive, dynamic REACT components in our CMS architecture.',
+  'Collaborated closely with Creative/Product team in feature specifications, feasibility study, effort estimates & facilitating technical decision.',
 ];
 
 export const summary4 = [
-  'Key contributor in A/B testing using experiment-service.',
+  'Key contributor in A/B testing and UI experiments.',
   'Contributed in Search-engine-optimization, Google Analytics and Google Tag Manager scripts.',
   'Also, contributed in Localization and Internalization tasks.',
 ];

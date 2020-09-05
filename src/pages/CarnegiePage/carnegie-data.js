@@ -122,7 +122,7 @@ export const summary2 = [
 ];
 
 export const summary3 = [
-  'Create a highly interactive world involving the theme of Fear.',
+  'Created a highly interactive world involving the theme of Fear.',
   'Designed using Xbox Kinect to create a first person adventure game - escape from drowning in a shaft.',
   'Designed kinect gestures that were intuitive and an engaging screenplay to establish the high stakes and urgency of the character to escape.',
   'Modeled the 3D assets using Autodesk Maya.',
