@@ -21,6 +21,7 @@ const MegalodonPage = lazy(() => import('pages/MegalodonPage'));
 const NokiaPage = lazy(() => import('pages/NokiaPage'));
 const BachelorPage = lazy(() => import('pages/BachelorPage'));
 const CarnegiePage = lazy(() => import('pages/CarnegiePage'));
+const InfiniteScroll = lazy(() => import('reactProjects/InfiniteScroll'));
 const Imagetile = lazy(() => import('reactProjects/Imagetile'));
 const CoursesCalendar = lazy(() => import('reactProjects/CoursesCalendar'));
 const EvadeGame = lazy(() => import('reactProjects/EvadeGame'));
@@ -48,6 +49,7 @@ function App() {
             <Route path="/resume/nokia" component={NokiaPage} />
             <Route path="/resume/bachelor" component={BachelorPage} />
             <Route path="/resume/carnegie" component={CarnegiePage} />
+            <Route path="/infinite" component={InfiniteScroll} exact />
             <Route path="/imagetile" component={Imagetile} exact />
             <Route path="/courses" component={CoursesCalendar} />
             <Route path="/evade" component={EvadeGame} exact />

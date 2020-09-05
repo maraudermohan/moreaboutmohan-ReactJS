@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH1, StyledSubtext } from 'components/Typography';
+import infinitescroll from 'images/infinitescroll.png';
 import imagetile from 'images/imagetile1.png';
 import coursescalendar from 'images/coursescalendar.png';
 import evadegame from 'images/evadegame.png';
@@ -224,6 +225,14 @@ export const ReactPageContainer = styled.main`
 `;
 
 export const data = [
+  {
+    imageUrl: infinitescroll,
+    imageAlt: 'infinite scroll module',
+    title: 'Infinite scrolling',
+    subTitle: 'An infinite scrolling list of images, which are dynamically lazy-loaded to the DOM on entering the viewport.',
+    techInfo: 'JavaScript (Intersection observer API). 2020',
+    href: '/infinite',
+  },
   {
     imageUrl: imagetile,
     imageAlt: 'image tile game',
