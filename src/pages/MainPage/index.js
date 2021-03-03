@@ -112,7 +112,7 @@ const MainPage = ({
                 <br />
                 with &lsquo;Game Designer&rsquo; skills
                 <br />
-                9+ years of experience
+                11+ years of experience
                 <br />
                 Fueled by passion & creativity
               </StyledH4>
