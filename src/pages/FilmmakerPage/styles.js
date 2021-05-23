@@ -147,7 +147,6 @@ export const FilterContainer = styled.div`
   }
 `;
 
-
 export const CountContainer = styled.div`
   display: grid;
   width: 100%;

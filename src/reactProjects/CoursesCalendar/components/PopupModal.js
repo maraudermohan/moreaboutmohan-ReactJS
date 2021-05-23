@@ -208,7 +208,6 @@ class PopupModal extends React.Component {
   }
 }
 
-
 PopupModal.propTypes = {
   catalog: PropTypes.arrayOf(PropTypes.object),
   currentSelection: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])),

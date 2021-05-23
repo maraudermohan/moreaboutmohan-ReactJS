@@ -1,4 +1,3 @@
-
 import carnegie1 from 'images/carnegie1.jpg';
 import carnegie2 from 'images/carnegie2.jpg';
 import carnegie3 from 'images/carnegie3.jpg';

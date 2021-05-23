@@ -92,7 +92,6 @@ const shuffleCounter = (state = 50, action) => {
   }
 };
 
-
 const moveCounter = (state = 0, action) => {
   switch (action.type) {
     case 'TOGGLE_GAME_READY':

@@ -71,10 +71,6 @@ const MainPage = ({
         setTimeout(() => { throttle = false; }, 150);
       }
     });
-
-    return (() => {
-      imageBgRef.current.removeEventListener('mousemove', () => {});
-    });
   }, []);
 
   return (

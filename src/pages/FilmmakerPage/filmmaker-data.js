@@ -16,6 +16,15 @@ const videos = [
     'Dance-Videos': true,
   },
   {
+    title: 'Prema Prema',
+    player: 'youtube',
+    url: 'fplAPb4FEx0',
+    start: 0,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+  },
+  {
     title: 'Visweta-Aladdin',
     player: 'youtube',
     url: 'Pc1_dJzxf68',

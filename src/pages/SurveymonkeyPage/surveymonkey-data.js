@@ -50,7 +50,6 @@ export const carouselProps1 = [
   },
 ];
 
-
 export const carouselProps2 = [
   {
     imageUrl: surveymonkey7,
