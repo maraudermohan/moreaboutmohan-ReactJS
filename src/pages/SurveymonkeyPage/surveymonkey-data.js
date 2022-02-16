@@ -112,5 +112,5 @@ export const summary3 = [
 export const summary4 = [
   'Key contributor in A/B testing and UI experiments.',
   'Contributed in Search-engine-optimization, Google Analytics and Google Tag Manager scripts.',
-  'Also, contributed in Localization and Internalization tasks.',
+  'Also, contributed in Localization and Internationalization tasks.',
 ];

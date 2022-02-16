@@ -1,7 +1,7 @@
 {
   "name": "moreaboutmohan",
   "homepage": "https://www.moreaboutmohan.com",
-  "version": "2.1.0",
+  "version": "2.6.0",
   "description": "Portfolio - Mohan Subramanian",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",

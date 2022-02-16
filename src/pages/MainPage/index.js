@@ -104,7 +104,7 @@ const MainPage = ({
               </StyledH4>
             ) : (
               <StyledH4>
-                Senior Frontend Developer
+                Principal Frontend Engineer
                 <br />
                 with &lsquo;Game Designer&rsquo; skills
                 <br />
