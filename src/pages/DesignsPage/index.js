@@ -125,21 +125,15 @@ class DesignsPage extends Component {
                             PDF
                           </DesignButton>
                           {
-                            currentCard && (
-                              <>
-                                {
-                                  currentCard.video && (
-                                    <Video
-                                      {...currentCard.video}
-                                      height={`${breakpoint < 1 ? Math.round(0.8 * 0.56 * window.innerWidth) : '280'}`}
-                                      width={`${breakpoint < 1 ? Math.round(0.8 * window.innerWidth) : '500'}`}
-                                      autoplay={1}
-                                      muted={0}
-                                      className="design-page__video"
-                                    />
-                                  )
-                                }
-                              </>
+                            currentCard && currentCard.video && (
+                              <Video
+                                {...currentCard.video}
+                                height={`${breakpoint < 1 ? Math.round(0.8 * 0.56 * window.innerWidth) : '280'}`}
+                                width={`${breakpoint < 1 ? Math.round(0.8 * window.innerWidth) : '500'}`}
+                                autoplay={1}
+                                muted={0}
+                                className="design-page__video"
+                              />
                             )
                           }
                           <ContentList

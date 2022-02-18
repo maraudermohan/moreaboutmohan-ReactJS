@@ -37,33 +37,31 @@ const GameArea = ({
   }, [orientation]);
 
   return (
-    <>
-      <AreaContainer
-        $length={areaLength}
-        className="evade-game__area"
-      >
-        <Player />
-        {
-          isGameReady
-            ? (
-              <>
-                <Levels />
-                <ScoreContainer>
-                  <StyledH2 className="game__score-value">{`${gameScore} \xa0 `}</StyledH2>
-                </ScoreContainer>
-              </>
-            ) : (
-              <ReadyGameContainer onClick={() => readyGame(true)}>
-                {
-                  gameScore !== null
-                    && <StyledParagraph>{`You scored ${gameScore}`}</StyledParagraph>
-                }
-                <StyledH2>Ready for new game?</StyledH2>
-              </ReadyGameContainer>
-            )
-        }
-      </AreaContainer>
-    </>
+    <AreaContainer
+      $length={areaLength}
+      className="evade-game__area"
+    >
+      <Player />
+      {
+        isGameReady
+          ? (
+            <>
+              <Levels />
+              <ScoreContainer>
+                <StyledH2 className="game__score-value">{`${gameScore} \xa0 `}</StyledH2>
+              </ScoreContainer>
+            </>
+          ) : (
+            <ReadyGameContainer onClick={() => readyGame(true)}>
+              {
+                gameScore !== null
+                  && <StyledParagraph>{`You scored ${gameScore}`}</StyledParagraph>
+              }
+              <StyledH2>Ready for new game?</StyledH2>
+            </ReadyGameContainer>
+          )
+      }
+    </AreaContainer>
   );
 };
 

@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import configureStore from './store/configureStore';
 import Header from './components/Header';
@@ -17,10 +17,10 @@ const CoursesCalendar = () => (
     <Suspense fallback={<div />} className="page__courses-calendar">
       <main className="courses-calendar-page">
         <Header />
-        <Switch>
+        <Routes>
           <Route path="/courses" component={CoursesMain} exact />
           <Route path="/courses/calendar" component={CalendarMain} />
-        </Switch>
+        </Routes>
       </main>
     </Suspense>
   </Provider>

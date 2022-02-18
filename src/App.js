@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import ResizeHOC from 'components/ResizeHOC';
@@ -32,30 +32,30 @@ function App() {
     <Suspense fallback={<MainPage />} className="App">
       <ScrollHOC>
         <ResizeHOC>
-          <Switch>
-            <Route path="/" component={MainPage} exact />
-            <Route path="/resume" component={ResumePage} exact />
-            <Route path="/react" component={ReactPage} exact />
-            <Route path="/filmmaker" component={FilmmakerPage} exact />
-            <Route path="/photography" component={PhotographyPage} exact />
-            <Route path="/design" component={DesignsPage} exact />
-            <Route path="/resume/intuit" component={IntuitPage} />
-            <Route path="/resume/surveymonkey" component={SurveymonkeyPage} />
-            <Route path="/resume/zynga" component={ZyngaPage} />
-            <Route path="/resume/smallab" component={SmallabPage} />
-            <Route path="/resume/smilegate" component={SmilegatePage} />
-            <Route path="/resume/cooliris" component={CoolirisPage} />
-            <Route path="/resume/megalodon" component={MegalodonPage} />
-            <Route path="/resume/nokia" component={NokiaPage} />
-            <Route path="/resume/bachelor" component={BachelorPage} />
-            <Route path="/resume/carnegie" component={CarnegiePage} />
-            <Route path="/infinite" component={InfiniteScroll} exact />
-            <Route path="/imagetile" component={Imagetile} exact />
-            <Route path="/courses" component={CoursesCalendar} />
-            <Route path="/evade" component={EvadeGame} exact />
-            <Route path="/regexsearch" component={CourseRegexSearch} exact />
-            <Route component={() => <MainPage is404 />} />
-          </Switch>
+          <Routes>
+            <Route path="/" element={<MainPage />} exact />
+            <Route path="/resume" element={<ResumePage />} exact />
+            <Route path="/react" element={<ReactPage />} exact />
+            <Route path="/filmmaker" element={<FilmmakerPage />} exact />
+            <Route path="/photography" element={<PhotographyPage />} exact />
+            <Route path="/design" element={<DesignsPage />} exact />
+            <Route path="/resume/intuit" element={<IntuitPage />} />
+            <Route path="/resume/surveymonkey" element={<SurveymonkeyPage />} />
+            <Route path="/resume/zynga" element={<ZyngaPage />} />
+            <Route path="/resume/smallab" element={<SmallabPage />} />
+            <Route path="/resume/smilegate" element={<SmilegatePage />} />
+            <Route path="/resume/cooliris" element={<CoolirisPage />} />
+            <Route path="/resume/megalodon" element={<MegalodonPage />} />
+            <Route path="/resume/nokia" element={<NokiaPage />} />
+            <Route path="/resume/bachelor" element={<BachelorPage />} />
+            <Route path="/resume/carnegie" element={<CarnegiePage />} />
+            <Route path="/infinite" element={<InfiniteScroll />} exact />
+            <Route path="/imagetile" element={<Imagetile />} exact />
+            <Route path="/courses" element={<CoursesCalendar />} />
+            <Route path="/evade" element={<EvadeGame />} exact />
+            <Route path="/regexsearch" element={<CourseRegexSearch />} exact />
+            <Route element={<MainPage is404 />} />
+          </Routes>
         </ResizeHOC>
       </ScrollHOC>
     </Suspense>
