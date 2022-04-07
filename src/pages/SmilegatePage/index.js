@@ -29,7 +29,7 @@ import {
 import SmilegatePageContainer from './styles';
 
 // Smilegate work experience page
-const SmilegatePage = () => {
+function SmilegatePage() {
   const { breakpoint } = useContext(BrowserContext);
   return (
     <SmilegatePageContainer className="smilegate-page">
@@ -108,6 +108,6 @@ const SmilegatePage = () => {
       <Footer />
     </SmilegatePageContainer>
   );
-};
+}
 
 export default SmilegatePage;

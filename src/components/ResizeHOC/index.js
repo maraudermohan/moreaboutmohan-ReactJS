@@ -5,9 +5,9 @@ import { BrowserContext, calcBreakpoint, calcOrientation } from 'constants/conte
 
 // Higher order component that handles the resize event
 // It passes the current browser parameters to Children elements
-const ResizeHOC = ({
+function ResizeHOC({
   children,
-}) => {
+}) {
   const [browserParams, setBrowserParams] = useState({});
 
   const resizeHandler = () => {
@@ -38,7 +38,7 @@ const ResizeHOC = ({
       {children}
     </BrowserContext.Provider>
   );
-};
+}
 
 ResizeHOC.propTypes = {
   children: PropTypes.node,

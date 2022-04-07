@@ -12,18 +12,19 @@ const CalendarMain = lazy(() => import('./components/CalendarMain'));
 
 const store = configureStore();
 
-const CoursesCalendar = () => (
-  <Provider store={store}>
-    <Suspense fallback={<div />} className="page__courses-calendar">
-      <main className="courses-calendar-page">
-        <Header />
-        <Routes>
-          <Route path="/courses" component={CoursesMain} exact />
-          <Route path="/courses/calendar" component={CalendarMain} />
-        </Routes>
-      </main>
-    </Suspense>
-  </Provider>
-);
-
+function CoursesCalendar() {
+  return (
+    <Provider store={store}>
+      <Suspense fallback={<div />} className="page__courses-calendar">
+        <main className="courses-calendar-page">
+          <Header />
+          <Routes>
+            <Route path="/courses" component={CoursesMain} exact />
+            <Route path="/courses/calendar" component={CalendarMain} />
+          </Routes>
+        </main>
+      </Suspense>
+    </Provider>
+  );
+}
 export default CoursesCalendar;

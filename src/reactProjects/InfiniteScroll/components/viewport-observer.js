@@ -15,7 +15,7 @@ import {
  *
  * @returns {Object} Instance of Intersection Observer
  */
-const Observer = function () {
+function Observer() {
   const options = {
     root: document.body.querySelector('.gallery'),
     threshold: 0.1,
@@ -101,6 +101,6 @@ const Observer = function () {
   );
 
   return observer;
-};
+}
 
 export default Observer;

@@ -15,7 +15,7 @@ import {
  *
  * @returns {Element} Gallery element
  */
-const Gallery = function (firstImage) {
+function Gallery(firstImage) {
   const observer = Observer();
   const gallery = document.createElement('div');
   gallery.setAttribute('class', 'gallery');
@@ -30,6 +30,6 @@ const Gallery = function (firstImage) {
   SetImageSrc(secondRow);
 
   return gallery;
-};
+}
 
 export default Gallery;

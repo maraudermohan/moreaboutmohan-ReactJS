@@ -14,7 +14,7 @@ import {
   SubmitButton,
 } from './styles';
 
-const CourseForm = ({ setCourseSubmittedOnMain = () => {} }) => {
+function CourseForm({ setCourseSubmittedOnMain = () => {} }) {
   const [inputValue, setInputValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
 
@@ -99,7 +99,7 @@ const CourseForm = ({ setCourseSubmittedOnMain = () => {} }) => {
       </SubmitButton>
     </Form>
   );
-};
+}
 
 CourseForm.propTypes = {
   setCourseSubmittedOnMain: PropTypes.func,

@@ -2,7 +2,12 @@ import styled from 'styled-components';
 
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
-import { StyledH1, StyledH2, StyledSubtext } from 'components/Typography';
+import {
+  StyledH1,
+  StyledH2,
+  StyledH4,
+  StyledSubtext,
+} from 'components/Typography';
 import {
   DirectorIcon,
   CinematographerIcon,
@@ -14,7 +19,7 @@ import {
 } from 'images/icons';
 
 export const FilmmakerPageContainer = styled.main`
-  background: ${colors.LATTE};
+  background: ${colors.MAGENTA};
 
   header:not(.scrolling) {
     background: none;
@@ -80,28 +85,40 @@ export const FilmmakerPageContainer = styled.main`
 `;
 
 export const DemoContainer = styled.div`
-  display: block;
+  display: flex;
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 96%;
   text-decoration: none;
-  overflow: hidden;
-  background: linear-gradient(180deg, ${colors.MAGENTA} 50%, ${colors.LATTE} 50.1%);
+  flex-wrap: wrap;
+  margin: 24px auto;
+  background: ${colors.MAGENTA};
   box-sizing: content-box;
-  &.demo-video-container {
-    padding: 0 0 120px 0;
-    background: ${colors.MAGENTA};
-  }
 
   > section {
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  > section:hover {
+    transform: scale(1.05);
   }
 
   > section > iframe,
   > section > div {
     border-radius: 7px;
+  }
+
+  > section {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+
+  @media ${mq.uptoTablet} and (orientation: landscape),
+  ${mq.tablet} {
+    width: ${(props) => {
+    const count = Math.floor(props.$browserWidth / 332);
+    return `${count * 332}px`;
+  }}
   }
 `;
 
@@ -112,7 +129,7 @@ export const FilterContainer = styled.div`
   max-height: 800px;
   opacity: 1;
   grid-template-columns: 1fr 1fr 8px 1fr;
-  grid-template-rows: 28px 100px 100px;
+  grid-template-rows: 28px 82px 82px;
   background: ${colors.MAGENTA};
   transition: all 1s;
   box-sizing: content-box;
@@ -132,10 +149,10 @@ export const FilterContainer = styled.div`
 
   @media ${mq.uptoTablet} and (orientation: landscape),
   ${mq.tablet} {
-    width: 90%;
-    padding: 0 5% 36px 5%;
-    grid-template-columns: 1fr 1fr 1fr 1fr 12px 1fr 1fr;
-    grid-template-rows: 28px 150px;
+    width: 60%;
+    padding: 0 20% 36px 20%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 20px 1fr 1fr;
+    grid-template-rows: 28px 90px;
 
     ${StyledSubtext}:first-of-type {
       grid-column: 1;
@@ -149,18 +166,23 @@ export const FilterContainer = styled.div`
 
 export const CountContainer = styled.div`
   display: grid;
-  width: 100%;
-  height: 100px;
-  padding: 0 0 24px 0;
+  width: 60%;
+  margin: 16px auto 0 auto;
+  padding: 40px 0;
+  grid-template-rows: 50px 10px 28px;
   justify-content: center;
   justify-items: center;
-  max-height: 800px;
   opacity: 1;
   background: ${colors.MAGENTA};
   transition: all 1s;
   box-sizing: content-box;
+  border-top: 1px solid ${colors.LATTE};
 
-  ${StyledSubtext},
+  ${StyledH4} {
+    grid-row: 3;
+  }
+
+  ${StyledH4},
   ${StyledH2} {
     color: ${colors.LATTE};
   }
@@ -172,7 +194,7 @@ export const StyledButton = styled.button`
   justify-content: center;
   align-items: center;
   width: 99%;
-  height: 99px;
+  height: 81px;
   grid-row: 2;
   font-family: "Staatliches", san-serif;
   font-weight: 500;
@@ -221,9 +243,9 @@ export const StyledButton = styled.button`
   }
 
   svg {
-    width: 30px;
-    height: 30px;
-    padding: 0 0 12px 0;
+    width: 25px;
+    height: 25px;
+    padding: 0 0 8px 0;
     color: ${(props) => (props.$selected ? colors.APPLE : colors.LATTE)};
     fill: ${(props) => (props.$selected ? colors.APPLE : colors.LATTE)};
     transition: all 0.3s;
@@ -231,7 +253,7 @@ export const StyledButton = styled.button`
 
   @media ${mq.uptoTablet} and (orientation: landscape),
   ${mq.tablet} {
-    height: 150px;
+    height: 90px;
 
     &:nth-of-type(3) {
       grid-row: 2;
@@ -253,7 +275,7 @@ export const StyledButton = styled.button`
 `;
 
 export const filterInitialValues = {
-  Director: true,
+  Director: false,
   'D.o.P': false,
   Editor: false,
   Performer: false,

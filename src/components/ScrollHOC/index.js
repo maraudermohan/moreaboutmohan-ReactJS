@@ -6,9 +6,9 @@ import { ScrollPositionContext } from 'constants/contexts';
 // Higher order component that handles the scroll and resize event
 // It passes the current top and bottom scroll position to Children
 // by setting the scroll context with the current scroll values
-const ScrollHOC = ({
+function ScrollHOC({
   children,
-}) => {
+}) {
   const [scrollPos, setScrollPos] = useState({});
 
   const scrollHandler = () => {
@@ -40,7 +40,7 @@ const ScrollHOC = ({
       {children}
     </ScrollPositionContext.Provider>
   );
-};
+}
 
 ScrollHOC.propTypes = {
   children: PropTypes.node,

@@ -6,7 +6,7 @@ import { VirusIcon } from 'images/icons';
 import actions from '../actions';
 import { VirusStyled } from '../styles';
 
-const Virus = ({
+function Virus({
   id,
   currentTop,
   currentLeft,
@@ -20,7 +20,7 @@ const Virus = ({
   moveVirus,
   deleteVirus,
   readyGame,
-}) => {
+}) {
   const checkCollision = (virusTop, virusLeft) => {
     let topCollision = false;
     let leftCollision = false;
@@ -96,7 +96,7 @@ const Virus = ({
       <VirusIcon />
     </VirusStyled>
   );
-};
+}
 
 Virus.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),

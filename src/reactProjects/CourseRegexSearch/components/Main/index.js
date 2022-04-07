@@ -4,7 +4,7 @@ import CourseForm from '../CourseForm';
 import CourseCard from '../CourseCard';
 import MainContainer, { TextContainer } from './styles';
 
-const Main = () => {
+function Main() {
   const [courseSubmittedOnMain, setCourseSubmittedOnMain] = useState(null);
 
   return (
@@ -46,6 +46,6 @@ const Main = () => {
       }
     </MainContainer>
   );
-};
+}
 
 export default Main;

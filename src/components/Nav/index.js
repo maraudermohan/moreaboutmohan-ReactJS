@@ -16,9 +16,9 @@ import {
 } from './styles';
 
 // Nav component that displays links to 5 main categories
-const Nav = ({
+function Nav({
   clickHandler = () => {},
-}) => {
+}) {
   const navElement = useRef(null);
 
   const startAnimation = (index = 0) => {
@@ -102,7 +102,7 @@ const Nav = ({
       </LinkTwoContainer>
     </NavContainer>
   );
-};
+}
 
 Nav.propTypes = {
   clickHandler: PropTypes.func,

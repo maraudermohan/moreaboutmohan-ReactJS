@@ -1,4 +1,4 @@
-const imageSelected = (state = false, action) => {
+const imageSelected = (state = false, action = {}) => {
   switch (action.type) {
     case 'SELECT_IMAGE': {
       return action.payload; // sets { url,width,height,rowLength,colLength,tileWidth,tileHeight}
@@ -13,7 +13,7 @@ const imageSelected = (state = false, action) => {
   }
 };
 
-const tileCssList = (state = {}, action) => {
+const tileCssList = (state = {}, action = {}) => {
   switch (action.type) {
     case 'CREATE_TILE_LISTS': {
       return action.tileCssList; // sets css for each tile { top, left }
@@ -34,7 +34,7 @@ const tileCssList = (state = {}, action) => {
   }
 };
 
-const tileOrderList = (state = {}, action) => {
+const tileOrderList = (state = {}, action = {}) => {
   switch (action.type) {
     case 'CREATE_TILE_LISTS': {
       return action.tileOrderList; // maintains the current order of the jumbled tiles
@@ -57,7 +57,7 @@ const tileOrderList = (state = {}, action) => {
   }
 };
 
-const gameState = (state = false, action) => {
+const gameState = (state = false, action = {}) => {
   switch (action.type) {
     case 'SELECT_IMAGE':
       return { isImageSelected: true };
@@ -76,7 +76,7 @@ const gameState = (state = false, action) => {
   }
 };
 
-const shuffleCounter = (state = 50, action) => {
+const shuffleCounter = (state = 50, action = {}) => {
   switch (action.type) {
     case 'TOGGLE_GAME_READY':
       return -1;
@@ -92,7 +92,7 @@ const shuffleCounter = (state = 50, action) => {
   }
 };
 
-const moveCounter = (state = 0, action) => {
+const moveCounter = (state = 0, action = {}) => {
   switch (action.type) {
     case 'TOGGLE_GAME_READY':
       return 100;

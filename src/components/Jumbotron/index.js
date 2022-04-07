@@ -6,9 +6,9 @@ import { JumbotronContainer, JumbotronOverlay } from './styles';
 
 // Component that cycles through images every few seconds
 // Acts as HERO component for the page
-const Jumbotron = ({
+function Jumbotron({
   data = [],
-}) => {
+}) {
   const [iterator, setIterator] = useState(0);
 
   const cycleImageOnTime = () => {
@@ -29,7 +29,7 @@ const Jumbotron = ({
       <JumbotronOverlay />
     </JumbotronContainer>
   );
-};
+}
 
 Jumbotron.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,

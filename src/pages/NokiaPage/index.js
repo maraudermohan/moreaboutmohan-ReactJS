@@ -15,34 +15,36 @@ import {
 import NokiaPageContainer from './styles';
 
 // Nokia work experience page
-const NokiaPage = () => (
-  <NokiaPageContainer className="nokia-page">
-    <Jumbotron
-      data={jumbotronProps}
-    />
-    <TitleSection
-      heading={jobTitle.title}
-      subHeading={jobTitle.company}
-      duration={jobTitle.duration}
-    />
-    <Header />
-    <ContentList
-      data={summary1}
-      alignment="full"
-      browserHeight={window.innerHeight}
-      heading={duration.heading}
-      subHeading={duration.subHeading}
-      className="nokia-page__summary1"
-    />
-    <LazyLoadImage
-      imageUrl={imageProps1.imageUrl}
-      imageAlt={imageProps1.imageAlt}
-      width="540px"
-      height="303px"
-      className="nokia-page__image1"
-    />
-    <Footer />
-  </NokiaPageContainer>
-);
+function NokiaPage() {
+  return (
+    <NokiaPageContainer className="nokia-page">
+      <Jumbotron
+        data={jumbotronProps}
+      />
+      <TitleSection
+        heading={jobTitle.title}
+        subHeading={jobTitle.company}
+        duration={jobTitle.duration}
+      />
+      <Header />
+      <ContentList
+        data={summary1}
+        alignment="full"
+        browserHeight={window.innerHeight}
+        heading={duration.heading}
+        subHeading={duration.subHeading}
+        className="nokia-page__summary1"
+      />
+      <LazyLoadImage
+        imageUrl={imageProps1.imageUrl}
+        imageAlt={imageProps1.imageAlt}
+        width="540px"
+        height="303px"
+        className="nokia-page__image1"
+      />
+      <Footer />
+    </NokiaPageContainer>
+  );
+}
 
 export default NokiaPage;

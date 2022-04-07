@@ -20,54 +20,56 @@ import {
 import ZyngaPageContainer from './styles';
 
 // Zynga work experience page
-const ZyngaPage = () => (
-  <ZyngaPageContainer className="zynga-page">
-    <Jumbotron
-      data={jumbotronProps}
-    />
-    <TitleSection
-      heading={jobTitle.title}
-      subHeading={jobTitle.company}
-      duration={jobTitle.duration}
-    />
-    <Header />
-    <ContentList
-      data={summary1}
-      alignment="full"
-      browserHeight={window.innerHeight}
-      heading={duration.heading}
-      subHeading={duration.subHeading}
-      className="zynga-page__summary1"
-    />
-    <LazyLoadImage
-      imageUrl={imageProps1.imageUrl}
-      imageAlt={imageProps1.imageAlt}
-      width="720px"
-      height="538px"
-      className="zynga-page__image1"
-    />
-    <div style={{ width: '100%', height: '48px' }} />
-    <TextImageCarouselOnScroll
-      carouselData={carouselProps1}
-      contentListData={summary2}
-    />
-    <div style={{ padding: '100px 0 24px 0' }}>
-      <LazyLoadImage
-        imageUrl={imageProps2.imageUrl}
-        imageAlt={imageProps2.imageAlt}
-        width="720px"
-        height="451px"
-        className="zynga-page__image2"
+function ZyngaPage() {
+  return (
+    <ZyngaPageContainer className="zynga-page">
+      <Jumbotron
+        data={jumbotronProps}
       />
-    </div>
-    <ContentList
-      alignment="full"
-      browserHeight={window.innerHeight}
-      data={summary3}
-      className="zynga-page__summary2"
-    />
-    <Footer />
-  </ZyngaPageContainer>
-);
+      <TitleSection
+        heading={jobTitle.title}
+        subHeading={jobTitle.company}
+        duration={jobTitle.duration}
+      />
+      <Header />
+      <ContentList
+        data={summary1}
+        alignment="full"
+        browserHeight={window.innerHeight}
+        heading={duration.heading}
+        subHeading={duration.subHeading}
+        className="zynga-page__summary1"
+      />
+      <LazyLoadImage
+        imageUrl={imageProps1.imageUrl}
+        imageAlt={imageProps1.imageAlt}
+        width="720px"
+        height="538px"
+        className="zynga-page__image1"
+      />
+      <div style={{ width: '100%', height: '48px' }} />
+      <TextImageCarouselOnScroll
+        carouselData={carouselProps1}
+        contentListData={summary2}
+      />
+      <div style={{ padding: '100px 0 24px 0' }}>
+        <LazyLoadImage
+          imageUrl={imageProps2.imageUrl}
+          imageAlt={imageProps2.imageAlt}
+          width="720px"
+          height="451px"
+          className="zynga-page__image2"
+        />
+      </div>
+      <ContentList
+        alignment="full"
+        browserHeight={window.innerHeight}
+        data={summary3}
+        className="zynga-page__summary2"
+      />
+      <Footer />
+    </ZyngaPageContainer>
+  );
+}
 
 export default ZyngaPage;

@@ -14,14 +14,14 @@ import {
 import Player from './Player';
 import Levels from './Levels';
 
-const GameArea = ({
+function GameArea({
   orientation,
   areaLength,
   gameScore,
   isGameReady,
   initializeArea,
   readyGame,
-}) => {
+}) {
   useEffect(() => {
     const length = (orientation === 'landscape') ? window.innerHeight : window.innerWidth;
     const newAreaLength = Math.floor((length * 0.85) / 30) * 30;
@@ -63,7 +63,7 @@ const GameArea = ({
       }
     </AreaContainer>
   );
-};
+}
 
 GameArea.propTypes = {
   orientation: PropTypes.string,

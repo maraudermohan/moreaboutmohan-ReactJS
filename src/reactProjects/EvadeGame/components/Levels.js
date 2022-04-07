@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import actions from '../actions';
 import Virus from './Virus';
 
-const Levels = ({
+function Levels({
   virusData,
   virusStartEndPos,
   gameScore,
   isGameReady,
   createVirus,
-}) => {
+}) {
   const emitVirus = () => {
     const randomIndex = Math.floor(Math.random() * 4);
     let newId = Math.floor(Math.random() * 50);
@@ -43,7 +43,7 @@ const Levels = ({
       }
     </>
   );
-};
+}
 
 Levels.propTypes = {
   virusData: PropTypes.objectOf(PropTypes.objectOf),

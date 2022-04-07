@@ -7,10 +7,12 @@ import 'reactProjects/bootstrap.min.css';
 
 const store = configureStore();
 
-const Imagetile = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
-);
+function Imagetile() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+}
 
 export default Imagetile;

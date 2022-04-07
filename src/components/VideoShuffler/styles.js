@@ -220,10 +220,10 @@ export const ShufflerContainer = styled.div`
   position: relative;
   width: 100%;
   height: ${(props) => props.$height}px;
-  padding: 50px 0;
+  padding: 0 0 50px 0;
   text-decoration: none;
   overflow: hidden;
-  background: linear-gradient(180deg, ${colors.MAGENTA} 50%, ${colors.LATTE} 50.1%);
+  background: ${colors.MAGENTA};
   box-sizing: content-box;
 `;
 

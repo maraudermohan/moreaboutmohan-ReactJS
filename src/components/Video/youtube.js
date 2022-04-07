@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LazyLoadImage from 'components/LazyLoadImage';
+import { YoutubePlayIcon } from 'images/icons/';
+import { ThumbnailContainer, OverlayContainer } from './styles';
 
 // Component to render Youtube API
 class Video extends Component {
   constructor(props) {
     super(props);
     this.loadVideo = this.loadVideo.bind(this);
+    this.state = {
+      videoLoaded: false,
+    };
   }
 
   componentDidMount() {
@@ -17,8 +23,6 @@ class Video extends Component {
 
       const firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    } else {
-      this.loadVideo();
     }
   }
 
@@ -40,10 +44,11 @@ class Video extends Component {
       playerVars: {
         autoplay,
         start,
-        rel: 1,
+        rel: 0,
       },
       events: {
         onReady: () => {
+          this.setState({ videoLoaded: true });
           if (muted) {
             this.player.mute();
           } else {
@@ -63,11 +68,30 @@ class Video extends Component {
     const {
       title = '',
       className = 'video__youtube',
+      url,
+      width,
+      height,
+      thumbnail,
     } = this.props;
+    const { videoLoaded = false } = this.state;
 
     return (
-      <section className={className}>
+      <section className={className} style={{ width: `${width}px`, height: `${height}px` }}>
         <div id={`${title}`} />
+        {
+          !videoLoaded && (
+            <ThumbnailContainer onClick={() => { this.loadVideo(); }}>
+              <LazyLoadImage
+                imageUrl={thumbnail}
+                imageAlt={`${url}-thumbnail`}
+                width={`${width}px`}
+                height={`${height}px`}
+              />
+              <OverlayContainer />
+              <YoutubePlayIcon className="youtube-play" />
+            </ThumbnailContainer>
+          )
+        }
       </section>
     );
   }
@@ -83,6 +107,7 @@ Video.propTypes = {
   muted: PropTypes.bool,
   onDone: PropTypes.func,
   className: PropTypes.string,
+  thumbnail: PropTypes.string,
 };
 
 export default Video;

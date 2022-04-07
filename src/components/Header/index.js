@@ -17,9 +17,9 @@ import {
 } from './styles';
 
 // Header component that displays name and trigger for Nav component
-const Header = ({
+function Header({
   isMainPage = false,
-}) => {
+}) {
   const {
     breakpoint,
   } = useContext(BrowserContext);
@@ -75,7 +75,7 @@ const Header = ({
       }
     </>
   );
-};
+}
 
 Header.propTypes = {
   isMainPage: PropTypes.bool,

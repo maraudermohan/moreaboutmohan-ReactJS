@@ -160,8 +160,8 @@ class VideoShuffler extends Component {
           {...videoData[currentIndex]}
           width={`${width}`}
           height={`${height}`}
-          autoplay={0}
-          muted
+          autoplay={1}
+          muted={false}
         />
       );
     } else if (order[index].indexOf('left') >= 0) {

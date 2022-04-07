@@ -28,7 +28,7 @@ import {
 import MegalodonPageContainer from './styles';
 
 // Megalodon work experience page
-const MegalodonPage = () => {
+function MegalodonPage() {
   const { breakpoint } = useContext(BrowserContext);
   return (
     <MegalodonPageContainer className="megalodon-page">
@@ -106,6 +106,6 @@ const MegalodonPage = () => {
       <Footer />
     </MegalodonPageContainer>
   );
-};
+}
 
 export default MegalodonPage;

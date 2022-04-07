@@ -25,79 +25,81 @@ import {
 import IntuitPageContainer from './styles';
 
 // Intuit work experience page
-const IntuitPage = () => (
-  <IntuitPageContainer className="intuit-page">
-    <Jumbotron
-      data={jumbotronProps}
-    />
-    <TitleSection
-      heading={jobTitle.title}
-      subHeading={jobTitle.company}
-      duration={jobTitle.duration}
-    />
-    <Header />
-    <ContentList
-      data={summary1}
-      alignment="right"
-      browserHeight={window.innerHeight}
-      heading={duration.heading}
-      subHeading={duration.subHeading}
-      className="intuit-page__summary1"
-    />
-    <LazyLoadImage
-      imageUrl={imageProps1.imageUrl}
-      imageAlt={imageProps1.imageAlt}
-      width="720px"
-      height="540px"
-      className="intuit-page__image1"
-    />
-    <TextImageCarouselOnScroll
-      carouselData={carouselProps1}
-      contentListData={summary2}
-    />
-    <div className="intuit-page__image-holder">
-      <LazyLoadImage
-        imageUrl={imageProps3.imageUrl}
-        imageAlt={imageProps3.imageAlt}
-        width="640px"
-        height="480px"
-        className="intuit-page__image3"
+function IntuitPage() {
+  return (
+    <IntuitPageContainer className="intuit-page">
+      <Jumbotron
+        data={jumbotronProps}
       />
+      <TitleSection
+        heading={jobTitle.title}
+        subHeading={jobTitle.company}
+        duration={jobTitle.duration}
+      />
+      <Header />
       <ContentList
-        alignment="full"
+        data={summary1}
+        alignment="right"
         browserHeight={window.innerHeight}
-        data={summary3}
-        className="intuit-page__summary3"
+        heading={duration.heading}
+        subHeading={duration.subHeading}
+        className="intuit-page__summary1"
       />
       <LazyLoadImage
-        imageUrl={imageProps4.imageUrl}
-        imageAlt={imageProps4.imageAlt}
-        width="650px"
-        height="406px"
-        className="intuit-page__image4"
+        imageUrl={imageProps1.imageUrl}
+        imageAlt={imageProps1.imageAlt}
+        width="720px"
+        height="540px"
+        className="intuit-page__image1"
       />
-    </div>
-    <TransparentScroller
-      className="intuit-page__transparent-scroller"
-      background={colors.LATTE}
-    >
-      <LazyLoadImage
-        imageUrl={imageProps2.imageUrl}
-        imageAlt={imageProps2.imageAlt}
-        width="652px"
-        height="489px"
-        className="intuit-page__image2"
+      <TextImageCarouselOnScroll
+        carouselData={carouselProps1}
+        contentListData={summary2}
       />
-      <ContentList
-        alignment="full"
-        browserHeight={window.innerHeight}
-        data={summary4}
-        heading="Winner of 2 more Spotlight awards -"
-        className="intuit-page__summary4"
-      />
-    </TransparentScroller>
-    <Footer />
-  </IntuitPageContainer>
-);
+      <div className="intuit-page__image-holder">
+        <LazyLoadImage
+          imageUrl={imageProps3.imageUrl}
+          imageAlt={imageProps3.imageAlt}
+          width="640px"
+          height="480px"
+          className="intuit-page__image3"
+        />
+        <ContentList
+          alignment="full"
+          browserHeight={window.innerHeight}
+          data={summary3}
+          className="intuit-page__summary3"
+        />
+        <LazyLoadImage
+          imageUrl={imageProps4.imageUrl}
+          imageAlt={imageProps4.imageAlt}
+          width="650px"
+          height="406px"
+          className="intuit-page__image4"
+        />
+      </div>
+      <TransparentScroller
+        className="intuit-page__transparent-scroller"
+        background={colors.LATTE}
+      >
+        <LazyLoadImage
+          imageUrl={imageProps2.imageUrl}
+          imageAlt={imageProps2.imageAlt}
+          width="652px"
+          height="489px"
+          className="intuit-page__image2"
+        />
+        <ContentList
+          alignment="full"
+          browserHeight={window.innerHeight}
+          data={summary4}
+          heading="Winner of 2 more Spotlight awards -"
+          className="intuit-page__summary4"
+        />
+      </TransparentScroller>
+      <Footer />
+    </IntuitPageContainer>
+  );
+}
 
 export default IntuitPage;

@@ -4,7 +4,7 @@ import Gallery from 'reactProjects/InfiniteScroll/components/gallery';
 
 import 'reactProjects/InfiniteScroll/styles/style.css';
 
-const InfiniteScroll = () => {
+function InfiniteScroll() {
   const firstImage = 1;
   const gallery = Gallery(firstImage);
 
@@ -20,6 +20,6 @@ const InfiniteScroll = () => {
   return (
     <Header />
   );
-};
+}
 
 export default InfiniteScroll;

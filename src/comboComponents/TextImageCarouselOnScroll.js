@@ -12,14 +12,14 @@ import ImageCarousel from 'components/ImageCarousel';
 // Combining FixedOnScroll and Image Carousel
 // The text stays fixed to the screen bottom, while the images slide
 // Slide direction can be customized
-const TextImageCarouselOnScroll = ({
+function TextImageCarouselOnScroll({
   carouselData = [],
   contentListDuration = {
     heading: '',
     subHeading: '',
   },
   contentListData = [],
-}) => {
+}) {
   const fixedElem = useRef({
     current: {},
   });
@@ -84,7 +84,7 @@ const TextImageCarouselOnScroll = ({
       }
     />
   );
-};
+}
 
 TextImageCarouselOnScroll.propTypes = {
   carouselData: PropTypes.arrayOf(PropTypes.object),

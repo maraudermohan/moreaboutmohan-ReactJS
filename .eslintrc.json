@@ -1,7 +1,6 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
         "jest": true
     },
     "extends": [
@@ -28,5 +27,10 @@
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off"
     },
-    "ignorePatterns": ["src/tests/", "src/serviceWorker"]
+    "ignorePatterns": ["src/tests/", "src/serviceWorker"],
+    "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    }
 }

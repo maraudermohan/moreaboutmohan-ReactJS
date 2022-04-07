@@ -14,27 +14,29 @@ import {
 
 const store = configureStore();
 
-const EvadeGame = () => (
-  <Provider store={store}>
-    <StyledMain className="evade-game">
-      <Header />
-      <StyledH1 className="game-title">{'Evade \xa0 game'}</StyledH1>
-      <div className="title-container">
-        <a href="https://github.com/maraudermohan/"><github.Icon /></a>
-        <StyledParagraph className="game-subtitle">
-          React + Hooks + Redux. 2020.
-        </StyledParagraph>
-      </div>
-      <BrowserContext.Consumer>
-        {
-          ({ orientation }) => (
-            <GameArea orientation={orientation} />
-          )
-        }
-      </BrowserContext.Consumer>
-      <FooterLine />
-    </StyledMain>
-  </Provider>
-);
+function EvadeGame() {
+  return (
+    <Provider store={store}>
+      <StyledMain className="evade-game">
+        <Header />
+        <StyledH1 className="game-title">{'Evade \xa0 game'}</StyledH1>
+        <div className="title-container">
+          <a href="https://github.com/maraudermohan/"><github.Icon /></a>
+          <StyledParagraph className="game-subtitle">
+            React + Hooks + Redux. 2020.
+          </StyledParagraph>
+        </div>
+        <BrowserContext.Consumer>
+          {
+            ({ orientation }) => (
+              <GameArea orientation={orientation} />
+            )
+          }
+        </BrowserContext.Consumer>
+        <FooterLine />
+      </StyledMain>
+    </Provider>
+  );
+}
 
 export default EvadeGame;

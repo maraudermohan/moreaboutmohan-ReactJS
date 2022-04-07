@@ -4,10 +4,15 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Video from 'components/Video/youtube';
 import VideoShuffler from 'components/VideoShuffler';
-import { StyledH1, StyledH2, StyledSubtext } from 'components/Typography';
+import {
+  StyledH1,
+  StyledH2,
+  StyledH4,
+  StyledSubtext,
+} from 'components/Typography';
 import { BrowserContext } from 'constants/contexts';
 import colors from 'constants/colors';
-import data, { demo } from './filmmaker-data';
+import { videosData, spotlightData } from './filmmaker-data';
 import {
   FilmmakerPageContainer,
   DemoContainer,
@@ -26,8 +31,8 @@ class FilmmakerPage extends Component {
     super(props);
     this.state = {
       filterValues: filterInitialValues,
-      demoReelDone: false,
-      filterData: [],
+      filterData: videosData.slice(0, 5),
+      browserWidth: window.innerWidth,
     };
   }
 
@@ -42,7 +47,7 @@ class FilmmakerPage extends Component {
       filterValues,
     } = this.state;
     const newFilterValues = Object.keys(filterValues).filter((key) => !!filterValues[key]);
-    let filteredData = data;
+    let filteredData = videosData;
     for (let index = 0; index < newFilterValues.length; index += 1) {
       filteredData = filteredData.filter((video) => (video[newFilterValues[index]]));
     }
@@ -69,17 +74,11 @@ class FilmmakerPage extends Component {
     });
   }
 
-  closeDemoReelVideo() {
-    setTimeout(() => this.setState({
-      demoReelDone: true,
-    }), 1000);
-  }
-
   render() {
     const {
       filterValues,
-      demoReelDone,
       filterData,
+      browserWidth,
     } = this.state;
     const {
       breakpoint = 2,
@@ -88,26 +87,15 @@ class FilmmakerPage extends Component {
     return (
       <FilmmakerPageContainer className="filmmaker-page">
         <Header />
-        <StyledH1>Filmmaker Reel</StyledH1>
-        {
-          !demoReelDone
-            && (
-              <DemoContainer className="demo-video-container">
-                <Video
-                  {...demo}
-                  height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
-                  width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
-                  autoplay={1}
-                  muted={false}
-                  onDone={() => this.closeDemoReelVideo()}
-                />
-              </DemoContainer>
-            )
-        }
-        <StyledH2 className="filter-title">Filter collection by</StyledH2>
+        <StyledH1>Filmmaking projects</StyledH1>
+        <VideoShuffler videoData={spotlightData} />
+        <CountContainer>
+          <StyledH2>All Videos</StyledH2>
+          <StyledH4>{`${filterData.length} results`}</StyledH4>
+        </CountContainer>
         <FilterContainer>
-          <StyledSubtext>Role:</StyledSubtext>
-          <StyledSubtext>Type:</StyledSubtext>
+          <StyledSubtext>Filter by Role:</StyledSubtext>
+          <StyledSubtext>Filter by Type:</StyledSubtext>
           {
             filterKeys.map((item, index) => {
               let Icon = filterIcons[6];
@@ -128,36 +116,23 @@ class FilmmakerPage extends Component {
             })
           }
         </FilterContainer>
-        <CountContainer>
-          <StyledSubtext>Count:</StyledSubtext>
-          <StyledH2>{filterData.length}</StyledH2>
-        </CountContainer>
-        {
-          filterData.length > 1
-            && (
-              <VideoShuffler
-                videoData={filterData}
+        <DemoContainer $browserWidth={browserWidth}>
+          {
+            filterData.length && (filterData.map((singleVideo) => (
+              <Video
+                key={singleVideo.url}
+                height={`${breakpoint < 2 ? '112' : '180'}`}
+                width={`${breakpoint < 2 ? '200' : '320'}`}
+                {...singleVideo}
+                autoplay={1}
+                muted={false}
               />
-            )
-        }
-        {
-          filterData.length === 1
-            && (
-              <DemoContainer>
-                <Video
-                  {...filterData[0]}
-                  height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
-                  width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
-                  autoplay={1}
-                  muted
-                />
-              </DemoContainer>
-            )
-        }
+            )))
+          }
+        </DemoContainer>
         <Footer
-          hoverColor={colors.MAGENTA}
-          backgroundColor={colors.LATTE}
-          textColor={colors.PANTONE}
+          backgroundColor={colors.MAGENTA}
+          textColor={colors.LATTE}
         />
       </FilmmakerPageContainer>
     );

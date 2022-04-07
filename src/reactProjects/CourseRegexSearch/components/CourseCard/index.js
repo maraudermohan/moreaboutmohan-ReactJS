@@ -11,7 +11,7 @@ import {
   HintText,
 } from './styles';
 
-const CourseCard = ({ filteredCourse }) => {
+function CourseCard({ filteredCourse }) {
   if (filteredCourse === null || typeof filteredCourse === 'undefined') {
     return (
       <HintText data-testid="course-card-error">
@@ -50,7 +50,7 @@ const CourseCard = ({ filteredCourse }) => {
       </Ul>
     </Card>
   );
-};
+}
 
 CourseCard.propTypes = {
   filteredCourse: PropTypes.objectOf(

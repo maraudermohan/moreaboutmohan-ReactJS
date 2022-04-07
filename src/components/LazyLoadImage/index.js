@@ -5,13 +5,13 @@ import { StyledImgSubstitute, StyledImg } from './styles';
 // Component that lazy loads image from the given URL
 // Renders a white div till the image is loaded
 // Adds height, width and alt properties
-const LazyLoadImage = ({
+function LazyLoadImage({
   imageAlt = 'Portfolio - Mohan Subramanian',
   imageUrl = '',
   width = 'auto',
   height = '350px',
   className = '',
-}) => {
+}) {
   const [hasLoaded, setHasLoaded] = useState(false);
 
   const onLoad = () => {
@@ -35,7 +35,7 @@ const LazyLoadImage = ({
       }
     </>
   );
-};
+}
 
 LazyLoadImage.propTypes = {
   imageAlt: PropTypes.string,

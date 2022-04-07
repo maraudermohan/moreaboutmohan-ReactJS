@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-export default function catalogReducer(state = initialState.catalog, action) {
+export default function catalogReducer(state = initialState.catalog, action = {}) {
   switch (action.type) {
     case 'REMOVE_COURSE_FROM_SELECTION':
       return Array.from(state, (value) => {

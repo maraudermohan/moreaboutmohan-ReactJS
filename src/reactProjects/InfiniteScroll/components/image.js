@@ -9,7 +9,7 @@
  *
  * @returns {Element} Img element
  */
-const Image = function (imageIndex) {
+function Image(imageIndex) {
   const img = document.createElement('img');
   const url = `http://www.moreaboutmohan.com/uploads/infinite${imageIndex}.jpg`;
 
@@ -19,6 +19,6 @@ const Image = function (imageIndex) {
   img.setAttribute('alt', `Wildlife ${imageIndex}`);
 
   return img;
-};
+}
 
 export default Image;

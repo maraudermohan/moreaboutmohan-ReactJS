@@ -8,12 +8,12 @@
  *
  * @returns {Element} Row container
  */
-const RowContainer = function (startIndex) {
+function RowContainer(startIndex) {
   const row = document.createElement('div');
   row.setAttribute('class', `row  img-${startIndex}  empty-row`);
   row.setAttribute('data-startindex', startIndex);
 
   return row;
-};
+}
 
 export default RowContainer;

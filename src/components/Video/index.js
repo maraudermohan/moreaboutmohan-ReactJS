@@ -9,7 +9,7 @@ import {
 } from './styles';
 
 // Video component that renders embedded iframe
-const Video = ({
+function Video({
   title = '',
   player = 'youtube',
   url = '',
@@ -19,7 +19,7 @@ const Video = ({
   autoplay = 0,
   muted = 0,
   className = 'video__iframe',
-}) => {
+}) {
   let src = `https://www.youtube-nocookie.com/embed/${url}?rel=1&start=${start}&autoplay=${autoplay}&mute=${muted}`;
   if (player === 'vimeo') {
     src = `https://player.vimeo.com/video/${url}?color=ffffff&byline=0&portrait=0`;
@@ -54,7 +54,7 @@ const Video = ({
       }
     </ErrorBoundary>
   );
-};
+}
 
 Video.propTypes = {
   title: PropTypes.string,

@@ -34,7 +34,7 @@ import {
 import SmallabPageContainer from './styles';
 
 // Smallab work experience page
-const SmallabPage = () => {
+function SmallabPage() {
   const { breakpoint } = useContext(BrowserContext);
   return (
     <SmallabPageContainer className="smallab-page">
@@ -137,6 +137,6 @@ const SmallabPage = () => {
       <Footer />
     </SmallabPageContainer>
   );
-};
+}
 
 export default SmallabPage;

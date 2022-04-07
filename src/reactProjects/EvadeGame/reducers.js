@@ -9,7 +9,7 @@ export const initialState = {
   isGameReady: false,
 };
 
-const areaLength = (state = initialState.areaLength, action) => {
+const areaLength = (state = initialState.areaLength, action = {}) => {
   switch (action.type) {
     case 'INITIALIZE_AREA':
       return action.area;
@@ -19,7 +19,7 @@ const areaLength = (state = initialState.areaLength, action) => {
   }
 };
 
-const playerPos = (state = initialState.playerPos, action) => {
+const playerPos = (state = initialState.playerPos, action = {}) => {
   switch (action.type) {
     case 'INITIALIZE_AREA':
       return {
@@ -41,7 +41,7 @@ const playerPos = (state = initialState.playerPos, action) => {
   }
 };
 
-const virusData = (state = initialState.virusData, action) => {
+const virusData = (state = initialState.virusData, action = {}) => {
   switch (action.type) {
     case 'CREATE_VIRUS':
       if (action.isGameReady) {
@@ -75,7 +75,7 @@ const virusData = (state = initialState.virusData, action) => {
   }
 };
 
-const virusStartEndPos = (state = initialState.virusStartEndPos, action) => {
+const virusStartEndPos = (state = initialState.virusStartEndPos, action = {}) => {
   const calculate = (newAreaLength, newPlayerTop, newPlayerLeft) => ([
     {
       current: [-50, newPlayerLeft],
@@ -111,7 +111,7 @@ const virusStartEndPos = (state = initialState.virusStartEndPos, action) => {
   }
 };
 
-const speed = (state = initialState.speed, action) => {
+const speed = (state = initialState.speed, action = {}) => {
   switch (action.type) {
     case 'INITIALIZE_AREA':
       return action.speed;
@@ -121,7 +121,7 @@ const speed = (state = initialState.speed, action) => {
   }
 };
 
-const isGameReady = (state = initialState.isGameReady, action) => {
+const isGameReady = (state = initialState.isGameReady, action = {}) => {
   switch (action.type) {
     case 'READY_GAME':
       return action.bool;
@@ -131,7 +131,7 @@ const isGameReady = (state = initialState.isGameReady, action) => {
   }
 };
 
-const gameScore = (state = null, action) => {
+const gameScore = (state = null, action = {}) => {
   switch (action.type) {
     case 'READY_GAME':
       return action.bool ? 0 : state;

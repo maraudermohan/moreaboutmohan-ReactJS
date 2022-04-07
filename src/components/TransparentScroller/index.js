@@ -10,12 +10,12 @@ import { ScrollPositionContext } from 'constants/contexts';
 import HiddenSection from './styles';
 
 // Component that creates a slide-up animation
-const TransparentScroller = ({
+function TransparentScroller({
   children,
   className,
   background,
   variant = 'fold',
-}) => {
+}) {
   const transparentElem = useRef(null);
   const [hiddenSectionCss, setHiddenSectionCss] = useState();
   const browserWidth = window.innerWidth;
@@ -63,7 +63,7 @@ const TransparentScroller = ({
       </HiddenSection>
     </div>
   );
-};
+}
 
 TransparentScroller.propTypes = {
   children: PropTypes.node,

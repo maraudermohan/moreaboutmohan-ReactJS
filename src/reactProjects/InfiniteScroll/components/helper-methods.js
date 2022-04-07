@@ -6,7 +6,7 @@ import Image from './image';
  * Function that fetches all images in a given row and
  * sets the src url from data-src.
  */
-export const SetImageSrc = function (row) {
+export function SetImageSrc(row) {
   const listOfImgs = row.querySelectorAll('.wildlife-image');
 
   listOfImgs.forEach((img) => {
@@ -15,33 +15,33 @@ export const SetImageSrc = function (row) {
       img.src = imgUrl;
     }
   });
-};
+}
 
 /**
  * Function that renders an empty row container and sets observer.
  */
-export const LoadNextRowContainer = function (gallery, observer, startIndex) {
+export function LoadNextRowContainer(gallery, observer, startIndex) {
   const row = RowContainer(startIndex);
   observer.observe(row);
   gallery.appendChild(row);
   return row;
-};
+}
 
 /**
  * Function that renders an empty row container and sets observer.
  */
-export const LoadPreviousRowContainer = function (gallery, observer, prevNode, startIndex) {
+export function LoadPreviousRowContainer(gallery, observer, prevNode, startIndex) {
   const row = RowContainer(startIndex);
   observer.observe(row);
   gallery.insertBefore(row, prevNode);
   return row;
-};
+}
 
 /**
  * Function that renders 6 images in a given row.
  * Verifies that each image is between first and last index.
  */
-export const renderImagesInRow = function (node, startIndex) {
+export function renderImagesInRow(node, startIndex) {
   const firstIndex = 1;
   const finalIndex = 48;
   let count = 6;
@@ -62,5 +62,5 @@ export const renderImagesInRow = function (node, startIndex) {
     count -= 1;
   }
   node.classList.remove('empty-row');
-};
+}
 /* eslint-enable no-param-reassign */

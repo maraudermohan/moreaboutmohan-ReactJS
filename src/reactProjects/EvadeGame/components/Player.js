@@ -9,13 +9,13 @@ import { WalkIcon } from 'images/icons';
 import actions from '../actions';
 import { PlayerStyles } from '../styles';
 
-const Player = ({
+function Player({
   areaLength,
   playerTop,
   playerLeft,
   movePlayer,
   direction,
-}) => {
+}) {
   const playerRef = useRef(null);
 
   const positionKeydownHandler = (event) => {
@@ -62,7 +62,7 @@ const Player = ({
       }}
     />
   );
-};
+}
 
 Player.propTypes = {
   areaLength: PropTypes.number,

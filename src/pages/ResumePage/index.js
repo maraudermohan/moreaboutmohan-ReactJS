@@ -26,7 +26,7 @@ import {
 } from './styles';
 
 // Page component that renders copy and links related to work experience
-const ResumePage = () => {
+function ResumePage() {
   const browserWidth = window.innerWidth;
   const {
     breakpoint = 'lg',
@@ -127,6 +127,6 @@ const ResumePage = () => {
       <Footer hoverColor={colors.DAYLILY} />
     </ResumePageContainer>
   );
-};
+}
 
 export default ResumePage;

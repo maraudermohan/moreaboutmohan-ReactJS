@@ -6,7 +6,7 @@ import { StyledH4 } from 'components/Typography';
 import BoxContainer from './styles';
 
 // Component used in ResumePage to display Company info
-const TimelineBox = ({
+function TimelineBox({
   href = '/',
   title,
   subTitle,
@@ -14,7 +14,7 @@ const TimelineBox = ({
   color,
   height,
   alignment = 'right',
-}) => {
+}) {
   const { bottomScroll } = useContext(ScrollPositionContext);
   const { breakpoint, orientation } = useContext(BrowserContext);
   const elemRef = useRef(null);
@@ -62,7 +62,7 @@ const TimelineBox = ({
       }
     </BoxContainer>
   );
-};
+}
 
 TimelineBox.propTypes = {
   href: PropTypes.string,

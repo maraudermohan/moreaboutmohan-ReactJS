@@ -29,6 +29,7 @@ import { ReactComponent as Spinner } from './spinner.svg';
 import { ReactComponent as Stopwatch } from './stopwatch.svg';
 import { ReactComponent as Virus } from './virus.svg';
 import { ReactComponent as Walk } from './walk.svg';
+import { ReactComponent as YoutubePlay } from './youtube.svg';
 
 export const email = {
   Icon: EmailIcon,
@@ -107,3 +108,5 @@ export const PencilIcon = Pencil;
 export const VirusIcon = Virus;
 
 export const WalkIcon = Walk;
+
+export const YoutubePlayIcon = YoutubePlay;

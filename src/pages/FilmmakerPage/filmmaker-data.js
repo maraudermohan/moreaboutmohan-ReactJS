@@ -1,11 +1,130 @@
-export const demo = {
-  title: 'demo-reel',
-  player: 'youtube',
-  url: '2mtccBT0ajk',
-  start: 0,
-};
+export const spotlightData = [
+  {
+    title: 'Hotel-California-Odissi',
+    player: 'youtube',
+    url: 'Fhp1pVrqOlE',
+    start: 4,
+    thumbnail: 'https://img.youtube.com/vi/Fhp1pVrqOlE/maxresdefault.jpg',
+  },
+  {
+    title: 'Prema-Prema',
+    player: 'youtube',
+    url: 'fplAPb4FEx0',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/fplAPb4FEx0/maxresdefault.jpg',
+  },
+  {
+    title: 'Albela-Sajan-HipHop',
+    player: 'youtube',
+    url: 'zGYPqQDf9Iw',
+    start: 4,
+    thumbnail: 'https://img.youtube.com/vi/zGYPqQDf9Iw/maxresdefault.jpg',
+  },
+  {
+    title: 'Kathak-Senorita-Despacito',
+    player: 'youtube',
+    url: 'G_nSq-cVdGU',
+    start: 4,
+    thumbnail: 'https://img.youtube.com/vi/G_nSq-cVdGU/maxresdefault.jpg',
+  },
+  {
+    title: 'Swarabindu',
+    player: 'youtube',
+    url: 'ECuFmeDuo9k',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/ECuFmeDuo9k/maxresdefault.jpg',
+  },
+  {
+    title: 'Thillana-2',
+    player: 'youtube',
+    url: 'XjouopoWpTQ',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/XjouopoWpTQ/hqdefault.jpg',
+  },
+  {
+    title: 'Nayantara-tribute',
+    player: 'youtube',
+    url: 'vFPyrjz-uZo',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/vFPyrjz-uZo/maxresdefault.jpg',
+  },
+  {
+    title: 'Ek-do-teen',
+    player: 'youtube',
+    url: '6HLIFMyJxWA',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/6HLIFMyJxWA/maxresdefault.jpg',
+  },
+  {
+    title: 'demo-reel',
+    player: 'youtube',
+    url: '2mtccBT0ajk',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/2mtccBT0ajk/maxresdefault.jpg',
+  },
+];
 
-const videos = [
+export const videosData = [
+  {
+    title: 'Hotel-California-Odissi',
+    player: 'youtube',
+    url: 'Fhp1pVrqOlE',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/Fhp1pVrqOlE/maxresdefault.jpg',
+  },
+  {
+    title: 'Neel-Digante-Folk',
+    player: 'youtube',
+    url: 'PjKssalnDxQ',
+    start: 5,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/PjKssalnDxQ/maxresdefault.jpg',
+  },
+  {
+    title: 'Prema-Prema',
+    player: 'youtube',
+    url: 'fplAPb4FEx0',
+    start: 0,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/fplAPb4FEx0/maxresdefault.jpg',
+  },
+  {
+    title: 'Albela-Sajan-HipHop',
+    player: 'youtube',
+    url: 'zGYPqQDf9Iw',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/zGYPqQDf9Iw/maxresdefault.jpg',
+  },
+  {
+    title: 'Kathak-Senorita-Despacito',
+    player: 'youtube',
+    url: 'G_nSq-cVdGU',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/G_nSq-cVdGU/maxresdefault.jpg',
+  },
+  {
+    title: 'Swarabindu',
+    player: 'youtube',
+    url: 'ECuFmeDuo9k',
+    start: 0,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/ECuFmeDuo9k/maxresdefault.jpg',
+  },
   {
     title: 'Thillana-2',
     player: 'youtube',
@@ -14,15 +133,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
-  },
-  {
-    title: 'Prema Prema',
-    player: 'youtube',
-    url: 'fplAPb4FEx0',
-    start: 0,
-    'D.o.P': true,
-    Editor: true,
-    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/XjouopoWpTQ/hqdefault.jpg',
   },
   {
     title: 'Visweta-Aladdin',
@@ -32,6 +143,7 @@ const videos = [
     Director: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/Pc1_dJzxf68/maxresdefault.jpg',
   },
   {
     title: 'Ek-do-teen',
@@ -41,6 +153,27 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/6HLIFMyJxWA/maxresdefault.jpg',
+  },
+  {
+    title: 'Sound-of-Silence-Manipuri',
+    player: 'youtube',
+    url: 'wDpCEtKKDqo',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/wDpCEtKKDqo/maxresdefault.jpg',
+  },
+  {
+    title: 'Rongila-Re-Mon-Folk',
+    player: 'youtube',
+    url: '5q1TaIoZqkM',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/5q1TaIoZqkM/maxresdefault.jpg',
   },
   {
     title: 'Saa-boo-III',
@@ -50,6 +183,7 @@ const videos = [
     Director: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/KlzRxpRlmeQ/maxresdefault.jpg',
   },
   {
     title: 'Shivam',
@@ -59,6 +193,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/pnW0WqOx36U/maxresdefault.jpg',
   },
   {
     title: 'Koova-2',
@@ -67,6 +202,17 @@ const videos = [
     start: 15,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/LKnxcz9hjVw/hqdefault.jpg',
+  },
+  {
+    title: 'Light-projection-dance',
+    player: 'youtube',
+    url: 'ArkE9nQieIc',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/ArkE9nQieIc/maxresdefault.jpg',
   },
   {
     title: '3D-Vittaai',
@@ -76,6 +222,7 @@ const videos = [
     Director: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/vkGTNMXjsvg/maxresdefault.jpg',
   },
   {
     title: 'Mahanati',
@@ -85,6 +232,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/kXN2GR0jTrY/maxresdefault.jpg',
   },
   {
     title: 'Dance-promo',
@@ -94,6 +242,7 @@ const videos = [
     Editor: true,
     'Dance-Videos': true,
     Performer: true,
+    thumbnail: 'https://img.youtube.com/vi/SnHKSVr-ioU/maxresdefault.jpg',
   },
   {
     title: 'Kan-note-am',
@@ -103,6 +252,7 @@ const videos = [
     Director: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/sRuogD2lj-U/maxresdefault.jpg',
   },
   {
     title: 'Dance-constant',
@@ -111,6 +261,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/mu-jzfpd814/maxresdefault.jpg',
   },
   {
     title: 'Nayantara-tribute',
@@ -120,6 +271,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/vFPyrjz-uZo/maxresdefault.jpg',
   },
   {
     title: 'Indre-kollum',
@@ -129,6 +281,7 @@ const videos = [
     Performer: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/hYxwpQDn2IU/maxresdefault.jpg',
   },
   {
     title: 'Neeye-sol',
@@ -138,6 +291,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/rPN05DTv95o/maxresdefault.jpg',
   },
   {
     title: 'Crown-jathi-mix',
@@ -147,6 +301,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/4UhTTB4z6qE/hqdefault.jpg',
   },
   {
     title: 'Zingaat-dance',
@@ -156,6 +311,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/Vwl-b6I_RBw/maxresdefault.jpg',
   },
   {
     title: 'Karuvizhi-karuvi',
@@ -164,6 +320,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/u2HffXNnUiY/maxresdefault.jpg',
   },
   {
     title: 'Seemaraja-dance',
@@ -173,6 +330,7 @@ const videos = [
     Performer: true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/MhVWfj3z69E/maxresdefault.jpg',
   },
   {
     title: 'Believer-dance',
@@ -182,6 +340,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/wthTwi7U1mc/maxresdefault.jpg',
   },
   {
     title: 'Once-again-dance',
@@ -191,6 +350,7 @@ const videos = [
     Performer: true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/_pn4T2mZaYQ/maxresdefault.jpg',
   },
   {
     title: 'Suzharchi',
@@ -199,6 +359,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/JopIo5rombc/maxresdefault.jpg',
   },
   {
     title: 'Shake-it-off-dance',
@@ -208,6 +369,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/ty9oKJnKm7w/maxresdefault.jpg',
   },
   {
     title: 'Sanhiti-IPL-dance',
@@ -217,6 +379,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/8LwT7-A18Ho/maxresdefault.jpg',
   },
   {
     title: 'Mungda-dance',
@@ -226,6 +389,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/hv7x6lcJjLE/maxresdefault.jpg',
   },
   {
     title: 'Velai-evanidam',
@@ -234,6 +398,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/q0aWIQ-9bVs/hqdefault.jpg',
   },
   {
     title: 'Nilave-mugam-kaatu',
@@ -242,6 +407,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/acIvgCl8pys/maxresdefault.jpg',
   },
   {
     title: 'Rowdy-baby-dance',
@@ -251,6 +417,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/VX84P8qGY1Q/hqdefault.jpg',
   },
   {
     title: 'Break-the-rules-dance',
@@ -260,6 +427,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/0QEmozeynSo/hqdefault.jpg',
   },
   {
     title: 'Null-hypothesis',
@@ -268,6 +436,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/nAlreN8y5rI/maxresdefault.jpg',
   },
   {
     title: 'Cant-stop-the-feeling',
@@ -277,6 +446,7 @@ const videos = [
     Editor: true,
     'Dance-Videos': true,
     'D.o.P': true,
+    thumbnail: 'https://img.youtube.com/vi/0TUfbNHg9ZE/maxresdefault.jpg',
   },
   {
     title: 'Dhaari-choodu-dance',
@@ -285,6 +455,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/EyBYPlsqz4w/maxresdefault.jpg',
   },
   {
     title: 'Pilichinda-dance',
@@ -294,6 +465,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/BlUBzEocQe8/maxresdefault.jpg',
   },
   {
     title: 'Nallavela-suttutaanunga',
@@ -302,6 +474,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/5Ft3hdqHNpg/maxresdefault.jpg',
   },
   {
     title: 'game-trailer',
@@ -311,6 +484,7 @@ const videos = [
     Director: true,
     Editor: true,
     'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/aN0ZXV8ux58/maxresdefault.jpg',
   },
   {
     title: 'Dont-stop-dance',
@@ -320,6 +494,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/aj9-E4-mTA4/maxresdefault.jpg',
   },
   {
     title: 'Say-something-dance',
@@ -329,6 +504,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/DAy02w2v2bo/maxresdefault.jpg',
   },
   {
     title: 'Akh-Lad-Jaave-dance',
@@ -338,13 +514,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
-  },
-  {
-    title: 'Twitmania',
-    player: 'youtube',
-    url: 'OyNTsqI22cI',
-    start: 0,
-    Editor: true,
+    thumbnail: 'https://img.youtube.com/vi/HpdLCWkDYfw/maxresdefault.jpg',
   },
   {
     title: 'Maari-dance',
@@ -353,6 +523,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/zzaFIViZpc0/maxresdefault.jpg',
   },
   {
     title: 'It-wasnt-me-dance',
@@ -362,6 +533,7 @@ const videos = [
     'D.o.P': true,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/p6wQsRHdG-A/maxresdefault.jpg',
   },
   {
     title: 'Milegi-dance',
@@ -370,6 +542,7 @@ const videos = [
     start: 0,
     Editor: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/KXbqY-UYCH8/maxresdefault.jpg',
   },
   {
     title: 'Mama-douser-dance',
@@ -378,6 +551,7 @@ const videos = [
     start: 685,
     Performer: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/6-6OxsKPWAE/maxresdefault.jpg',
   },
   {
     title: 'Theeratha-dance',
@@ -386,6 +560,7 @@ const videos = [
     start: 1050,
     Performer: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/jX6ZnlVwo_I/hqdefault.jpg',
   },
   {
     title: 'Kasu-mela-dance',
@@ -394,6 +569,7 @@ const videos = [
     start: 4175,
     Performer: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/zTor5l7h3u8/maxresdefault.jpg',
   },
   {
     title: 'Editing-classical-dance',
@@ -402,6 +578,7 @@ const videos = [
     start: 82,
     Director: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/gFR14gPn1dQ/maxresdefault.jpg',
   },
   {
     title: 'Lighting-contemporary-dance',
@@ -410,6 +587,7 @@ const videos = [
     start: 45,
     Director: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/e7s6dtEfU4E/hqdefault.jpg',
   },
   {
     title: 'Top-down-camera-dance',
@@ -418,6 +596,37 @@ const videos = [
     start: 63,
     Director: true,
     'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/CNDshA69NH4/maxresdefault.jpg',
+  },
+  {
+    title: 'Mi-gente-bharatnatyam',
+    player: 'youtube',
+    url: 'nU26HNruRSc',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/nU26HNruRSc/maxresdefault.jpg',
+  },
+  {
+    title: 'Bengali-finale',
+    player: 'youtube',
+    url: 'xaG2T03aE0k',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/xaG2T03aE0k/maxresdefault.jpg',
+  },
+  {
+    title: 'Jab-koi-baat-bollyfusion',
+    player: 'youtube',
+    url: '3ZNWNFL4omA',
+    start: 4,
+    'D.o.P': true,
+    Editor: true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/3ZNWNFL4omA/maxresdefault.jpg',
   },
   {
     title: 'etc-music-video',
@@ -426,8 +635,15 @@ const videos = [
     start: 10,
     Director: true,
     Editor: true,
-    'Dance-Films': true,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/VORhnpUUtig/maxresdefault.jpg',
+  },
+  {
+    title: 'Twitmania',
+    player: 'youtube',
+    url: 'OyNTsqI22cI',
+    start: 0,
+    Editor: true,
+    thumbnail: 'https://img.youtube.com/vi/OyNTsqI22cI/hqdefault.jpg',
   },
 ];
-
-export default videos;

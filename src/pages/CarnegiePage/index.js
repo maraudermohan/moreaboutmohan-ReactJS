@@ -28,7 +28,7 @@ import {
 import CarnegiePageContainer from './styles';
 
 // Masters at Carnegie Mellon university page
-const CarnegiePage = () => {
+function CarnegiePage() {
   const { breakpoint } = useContext(BrowserContext);
   return (
     <CarnegiePageContainer className="carnegie-page">
@@ -117,6 +117,6 @@ const CarnegiePage = () => {
       <Footer />
     </CarnegiePageContainer>
   );
-};
+}
 
 export default CarnegiePage;

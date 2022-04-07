@@ -6,11 +6,11 @@ import { StyledSubtext } from 'components/Typography';
 import YearContainer from './styles';
 
 // Component used in ResumePage to display Year
-const TimelineYear = ({
+function TimelineYear({
   children,
   offsetAhead,
   alignment = 'right',
-}) => {
+}) {
   const { bottomScroll } = useContext(ScrollPositionContext);
   const { breakpoint, orientation } = useContext(BrowserContext);
   const elemRef = useRef(null);
@@ -52,7 +52,7 @@ const TimelineYear = ({
       }
     </YearContainer>
   );
-};
+}
 
 TimelineYear.propTypes = {
   children: PropTypes.oneOfType([

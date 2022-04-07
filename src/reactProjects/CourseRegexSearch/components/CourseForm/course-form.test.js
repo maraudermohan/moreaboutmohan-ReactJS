@@ -1,5 +1,10 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import {
+  screen,
+  render,
+  fireEvent,
+  cleanup,
+} from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { COURSE_REGEX_FULL } from './regex-data';
@@ -35,42 +40,39 @@ describe('Regex Tests', () => {
 describe('Course form component', () => {
   afterEach(() => cleanup);
   test('test if button disabled by default', () => {
-    const { getByTestId, unmount } = render(<CourseForm />);
-    expect(getByTestId('course-form-button')).toBeDisabled();
-    unmount();
+    render(<CourseForm />);
+    expect(screen.getByTestId('course-form-button')).toBeDisabled();
   });
 
   test('test if button enables on input change', () => {
-    const { getByTestId, unmount } = render(<CourseForm />);
-    fireEvent.change(getByTestId('course-form-input'), {
+    render(<CourseForm />);
+    fireEvent.change(screen.getByTestId('course-form-input'), {
       target: {
         value: 'sometext',
       },
     });
 
-    expect(getByTestId('course-form-button')).not.toBeDisabled();
-    unmount();
+    expect(screen.getByTestId('course-form-button')).not.toBeDisabled();
   });
 
   test('test if error text hides and shows correctly', () => {
-    const { getByTestId, queryByTestId, unmount } = render(<CourseForm />);
+    render(<CourseForm />);
 
-    expect(queryByTestId('course-form-error')).toBeFalsy();
-    fireEvent.change(getByTestId('course-form-input'), {
+    expect(screen.queryByTestId('course-form-error')).toBeFalsy();
+    fireEvent.change(screen.getByTestId('course-form-input'), {
       target: {
         value: 'hello world',
       },
     });
-    fireEvent.click(getByTestId('course-form-button'));
-    expect(queryByTestId('course-form-error')).toBeTruthy();
+    fireEvent.click(screen.getByTestId('course-form-button'));
+    expect(screen.getByTestId('course-form-error')).toBeTruthy();
 
-    fireEvent.change(getByTestId('course-form-input'), {
+    fireEvent.change(screen.getByTestId('course-form-input'), {
       target: {
         value: 'CS111 Winter18',
       },
     });
-    fireEvent.click(getByTestId('course-form-button'));
-    expect(queryByTestId('course-form-error')).toBeFalsy();
-    unmount();
+    fireEvent.click(screen.getByTestId('course-form-button'));
+    expect(screen.queryByTestId('course-form-error')).toBeFalsy();
   });
 });

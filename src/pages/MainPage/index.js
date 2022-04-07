@@ -26,9 +26,9 @@ import {
 } from './styles';
 
 // Page component that renders copy and links related to work experience
-const MainPage = ({
+function MainPage({
   is404 = false,
-}) => {
+}) {
   const imageBgRef = useRef(null);
   const { breakpoint } = useContext(BrowserContext);
   const [mouseXY, setMouseXY] = useState({
@@ -108,7 +108,7 @@ const MainPage = ({
                 <br />
                 with &lsquo;Game Designer&rsquo; skills
                 <br />
-                11+ years of experience
+                12+ years of experience
                 <br />
                 Fueled by passion & creativity
               </StyledH4>
@@ -130,7 +130,7 @@ const MainPage = ({
       </IconContainer>
     </MainPageContainer>
   );
-};
+}
 
 MainPage.propTypes = {
   is404: PropTypes.bool,

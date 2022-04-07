@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-export default function calendarReducer(state = initialState.calendarModel, action) {
+export default function calendarReducer(state = initialState.calendarModel, action = {}) {
   let newObj = state;
   switch (action.type) {
     case 'UPDATE_NAME_IN_CALENDAR_MODEL':

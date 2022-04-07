@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-export default function timeIndexReducer(state = initialState.currentSelection, action) {
+export default function timeIndexReducer(state = initialState.currentSelection, action = {}) {
   switch (action.type) {
     case 'PICK_COURSE_TO_CURRENT_SELECTION':
       return {

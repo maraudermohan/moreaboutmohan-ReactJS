@@ -12,7 +12,7 @@ import {
 } from './styles';
 
 // Page component that renders copy and links related to work experience
-const ReactPage = () => {
+function ReactPage() {
   const browserWidth = window.innerWidth;
 
   useEffect(() => {}, [window.innerWidth, window.innerHeight]);
@@ -56,6 +56,6 @@ const ReactPage = () => {
       <Footer hoverColor={colors.AZURE} />
     </ReactPageContainer>
   );
-};
+}
 
 export default ReactPage;

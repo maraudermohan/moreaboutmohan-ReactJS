@@ -6,10 +6,10 @@ import { ScrollPositionContext } from 'constants/contexts';
 // Higher order component that detects scroll event
 // Scroll positions are compared with current element's offsetTop
 // Current element is set to position FIXED
-const FixedOnScrollHOC = ({
+function FixedOnScrollHOC({
   fixedElemCss = {},
   render,
-}) => {
+}) {
   const [newStyles, setNewStyles] = useState({});
   const { bottomScroll } = useContext(ScrollPositionContext);
   const {
@@ -40,7 +40,7 @@ const FixedOnScrollHOC = ({
   }, [bottomScroll]);
 
   return render(newStyles);
-};
+}
 
 FixedOnScrollHOC.propTypes = {
   fixedElemCss: PropTypes.objectOf(PropTypes.number),

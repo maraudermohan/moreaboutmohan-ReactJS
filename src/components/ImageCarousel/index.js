@@ -13,10 +13,10 @@ import { ImageCarouselContainer, calculateStaticHeight, calculateImageWidth } fr
 // Component that renders a list of images in a single row
 // Normal scroll event is transformed to offset the image carousel
 // Hence scrolling down the page will create a sliding effect on the images
-const ImageCarousel = ({
+function ImageCarousel({
   data = [],
   slideDirection = 'left',
-}) => {
+}) {
   const imagesList = useRef(null);
   const [staticCss, setStaticCss] = useState({});
   const [slideCss, setSlideCss] = useState({
@@ -116,7 +116,7 @@ const ImageCarousel = ({
       </div>
     </ImageCarouselContainer>
   );
-};
+}
 
 ImageCarousel.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),

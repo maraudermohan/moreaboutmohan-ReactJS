@@ -1,5 +1,9 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import {
+  screen,
+  render,
+  cleanup,
+} from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import CourseCard from './index';
@@ -7,9 +11,9 @@ import CourseCard from './index';
 describe('Course card component', () => {
   afterEach(() => cleanup);
   test('test if error text renders for empty coursedata', () => {
-    const { queryByTestId } = render(<CourseCard filteredCourse={null} />);
+    render(<CourseCard filteredCourse={null} />);
 
-    expect(queryByTestId('course-card-error')).toBeTruthy();
+    expect(screen.getByTestId('course-card-error')).toBeTruthy();
   });
   test('test if card renders successful for meaningful coursedata', () => {
     const coursedata = {
@@ -18,9 +22,9 @@ describe('Course card component', () => {
       semester: 'Summer',
       year: 2020,
     };
-    const { getByTestId, queryByTestId } = render(<CourseCard filteredCourse={coursedata} />);
+    render(<CourseCard filteredCourse={coursedata} />);
 
-    expect(queryByTestId('course-card-error')).toBeNull();
-    expect(getByTestId('course-card-success')).toBeTruthy();
+    expect(screen.queryByTestId('course-card-error')).toBeNull();
+    expect(screen.getByTestId('course-card-success')).toBeTruthy();
   });
 });
