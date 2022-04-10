@@ -54,7 +54,7 @@ function App() {
             <Route path="/courses" element={<CoursesCalendar />} />
             <Route path="/evade" element={<EvadeGame />} exact />
             <Route path="/regexsearch" element={<CourseRegexSearch />} exact />
-            <Route element={<MainPage is404 />} />
+            <Route path="*" element={<MainPage is404 />} />
           </Routes>
         </ResizeHOC>
       </ScrollHOC>

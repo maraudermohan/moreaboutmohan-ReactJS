@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -19,6 +20,9 @@ function ReactPage() {
 
   return (
     <ReactPageContainer className="react-page">
+      <Helmet>
+        <title>React projects - Mohan Subramanian</title>
+      </Helmet>
       <Header />
       <StyledH1 className="page__title">{'React \xa0 side-projects'}</StyledH1>
       {

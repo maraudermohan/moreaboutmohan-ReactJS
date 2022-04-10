@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -86,6 +87,9 @@ class FilmmakerPage extends Component {
 
     return (
       <FilmmakerPageContainer className="filmmaker-page">
+        <Helmet>
+          <title>Filmmaker - Mohan Subramanian</title>
+        </Helmet>
         <Header />
         <StyledH1>Filmmaking projects</StyledH1>
         <VideoShuffler videoData={spotlightData} />

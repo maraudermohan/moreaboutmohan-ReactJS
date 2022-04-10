@@ -5,6 +5,8 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
 import { StyledH2, StyledH4 } from 'components/Typography';
@@ -80,6 +82,9 @@ function MainPage({
       $width={browserParams.width}
       $height={browserParams.height}
     >
+      <Helmet>
+        <title>Mohan Subramanian&apos;s Portfolio</title>
+      </Helmet>
       <ImageContainer
         style={{
           backgroundImage: `url(${backgroundData[backgroundDataIndex]})`,
@@ -100,7 +105,9 @@ function MainPage({
               <StyledH4>
                 <span>404</span>
                 <br />
-                Page not found
+                Sorry, the page could not be found
+                <br />
+                <Link to="/" className="return__title">Return to Homepage</Link>
               </StyledH4>
             ) : (
               <StyledH4>

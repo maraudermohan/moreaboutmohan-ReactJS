@@ -25,6 +25,12 @@ export const MainPageContainer = styled.main`
     display: none;
   }
 
+  .return__title {
+    color: ${colors.LATTE};
+    font-size: 16px;
+    padding: 20px 0 0 0;
+  }
+
   .main-page__title {
     position: fixed;
     top: 24px;
