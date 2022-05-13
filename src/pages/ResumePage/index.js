@@ -104,26 +104,28 @@ function ResumePage() {
       <TimelineContainer ref={containerRef1} $show={offsetObj.show}>
         <TimelineYear offsetAhead={offsetObj.first} />
         <TimelineBox offsetAhead={offsetObj.first} {...data[0]} />
-        <TimelineYear offsetAhead={offsetObj.first}>2020</TimelineYear>
+        <TimelineYear offsetAhead={offsetObj.first}>2022</TimelineYear>
         <TimelineBox offsetAhead={offsetObj.first} {...data[1]} />
-        <TimelineYear offsetAhead={offsetObj.first}>2016</TimelineYear>
+        <TimelineYear offsetAhead={offsetObj.first}>2020</TimelineYear>
         <TimelineBox offsetAhead={offsetObj.first} {...data[2]} />
-        <TimelineYear offsetAhead={offsetObj.first}>2014</TimelineYear>
+        <TimelineYear offsetAhead={offsetObj.first}>2016</TimelineYear>
         <TimelineBox offsetAhead={offsetObj.first} {...data[3]} />
+        <TimelineYear offsetAhead={offsetObj.first}>2014</TimelineYear>
+        <TimelineBox offsetAhead={offsetObj.first} {...data[4]} />
         <TimelineYear offsetAhead={offsetObj.first}>2013</TimelineYear>
         <TimelineContainer ref={containerRef2} $show={offsetObj.show}>
-          <TimelineBox offsetAhead={offsetObj.second} {...data[4]} />
+          <TimelineBox offsetAhead={offsetObj.second} {...data[5]} />
           <BoxSubcontainer ref={containerRef3}>
-            <TimelineBox offsetAhead={offsetObj.third} {...data[5]} />
             <TimelineBox offsetAhead={offsetObj.third} {...data[6]} />
             <TimelineBox offsetAhead={offsetObj.third} {...data[7]} />
             <TimelineBox offsetAhead={offsetObj.third} {...data[8]} />
+            <TimelineBox offsetAhead={offsetObj.third} {...data[9]} />
           </BoxSubcontainer>
         </TimelineContainer>
         <TimelineYear offsetAhead={offsetObj.first}>2011</TimelineYear>
-        <TimelineBox offsetAhead={offsetObj.first} {...data[9]} />
-        <TimelineYear offsetAhead={offsetObj.first}>2009</TimelineYear>
         <TimelineBox offsetAhead={offsetObj.first} {...data[10]} />
+        <TimelineYear offsetAhead={offsetObj.first}>2009</TimelineYear>
+        <TimelineBox offsetAhead={offsetObj.first} {...data[11]} />
         <TimelineYear offsetAhead={offsetObj.first}>2005</TimelineYear>
         <Timeline />
       </TimelineContainer>

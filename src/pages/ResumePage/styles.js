@@ -214,6 +214,13 @@ export const Mask = styled.div`
 
 export const data = [
   {
+    title: 'Zoox',
+    color: '#9730A6',
+    height: 3,
+    alignment: 'right',
+    href: '/resume',
+  },
+  {
     title: 'ShareCare',
     color: '#0fb294',
     height: 3,
