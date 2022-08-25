@@ -1,5 +1,5 @@
 import React, { Component, createRef, Fragment } from 'react';
-import { Helmet } from 'react-helmet';
+import Headx from 'headx';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -94,9 +94,9 @@ class DesignsPage extends Component {
         {
           ({ breakpoint }) => (
             <DesignsPageContainer className="design-page">
-              <Helmet>
-                <title>Design works - Mohan Subramanian</title>
-              </Helmet>
+              <Headx
+                title="Design works - Mohan Subramanian"
+              />
               <Header />
               <StyledH1>Design works</StyledH1>
               <Gradient ref={hiddenElemRef}>

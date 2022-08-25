@@ -79,8 +79,9 @@ export const duration = {
 export const video1 = {
   title: 'megalodon-gameplay',
   player: 'youtube',
-  url: 'S9B32jHRx-k',
+  url: 'yhNFmzmOfZw',
   start: 0,
+  thumbnail: 'https://img.youtube.com/vi/yhNFmzmOfZw/maxresdefault.jpg',
 };
 
 export const video2 = {

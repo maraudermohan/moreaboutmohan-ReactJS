@@ -68,7 +68,7 @@ function CarnegiePage() {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={0}
-          muted
+          muted={1}
           className="carnegie-page__video1"
         />
         <ContentList
@@ -88,7 +88,7 @@ function CarnegiePage() {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={0}
-          muted
+          muted={1}
           className="carnegie-page__video2"
         />
         <ContentList
@@ -110,7 +110,7 @@ function CarnegiePage() {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={0}
-          muted
+          muted={1}
           className="carnegie-page__video3"
         />
       </div>

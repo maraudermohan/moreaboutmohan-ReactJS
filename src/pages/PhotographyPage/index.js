@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import Headx from 'headx';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -17,9 +17,9 @@ import {
 function PhotographyPage() {
   return (
     <PhotographyPageContainer className="photography-page">
-      <Helmet>
-        <title>Photography - Mohan Subramanian</title>
-      </Helmet>
+      <Headx
+        title="Photography - Mohan Subramanian"
+      />
       <Header />
       <StyledH1>Arts & Photography</StyledH1>
       <Gradient>

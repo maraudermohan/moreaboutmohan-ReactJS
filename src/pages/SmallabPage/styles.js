@@ -19,6 +19,8 @@ const SmallabPageContainer = styled.main`
 
   .smallab-page__video1 {
     min-height: 200px;
+    margin: 0 auto;
+    position: relative;
     iframe {
       display: block;
       margin: 0 auto;

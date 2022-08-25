@@ -47,7 +47,7 @@ function MegalodonPage() {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={1}
-          muted
+          muted={1}
           className="megalodon-page__video1"
         />
         <ContentList
@@ -81,7 +81,7 @@ function MegalodonPage() {
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
           autoplay={0}
-          muted
+          muted={1}
           className="megalodon-page__video2"
         />
         <ContentList
@@ -100,7 +100,7 @@ function MegalodonPage() {
         height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
         width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
         autoplay={0}
-        muted
+        muted={1}
         className="megalodon-page__video3"
       />
       <Footer />

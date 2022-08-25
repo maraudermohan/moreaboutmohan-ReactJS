@@ -5,7 +5,7 @@ import React, {
   useState,
 } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
+import Headx from 'headx';
 import { Link } from 'react-router-dom';
 
 import Header from 'components/Header';
@@ -82,9 +82,9 @@ function MainPage({
       $width={browserParams.width}
       $height={browserParams.height}
     >
-      <Helmet>
-        <title>Mohan Subramanian&apos;s Portfolio</title>
-      </Helmet>
+      <Headx
+        title="Mohan Subramanian - Portfolio"
+      />
       <ImageContainer
         style={{
           backgroundImage: `url(${backgroundData[backgroundDataIndex]})`,

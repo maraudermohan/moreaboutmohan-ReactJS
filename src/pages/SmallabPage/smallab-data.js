@@ -75,6 +75,7 @@ export const video1 = {
   player: 'youtube',
   url: 'j2tsCQUYJB8',
   start: 0,
+  thumbnail: 'https://img.youtube.com/vi/j2tsCQUYJB8/maxresdefault.jpg',
 };
 
 export const video2 = {

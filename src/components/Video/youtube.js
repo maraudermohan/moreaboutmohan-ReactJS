@@ -34,7 +34,7 @@ class Video extends Component {
       height = '360',
       start = 0,
       autoplay = 0,
-      muted = true,
+      muted = 1,
       onDone = () => {},
     } = this.props;
     this.player = new window.YT.Player(`${title}`, {
@@ -104,7 +104,7 @@ Video.propTypes = {
   height: PropTypes.string,
   start: PropTypes.number,
   autoplay: PropTypes.number,
-  muted: PropTypes.bool,
+  muted: PropTypes.number,
   onDone: PropTypes.func,
   className: PropTypes.string,
   thumbnail: PropTypes.string,
