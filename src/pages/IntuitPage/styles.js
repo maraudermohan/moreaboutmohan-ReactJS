@@ -28,6 +28,8 @@ const IntuitPageContainer = styled.main`
   .intuit-page__image1,
   .intuit-page__image2,
   .intuit-page__image3 {
+    display: block;
+    margin: 0 auto;
     @media ${mq.uptoTablet},
     (max-width: 868px) and (orientation: landscape) {
       width: 300px;
@@ -38,7 +40,7 @@ const IntuitPageContainer = styled.main`
 
   .intuit-page__image4 {
     display: block;
-    margin: 0 auto 0 calc(100% - 750px);
+    margin: 0 auto;
     padding: 24px 0 0 0;
 
     @media ${mq.uptoTablet},

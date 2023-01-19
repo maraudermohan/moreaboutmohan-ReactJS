@@ -324,6 +324,16 @@ export const videosData = [
     thumbnail: 'https://img.youtube.com/vi/4UhTTB4z6qE/hqdefault.jpg',
   },
   {
+    title: 'Blinding-lights-dance',
+    player: 'youtube',
+    url: 'CMWogSJgzgM',
+    start: 0,
+    'D.o.P': true,
+    Editor: false,
+    'Dance-Videos': true,
+    thumbnail: 'https://img.youtube.com/vi/CMWogSJgzgM/maxresdefault.jpg',
+  },
+  {
     title: 'Zingaat-dance',
     player: 'youtube',
     url: 'Vwl-b6I_RBw',
