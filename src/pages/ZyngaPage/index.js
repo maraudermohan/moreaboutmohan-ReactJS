@@ -1,11 +1,4 @@
-import React from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Jumbotron from 'components/Jumbotron';
-import TitleSection from 'components/TitleSection';
-import LazyLoadImage from 'components/LazyLoadImage';
-import TextImageCarouselOnScroll from 'comboComponents/TextImageCarouselOnScroll';
-import ContentList from 'components/ContentList';
+import React, { lazy } from 'react';
 import {
   jumbotronProps,
   jobTitle,
@@ -18,6 +11,14 @@ import {
   imageProps2,
 } from './zynga-data';
 import ZyngaPageContainer from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const Jumbotron = lazy(() => import('components/Jumbotron'));
+const TitleSection = lazy(() => import('components/TitleSection'));
+const TextImageCarouselOnScroll = lazy(() => import('comboComponents/TextImageCarouselOnScroll'));
+const ContentList = lazy(() => import('components/ContentList'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Zynga work experience page
 function ZyngaPage() {

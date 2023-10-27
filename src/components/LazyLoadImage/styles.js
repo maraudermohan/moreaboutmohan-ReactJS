@@ -3,7 +3,7 @@ import colors from 'constants/colors';
 
 // Styled <img> and <div> elements
 const StyledImg = styled.img`
-  opacity: ${(props) => (props.hasLoaded ? 1 : 0)};
+  opacity: ${(props) => (props.$hasLoaded ? 1 : 0)};
   width: ${(props) => props.$width};
   height: ${(props) => props.$height};
 `;

@@ -1,4 +1,5 @@
 import React, {
+  lazy,
   useContext,
   useEffect,
   useRef,
@@ -8,7 +9,6 @@ import PropTypes from 'prop-types';
 import Headx from 'headx';
 import { Link } from 'react-router-dom';
 
-import Header from 'components/Header';
 import { StyledH2, StyledH4 } from 'components/Typography';
 import { BrowserContext } from 'constants/contexts';
 import {
@@ -26,6 +26,8 @@ import {
   ImageBgContainer,
   TextBox,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
 
 // Page component that renders copy and links related to work experience
 function MainPage({

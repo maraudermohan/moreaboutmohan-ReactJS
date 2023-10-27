@@ -3,10 +3,10 @@ import { Provider } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import configureStore from './store/configureStore';
-import Header from './components/Header';
 import 'reactProjects/bootstrap.min.css';
 import './styles/courses-calendar.css';
 
+const Header = lazy(() => import('components/Header'));
 const CoursesMain = lazy(() => import('./components/CoursesMain'));
 const CalendarMain = lazy(() => import('./components/CalendarMain'));
 

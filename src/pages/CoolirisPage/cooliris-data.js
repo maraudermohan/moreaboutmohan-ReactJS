@@ -1,6 +1,6 @@
-import cooliris1 from 'images/cooliris1.jpg';
-import cooliris2 from 'images/cooliris2.jpg';
-import cooliris3 from 'images/cooliris3.jpg';
+import cooliris1 from 'images/cooliris1.webp';
+import cooliris2 from 'images/cooliris2.webp';
+import cooliris3 from 'images/cooliris3.webp';
 
 export const jumbotronProps = [
   {

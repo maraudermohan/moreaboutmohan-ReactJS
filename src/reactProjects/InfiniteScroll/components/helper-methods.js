@@ -43,7 +43,7 @@ export function LoadPreviousRowContainer(gallery, observer, prevNode, startIndex
  */
 export function renderImagesInRow(node, startIndex) {
   const firstIndex = 1;
-  const finalIndex = 48;
+  const finalIndex = 18;
   let count = 6;
   let currentIndex = startIndex;
 

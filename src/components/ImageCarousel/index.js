@@ -1,4 +1,5 @@
 import React, {
+  lazy,
   useEffect,
   useRef,
   useContext,
@@ -7,8 +8,9 @@ import React, {
 import PropTypes from 'prop-types';
 
 import { ScrollPositionContext } from 'constants/contexts';
-import LazyLoadImage from 'components/LazyLoadImage';
 import { ImageCarouselContainer, calculateStaticHeight, calculateImageWidth } from './styles';
+
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Component that renders a list of images in a single row
 // Normal scroll event is transformed to offset the image carousel

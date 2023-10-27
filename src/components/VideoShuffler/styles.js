@@ -313,34 +313,34 @@ export const MainVideoContainer = styled.div`
     > * {
       opacity: 0;
     }
-    animation: ${(props) => MainToLeft(props.$width)} .75s linear both;
+    animation: ${(props) => MainToLeft(props.$width)} 0.5s linear both;
   }
   &.LeftToRight {
     > * {
       opacity: 0;
     }
-    animation: ${(props) => LeftToRight(props.$width)} .75s linear both;
+    animation: ${(props) => LeftToRight(props.$width)} 0.5s linear both;
   }
   &.RightToMain {
     > * {
       opacity: 0;
     }
-    animation: ${(props) => RightToMain(props.$width)} .75s linear both;
+    animation: ${(props) => RightToMain(props.$width)} 0.5s linear both;
   }
   &.LeftToMain {
     > * {
       opacity: 0;
     }
-    animation: ${(props) => MainToLeft(props.$width)} .75s linear reverse both;
+    animation: ${(props) => MainToLeft(props.$width)} 0.5s linear reverse both;
   }
   &.RightToLeft {
-    animation: ${(props) => LeftToRight(props.$width)} .75s linear reverse both;
+    animation: ${(props) => LeftToRight(props.$width)} 0.5s linear reverse both;
   }
   &.MainToRight {
     > * {
       opacity: 0;
     }
-    animation: ${(props) => RightToMain(props.$width)} .75s linear reverse both;
+    animation: ${(props) => RightToMain(props.$width)} 0.5s linear reverse both;
   }
 
   @media ${mq.desktop} {
@@ -355,22 +355,22 @@ export const MainVideoContainer = styled.div`
       transform: scale(0.8);
     }
     &.MainToLeft {
-      animation: ${(props) => MainToLeftLG(props.$width)} 1.2s linear both;
+      animation: ${(props) => MainToLeftLG(props.$width)} 0.5s linear both;
     }
     &.LeftToRight {
-      animation: ${(props) => LeftToRightLG(props.$width)} 1.2s linear both;
+      animation: ${(props) => LeftToRightLG(props.$width)} 0.5s linear both;
     }
     &.RightToMain {
-      animation: ${(props) => RightToMainLG(props.$width)} 1.2s linear both;
+      animation: ${(props) => RightToMainLG(props.$width)} 0.5s linear both;
     }
     &.LeftToMain {
-      animation: ${(props) => MainToLeftLG(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => MainToLeftLG(props.$width)} 0.5s linear reverse both;
     }
     &.RightToLeft {
-      animation: ${(props) => LeftToRightLG(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => LeftToRightLG(props.$width)} 0.5s linear reverse both;
     }
     &.MainToRight {
-      animation: ${(props) => RightToMainLG(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => RightToMainLG(props.$width)} 0.5s linear reverse both;
     }
   }
 
@@ -382,22 +382,22 @@ export const MainVideoContainer = styled.div`
       right: 10%;
     }
     &.MainToLeft {
-      animation: ${(props) => MainToLeftXL(props.$width)} 1.2s linear both;
+      animation: ${(props) => MainToLeftXL(props.$width)} 0.5s linear both;
     }
     &.LeftToRight {
-      animation: ${(props) => LeftToRightXL(props.$width)} 1.2s linear both;
+      animation: ${(props) => LeftToRightXL(props.$width)} 0.5s linear both;
     }
     &.RightToMain {
-      animation: ${(props) => RightToMainXL(props.$width)} 1.2s linear both;
+      animation: ${(props) => RightToMainXL(props.$width)} 0.5s linear both;
     }
     &.LeftToMain {
-      animation: ${(props) => MainToLeftXL(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => MainToLeftXL(props.$width)} 0.5s linear reverse both;
     }
     &.RightToLeft {
-      animation: ${(props) => LeftToRightXL(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => LeftToRightXL(props.$width)} 0.5s linear reverse both;
     }
     &.MainToRight {
-      animation: ${(props) => RightToMainXL(props.$width)} 1.2s linear reverse both;
+      animation: ${(props) => RightToMainXL(props.$width)} 0.5s linear reverse both;
     }
   }
 `;

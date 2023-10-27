@@ -1,12 +1,12 @@
-import smilegate1 from 'images/smilegate1.jpg';
-import smilegate2 from 'images/smilegate2.jpg';
-import smilegate3 from 'images/smilegate3.jpg';
-import smilegate4 from 'images/smilegate4.jpg';
-import smilegate5 from 'images/smilegate5.jpg';
-import smilegate6 from 'images/smilegate6.jpg';
-import smilegate7 from 'images/smilegate7.jpg';
-import smilegate9 from 'images/smilegate9.jpg';
-import smilegate10 from 'images/smilegate10.jpg';
+import smilegate1 from 'images/smilegate1.webp';
+import smilegate2 from 'images/smilegate2.webp';
+import smilegate3 from 'images/smilegate3.webp';
+import smilegate4 from 'images/smilegate4.webp';
+import smilegate5 from 'images/smilegate5.webp';
+import smilegate6 from 'images/smilegate6.webp';
+import smilegate7 from 'images/smilegate7.webp';
+import smilegate9 from 'images/smilegate9.webp';
+import smilegate10 from 'images/smilegate10.webp';
 
 export const jumbotronProps = [
   {

@@ -1,4 +1,5 @@
 import React, {
+  lazy,
   useEffect,
   useContext,
   useRef,
@@ -6,12 +7,7 @@ import React, {
 } from 'react';
 import Headx from 'headx';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import LazyLoadImage from 'components/LazyLoadImage';
 import { StyledH1, StyledH3, StyledSubtext } from 'components/Typography';
-import TimelineBox from 'components/TimelineBox';
-import TimelineYear from 'components/TimelineYear';
 import { BrowserContext, ScrollPositionContext } from 'constants/contexts';
 import { DownloadIcon } from 'images/icons';
 import colors from 'constants/colors';
@@ -25,6 +21,12 @@ import {
   Timeline,
   TimelineContainer,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const TimelineBox = lazy(() => import('components/TimelineBox'));
+const TimelineYear = lazy(() => import('components/TimelineYear'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Page component that renders copy and links related to work experience
 function ResumePage() {

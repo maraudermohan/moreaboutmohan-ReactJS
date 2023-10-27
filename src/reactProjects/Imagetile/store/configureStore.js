@@ -1,12 +1,8 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
+import reducers from '../reducers';
 
-import rootReducer from '../reducers';
+const store = configureStore({
+  reducer: reducers,
+});
 
-export default function configureStore(initialState) {
-  return createStore(
-    rootReducer,
-    initialState,
-    applyMiddleware(thunk),
-  );
-}
+export default store;

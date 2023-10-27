@@ -39,8 +39,9 @@ const CarnegiePageContainer = styled.main`
   .carnegie-page__video1,
   .carnegie-page__video2,
   .carnegie-page__video3 {
-    display: block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin: 0;
     min-height: 200px;
     @media ${mq.uptoTablet} and (orientation: landscape) {
       min-height: 290px;

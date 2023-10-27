@@ -14,6 +14,7 @@ export const DesignsPageContainer = styled.main`
 
   .header__title {
     font-family: "Lobster", san-serif;
+    font-display: swap;
   }
 
   nav .nav__link-two > .nav__link:first-of-type {
@@ -98,6 +99,7 @@ export const DesignButton = styled.a`
   text-align: center;
   font-size: 20px;
   font-family: "Staatliches", san-serif;
+  font-display: swap;
   color: ${colors.LATTE};
   border-radius: 4px;
   transition: all 0.3s;

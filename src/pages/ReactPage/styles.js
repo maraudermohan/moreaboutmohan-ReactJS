@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH1, StyledSubtext } from 'components/Typography';
-import infinitescroll from 'images/infinitescroll.png';
-import imagetile from 'images/imagetile1.png';
-import coursescalendar from 'images/coursescalendar.png';
-import evadegame from 'images/evadegame.png';
-import intuitpark from 'images/intuitpark.png';
-import regexsearch from 'images/regexsearch.png';
+import infinitescroll from 'images/infinitescroll.webp';
+import imagetile from 'images/imagetile1.webp';
+import coursescalendar from 'images/coursescalendar.webp';
+import evadegame from 'images/evadegame.webp';
+import intuitpark from 'images/intuitpark.webp';
+import regexsearch from 'images/regexsearch.webp';
 
 export const ReactPageContainer = styled.main`
   background: ${colors.PANTONE};
@@ -19,6 +19,7 @@ export const ReactPageContainer = styled.main`
 
   .header__title {
     font-family: "Lobster", san-serif;
+    font-display: swap;
   }
 
   nav > .nav__link:nth-of-type(2) {
@@ -117,6 +118,7 @@ export const ReactPageContainer = styled.main`
       padding: 16px 0 0 24px;
       color: ${colors.PANTONE};
       font-family: "El Messiri", san-serif;
+      font-display: swap;
       font-weight: 600;
     }
   
@@ -128,6 +130,7 @@ export const ReactPageContainer = styled.main`
       color: ${colors.MAGENTA};
       text-align: right;
       font-family: "Sen", san-serif;
+      font-display: swap;
       font-size: 16px;
       font-weight: 500;
     }
@@ -142,6 +145,7 @@ export const ReactPageContainer = styled.main`
       color: ${colors.PANTONE};
       text-align: left;
       font-family: "Sen", san-serif;
+      font-display: swap;
       font-size: 18px;
     }
   

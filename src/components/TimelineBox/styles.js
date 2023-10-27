@@ -42,6 +42,7 @@ const BoxContainer = styled(Link)`
 
   ${StyledH4} {
     font-family: "Sen", san-serif;
+    font-display: swap;
     color: ${colors.LATTE};
   }
 
@@ -57,6 +58,7 @@ const BoxContainer = styled(Link)`
   p {
     color: ${colors.LATTE};
     font-family: "Sen", san-serif;
+    font-display: swap;
     font-size: 18px;
     &:empty {
       display: none;

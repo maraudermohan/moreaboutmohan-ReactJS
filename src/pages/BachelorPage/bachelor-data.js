@@ -1,8 +1,8 @@
-import psg1 from 'images/psg1.png';
-import psg2 from 'images/psg2.jpg';
-import psg3 from 'images/psg3.jpg';
-import psg0 from 'images/psg0.jpg';
-import psg4 from 'images/psg4.jpg';
+import psg1 from 'images/psg1.webp';
+import psg2 from 'images/psg2.webp';
+import psg3 from 'images/psg3.webp';
+import psg0 from 'images/psg0.webp';
+import psg4 from 'images/psg4.webp';
 
 export const jumbotronProps = [
   {

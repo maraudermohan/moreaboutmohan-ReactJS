@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { lazy, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import LazyLoadImage from 'components/LazyLoadImage';
 import { JumbotronContainer, JumbotronOverlay } from './styles';
+
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Component that cycles through images every few seconds
 // Acts as HERO component for the page

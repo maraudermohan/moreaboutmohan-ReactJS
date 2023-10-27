@@ -1,12 +1,4 @@
-import React from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Jumbotron from 'components/Jumbotron';
-import TitleSection from 'components/TitleSection';
-import LazyLoadImage from 'components/LazyLoadImage';
-import TextImageCarouselOnScroll from 'comboComponents/TextImageCarouselOnScroll';
-import TransparentScroller from 'components/TransparentScroller';
-import ContentList from 'components/ContentList';
+import React, { lazy } from 'react';
 import colors from 'constants/colors';
 import {
   jumbotronProps,
@@ -23,6 +15,15 @@ import {
   imageProps4,
 } from './intuit-data';
 import IntuitPageContainer from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const Jumbotron = lazy(() => import('components/Jumbotron'));
+const TitleSection = lazy(() => import('components/TitleSection'));
+const TextImageCarouselOnScroll = lazy(() => import('comboComponents/TextImageCarouselOnScroll'));
+const TransparentScroller = lazy(() => import('components/TransparentScroller'));
+const ContentList = lazy(() => import('components/ContentList'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Intuit work experience page
 function IntuitPage() {

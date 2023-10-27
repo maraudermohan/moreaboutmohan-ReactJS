@@ -1,15 +1,5 @@
-import React, { useContext } from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Jumbotron from 'components/Jumbotron';
-import TitleSection from 'components/TitleSection';
+import React, { lazy, useContext } from 'react';
 import { BrowserContext } from 'constants/contexts';
-import LazyLoadImage from 'components/LazyLoadImage';
-import YoutubeVideo from 'components/Video/youtube';
-import Video from 'components/Video';
-import TextImageCarouselOnScroll from 'comboComponents/TextImageCarouselOnScroll';
-import TransparentScroller from 'components/TransparentScroller';
-import ContentList from 'components/ContentList';
 import colors from 'constants/colors';
 import {
   jumbotronProps,
@@ -26,6 +16,17 @@ import {
   video3,
 } from './megalodon-data';
 import MegalodonPageContainer from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const Jumbotron = lazy(() => import('components/Jumbotron'));
+const TitleSection = lazy(() => import('components/TitleSection'));
+const YoutubeVideo = lazy(() => import('components/Video/youtube'));
+const Video = lazy(() => import('components/Video'));
+const TextImageCarouselOnScroll = lazy(() => import('comboComponents/TextImageCarouselOnScroll'));
+const TransparentScroller = lazy(() => import('components/TransparentScroller'));
+const ContentList = lazy(() => import('components/ContentList'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Megalodon work experience page
 function MegalodonPage() {
@@ -46,7 +47,7 @@ function MegalodonPage() {
           {...video1}
           height={`${breakpoint < 2 ? Math.round(0.8 * 0.56 * window.innerWidth) : '360'}`}
           width={`${breakpoint < 2 ? Math.round(0.8 * window.innerWidth) : '640'}`}
-          autoplay={1}
+          autoplay={0}
           muted={1}
           className="megalodon-page__video1"
         />

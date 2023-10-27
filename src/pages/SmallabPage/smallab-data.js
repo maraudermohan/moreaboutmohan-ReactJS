@@ -1,12 +1,12 @@
-import smallab1 from 'images/smallab1.jpg';
-import smallab2 from 'images/smallab2.jpg';
-import smallab3 from 'images/smallab3.jpg';
-import smallab4 from 'images/smallab9.jpg';
-import smallab5 from 'images/smallab5.jpg';
-import smallab6 from 'images/smallab6.jpg';
-import smallab8 from 'images/smallab8.jpg';
-import smallab10 from 'images/smallab10.jpg';
-import smallab11 from 'images/smallab11.jpg';
+import smallab1 from 'images/smallab1.webp';
+import smallab2 from 'images/smallab2.webp';
+import smallab3 from 'images/smallab3.webp';
+import smallab4 from 'images/smallab9.webp';
+import smallab5 from 'images/smallab5.webp';
+import smallab6 from 'images/smallab6.webp';
+import smallab8 from 'images/smallab8.webp';
+import smallab10 from 'images/smallab10.webp';
+import smallab11 from 'images/smallab11.webp';
 
 export const jumbotronProps = [
   {

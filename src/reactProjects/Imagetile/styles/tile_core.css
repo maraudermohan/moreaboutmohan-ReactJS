@@ -30,6 +30,7 @@ main.image-tile-page .game-subtitle {
 	text-align: center;
 	color: #F7F4E9;
     font-family: 'Sen', san-serif;
+	font-display: swap;
 }
 main.image-tile-page .game-subtitle a {
 	display: block;

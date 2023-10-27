@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -6,9 +6,10 @@ import {
   ChevronDownIcon,
   ChevronUpIcon,
 } from 'images/icons';
-import CourseIndividual from './CourseIndividual';
-import PopupModal from './PopupModal';
 import * as actions from '../actions';
+
+const CourseIndividual = lazy(() => import('./CourseIndividual'));
+const PopupModal = lazy(() => import('./PopupModal'));
 
 // Container component which acts as the main entry page
 // Serves the course catalog and allows user to add or remove courses

@@ -1,11 +1,4 @@
-import React from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Jumbotron from 'components/Jumbotron';
-import TitleSection from 'components/TitleSection';
-import LazyLoadImage from 'components/LazyLoadImage';
-import ContentList from 'components/ContentList';
-import TransparentScroller from 'components/TransparentScroller';
+import React, { lazy } from 'react';
 import colors from 'constants/colors';
 import {
   jumbotronProps,
@@ -17,6 +10,14 @@ import {
   imageProps2,
 } from './cooliris-data';
 import CoolirisPageContainer from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const Jumbotron = lazy(() => import('components/Jumbotron'));
+const TitleSection = lazy(() => import('components/TitleSection'));
+const TransparentScroller = lazy(() => import('components/TransparentScroller'));
+const ContentList = lazy(() => import('components/ContentList'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Cooliris work experience page
 function CoolirisPage() {

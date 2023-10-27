@@ -43,6 +43,7 @@ export const FooterContainer = styled.footer`
 
   ${StyledH3} {
     font-family: "El Messiri", san-serif;
+    font-display: swap;
   }
 
   svg {

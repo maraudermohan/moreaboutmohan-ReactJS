@@ -27,6 +27,7 @@ export const FilmmakerPageContainer = styled.main`
 
   .header__title {
     font-family: "Lobster", san-serif;
+    font-display: swap;
   }
 
   nav > .nav__link:nth-child(4) {
@@ -75,6 +76,7 @@ export const FilmmakerPageContainer = styled.main`
     background: ${colors.MAGENTA};
     font-size: 21px;
     font-family: 'Sen', san-serif;
+    font-display: swap;
 
     @media ${mq.uptoTablet} and (orientation: landscape),
     ${mq.tablet} {
@@ -197,6 +199,7 @@ export const StyledButton = styled.button`
   height: 81px;
   grid-row: 2;
   font-family: "Staatliches", san-serif;
+  font-display: swap;
   font-weight: 500;
   color: ${(props) => (props.$selected ? colors.APPLE : colors.LATTE)};
   background: ${(props) => (props.$selected ? colors.LATTE : colors.BLUSH)};

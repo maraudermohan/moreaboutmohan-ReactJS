@@ -1,11 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import configureStore from 'reactProjects/Imagetile/store/configureStore';
+import store from 'reactProjects/Imagetile/store/configureStore';
 import App from 'reactProjects/Imagetile/components/App';
 import 'reactProjects/Imagetile/styles/tile_core.css';
 import 'reactProjects/bootstrap.min.css';
-
-const store = configureStore();
 
 function Imagetile() {
   return (

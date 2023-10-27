@@ -38,6 +38,7 @@ export const ContentListContainer = styled.ul`
   ${StyledSubtext},
   ${StyledParagraph} {
     font-family: 'Sen', san-serif;
+    font-display: swap;
   }
 
   @media ${mq.phone} and (orientation: landscape) {

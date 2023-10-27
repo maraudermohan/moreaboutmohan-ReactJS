@@ -1,10 +1,10 @@
-import zynga1 from 'images/zynga1.jpg';
-import zynga2 from 'images/zynga2.jpg';
-import zynga3 from 'images/zynga3.jpg';
-import chefville1 from 'images/chefville1.png';
-import chefville2 from 'images/chefville2.jpg';
-import chefville3 from 'images/chefville3.jpg';
-import chefville4 from 'images/chefville4.png';
+import zynga1 from 'images/zynga1.webp';
+import zynga2 from 'images/zynga2.webp';
+import zynga3 from 'images/zynga3.webp';
+import chefville1 from 'images/chefville1.webp';
+import chefville2 from 'images/chefville2.webp';
+import chefville3 from 'images/chefville3.webp';
+import chefville4 from 'images/chefville4.webp';
 
 export const jumbotronProps = [
   {

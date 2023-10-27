@@ -1,5 +1,12 @@
 export const spotlightData = [
   {
+    title: 'A-Spade-trailer',
+    player: 'youtube',
+    url: 'uKxsttPuNVE',
+    start: 0,
+    thumbnail: 'https://img.youtube.com/vi/uKxsttPuNVE/maxresdefault.jpg',
+  },
+  {
     title: 'Hotel-California-Odissi',
     player: 'youtube',
     url: 'Fhp1pVrqOlE',
@@ -19,13 +26,6 @@ export const spotlightData = [
     url: 'zGYPqQDf9Iw',
     start: 4,
     thumbnail: 'https://img.youtube.com/vi/zGYPqQDf9Iw/maxresdefault.jpg',
-  },
-  {
-    title: 'Kathak-Senorita-Despacito',
-    player: 'youtube',
-    url: 'G_nSq-cVdGU',
-    start: 4,
-    thumbnail: 'https://img.youtube.com/vi/G_nSq-cVdGU/maxresdefault.jpg',
   },
   {
     title: 'Swarabindu',
@@ -55,16 +55,20 @@ export const spotlightData = [
     start: 0,
     thumbnail: 'https://img.youtube.com/vi/6HLIFMyJxWA/maxresdefault.jpg',
   },
-  {
-    title: 'demo-reel',
-    player: 'youtube',
-    url: '2mtccBT0ajk',
-    start: 0,
-    thumbnail: 'https://img.youtube.com/vi/2mtccBT0ajk/maxresdefault.jpg',
-  },
 ];
 
 export const videosData = [
+  {
+    title: 'A-Spade-short',
+    player: 'youtube',
+    url: 'J5Ak7BFol8U',
+    start: 3,
+    'D.o.P': true,
+    Director: true,
+    Editor: true,
+    'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/J5Ak7BFol8U/maxresdefault.jpg',
+  },
   {
     title: 'Hotel-California-Odissi',
     player: 'youtube',

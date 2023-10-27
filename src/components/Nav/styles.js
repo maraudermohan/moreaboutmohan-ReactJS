@@ -29,6 +29,7 @@ export const NavContainer = styled.nav`
   ${StyledH4} {
     font-family: "El Messiri", san-serif;
     color: ${colors.PANTONE};
+    font-display: swap;
   }
 
   @media ${mq.uptoTablet} and (orientation: landscape),

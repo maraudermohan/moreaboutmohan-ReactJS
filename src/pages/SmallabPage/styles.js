@@ -38,7 +38,8 @@ const SmallabPageContainer = styled.main`
   .smallab-page__video2,
   .smallab-page__video3,
   .smallab-page__video4 {
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
   }
 

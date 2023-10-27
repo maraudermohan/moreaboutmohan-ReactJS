@@ -37,7 +37,8 @@ const SmilegatePageContainer = styled.main`
 
   .smilegate-page__video2,
   .smilegate-page__video3 {
-    display: block;
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
   }
 

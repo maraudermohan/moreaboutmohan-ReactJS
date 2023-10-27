@@ -1,9 +1,6 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import Headx from 'headx';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import LazyLoadImage from 'components/LazyLoadImage';
 import { StyledH1 } from 'components/Typography';
 import colors from 'constants/colors';
 import imageList from './data';
@@ -12,6 +9,10 @@ import {
   ImageContainer,
   Gradient,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Page component for all my photography works and performances
 function PhotographyPage() {

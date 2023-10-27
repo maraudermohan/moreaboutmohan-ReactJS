@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 
-import CourseForm from '../CourseForm';
-import CourseCard from '../CourseCard';
 import MainContainer, { TextContainer } from './styles';
+
+const CourseForm = lazy(() => import('../CourseForm'));
+const CourseCard = lazy(() => import('../CourseCard'));
 
 function Main() {
   const [courseSubmittedOnMain, setCourseSubmittedOnMain] = useState(null);

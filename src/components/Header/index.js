@@ -1,4 +1,5 @@
 import React, {
+  lazy,
   useContext,
   useEffect,
   useState,
@@ -6,15 +7,16 @@ import React, {
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-import LazyLoadImage from 'components/LazyLoadImage';
 import { BrowserContext, ScrollPositionContext } from 'constants/contexts';
-import Nav from 'components/Nav';
 import { HeaderIcon } from 'images/icons';
 import {
   HeaderContainer,
   LogoContainer,
   StyledSpan1,
 } from './styles';
+
+const Nav = lazy(() => import('components/Nav'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Header component that displays name and trigger for Nav component
 function Header({

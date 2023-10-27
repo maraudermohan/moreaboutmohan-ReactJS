@@ -1,14 +1,14 @@
-import carnegie1 from 'images/carnegie1.jpg';
-import carnegie2 from 'images/carnegie2.jpg';
-import carnegie3 from 'images/carnegie3.jpg';
-import carnegie4 from 'images/carnegie4.jpg';
-import carnegie5 from 'images/carnegie5.jpg';
-import carnegie6 from 'images/carnegie6.jpg';
-import carnegie8 from 'images/carnegie8.jpg';
-import carnegie9 from 'images/carnegie9.jpg';
-import carnegie11 from 'images/carnegie11.jpg';
-import carnegie12 from 'images/carnegie12.jpg';
-import carnegie13 from 'images/carnegie13.jpg';
+import carnegie1 from 'images/carnegie1.webp';
+import carnegie2 from 'images/carnegie2.webp';
+import carnegie3 from 'images/carnegie3.webp';
+import carnegie4 from 'images/carnegie4.webp';
+import carnegie5 from 'images/carnegie5.webp';
+import carnegie6 from 'images/carnegie6.webp';
+import carnegie8 from 'images/carnegie8.webp';
+import carnegie9 from 'images/carnegie9.webp';
+import carnegie11 from 'images/carnegie11.webp';
+import carnegie12 from 'images/carnegie12.webp';
+import carnegie13 from 'images/carnegie13.webp';
 
 export const jumbotronProps = [
   {

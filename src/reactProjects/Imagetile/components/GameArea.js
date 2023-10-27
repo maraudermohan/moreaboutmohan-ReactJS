@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import actions from '../actions';
+import { createTileLists } from '../actions';
 import GameTiles from './GameTiles';
 
-class GameArea extends Component {
-  componentDidMount() {
+function GameArea({ resetGame }) {
+  const dispatch = useDispatch();
+  const gameState = useSelector((state) => state.gameState);
+  const imageSelected = useSelector((state) => state.imageSelected);
+
+  useEffect(() => {
     // Calculate the best possible tile-width, tile-height
     // number of tiles, based on the given properties
     const {
@@ -15,8 +19,7 @@ class GameArea extends Component {
       colLength,
       tileWidth,
       tileHeight,
-      createTileLists,
-    } = this.props;
+    } = imageSelected;
     const element = document.getElementsByClassName('game-area')[0];
     const tileCssList = {};
     const tileOrderList = {};
@@ -41,47 +44,22 @@ class GameArea extends Component {
       }
     }
     tileOrderList[rowLength * colLength] = rowLength * colLength;
-    createTileLists(tileCssList, tileOrderList);
-  }
+    dispatch(createTileLists(tileCssList, tileOrderList));
+  }, []);
 
-  render() {
-    const { resetGame, areTilesCreated } = this.props;
-    return (
-      <div className="well game-area not-ready flex-item">
-        {
-          areTilesCreated && (
-            <GameTiles resetGame={resetGame} />
-          )
-        }
-      </div>
-    );
-  }
+  return (
+    <div className="well game-area not-ready flex-item">
+      {
+        gameState.areTilesCreated && (
+          <GameTiles resetGame={resetGame} />
+        )
+      }
+    </div>
+  );
 }
 
 GameArea.propTypes = {
-  imageWidth: PropTypes.number,
-  imageHeight: PropTypes.number,
-  rowLength: PropTypes.number,
-  colLength: PropTypes.number,
-  tileWidth: PropTypes.number,
-  tileHeight: PropTypes.number,
-  areTilesCreated: PropTypes.bool,
-  createTileLists: PropTypes.func,
   resetGame: PropTypes.func,
 };
 
-const mapStateToProps = (state) => ({
-  imageWidth: state.imageSelected.width,
-  imageHeight: state.imageSelected.height,
-  rowLength: state.imageSelected.rowLength,
-  colLength: state.imageSelected.colLength,
-  tileWidth: state.imageSelected.tileWidth,
-  tileHeight: state.imageSelected.tileHeight,
-  areTilesCreated: state.gameState.areTilesCreated,
-});
-
-const mapDispatchToProps = {
-  createTileLists: actions.createTileLists,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(GameArea);
+export default GameArea;

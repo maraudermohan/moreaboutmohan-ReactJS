@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { ExclaimIcon } from 'images/icons';
 import * as actions from '../actions';
-import timeConflictCalculator from './timeConflictCalculator';
+
+const timeConflictCalculator = lazy(() => import('./timeConflictCalculator'));
 
 // Container component which calls time-conflict-calculator function to identify time conflicts
 class PopupModal extends React.Component {

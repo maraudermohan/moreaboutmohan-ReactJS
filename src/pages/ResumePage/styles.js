@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH1, StyledSubtext } from 'components/Typography';
-import resume from 'images/workexperience.jpg';
+import resume from 'images/workexperience.webp';
 
 export const downloadImg = resume;
 
@@ -16,6 +16,7 @@ export const ResumePageContainer = styled.main`
 
   .header__title {
     font-family: "Lobster", san-serif;
+    font-display: swap;
   }
 
   nav > .nav__link:first-of-type {
@@ -135,6 +136,7 @@ export const DownloadContainer = styled.a`
   .resume__title {
     color: ${colors.PANTONE};
     font-family: "Sen", san-serif;
+    font-display: swap;
     font-weight: 500;
   }
 

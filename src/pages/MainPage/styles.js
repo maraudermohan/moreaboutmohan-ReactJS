@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import main1 from 'images/main1.jpg';
-import main2 from 'images/main2.jpg';
-import main3 from 'images/main3.jpg';
-import main4 from 'images/main4.jpg';
+import main1 from 'images/main1.webp';
+import main2 from 'images/main2.webp';
+import main3 from 'images/main3.webp';
+import main4 from 'images/main4.webp';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH4 } from 'components/Typography';
@@ -37,6 +37,7 @@ export const MainPageContainer = styled.main`
     right: 24px;
     z-index: 11;
     font-family: "Lobster", san-serif;
+    font-display: swap;
     font-size: 32px;
     color: ${colors.LATTE};
     text-shadow: 4px 4px 7px ${colors.ABYSS},
@@ -162,6 +163,7 @@ export const TextBox = styled.section`
     text-align: center;
     line-height: 36px;
     font-family: "Sen", san-serif;
+    font-display: swap;
     font-weight: 500;
     color: ${colors.LATTE};
 

@@ -32,6 +32,7 @@ export const HeaderContainer = styled.header`
     grid-column: 3;
     font-family: "Lobster", san-serif;
     font-size: 28px;
+    font-display: swap;
     color: ${colors.LATTE};
     cursor: pointer;
     transition: all 0.3s;

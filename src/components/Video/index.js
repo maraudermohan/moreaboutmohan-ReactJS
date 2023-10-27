@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { lazy, useState } from 'react';
 import PropTypes from 'prop-types';
+import YouTube from 'react-youtube';
 
-import ErrorBoundary from 'components/ErrorBoundary';
 import { SpinnerIcon } from 'images/icons';
 import {
   VideoContainer,
   FallbackContainer,
 } from './styles';
+
+const ErrorBoundary = lazy(() => import('components/ErrorBoundary'));
 
 // Video component that renders embedded iframe
 function Video({
@@ -16,42 +18,52 @@ function Video({
   width = '640',
   height = '360',
   start = 0,
-  autoplay = 0,
-  muted = 0,
   className = 'video__iframe',
 }) {
-  let src = `https://www.youtube-nocookie.com/embed/${url}?rel=1&start=${start}&autoplay=${autoplay}&mute=${muted}`;
-  if (player === 'vimeo') {
-    src = `https://player.vimeo.com/video/${url}?color=ffffff&byline=0&portrait=0`;
-  }
-
   const [hasLoaded, setHasLoaded] = useState(false);
 
+  if (player === 'vimeo') {
+    return (
+      <ErrorBoundary>
+        <VideoContainer
+          title={title}
+          width={width}
+          height={height}
+          src={`https://player.vimeo.com/video/${url}?color=ffffff&byline=0&portrait=0`}
+          onLoad={() => { setHasLoaded(true); }}
+          $hasLoaded={hasLoaded}
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className={className}
+        />
+        {
+          !hasLoaded
+          && (
+            <FallbackContainer
+              $width={width}
+              $height={height}
+            >
+              <SpinnerIcon />
+            </FallbackContainer>
+          )
+        }
+      </ErrorBoundary>
+    );
+  }
   return (
     <ErrorBoundary>
-      <VideoContainer
-        title={title}
-        width={width}
-        height={height}
-        src={src}
-        frameborder="0"
-        onLoad={() => { setHasLoaded(true); }}
-        $hasLoaded={hasLoaded}
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
+      <YouTube
+        videoId={url}
+        opts={{
+          width,
+          height,
+          playerVars: {
+            start,
+            rel: 0,
+          },
+        }}
         className={className}
       />
-      {
-        !hasLoaded
-        && (
-          <FallbackContainer
-            $width={width}
-            $height={height}
-          >
-            <SpinnerIcon />
-          </FallbackContainer>
-        )
-      }
     </ErrorBoundary>
   );
 }
@@ -63,8 +75,6 @@ Video.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   start: PropTypes.number,
-  muted: PropTypes.number,
-  autoplay: PropTypes.number,
   className: PropTypes.string,
 };
 

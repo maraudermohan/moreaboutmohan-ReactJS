@@ -18,6 +18,7 @@ const TitleSectionContainer = styled.div`
   ${StyledH1},
   ${StyledH3} {
     font-family: 'Acme', san-serif;
+    font-display: swap;
     color: ${colors.LATTE};
   }
 `;

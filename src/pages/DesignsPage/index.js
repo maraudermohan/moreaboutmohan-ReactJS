@@ -1,12 +1,12 @@
-import React, { Component, createRef, Fragment } from 'react';
+import React, {
+  Component,
+  createRef,
+  lazy,
+  Fragment,
+} from 'react';
 import Headx from 'headx';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
 import { StyledH1, StyledParagraph, StyledSubtext } from 'components/Typography';
-import DesignCard from 'components/DesignCard';
-import Video from 'components/Video';
-import ContentList from 'components/ContentList';
 import { BrowserContext } from 'constants/contexts';
 import colors from 'constants/colors';
 import { DownloadIcon } from 'images/icons';
@@ -18,6 +18,12 @@ import {
   DesignContentHidden,
   Gradient,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const DesignCard = lazy(() => import('components/DesignCard'));
+const Video = lazy(() => import('components/Video'));
+const ContentList = lazy(() => import('components/ContentList'));
 
 // Page component for all my design collections
 class DesignsPage extends Component {

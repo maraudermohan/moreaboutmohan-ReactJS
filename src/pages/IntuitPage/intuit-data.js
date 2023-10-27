@@ -1,15 +1,15 @@
-import intuit0 from 'images/intuit0.jpg';
-import intuit1 from 'images/intuit1.jpg';
-import intuit2 from 'images/intuit2.jpg';
-import intuit3 from 'images/intuit3.jpg';
-import intuit4 from 'images/intuit4.png';
-import intuit5 from 'images/intuit5.png';
-import intuit6 from 'images/intuit6.png';
-import intuit7 from 'images/intuit7.png';
-import intuit8 from 'images/intuit8.png';
-import intuit9 from 'images/intuit9.png';
-import intuit10 from 'images/intuit10.png';
-import intuit11 from 'images/intuit11.png';
+import intuit0 from 'images/intuit0.webp';
+import intuit1 from 'images/intuit1.webp';
+import intuit2 from 'images/intuit2.webp';
+import intuit3 from 'images/intuit3.webp';
+import intuit4 from 'images/intuit4.webp';
+import intuit5 from 'images/intuit5.webp';
+import intuit6 from 'images/intuit6.webp';
+import intuit7 from 'images/intuit7.webp';
+import intuit8 from 'images/intuit8.webp';
+import intuit9 from 'images/intuit9.webp';
+import intuit10 from 'images/intuit10.webp';
+import intuit11 from 'images/intuit11.webp';
 
 export const jumbotronProps = [
   {

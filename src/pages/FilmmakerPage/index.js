@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, lazy } from 'react';
 import Headx from 'headx';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Video from 'components/Video/youtube';
-import VideoShuffler from 'components/VideoShuffler';
 import {
   StyledH1,
   StyledH2,
@@ -24,6 +20,11 @@ import {
   filterIcons,
   StyledButton,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const VideoShuffler = lazy(() => import('components/VideoShuffler'));
+const Video = lazy(() => import('components/Video/youtube'));
 
 // Page component to render all my dance videos and short films
 // Added a filter by Role/Type and Shuffle animation

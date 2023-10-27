@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { lazy, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Headx from 'headx';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import LazyLoadImage from 'components/LazyLoadImage';
 import { StyledH1, StyledH3, StyledSubtext } from 'components/Typography';
 import colors from 'constants/colors';
 import {
   data,
   ReactPageContainer,
 } from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Page component that renders copy and links related to work experience
 function ReactPage() {

@@ -29,7 +29,7 @@ function Observer() {
       const nextRow = currentRow.target.nextSibling;
       const previousRow = currentRow.target.previousSibling;
       const firstIndex = 1;
-      const finalIndex = 48;
+      const finalIndex = 18;
 
       if (currentRow.isIntersecting || currentRow.isVisible) {
         //

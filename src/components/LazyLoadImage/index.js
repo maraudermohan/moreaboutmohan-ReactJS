@@ -24,7 +24,7 @@ function LazyLoadImage({
         src={imageUrl}
         alt={imageAlt}
         onLoad={onLoad}
-        hasLoaded={hasLoaded}
+        $hasLoaded={hasLoaded}
         $width={width} // Styled props, hence adding $
         $height={height}
         className={className}

@@ -1,10 +1,4 @@
-import React from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Jumbotron from 'components/Jumbotron';
-import TitleSection from 'components/TitleSection';
-import ContentList from 'components/ContentList';
-import LazyLoadImage from 'components/LazyLoadImage';
+import React, { lazy } from 'react';
 import {
   jumbotronProps,
   jobTitle,
@@ -13,6 +7,13 @@ import {
   imageProps1,
 } from './nokia-data';
 import NokiaPageContainer from './styles';
+
+const Header = lazy(() => import('components/Header'));
+const Footer = lazy(() => import('components/Footer'));
+const Jumbotron = lazy(() => import('components/Jumbotron'));
+const TitleSection = lazy(() => import('components/TitleSection'));
+const ContentList = lazy(() => import('components/ContentList'));
+const LazyLoadImage = lazy(() => import('components/LazyLoadImage'));
 
 // Nokia work experience page
 function NokiaPage() {

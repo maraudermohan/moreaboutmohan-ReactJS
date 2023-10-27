@@ -1,16 +1,16 @@
-import surveymonkey1 from 'images/surveymonkey1.png';
-import surveymonkey2 from 'images/surveymonkey2.png';
-import surveymonkey3 from 'images/surveymonkey3.png';
-import surveymonkey4 from 'images/surveymonkey4.png';
-import surveymonkey5 from 'images/surveymonkey5.png';
-import surveymonkey6 from 'images/surveymonkey6.png';
-import surveymonkey7 from 'images/surveymonkey7.png';
-import surveymonkey8 from 'images/surveymonkey8.png';
-import surveymonkey9 from 'images/surveymonkey9.png';
-import surveymonkey10 from 'images/surveymonkey10.png';
-import surveymonkey11 from 'images/surveymonkey11.png';
-import surveymonkey12 from 'images/surveymonkey12.png';
-import surveymonkey13 from 'images/surveymonkey13.png';
+import surveymonkey1 from 'images/surveymonkey1.webp';
+import surveymonkey2 from 'images/surveymonkey2.webp';
+import surveymonkey3 from 'images/surveymonkey3.webp';
+import surveymonkey4 from 'images/surveymonkey4.webp';
+import surveymonkey5 from 'images/surveymonkey5.webp';
+import surveymonkey6 from 'images/surveymonkey6.webp';
+import surveymonkey7 from 'images/surveymonkey7.webp';
+import surveymonkey8 from 'images/surveymonkey8.webp';
+import surveymonkey9 from 'images/surveymonkey9.webp';
+import surveymonkey10 from 'images/surveymonkey10.webp';
+import surveymonkey11 from 'images/surveymonkey11.webp';
+import surveymonkey12 from 'images/surveymonkey12.webp';
+import surveymonkey13 from 'images/surveymonkey13.webp';
 
 export const jumbotronProps = [
   {

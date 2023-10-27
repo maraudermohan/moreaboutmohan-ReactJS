@@ -11,9 +11,9 @@
  */
 function Image(imageIndex) {
   const img = document.createElement('img');
-  const url = `http://www.moreaboutmohan.com/uploads/infinite${imageIndex}.jpg`;
+  const url = `/img/infinite${imageIndex}.webp`;
 
-  img.src = 'http://www.moreaboutmohan.com/uploads/white.jpg';
+  img.src = '/img/white.webp';
   img.dataset.src = url;
   img.setAttribute('class', 'wildlife-image');
   img.setAttribute('alt', `Wildlife ${imageIndex}`);

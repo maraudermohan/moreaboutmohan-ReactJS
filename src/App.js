@@ -2,9 +2,9 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import ResizeHOC from 'components/ResizeHOC';
-import ScrollHOC from 'components/ScrollHOC';
-import MainPage from 'pages/MainPage';
+const ResizeHOC = lazy(() => import('components/ResizeHOC'));
+const ScrollHOC = lazy(() => import('components/ScrollHOC'));
+const MainPage = lazy(() => import('pages/MainPage'));
 
 const ResumePage = lazy(() => import('pages/ResumePage'));
 const ReactPage = lazy(() => import('pages/ReactPage'));

@@ -1,13 +1,14 @@
 import React, {
+  lazy,
   useRef,
   useState,
   useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 
-import ContentList from 'components/ContentList';
-import FixedOnScrollHOC from 'components/FixedOnScrollHOC';
-import ImageCarousel from 'components/ImageCarousel';
+const ContentList = lazy(() => import('components/ContentList'));
+const FixedOnScrollHOC = lazy(() => import('components/FixedOnScrollHOC'));
+const ImageCarousel = lazy(() => import('components/ImageCarousel'));
 
 // Combining FixedOnScroll and Image Carousel
 // The text stays fixed to the screen bottom, while the images slide

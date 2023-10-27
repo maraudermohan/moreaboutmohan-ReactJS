@@ -1,16 +1,18 @@
 import React, {
   Component,
   createRef,
+  lazy,
 } from 'react';
 import PropTypes from 'prop-types';
 
-import Video from 'components/Video/youtube';
 import { ArrowRightIcon, ArrowLeftIcon } from 'images/icons/';
 import { BrowserContext } from 'constants/contexts';
 import {
   MainVideoContainer,
   ShufflerContainer,
 } from './styles';
+
+const Video = lazy(() => import('components/Video/youtube'));
 
 // Component to add shuffling-animation to the filtered videos
 class VideoShuffler extends Component {
@@ -58,7 +60,7 @@ class VideoShuffler extends Component {
     /* eslint-disable */
     if (shufflerElem.children[0].classList.contains('preload')) {
       for (let elem of shufflerElem.children) {
-        setTimeout(() => { elem.classList.remove('preload'); }, 750);
+        setTimeout(() => { elem.classList.remove('preload'); }, 500);
       }
     }
     /* eslint-enable */

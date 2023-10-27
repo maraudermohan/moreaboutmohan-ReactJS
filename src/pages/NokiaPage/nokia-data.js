@@ -1,6 +1,6 @@
-import nokia1 from 'images/nokia1.jpg';
-import nokia2 from 'images/nokia2.jpg';
-import nokia3 from 'images/nokia3.jpg';
+import nokia1 from 'images/nokia1.webp';
+import nokia2 from 'images/nokia2.webp';
+import nokia3 from 'images/nokia3.webp';
 
 export const jumbotronProps = [
   {

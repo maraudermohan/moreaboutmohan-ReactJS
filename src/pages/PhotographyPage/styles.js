@@ -14,6 +14,7 @@ export const PhotographyPageContainer = styled.main`
 
   .header__title {
     font-family: "Lobster", san-serif;
+    font-display: swap;
   }
 
   nav .nav__link-two > .nav__link:last-of-type {

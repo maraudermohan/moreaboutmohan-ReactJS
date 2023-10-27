@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { PencilIcon } from 'images/icons';
-import CalendarIndividual from './CalendarIndividual';
-import CourseIndividual from './CourseIndividual';
-import PopupModal from './PopupModal';
 import * as actions from '../actions';
+
+const CalendarIndividual = lazy(() => import('./CalendarIndividual'));
+const CourseIndividual = lazy(() => import('./CourseIndividual'));
+const PopupModal = lazy(() => import('./PopupModal'));
 
 // Container component which serves the calender model and lets user remove courses
 class CalendarMain extends React.Component {

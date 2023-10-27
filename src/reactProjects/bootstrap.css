@@ -191,6 +191,7 @@ code,
 kbd,
 samp {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-display: swap;
   font-size: 1em;
 }
 
@@ -6903,7 +6904,7 @@ button.bg-dark:focus {
   }
   .align-items-md-center {
     -ms-flex-align: center !important;
-    align-items: center !important;
+    align-items: center !ant;
   }
   .align-items-md-baseline {
     -ms-flex-align: baseline !important;

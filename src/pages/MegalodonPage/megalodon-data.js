@@ -1,13 +1,13 @@
-import ea0 from 'images/ea0.jpg';
-import ea1 from 'images/ea1.jpg';
-import ea2 from 'images/ea2.jpg';
-import ea3 from 'images/ea3.jpg';
-import ea4 from 'images/ea4.jpg';
-import ea5 from 'images/ea5.jpg';
-import ea6 from 'images/ea6.jpg';
-import ea7 from 'images/ea7.jpg';
-import ea9 from 'images/ea9.jpg';
-import ea10 from 'images/ea10.jpg';
+import ea0 from 'images/ea0.webp';
+import ea1 from 'images/ea1.webp';
+import ea2 from 'images/ea2.webp';
+import ea3 from 'images/ea3.webp';
+import ea4 from 'images/ea4.webp';
+import ea5 from 'images/ea5.webp';
+import ea6 from 'images/ea6.webp';
+import ea7 from 'images/ea7.webp';
+import ea9 from 'images/ea9.webp';
+import ea10 from 'images/ea10.webp';
 
 export const jumbotronProps = [
   {
