@@ -113,11 +113,11 @@ function MainPage({
               </StyledH4>
             ) : (
               <StyledH4>
-                Principal Frontend Engineer
+                Lead Frontend Engineer
                 <br />
                 with &lsquo;Game Designer&rsquo; skills
                 <br />
-                12+ years of experience
+                14+ years of experience
                 <br />
                 Fueled by passion & creativity
               </StyledH4>

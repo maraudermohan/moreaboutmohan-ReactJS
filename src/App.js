@@ -33,28 +33,32 @@ function App() {
       <ScrollHOC>
         <ResizeHOC>
           <Routes>
-            <Route path="/" element={<MainPage />} exact />
-            <Route path="/resume" element={<ResumePage />} exact />
-            <Route path="/react" element={<ReactPage />} exact />
-            <Route path="/filmmaker" element={<FilmmakerPage />} exact />
-            <Route path="/photography" element={<PhotographyPage />} exact />
-            <Route path="/design" element={<DesignsPage />} exact />
-            <Route path="/resume/intuit" element={<IntuitPage />} />
-            <Route path="/resume/surveymonkey" element={<SurveymonkeyPage />} />
-            <Route path="/resume/zynga" element={<ZyngaPage />} />
-            <Route path="/resume/smallab" element={<SmallabPage />} />
-            <Route path="/resume/smilegate" element={<SmilegatePage />} />
-            <Route path="/resume/cooliris" element={<CoolirisPage />} />
-            <Route path="/resume/megalodon" element={<MegalodonPage />} />
-            <Route path="/resume/nokia" element={<NokiaPage />} />
-            <Route path="/resume/bachelor" element={<BachelorPage />} />
-            <Route path="/resume/carnegie" element={<CarnegiePage />} />
-            <Route path="/infinite" element={<InfiniteScroll />} exact />
-            <Route path="/imagetile" element={<Imagetile />} exact />
-            <Route path="/courses" element={<CoursesCalendar />} />
-            <Route path="/evade" element={<EvadeGame />} exact />
-            <Route path="/regexsearch" element={<CourseRegexSearch />} exact />
-            <Route path="*" element={<MainPage is404 />} />
+            <Route path="/">
+              <Route index element={<MainPage />} />
+              <Route path="react" element={<ReactPage />} />
+              <Route path="filmmaker" element={<FilmmakerPage />} />
+              <Route path="photography" element={<PhotographyPage />} />
+              <Route path="design" element={<DesignsPage />} />
+              <Route path="resume">
+                <Route index element={<ResumePage />} />
+                <Route path="intuit" element={<IntuitPage />} />
+                <Route path="surveymonkey" element={<SurveymonkeyPage />} />
+                <Route path="zynga" element={<ZyngaPage />} />
+                <Route path="smallab" element={<SmallabPage />} />
+                <Route path="smilegate" element={<SmilegatePage />} />
+                <Route path="cooliris" element={<CoolirisPage />} />
+                <Route path="megalodon" element={<MegalodonPage />} />
+                <Route path="nokia" element={<NokiaPage />} />
+                <Route path="bachelor" element={<BachelorPage />} />
+                <Route path="carnegie" element={<CarnegiePage />} />
+              </Route>
+              <Route path="infinite" element={<InfiniteScroll />} />
+              <Route path="imagetile" element={<Imagetile />} />
+              <Route path="courses" element={<CoursesCalendar />} />
+              <Route path="evade" element={<EvadeGame />} />
+              <Route path="regexsearch" element={<CourseRegexSearch />} />
+              <Route path="*" element={<MainPage is404 />} />
+            </Route>
           </Routes>
         </ResizeHOC>
       </ScrollHOC>
