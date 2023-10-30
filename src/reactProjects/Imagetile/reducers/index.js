@@ -1,80 +1,54 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const imageSelectedSlice = createSlice({
-  name: 'imageSelected',
-  initialState: {},
-  reducers: {
-    SELECT_IMAGE: (state, action) => action.payload,
-    LOG_OUT: () => {},
-  },
-});
-
-const tileCssListSlice = createSlice({
-  name: 'tileCssList',
-  initialState: {},
-  reducers: {
-    CREATE_TILE_LISTS: (state, action) => action.tileCssList,
-    MOVE_TILE: (state, action) => {
-      const obj = { ...state };
-      obj[action.key] = { ...obj[action.key], top: action.top, left: action.left };
-      return obj;
-    },
-    LOG_OUT: () => {},
-  },
-});
-
-const tileOrderListSlice = createSlice({
-  name: 'tileOrderList',
-  initialState: {},
-  reducers: {
-    CREATE_TILE_LISTS: (state, action) => action.tileOrderList,
-    MOVE_TILE: (state, action) => {
-      const obj = { ...state };
-      const temp = obj[action.key];
-      obj[action.key] = obj[action.indexEmptyTile];
-      obj[action.indexEmptyTile] = temp;
-      return obj;
-    },
-    LOG_OUT: () => {},
-  },
-});
-
-const gameStateSlice = createSlice({
-  name: 'gameState',
-  initialState: {},
-  reducers: {
-    SELECT_IMAGE: () => ({ isImageSelected: true }),
-    CREATE_TILE_LISTS: (state) => ({ ...state, areTilesCreated: true, isGameReady: false }),
-    TOGGLE_GAME_READY: (state) => ({ ...state, isGameReady: true }),
-    LOG_OUT: () => {},
-  },
-});
-
-const shuffleCounterSlice = createSlice({
-  name: 'shuffleCounter',
-  initialState: 50,
-  reducers: {
-    TOGGLE_GAME_READY: () => -1,
-    MOVE_TILE: (state) => (state > 0 ? state - 1 : state),
-    LOG_OUT: () => 50,
-  },
-});
-
-const moveCounterSlice = createSlice({
-  name: 'moveCounter',
-  initialState: 0,
-  reducers: {
-    TOGGLE_GAME_READY: () => 100,
-    MOVE_TILE: (state) => (state > 0 ? state - 1 : state),
-    LOG_OUT: () => 0,
-  },
-});
-
-export default {
-  imageSelected: imageSelectedSlice.reducer,
-  gameState: gameStateSlice.reducer,
-  tileCssList: tileCssListSlice.reducer,
-  tileOrderList: tileOrderListSlice.reducer,
-  shuffleCounter: shuffleCounterSlice.reducer,
-  moveCounter: moveCounterSlice.reducer,
+const INITIAL_STATE = {
+  imageSelected: {},
+  tileCssList: {},
+  tileOrderList: {},
+  gameState: {},
+  shuffleCounter: 50,
+  moveCounter: 0,
 };
+
+export const { reducer, actions } = createSlice({
+  name: 'rootReducer',
+  initialState: INITIAL_STATE,
+  reducers: {
+    CREATE_TILE_LISTS: (state, action) => {
+      state.tileCssList = action.payload.tileCssList;
+      state.tileOrderList = action.payload.tileOrderList;
+      state.gameState = {
+        ...state.gameState,
+        areTilesCreated: true,
+        isGameReady: false,
+      };
+    },
+    MOVE_TILE: (state, action) => {
+      const obj = { ...state.tileCssList };
+      obj[action.payload.key] = {
+        ...obj[action.payload.key],
+        top: action.payload.top,
+        left: action.payload.left,
+      };
+      state.tileCssList = obj;
+      const temp = state.tileOrderList[action.payload.key];
+      state.tileOrderList[action.payload.key] = state.tileOrderList[action.payload.indexEmptyTile];
+      state.tileOrderList[action.payload.indexEmptyTile] = temp;
+      state.shuffleCounter = state.shuffleCounter > 0
+        ? state.shuffleCounter - 1
+        : state.shuffleCounter;
+      state.moveCounter = state.moveCounter > 0
+        ? state.moveCounter - 1
+        : state.moveCounter;
+    },
+    SELECT_IMAGE: (state, action) => {
+      state.imageSelected = action.payload;
+      state.gameState = { isImageSelected: true };
+    },
+    TOGGLE_GAME_READY: (state) => {
+      state.gameState = { ...state.gameState, isGameReady: true };
+      state.shuffleCounter = -1;
+      state.moveCounter = 100;
+    },
+    LOG_OUT: () => INITIAL_STATE,
+  },
+});

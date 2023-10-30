@@ -11,7 +11,7 @@ import photo18 from 'images/photo18.webp';
 import photo13 from 'images/photo13.webp';
 import photo9 from 'images/photo9.webp';
 import photo7 from 'images/photo7.webp';
-import { logOut, selectImage } from '../actions';
+import { actions } from '../reducers';
 import GameArea from './GameArea';
 
 const imageList = [
@@ -35,11 +35,14 @@ function App() {
       document.getElementsByClassName('appear')[0].style.display = 'block';
       document.getElementsByClassName('appear')[1].style.display = 'block';
     }
+    return () => {
+      dispatch(actions.LOG_OUT());
+    };
   }, []);
 
   const resetGame = () => {
     // Resets the state values for a new game
-    dispatch(logOut());
+    dispatch(actions.LOG_OUT());
     document.getElementsByClassName('inputURL')[0].value = '';
     document.getElementsByClassName('disappear')[0].style.display = 'block';
     document.getElementsByClassName('appear')[0].style.display = 'none';
@@ -78,8 +81,8 @@ function App() {
       // Calculate the number of tiles, tileHeight, tileWidth based on image selected
       const winWidth = window.innerWidth;
       const ratio = img.width / img.height;
-      let width = 810;
-      if (winWidth < 809) {
+      let width = 960;
+      if (winWidth < 959) {
         width = winWidth > 639 ? 640 : 320;
       }
       const height = Math.floor(width / ratio);
@@ -95,7 +98,7 @@ function App() {
       const colLength = Math.floor(temp);
       const tileWidth = Math.floor(width / rowLength);
       const tileHeight = Math.floor(height / colLength);
-      dispatch(selectImage({
+      dispatch(actions.SELECT_IMAGE({
         url: imgUrl,
         width,
         height,

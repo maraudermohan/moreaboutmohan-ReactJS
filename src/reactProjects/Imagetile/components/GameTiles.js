@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { moveTile, toggleGameReady } from '../actions/index';
+import { actions } from '../reducers';
 
 function GameTiles({ resetGame }) {
   const dispatch = useDispatch();
@@ -74,7 +74,12 @@ function GameTiles({ resetGame }) {
     top = parseInt(top, 10);
     left = parseInt(left, 10) - tileWidth;
 
-    moveTile(key, top, left, rowLength * colLength);
+    dispatch(actions.MOVE_TILE({
+      key,
+      top,
+      left,
+      indexEmptyTile: rowLength * colLength,
+    }));
   };
 
   const moveRightEvent = () => {
@@ -86,7 +91,12 @@ function GameTiles({ resetGame }) {
     top = parseInt(top, 10);
     left = parseInt(left, 10) + tileWidth;
 
-    moveTile(key, top, left, rowLength * colLength);
+    dispatch(actions.MOVE_TILE({
+      key,
+      top,
+      left,
+      indexEmptyTile: rowLength * colLength,
+    }));
   };
 
   const moveTopEvent = () => {
@@ -98,7 +108,12 @@ function GameTiles({ resetGame }) {
     left = parseInt(left, 10);
     top = parseInt(top, 10) - tileHeight;
 
-    moveTile(key, top, left, rowLength * colLength);
+    dispatch(actions.MOVE_TILE({
+      key,
+      top,
+      left,
+      indexEmptyTile: rowLength * colLength,
+    }));
   };
 
   const moveBottomEvent = () => {
@@ -110,7 +125,12 @@ function GameTiles({ resetGame }) {
     left = parseInt(left, 10);
     top = parseInt(top, 10) + tileHeight;
 
-    moveTile(key, top, left, rowLength * colLength);
+    dispatch(actions.MOVE_TILE({
+      key,
+      top,
+      left,
+      indexEmptyTile: rowLength * colLength,
+    }));
   };
 
   const shuffleTile = () => {
@@ -142,7 +162,7 @@ function GameTiles({ resetGame }) {
     } else if (shuffleCounter === 0) {
       document.getElementsByClassName('game-area')[0].classList.remove('not-ready');
       document.getElementsByClassName('game-area')[0].classList.add('ready');
-      dispatch(toggleGameReady());
+      dispatch(actions.TOGGLE_GAME_READY());
     }
   };
 

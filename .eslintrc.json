@@ -27,7 +27,8 @@
         "react/require-default-props": "off",
         "react/jsx-props-no-spreading": "off",
         "react/forbid-prop-types": "off",
-        "import/no-extraneous-dependencies": "off"
+        "import/no-extraneous-dependencies": "off",
+        "no-param-reassign": ["error", { "props": false }]
     },
     "ignorePatterns": ["src/tests/", "src/serviceWorker"],
     "parserOptions": {

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { createTileLists } from '../actions';
 import GameTiles from './GameTiles';
+import { actions } from '../reducers';
 
 function GameArea({ resetGame }) {
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ function GameArea({ resetGame }) {
     // Calculate the best possible tile-width, tile-height
     // number of tiles, based on the given properties
     const {
-      imageWidth,
-      imageHeight,
+      width: imageWidth,
+      height: imageHeight,
       rowLength,
       colLength,
       tileWidth,
@@ -44,7 +44,7 @@ function GameArea({ resetGame }) {
       }
     }
     tileOrderList[rowLength * colLength] = rowLength * colLength;
-    dispatch(createTileLists(tileCssList, tileOrderList));
+    dispatch(actions.CREATE_TILE_LISTS({ tileCssList, tileOrderList }));
   }, []);
 
   return (
