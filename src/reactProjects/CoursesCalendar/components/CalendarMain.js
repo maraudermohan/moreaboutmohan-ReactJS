@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { PencilIcon } from 'images/icons';
 import * as actions from '../actions';
+import Header from './Header';
 
 const CalendarIndividual = lazy(() => import('./CalendarIndividual'));
 const CourseIndividual = lazy(() => import('./CourseIndividual'));
@@ -15,7 +16,11 @@ class CalendarMain extends React.Component {
     const {
       calendarModel,
     } = this.props;
-    setTimeout(() => { document.getElementsByClassName('calendar-page')[0].style.right = '0%'; }, 200);
+    setTimeout(() => {
+      if (document.getElementsByClassName('calendar-page')[0]) {
+        document.getElementsByClassName('calendar-page')[0].style.left = '0%';
+      }
+    }, 200);
     this.attachEventHandlersCourseContainers();
     // Updates the Input value to Calendar's name
     document.getElementsByClassName('input-calendar-name')[0].value = calendarModel.name;
@@ -128,48 +133,51 @@ class CalendarMain extends React.Component {
       height: window.innerHeight - 65,
     };
     return (
-      <div
-        className="calendar-page flex-container"
-        style={styles}
-      >
-        {this.renderPopUpModal()}
-        <div className="calendar-left">
-          <div className="calendar-title flex-container">
-            <input type="text" className="input-calendar-name" />
-            <PencilIcon className="glyphicon" />
+      <>
+        <Header />
+        <div
+          className="calendar-page flex-container"
+          style={styles}
+        >
+          {this.renderPopUpModal()}
+          <div className="calendar-left">
+            <div className="calendar-title flex-container">
+              <input type="text" className="input-calendar-name" />
+              <PencilIcon className="glyphicon" />
+            </div>
+            <hr />
+            {this.renderSelectedCoursesContainer()}
           </div>
-          <hr />
-          {this.renderSelectedCoursesContainer()}
+          <div>
+            <div className="week-titles flex-container">
+              <li>Monday</li>
+              <li>Tuesday</li>
+              <li>Wednesday</li>
+              <li>Thursday</li>
+              <li>Friday</li>
+            </div>
+            <div className="week-container flex-container">
+              <ul className="timeslot-names flex-container">
+                <li>7:00</li>
+                <li>8:00</li>
+                <li>9:00</li>
+                <li>10:00</li>
+                <li>11:00</li>
+                <li>12:00</li>
+                <li>1:00</li>
+                <li>2:00</li>
+                <li>3:00</li>
+                <li>4:00</li>
+              </ul>
+              <CalendarIndividual dayID="day1" />
+              <CalendarIndividual dayID="day2" />
+              <CalendarIndividual dayID="day3" />
+              <CalendarIndividual dayID="day4" />
+              <CalendarIndividual dayID="day5" />
+            </div>
+          </div>
         </div>
-        <div>
-          <div className="week-titles flex-container">
-            <li>Monday</li>
-            <li>Tuesday</li>
-            <li>Wednesday</li>
-            <li>Thursday</li>
-            <li>Friday</li>
-          </div>
-          <div className="week-container flex-container">
-            <ul className="timeslot-names flex-container">
-              <li>7:00</li>
-              <li>8:00</li>
-              <li>9:00</li>
-              <li>10:00</li>
-              <li>11:00</li>
-              <li>12:00</li>
-              <li>1:00</li>
-              <li>2:00</li>
-              <li>3:00</li>
-              <li>4:00</li>
-            </ul>
-            <CalendarIndividual dayID="day1" />
-            <CalendarIndividual dayID="day2" />
-            <CalendarIndividual dayID="day3" />
-            <CalendarIndividual dayID="day4" />
-            <CalendarIndividual dayID="day5" />
-          </div>
-        </div>
-      </div>
+      </>
     );
   }
 }

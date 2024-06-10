@@ -35,13 +35,15 @@ function ReactPage() {
           techInfo,
           href,
         }) => {
-          const ProjectContainer = title === 'Intuit quickpark' ? 'a' : Link;
+          const ProjectContainer = title === 'Tamil Charades' ? 'a' : Link;
           return (
             <ProjectContainer
               to={href}
               href={href}
               key={title}
               className="react-page__link"
+              target={title === 'Tamil Charades' ? '_blank' : '_self'}
+              rel="noreferrer"
             >
               <LazyLoadImage
                 imageUrl={imageUrl}

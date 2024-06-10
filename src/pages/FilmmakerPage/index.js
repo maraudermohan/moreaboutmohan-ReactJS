@@ -96,7 +96,9 @@ class FilmmakerPage extends Component {
         <VideoShuffler videoData={spotlightData} />
         <CountContainer>
           <StyledH2>All Videos</StyledH2>
-          <StyledH4>{`${filterData.length} results`}</StyledH4>
+          <StyledH4>
+            {`${filterData.length > 0 ? filterData.length : 'No'} ${filterData.length === 1 ? 'result' : 'results'}`}
+          </StyledH4>
         </CountContainer>
         <FilterContainer>
           <StyledSubtext>Filter by Role:</StyledSubtext>
@@ -123,7 +125,7 @@ class FilmmakerPage extends Component {
         </FilterContainer>
         <DemoContainer $browserWidth={browserWidth}>
           {
-            filterData.length && (filterData.map((singleVideo) => (
+            filterData.length > 0 && (filterData.map((singleVideo) => (
               <Video
                 key={singleVideo.url}
                 height={`${breakpoint < 2 ? '112' : '180'}`}
@@ -133,6 +135,13 @@ class FilmmakerPage extends Component {
                 muted={0}
               />
             )))
+          }
+          {
+            filterData.length === 0 && (
+              <StyledH4 style={{ flex: '1', textAlign: 'center', color: 'white' }}>
+                Try adjusting or clearing the filters for better results.
+              </StyledH4>
+            )
           }
         </DemoContainer>
         <Footer

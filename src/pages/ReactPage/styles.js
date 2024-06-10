@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import colors from 'constants/colors';
 import mq from 'constants/media-queries';
 import { StyledH1, StyledSubtext } from 'components/Typography';
+import tamilcharades from 'images/tamilcharades.webp';
 import infinitescroll from 'images/infinitescroll.webp';
 import imagetile from 'images/imagetile1.webp';
 import coursescalendar from 'images/coursescalendar.webp';
 import evadegame from 'images/evadegame.webp';
-import intuitpark from 'images/intuitpark.webp';
 import regexsearch from 'images/regexsearch.webp';
 
 export const ReactPageContainer = styled.main`
@@ -230,6 +230,14 @@ export const ReactPageContainer = styled.main`
 
 export const data = [
   {
+    imageUrl: tamilcharades,
+    imageAlt: 'tamil charades web app',
+    title: 'Tamil Charades',
+    subTitle: 'A Charades game built for Tamil movies. The web-app supports multiple modes like Classic, Storylines and Song lyrics.',
+    techInfo: 'NextJS + PHP + MySQL. 2024',
+    href: 'https://www.tamilcharades.com/',
+  },
+  {
     imageUrl: infinitescroll,
     imageAlt: 'infinite scroll module',
     title: 'Infinite scrolling',
@@ -267,14 +275,14 @@ export const data = [
     title: 'Courses-calendar app',
     subTitle: 'A basic calendar app, with a catalog of mock-courses.',
     techInfo: 'React + Redux + Bootstrap. 2016',
-    href: '/courses',
+    href: '/courses?tab=main',
   },
-  {
-    imageUrl: intuitpark,
-    imageAlt: 'intuit parking app',
-    title: 'Intuit quickpark',
-    subTitle: 'Hackathon project building a parking app for employees.',
-    techInfo: 'React + Redux + GoogleMapsApi. 2016',
-    href: 'https://intuitpark.herokuapp.com/',
-  },
+  // {
+  //   imageUrl: intuitpark,
+  //   imageAlt: 'intuit parking app',
+  //   title: 'Intuit quickpark',
+  //   subTitle: 'Hackathon project building a parking app for employees.',
+  //   techInfo: 'React + Redux + GoogleMapsApi. 2016',
+  //   href: 'https://intuitpark.herokuapp.com/',
+  // },
 ];

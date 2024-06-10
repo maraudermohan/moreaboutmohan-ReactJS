@@ -102,5 +102,5 @@ export const summary3 = [
 
 export const summary4 = [
   'For a commendable demo in the EBS Demo Day 2016.',
-  'Leading frontend of Domain-name migration of Proconnect (previously "Taxpro").',
+  'For leading the Domain-name migration of Proconnect (previously "Taxpro").',
 ];

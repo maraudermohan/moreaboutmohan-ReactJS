@@ -117,7 +117,7 @@ function MainPage({
                 <br />
                 with &lsquo;Game Designer&rsquo; skills
                 <br />
-                14+ years of experience
+                15+ years of experience
                 <br />
                 Fueled by passion & creativity
               </StyledH4>

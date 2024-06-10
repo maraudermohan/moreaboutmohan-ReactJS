@@ -7,6 +7,7 @@ import {
   ChevronUpIcon,
 } from 'images/icons';
 import * as actions from '../actions';
+import Header from './Header';
 
 const CourseIndividual = lazy(() => import('./CourseIndividual'));
 const PopupModal = lazy(() => import('./PopupModal'));
@@ -38,7 +39,11 @@ class CoursesMain extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => { document.getElementsByClassName('courses-page')[0].style.left = '0%'; }, 200);
+    setTimeout(() => {
+      if (document.getElementsByClassName('courses-page')[0]) {
+        document.getElementsByClassName('courses-page')[0].style.left = '0%';
+      }
+    }, 200);
     this.calcCourseContainerWidth();
     this.attachEventHandlersCourseContainers();
   }
@@ -235,21 +240,24 @@ class CoursesMain extends React.Component {
       catalog,
     } = this.props;
     return (
-      <div className="courses-page">
-        {this.renderPopUpModal()}
-        <div className="selected-available-container">
-          {this.renderSelectedCoursesContainer()}
-          <h2 className="course-title">
-            Courses Available
-            <ChevronDownIcon className="glyphicon down" />
-            <ChevronUpIcon className="glyphicon up open" />
-          </h2>
-          <div className="course-container available-courses open">
-            { catalog.map(CoursesMain.renderAvailableCourses) }
+      <>
+        <Header />
+        <div className="courses-page">
+          {this.renderPopUpModal()}
+          <div className="selected-available-container">
+            {this.renderSelectedCoursesContainer()}
+            <h2 className="course-title">
+              Courses Available
+              <ChevronDownIcon className="glyphicon down" />
+              <ChevronUpIcon className="glyphicon up open" />
+            </h2>
+            <div className="course-container available-courses open">
+              { catalog.map(CoursesMain.renderAvailableCourses) }
+            </div>
           </div>
+          { this.renderUpcomingCourses() }
         </div>
-        { this.renderUpcomingCourses() }
-      </div>
+      </>
     );
   }
 }
