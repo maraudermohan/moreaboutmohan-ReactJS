@@ -115,13 +115,13 @@ Virus.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  currentTop: state.virusData[ownProps.id].current[0],
-  currentLeft: state.virusData[ownProps.id].current[1],
-  endTop: state.virusData[ownProps.id].end[0],
-  endLeft: state.virusData[ownProps.id].end[1],
-  playerTop: state.playerPos.top,
-  playerLeft: state.playerPos.left,
-  direction: state.virusData[ownProps.id].direction,
+  currentTop: state.virusData[ownProps.id]?.current[0] || 0,
+  currentLeft: state.virusData[ownProps.id]?.current[1] || 0,
+  endTop: state.virusData[ownProps.id]?.end[0] || 0,
+  endLeft: state.virusData[ownProps.id]?.end[1] || 0,
+  playerTop: state.playerPos?.top,
+  playerLeft: state.playerPos?.left,
+  direction: state.virusData[ownProps.id]?.direction || 'up',
   speed: state.speed,
   isGameReady: state.isGameReady,
 });

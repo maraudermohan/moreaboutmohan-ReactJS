@@ -19,6 +19,7 @@ function Player({
   const playerRef = useRef(null);
 
   const positionKeydownHandler = (event) => {
+    event.preventDefault();
     let newDirection = direction;
     if (playerTop >= 10 && (event.code === 'KeyW' || event.code === 'ArrowUp')) {
       playerRef.current.oldTop -= 20;

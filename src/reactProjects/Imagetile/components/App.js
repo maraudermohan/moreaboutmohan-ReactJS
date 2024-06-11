@@ -35,10 +35,11 @@ function App() {
       document.getElementsByClassName('appear')[0].style.display = 'block';
       document.getElementsByClassName('appear')[1].style.display = 'block';
     }
-    return () => {
-      dispatch(actions.LOG_OUT());
-    };
-  }, []);
+  }, [gameState]);
+
+  useEffect(() => (() => {
+    dispatch(actions.LOG_OUT());
+  }), []);
 
   const resetGame = () => {
     // Resets the state values for a new game
@@ -123,7 +124,7 @@ function App() {
       </StyledParagraph>
       <div className="flex-container game-area-container">
         <div className="appContainer">
-          <h4 style={{ color: '#F7F4E9', padding: '120px 0 0 0' }}>
+          <h4 style={{ color: '#F7F4E9', padding: '60px 0 0 0' }}>
             Solve the shuffled image in under 100 moves
           </h4>
           <div className="disappear">

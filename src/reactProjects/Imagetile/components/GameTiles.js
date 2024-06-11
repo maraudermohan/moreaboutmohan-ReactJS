@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { actions } from '../reducers';
@@ -20,7 +20,6 @@ function GameTiles({ resetGame }) {
     rowLength,
     colLength,
   } = imageSelected;
-  const [isEventAttached, setIsEventAttached] = useState(false);
 
   const gameConditionCheck = () => {
     const sortedList = Object.keys(tileOrderList)
@@ -166,27 +165,27 @@ function GameTiles({ resetGame }) {
     }
   };
 
-  const keyUpHandler = (e) => {
+  const keyDownHandler = (e) => {
     if (moveCounter > 0) {
-      if ([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      if ([37, 38, 39, 40].includes(e.which)) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
       }
-      if (e.keyCode === 39 && document.getElementsByClassName('game-tile left').length) {
+      if (e.which === 39 && document.getElementsByClassName('game-tile left').length) {
         moveLeftEvent();
-      } else if (e.keyCode === 37 && document.getElementsByClassName('game-tile right').length) {
+      } else if (e.which === 37 && document.getElementsByClassName('game-tile right').length) {
         moveRightEvent();
-      } else if (e.keyCode === 40 && document.getElementsByClassName('game-tile top').length) {
+      } else if (e.which === 40 && document.getElementsByClassName('game-tile top').length) {
         moveTopEvent();
-      } else if (e.keyCode === 38 && document.getElementsByClassName('game-tile bottom').length) {
+      } else if (e.which === 38 && document.getElementsByClassName('game-tile bottom').length) {
         moveBottomEvent();
       }
     }
   };
 
   const removeClickKeyHandlers = () => {
-    window.removeEventListener('keyup', keyUpHandler);
+    window.removeEventListener('keydown', keyDownHandler);
     if (document.getElementsByClassName('game-tile left').length) {
       document.getElementsByClassName('game-tile left')[0]
         .removeEventListener('click', moveLeftEvent);
@@ -246,23 +245,15 @@ function GameTiles({ resetGame }) {
   };
 
   useEffect(() => {
-    shuffleManager();
-  }, []);
-
-  useEffect(() => {
     if (!gameState?.isGameReady) {
       setTimeout(() => { shuffleManager(); }, 250);
     }
 
-    /* eslint-disable */
-    if (gameState?.isGameReady && moveCounter < 1 && isEventAttached) {
+    if (gameState?.isGameReady && moveCounter < 1) {
       removeClickKeyHandlers();
-      setIsEventAttached(false);
-    } else if (gameState?.isGameReady && moveCounter > 0 && !isEventAttached) {
-      window.addEventListener('keyup', keyUpHandler);
-      setIsEventAttached(true);
+    } else if (gameState?.isGameReady && moveCounter > 0) {
+      window.addEventListener('keydown', keyDownHandler);
     }
-    /* eslint-enable */
   });
 
   return (
