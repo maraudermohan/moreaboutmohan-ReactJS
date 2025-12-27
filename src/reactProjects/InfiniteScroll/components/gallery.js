@@ -13,12 +13,23 @@ import {
  *
  * @param {Number} firstImage First index of images list
  *
- * @returns {Element} Gallery element
+ * @returns {Element} Gallery element with cleanup method
  */
 function Gallery(firstImage) {
   const observer = Observer();
   const gallery = document.createElement('div');
   gallery.setAttribute('class', 'gallery');
+
+  // Store observer reference for cleanup
+  gallery.observer = observer;
+
+  // Add cleanup method
+  gallery.cleanup = () => {
+    if (gallery.observer) {
+      gallery.observer.disconnect();
+      gallery.observer = null;
+    }
+  };
 
   // Render and Observe the first two rows
   const firstRow = LoadNextRowContainer(gallery, observer, firstImage);

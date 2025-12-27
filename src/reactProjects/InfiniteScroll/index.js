@@ -13,7 +13,11 @@ function InfiniteScroll() {
     rootElem.appendChild(gallery);
 
     return (() => {
-      rootElem.removeChild(gallery);
+      // Cleanup observer before removing gallery
+      if (gallery?.cleanup) {
+        gallery.cleanup();
+      }
+      rootElem?.removeChild(gallery);
     });
   }, []);
 

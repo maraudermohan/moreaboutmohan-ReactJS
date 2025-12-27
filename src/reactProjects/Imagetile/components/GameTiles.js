@@ -254,7 +254,11 @@ function GameTiles({ resetGame }) {
     } else if (gameState?.isGameReady && moveCounter > 0) {
       window.addEventListener('keydown', keyDownHandler);
     }
-  });
+
+    return () => {
+      removeClickKeyHandlers();
+    };
+  }, [gameState, moveCounter]);
 
   return (
     <div>

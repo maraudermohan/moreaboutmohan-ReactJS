@@ -54,8 +54,10 @@ class CoursesMain extends React.Component {
   }
 
   componentWillUnmount() {
-    document.getElementsByClassName('courses-page')[0].style.left = '-100%';
-    document.getElementsByClassName('selected-available-container')[0].removeEventListener('click', () => {});
+    const coursesPage = document.getElementsByClassName('courses-page')[0];
+    const selectedAvailable = document.getElementsByClassName('selected-available-container')[0];
+    if (coursesPage) coursesPage.style.left = '-100%';
+    if (selectedAvailable) selectedAvailable.removeEventListener('click', () => {});
   }
 
   attachEventHandlersCourseContainers() {

@@ -31,23 +31,28 @@ function App() {
 
   useEffect(() => {
     if (gameState?.isGameReady) {
-      document.getElementsByClassName('disappear')[0].style.display = 'none';
-      document.getElementsByClassName('appear')[0].style.display = 'block';
-      document.getElementsByClassName('appear')[1].style.display = 'block';
+      const disappear = document.getElementsByClassName('disappear')[0];
+      const appear = document.getElementsByClassName('appear');
+      if (disappear) disappear.style.display = 'none';
+      if (appear[0]) appear[0].style.display = 'block';
+      if (appear[1]) appear[1].style.display = 'block';
     }
   }, [gameState]);
 
   useEffect(() => (() => {
     dispatch(actions.LOG_OUT());
-  }), []);
+  }), [dispatch]);
 
   const resetGame = () => {
     // Resets the state values for a new game
     dispatch(actions.LOG_OUT());
-    document.getElementsByClassName('inputURL')[0].value = '';
-    document.getElementsByClassName('disappear')[0].style.display = 'block';
-    document.getElementsByClassName('appear')[0].style.display = 'none';
-    document.getElementsByClassName('appear')[1].style.display = 'none';
+    const inputURL = document.getElementsByClassName('inputURL')[0];
+    const disappear = document.getElementsByClassName('disappear')[0];
+    const appear = document.getElementsByClassName('appear');
+    if (inputURL) inputURL.value = '';
+    if (disappear) disappear.style.display = 'block';
+    if (appear[0]) appear[0].style.display = 'none';
+    if (appear[1]) appear[1].style.display = 'none';
   };
 
   const disableBtn = () => !(url.length > 0);
@@ -110,8 +115,10 @@ function App() {
       }));
     };
     img.src = imgUrl;
-    document.getElementsByClassName('disappear')[0].style.display = 'none';
-    document.getElementsByClassName('reset-btn')[0].style.display = 'inline-block';
+    const disappear = document.getElementsByClassName('disappear')[0];
+    const resetBtn = document.getElementsByClassName('reset-btn')[0];
+    if (disappear) disappear.style.display = 'none';
+    if (resetBtn) resetBtn.style.display = 'inline-block';
   };
 
   return (
