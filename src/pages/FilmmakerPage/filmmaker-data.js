@@ -720,6 +720,16 @@ export const videosData = [
     'Dance-Videos': true,
     thumbnail: 'https://img.youtube.com/vi/3ZNWNFL4omA/maxresdefault.jpg',
   },
+  {
+    title: 'filter-coffee-short',
+    player: 'youtube',
+    url: 'kgLHi1Hjgl0',
+    start: 5,
+    'D.o.P': false,
+    Editor: true,
+    'Short-Films': true,
+    thumbnail: 'https://img.youtube.com/vi/kgLHi1Hjgl0/maxresdefault.jpg',
+  },
   // {
   //   title: 'Pathala-pathala',
   //   player: 'youtube',

@@ -113,9 +113,9 @@ function MainPage({
               </StyledH4>
             ) : (
               <StyledH4>
-                Lead Frontend Engineer
+                Staff Frontend Engineer
                 <br />
-                with &lsquo;Game Designer&rsquo; skills
+                Architecture, Visualization & Platform
                 <br />
                 15+ years of experience
                 <br />
