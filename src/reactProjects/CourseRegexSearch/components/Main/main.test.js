@@ -1,38 +1,47 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
   screen,
   render,
   fireEvent,
-  cleanup,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import Main from './index';
 
+// Main lazy-loads CourseForm/CourseCard. In the real app, App.js provides an
+// ancestor <Suspense> boundary, but in isolation Main needs its own for the
+// lazy children to resolve.
+function renderMain() {
+  return render(
+    <Suspense fallback={null}>
+      <Main />
+    </Suspense>,
+  );
+}
+
 describe('Course card component', () => {
-  afterEach(() => cleanup);
+  test('test if invalid string in CourseForm, renders error in CourseForm', async () => {
+    renderMain();
 
-  test('test if input string in CourseForm, renders error in CourseCard', () => {
-    render(<Main />);
-
-    fireEvent.change(screen.getByTestId('course-form-input'), {
+    // Missing a semester/year segment, so this can never match COURSE_REGEX_FULL.
+    fireEvent.change(await screen.findByTestId('course-form-input'), {
       target: {
-        value: 'Literature111 W19',
+        value: 'Literature111',
       },
     });
     fireEvent.click(screen.getByTestId('course-form-button'));
-    expect(screen.getByTestId('course-card-error')).toBeTruthy();
+    expect(await screen.findByTestId('course-form-error')).toBeTruthy();
   });
 
-  test('test if correct string in CourseForm, renders the CourseCard', () => {
-    render(<Main />);
+  test('test if correct string in CourseForm, renders the CourseCard', async () => {
+    renderMain();
 
-    fireEvent.change(screen.getByTestId('course-form-input'), {
+    fireEvent.change(await screen.findByTestId('course-form-input'), {
       target: {
         value: 'Math:200 Winter2016',
       },
     });
     fireEvent.click(screen.getByTestId('course-form-button'));
-    expect(screen.getByTestId('course-card-success')).toBeTruthy();
+    expect(await screen.findByTestId('course-card-success')).toBeTruthy();
   });
 });

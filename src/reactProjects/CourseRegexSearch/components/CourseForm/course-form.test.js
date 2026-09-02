@@ -3,7 +3,6 @@ import {
   screen,
   render,
   fireEvent,
-  cleanup,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
@@ -11,7 +10,6 @@ import { COURSE_REGEX_FULL } from './regex-data';
 import CourseForm from './index';
 
 describe('Regex Tests', () => {
-  afterEach(() => cleanup);
   const testCourseRegexFull = (str) => COURSE_REGEX_FULL.test(str);
 
   test('Test if all valid strings pass COURSE_REGEX_FULL', () => {
@@ -38,7 +36,6 @@ describe('Regex Tests', () => {
 });
 
 describe('Course form component', () => {
-  afterEach(() => cleanup);
   test('test if button disabled by default', () => {
     render(<CourseForm />);
     expect(screen.getByTestId('course-form-button')).toBeDisabled();
